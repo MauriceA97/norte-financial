@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Norte Financial Leads</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0B3D2E;--verde:#1D9E75;--amber:#D4700A;--frost:#E8F5F0;--ink:#1A1A1A;--ink-muted:#4A4A4A;--ink-light:#7A7A7A;--parchment:#F7F5F1;--white:#fff;--border:rgba(11,61,46,0.12);--r:8px;--shadow:0 1px 4px rgba(0,0,0,0.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
+
+/* LOGIN */
+#loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0f1117}
+.login-card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:48px 40px;width:380px;text-align:center}
+.login-logo{font-family:'Playfair Display';font-size:28px;color:#7EC4A8;margin-bottom:4px}
+.login-sub{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:32px}
+.login-input{width:100%;padding:12px 16px;background:#0f1117;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-family:inherit;font-size:15px;outline:none;margin-bottom:12px;transition:border-color 0.2s}
+.login-input:focus{border-color:#1D9E75}
+.login-btn{width:100%;padding:12px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s}
+.login-btn:hover{background:#16875f;transform:translateY(-1px)}
+.login-err{color:#f87171;font-size:13px;margin-top:8px;display:none}
+
+/* DASHBOARD */
+#dashboard{display:none;min-height:100vh;background:#0f1117}
+.topbar{background:#1a1f2e;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.topbar-brand{display:flex;align-items:center;gap:10px}
+.topbar-logo{font-family:'Playfair Display';font-size:18px;color:#7EC4A8}
+.topbar-badge{font-size:10px;background:#1D9E75;color:#fff;padding:2px 8px;border-radius:4px;font-weight:500}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-time{font-size:12px;color:#64748b}
+.btn-logout{font-size:13px;color:#64748b;background:none;border:1px solid rgba(255,255,255,0.1);padding:6px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s}
+.btn-logout:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.2)}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:20px 24px 0}
+.stat-card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px}
+.stat-label{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+.stat-num{font-family:'Playfair Display';font-size:28px;color:#e2e8f0}
+.stat-sub{font-size:11px;color:#64748b;margin-top:3px}
+.stat-card.highlight{border-color:rgba(29,158,117,0.3);background:rgba(29,158,117,0.07)}
+.stat-card.highlight .stat-num{color:#7EC4A8}
+
+/* FILTERS */
+.filters{display:flex;align-items:center;gap:10px;padding:16px 24px;flex-wrap:wrap}
+.filter-select,.filter-input{padding:8px 12px;background:#1a1f2e;border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#e2e8f0;font-family:inherit;font-size:13px;outline:none;cursor:pointer;transition:border-color 0.2s}
+.filter-select:focus,.filter-input:focus{border-color:#1D9E75}
+.filter-input{width:200px}
+.filter-label{font-size:12px;color:#64748b}
+.btn-refresh{padding:8px 16px;background:#1D9E75;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px}
+.btn-refresh:hover{background:#16875f}
+.btn-csv{padding:8px 16px;background:#D4700A;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px}
+.btn-csv:hover{background:#b85e08}
+.filters-right{margin-left:auto;display:flex;gap:8px}
+
+/* TABLE */
+.table-wrap{padding:0 24px 24px;overflow-x:auto}
+.leads-table{width:100%;border-collapse:collapse;font-size:13px}
+.leads-table th{padding:10px 12px;text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#64748b;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap}
+.leads-table td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top;color:#cbd5e1}
+.leads-table tr:hover td{background:rgba(255,255,255,0.02)}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;white-space:nowrap}
+.badge-new{background:rgba(29,158,117,0.15);color:#6ee7b7}
+.badge-contacted{background:rgba(59,130,246,0.15);color:#93c5fd}
+.badge-sold{background:rgba(251,191,36,0.15);color:#fcd34d}
+.badge-auto{background:rgba(99,102,241,0.15);color:#a5b4fc}
+.badge-hogar{background:rgba(249,115,22,0.15);color:#fdba74}
+.badge-vida{background:rgba(236,72,153,0.15);color:#f9a8d4}
+.badge-salud{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.badge-negocio{background:rgba(245,158,11,0.15);color:#fcd34d}
+.badge-otro{background:rgba(148,163,184,0.15);color:#94a3b8}
+.name-cell{font-weight:500;color:#e2e8f0}
+.phone-link{color:#7EC4A8;text-decoration:none}
+.phone-link:hover{color:#4ade80}
+.action-btns{display:flex;gap:6px;flex-wrap:nowrap}
+.btn-action{padding:4px 10px;border:none;border-radius:4px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.btn-contacted{background:rgba(59,130,246,0.15);color:#93c5fd}
+.btn-contacted:hover{background:rgba(59,130,246,0.3)}
+.btn-sold{background:rgba(251,191,36,0.15);color:#fcd34d}
+.btn-sold:hover{background:rgba(251,191,36,0.3)}
+.btn-email{background:rgba(29,158,117,0.15);color:#6ee7b7}
+.btn-email:hover{background:rgba(29,158,117,0.3)}
+.empty-state{text-align:center;padding:60px 20px;color:#64748b}
+.empty-icon{font-size:48px;margin-bottom:12px}
+.loading{text-align:center;padding:40px;color:#64748b;font-size:14px}
+
+/* EMAIL MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#1a1f2e;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;width:600px;max-width:90vw;max-height:85vh;overflow-y:auto}
+.modal-title{font-family:'Playfair Display';font-size:20px;color:#e2e8f0;margin-bottom:4px}
+.modal-sub{font-size:13px;color:#64748b;margin-bottom:20px}
+.email-sheet{background:#0f1117;border-radius:8px;padding:20px;font-size:13px;line-height:1.8;color:#cbd5e1;white-space:pre-wrap;font-family:monospace;margin-bottom:16px;border:1px solid rgba(255,255,255,0.06)}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-copy{padding:9px 18px;background:rgba(29,158,117,0.2);color:#6ee7b7;border:1px solid rgba(29,158,117,0.3);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.2s}
+.btn-copy:hover{background:rgba(29,158,117,0.35)}
+.btn-mailto{padding:9px 18px;background:#D4700A;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-close-modal{padding:9px 18px;background:rgba(255,255,255,0.05);color:#94a3b8;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;margin-left:auto}
+
+@media(max-width:768px){.stats-grid{grid-template-columns:1fr 1fr}.topbar{padding:0 16px}.filters,.stats-grid,.table-wrap{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">Norte</div>
+    <div class="login-sub">Financial · Admin</div>
+    <input type="password" class="login-input" id="passInput" placeholder="Contraseña de acceso" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" onclick="doLogin()">Entrar al dashboard</button>
+    <div class="login-err" id="loginErr">Contraseña incorrecta.</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <div class="topbar">
+    <div class="topbar-brand">
+      <div class="topbar-logo">Norte Financial</div>
+      <div class="topbar-badge">LEADS</div>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-time" id="clockEl"></span>
+      <button class="btn-logout" onclick="logout()">Salir</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat-card highlight"><div class="stat-label">Total Leads</div><div class="stat-num" id="statTotal">—</div><div class="stat-sub">Todos los tiempos</div></div>
+    <div class="stat-card"><div class="stat-label">Nuevos (24h)</div><div class="stat-num" id="statToday">—</div><div class="stat-sub">Últimas 24 horas</div></div>
+    <div class="stat-card"><div class="stat-label">Sin Contactar</div><div class="stat-num" id="statNew">—</div><div class="stat-sub">Status: new</div></div>
+    <div class="stat-card"><div class="stat-label">Contactados</div><div class="stat-num" id="statContacted">—</div><div class="stat-sub">Status: contacted</div></div>
+    <div class="stat-card"><div class="stat-label">Vendidos</div><div class="stat-num" id="statSold">—</div><div class="stat-sub">Status: sold</div></div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <span class="filter-label">Filtrar:</span>
+    <select class="filter-select" id="filterType" onchange="applyFilters()">
+      <option value="">Todos los tipos</option>
+      <option value="auto">Auto</option>
+      <option value="hogar">Hogar</option>
+      <option value="vida">Vida</option>
+      <option value="salud">Salud</option>
+      <option value="negocio">Negocio</option>
+      <option value="otro">Otro</option>
+    </select>
+    <select class="filter-select" id="filterState" onchange="applyFilters()">
+      <option value="">Todos los estados</option>
+      <option value="FL">Florida</option>
+      <option value="TX">Texas</option>
+      <option value="CA">California</option>
+      <option value="NY">New York</option>
+      <option value="IL">Illinois</option>
+      <option value="OTHER">Otro</option>
+    </select>
+    <select class="filter-select" id="filterStatus" onchange="applyFilters()">
+      <option value="">Todos los status</option>
+      <option value="new">Nuevo</option>
+      <option value="contacted">Contactado</option>
+      <option value="sold">Vendido</option>
+    </select>
+    <input class="filter-input" type="text" id="filterSearch" placeholder="Buscar nombre, email, teléfono..." oninput="applyFilters()">
+    <div class="filters-right">
+      <button class="btn-refresh" onclick="loadLeads()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        Actualizar
+      </button>
+      <button class="btn-csv" onclick="exportCSV()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        CSV
+      </button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <div id="tableContainer"><div class="loading">Cargando leads...</div></div>
+  </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="emailModal">
+  <div class="modal">
+    <div class="modal-title">Hoja de Referido</div>
+    <div class="modal-sub" id="emailModalSub">Lista para enviar a agente o carrier</div>
+    <div class="email-sheet" id="emailSheet"></div>
+    <div class="modal-actions">
+      <button class="btn-copy" onclick="copyEmailSheet()">📋 Copiar texto</button>
+      <a class="btn-mailto" id="mailtoLink" href="#" target="_blank">✉️ Abrir en Email</a>
+      <button class="btn-close-modal" onclick="closeEmailModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Config ───────────────────────────────────
+const SUPA_URL = 'https://agodvsflcfhfcxtlykpf.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb2R2c2ZsY2ZoZmN4dGx5a3BmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NTU2NTMsImV4cCI6MjA5MTMzMTY1M30.KDg8lPRPfyMXYQ6SQK3LcoIhSFqNZBAELlJIUWRC9mw';
+const ADMIN_PASS = 'Norte2025!';
+const ADMIN_EMAIL = 'mauriceagbag@gmail.com';
+
+let allLeads = [];
+let filteredLeads = [];
+
+// ── Auth ─────────────────────────────────────
+function doLogin() {
+  const pass = document.getElementById('passInput').value;
+  if(pass === ADMIN_PASS || pass === localStorage.getItem('norte_admin_pass')) {
+    localStorage.setItem('norte_admin_auth', btoa(Date.now()));
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    loadLeads();
+    startClock();
+  } else {
+    document.getElementById('loginErr').style.display = 'block';
+    document.getElementById('passInput').value = '';
+  }
+}
+function logout() {
+  localStorage.removeItem('norte_admin_auth');
+  location.reload();
+}
+// Auto-login if recent session
+if(localStorage.getItem('norte_admin_auth')) {
+  const ts = parseInt(atob(localStorage.getItem('norte_admin_auth')));
+  if(Date.now() - ts < 8*60*60*1000) { // 8 hours
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    setTimeout(()=>{ loadLeads(); startClock(); }, 100);
+  }
+}
+
+function startClock() {
+  const el = document.getElementById('clockEl');
+  const tick = ()=>{ el.textContent = new Date().toLocaleString('es-US',{weekday:'short',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}); };
+  tick(); setInterval(tick, 30000);
+}
+
+// ── Load leads ───────────────────────────────
+async function loadLeads() {
+  document.getElementById('tableContainer').innerHTML = '<div class="loading">⟳ Cargando leads...</div>';
+  try {
+    const res = await fetch(`${SUPA_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
+      headers: { 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}` }
+    });
+    if(!res.ok) throw new Error('API error ' + res.status);
+    allLeads = await res.json();
+    updateStats();
+    applyFilters();
+  } catch(e) {
+    document.getElementById('tableContainer').innerHTML = `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error cargando leads: ${e.message}</p><p style="margin-top:8px;font-size:12px">Verifica que la tabla "leads" existe en Supabase.</p></div>`;
+  }
+}
+
+function updateStats() {
+  const now = new Date();
+  const yesterday = new Date(now - 24*60*60*1000);
+  document.getElementById('statTotal').textContent = allLeads.length;
+  document.getElementById('statToday').textContent = allLeads.filter(l=>new Date(l.created_at)>yesterday).length;
+  document.getElementById('statNew').textContent = allLeads.filter(l=>l.status==='new'||!l.status).length;
+  document.getElementById('statContacted').textContent = allLeads.filter(l=>l.status==='contacted').length;
+  document.getElementById('statSold').textContent = allLeads.filter(l=>l.status==='sold').length;
+}
+
+function applyFilters() {
+  const type = document.getElementById('filterType').value;
+  const state = document.getElementById('filterState').value;
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('filterSearch').value.toLowerCase();
+  filteredLeads = allLeads.filter(l=>{
+    if(type && l.insurance_type!==type) return false;
+    if(state && l.state!==state) return false;
+    if(status) { const s = l.status||'new'; if(s!==status) return false; }
+    if(search) {
+      const hay = [l.first_name,l.last_name,l.email,l.phone,l.zip].join(' ').toLowerCase();
+      if(!hay.includes(search)) return false;
+    }
+    return true;
+  });
+  renderTable();
+}
+
+function renderTable() {
+  const c = document.getElementById('tableContainer');
+  if(!filteredLeads.length){
+    c.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div><p>${allLeads.length?'No hay leads con estos filtros.':'No hay leads todavía. Cuando alguien llene el formulario, aparecerán aquí.'}</p></div>`;
+    return;
+  }
+  let html = `<table class="leads-table">
+    <thead><tr>
+      <th>Fecha</th><th>Nombre</th><th>Teléfono</th><th>Email</th>
+      <th>Tipo</th><th>Estado</th><th>ZIP</th><th>Vehículo</th>
+      <th>Licencia</th><th>Idioma</th><th>Status</th><th>Acciones</th>
+    </tr></thead><tbody>`;
+  filteredLeads.forEach(l=>{
+    const d = new Date(l.created_at);
+    const date = d.toLocaleDateString('es-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    const name = [l.first_name,l.last_name].filter(Boolean).join(' ')||'—';
+    const typeBadge = `<span class="badge badge-${l.insurance_type||'otro'}">${(l.insurance_type||'—').toUpperCase()}</span>`;
+    const statusBadge = `<span class="badge badge-${l.status||'new'}">${(l.status||'new').toUpperCase()}</span>`;
+    const vehicle = l.vehicle_year&&l.vehicle_make ? `${l.vehicle_year} ${l.vehicle_make}` : '—';
+    html += `<tr>
+      <td style="white-space:nowrap;color:#64748b;font-size:12px">${date}</td>
+      <td class="name-cell">${name}</td>
+      <td>${l.phone?`<a class="phone-link" href="tel:${l.phone}">${l.phone}</a>`:'—'}</td>
+      <td style="font-size:12px;max-width:160px;overflow:hidden;text-overflow:ellipsis">${l.email||'—'}</td>
+      <td>${typeBadge}</td>
+      <td>${l.state||'—'}</td>
+      <td>${l.zip||'—'}</td>
+      <td style="font-size:12px">${vehicle}</td>
+      <td style="font-size:12px">${l.has_license||'—'}</td>
+      <td><span class="badge" style="background:rgba(148,163,184,0.1);color:#94a3b8">${l.preferred_language||'es'}</span></td>
+      <td>${statusBadge}</td>
+      <td>
+        <div class="action-btns">
+          <button class="btn-action btn-email" onclick='showEmailSheet(${JSON.stringify(l).replace(/'/g,"&#39;")})'>📋 Referir</button>
+          <button class="btn-action btn-contacted" onclick="updateStatus('${l.id}','contacted',this)">✓ Contactado</button>
+          <button class="btn-action btn-sold" onclick="updateStatus('${l.id}','sold',this)">💰 Vendido</button>
+        </div>
+      </td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  c.innerHTML = html;
+}
+
+// ── Update status ────────────────────────────
+async function updateStatus(id, status, btn) {
+  btn.textContent = '...';
+  try {
+    await fetch(`${SUPA_URL}/rest/v1/leads?id=eq.${id}`, {
+      method: 'PATCH',
+      headers: { 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ status, contacted_at: status==='contacted'?new Date().toISOString():undefined, sold_at: status==='sold'?new Date().toISOString():undefined })
+    });
+    const lead = allLeads.find(l=>l.id===id);
+    if(lead) lead.status = status;
+    updateStats();
+    applyFilters();
+  } catch(e) { btn.textContent = 'Error'; }
+}
+
+// ── Email referral sheet ─────────────────────
+function showEmailSheet(l) {
+  const typeLabels = {auto:'Seguro de Auto',hogar:'Seguro de Hogar',vida:'Seguro de Vida',salud:'Seguro Médico/Salud',negocio:'Seguro de Negocio',otro:'Otro Seguro'};
+  const licLabels = {us:'Licencia Americana',foreign:'Licencia Extranjera',no:'Sin Licencia'};
+  const insLabels = {yes:'Sí, tiene seguro activo',no:'No tiene seguro',expired:'Seguro vencido/cancelado'};
+  const vehicle = l.vehicle_year&&l.vehicle_make ? `${l.vehicle_year} ${l.vehicle_make}` : 'N/A';
+  const date = new Date(l.created_at).toLocaleString('es-US',{dateStyle:'medium',timeStyle:'short'});
+
+  const sheet = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  NORTE FINANCIAL — HOJA DE REFERIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FECHA DE SOLICITUD: ${date}
+TIPO DE SEGURO: ${typeLabels[l.insurance_type]||l.insurance_type||'N/A'}
+
+━━ INFORMACIÓN DE CONTACTO ━━━━━━━━
+
+Nombre:       ${[l.first_name,l.last_name].filter(Boolean).join(' ')||'N/A'}
+Teléfono:     ${l.phone||'N/A'}
+Email:        ${l.email||'N/A'}
+Idioma:       ${l.preferred_language==='es'?'Español':l.preferred_language==='en'?'Inglés':'Cualquiera'}
+Mejor hora:   ${l.best_time==='morning'?'Mañana (8am-12pm)':l.best_time==='afternoon'?'Tarde (12pm-5pm)':l.best_time==='evening'?'Noche (5pm-8pm)':'Cualquier hora'}
+
+━━ INFORMACIÓN DE RIESGO ━━━━━━━━━━
+
+ZIP:          ${l.zip||'N/A'}
+Estado:       ${l.state||'N/A'}
+${l.insurance_type==='auto'?`Vehículo:     ${vehicle}
+Licencia:     ${licLabels[l.has_license]||l.has_license||'N/A'}
+`:''
+}Seguro actual: ${insLabels[l.current_insurance]||l.current_insurance||'N/A'}
+
+━━ CONSENTIMIENTO ━━━━━━━━━━━━━━━━━
+
+TCPA:         ${l.tcpa_consent?'✓ OTORGADO':'NO OTORGADO'}
+Timestamp:    ${l.tcpa_timestamp||l.created_at||'N/A'}
+
+━━ FUENTE ━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fuente:       ${l.utm_source||'directo'}
+Medio:        ${l.utm_medium||'N/A'}
+Campaña:      ${l.utm_campaign||'N/A'}
+URL:          ${l.page_url||'nortefinancial.com/cotizar'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Norte Financial · nortefinancial.com
+  Generado: ${new Date().toLocaleString('es-US')}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+
+  document.getElementById('emailSheet').textContent = sheet;
+  document.getElementById('emailModalSub').textContent = `Lead: ${[l.first_name,l.last_name].filter(Boolean).join(' ')} · ${typeLabels[l.insurance_type]||l.insurance_type}`;
+
+  const subject = encodeURIComponent(`Referido de Seguro: ${l.first_name||''} ${l.last_name||''} — ${typeLabels[l.insurance_type]||l.insurance_type}`);
+  const body = encodeURIComponent(sheet);
+  document.getElementById('mailtoLink').href = `mailto:?subject=${subject}&body=${body}`;
+  document.getElementById('emailModal').classList.add('open');
+  window._currentSheet = sheet;
+}
+
+function closeEmailModal() { document.getElementById('emailModal').classList.remove('open'); }
+function copyEmailSheet() {
+  navigator.clipboard.writeText(window._currentSheet||'').then(()=>{
+    const btn = document.querySelector('.btn-copy');
+    btn.textContent = '✓ Copiado';
+    setTimeout(()=>btn.textContent='📋 Copiar texto', 2000);
+  });
+}
+document.getElementById('emailModal').addEventListener('click', e=>{ if(e.target===e.currentTarget) closeEmailModal(); });
+
+// ── CSV Export ───────────────────────────────
+function exportCSV() {
+  const cols = ['id','created_at','insurance_type','status','first_name','last_name','phone','email','zip','state','vehicle_year','vehicle_make','has_license','current_insurance','preferred_language','best_time','tcpa_consent','utm_source','utm_medium','utm_campaign'];
+  const header = cols.join(',');
+  const rows = filteredLeads.map(l=>cols.map(c=>{
+    const v = l[c]??'';
+    return typeof v==='string'&&v.includes(',') ? `"${v}"` : v;
+  }).join(','));
+  const csv = [header,...rows].join('\n');
+  const blob = new Blob([csv],{type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url; a.download=`norte-leads-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click(); URL.revokeObjectURL(url);
+}
+
+// ── Clock ────────────────────────────────────
+document.getElementById('passInput')?.addEventListener('keydown', e=>{ if(e.key==='Enter') doLogin(); });
+</script>
+</body>
+</html>
