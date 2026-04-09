@@ -237,6 +237,9 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+.nav__mobile-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.nav__mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    HERO
@@ -1401,9 +1404,52 @@ body {
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* Mobile drawer */
+.nav__drawer {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border-light);
+  padding: 12px 0 16px;
+  background: rgba(247,245,241,0.98);
+}
+.nav__drawer.open { display: flex; }
+.nav__drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.nav__drawer-links a {
+  display: block;
+  padding: 13px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.15s;
+}
+.nav__drawer-links a:hover { background: var(--frost); }
+.nav__drawer-cta {
+  display: block;
+  margin: 12px 24px 0;
+  padding: 13px 20px;
+  background: var(--amber);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--r-full);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+.nav__drawer-cta:hover { opacity: 0.9; }
+
 @media (max-width: 768px) {
-  .nav__links, .nav__lang { display: none; }
+  .nav__links { display: none; }
+  .nav__lang { display: flex; }
   .nav__mobile-toggle { display: flex; }
+  .nav__cta { display: none; }
   .hero__inner { grid-template-columns: 1fr; gap: 48px; }
   .hero__visual { display: none; }
   .trust-bar__inner { flex-wrap: wrap; gap: 16px; }
@@ -1464,10 +1510,21 @@ body {
           Pregunta gratis
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <button class="nav__mobile-toggle" aria-label="Menu">
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
           <span></span><span></span><span></span>
         </button>
       </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="#seguros" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="#guias" onclick="closeMobileMenu()" data-es="Gu&#237;as" data-en="Guides">Gu&#237;as</a></li>
+        <li><a href="#herramientas" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="#estados" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="#preguntar" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Pregunta gratis &#8594;" data-en="Ask for free &#8594;">Pregunta gratis &#8594;</a>
     </div>
   </div>
 </nav>
@@ -2147,6 +2204,25 @@ body {
      JAVASCRIPT
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <script>
+// ── Mobile Menu ──────────────────────────────
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobileDrawer');
+  const toggle = document.getElementById('mobileToggle');
+  const isOpen = drawer.classList.contains('open');
+  if (isOpen) {
+    drawer.classList.remove('open');
+    toggle.classList.remove('open');
+  } else {
+    drawer.classList.add('open');
+    toggle.classList.add('open');
+  }
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('mobileToggle').classList.remove('open');
+}
+
 // ── Language System ──────────────────────────
 let currentLang = 'es';
 
