@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Compara seguros de auto, hogar, vida, médico y negocio en español. Norte Financial: gratis, bilingüe, sin presión.">
+<meta name="description" content="Compara seguros de auto, hogar, vida, médico y negocio en español. Norte Financial te ayuda a encontrar la mejor cobertura.">
 <title>Seguros en Español — Norte Financial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    NORTE FINANCIAL — DESIGN SYSTEM
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -1468,117 +1467,82 @@ body {
 }
 
 
-/* SHARED PAGE STYLES */
-.page-hero{padding:140px 0 80px;background:var(--forest);position:relative;overflow:hidden}
-.page-hero__bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.page-hero__bg-c{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
-.page-hero__eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:20px;display:flex;align-items:center;gap:8px}
-.page-hero__eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--mist)}
-.page-hero__title{font-family:var(--font-display);font-size:clamp(40px,6vw,68px);font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
-.page-hero__title em{font-style:italic;color:var(--mist)}
-.page-hero__subtitle{font-family:var(--font-display);font-size:clamp(18px,2.2vw,24px);font-weight:400;font-style:italic;color:rgba(232,245,240,0.65);margin-bottom:24px}
-.page-hero__desc{font-size:17px;font-weight:300;color:rgba(232,245,240,0.75);line-height:1.7;max-width:560px;margin-bottom:36px}
-.section-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--verde);margin-bottom:12px}
-.section-headline{font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:500;color:var(--ink);line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
-.section-desc{font-size:17px;color:var(--ink-muted);line-height:1.7;max-width:540px}
-.cta-band{padding:96px 0;background:var(--amber);position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.07)}
-.cta-band__inner{text-align:center;position:relative;z-index:1}
-.cta-band__label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px}
-.cta-band__headline{font-family:var(--font-display);font-size:clamp(36px,5vw,56px);font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
-.cta-band__sub{font-size:18px;color:rgba(255,255,255,0.8);margin-bottom:40px;font-style:italic;font-family:var(--font-display)}
-.cta-band__actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-.btn-white{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:14px 28px;background:var(--white);color:var(--amber);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
-.btn-outline-white{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:400;padding:14px 24px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.5);border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s}
-.btn-outline-white:hover{background:rgba(255,255,255,0.15)}
-.btn-forest{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:14px 28px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s}
-.btn-forest:hover{background:var(--forest-mid);transform:translateY(-1px)}
-.trust-bar{background:var(--white);border-bottom:1px solid var(--border-light);padding:18px 0}
-.trust-bar__inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.trust-item{display:flex;align-items:center;gap:10px}
-.trust-item__icon{width:36px;height:36px;background:var(--frost);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.trust-item__text strong{display:block;font-size:13px;font-weight:500;color:var(--ink)}
-.trust-item__text span{font-size:12px;color:var(--ink-light)}
-.trust-divider{width:1px;height:28px;background:var(--border-light)}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.card{background:var(--parchment);border-radius:var(--r-xl);padding:32px 28px;transition:all 0.25s;border:1px solid transparent;text-decoration:none;display:block;color:inherit}
-.card:hover{background:var(--white);border-color:var(--border);transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.card__icon{width:52px;height:52px;background:var(--white);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:transform 0.2s}
-.card:hover .card__icon{transform:scale(1.08)}
-.card__tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-full);background:var(--amber-light);color:var(--amber);margin-bottom:20px}
-.card__title{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em}
-.card__desc{font-size:14px;color:var(--ink-muted);line-height:1.6;margin-bottom:24px}
-.card__link{font-size:13px;font-weight:500;color:var(--verde);display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s}
-.card:hover .card__link{gap:10px}
-.card--featured{background:var(--forest)}
-.card--featured:hover{background:var(--forest-mid);border-color:transparent}
-.card--featured .card__title{color:var(--white)}
-.card--featured .card__desc{color:rgba(232,245,240,0.7)}
-.card--featured .card__link{color:var(--mist)}
-.card--featured .card__icon{background:rgba(255,255,255,0.12)}
-.card--featured .card__tag{background:rgba(255,255,255,0.15);color:var(--mist)}
-.faq-item{border-bottom:1px solid var(--border-light);padding:20px 0}
-.faq-item:last-child{border-bottom:none}
-.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:16px;font-weight:500;color:var(--ink);gap:16px}
-.faq-q svg{flex-shrink:0;transition:transform 0.3s;color:var(--verde)}
-.faq-item.open .faq-q svg{transform:rotate(45deg)}
-.faq-a{font-size:15px;color:var(--ink-muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s}
-.faq-item.open .faq-a{max-height:500px;padding-top:12px}
-.form-group{margin-bottom:20px}
-.form-label{display:block;font-size:13px;font-weight:500;color:var(--ink-muted);margin-bottom:6px}
-.form-label.req::after{content:' *';color:var(--amber)}
-.form-input,.form-select{width:100%;font-family:var(--font-body);font-size:15px;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--r-md);outline:none;background:var(--white);color:var(--ink);transition:border-color 0.18s,box-shadow 0.18s;-webkit-appearance:none;appearance:none}
-.form-input:focus,.form-select:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(29,158,117,0.12)}
-.form-input.error,.form-select.error{border-color:#C0392B}
-.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234A4A4A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:1024px){.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){
-  .nav__links{display:none}.nav__lang{display:flex}.nav__mobile-toggle{display:flex}.nav__cta{display:none}
-  .page-hero{padding:100px 0 60px}
-  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-  .trust-bar__inner{flex-wrap:wrap;gap:16px}.trust-divider{display:none}
-  .cta-band__actions{flex-direction:column;align-items:center}
-  .form-row{grid-template-columns:1fr}
-}
-@media(max-width:480px){.cta-band__actions{flex-direction:column;align-items:stretch}}
+.page-hero { padding:140px 0 80px;background:var(--forest);position:relative;overflow:hidden; }
+.page-hero__bg { position:absolute;inset:0;overflow:hidden;pointer-events:none; }
+.page-hero__bg-circle { position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.06); }
+.page-hero__eyebrow { display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:20px; }
+.page-hero__eyebrow::before { content:'';display:block;width:24px;height:1px;background:var(--mist); }
+.page-hero__title { font-family:var(--font-display);font-size:clamp(42px,5.5vw,68px);font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px; }
+.page-hero__title em { font-style:italic;color:var(--mist); }
+.page-hero__subtitle { font-family:var(--font-display);font-size:clamp(18px,2.2vw,26px);font-weight:400;font-style:italic;color:rgba(232,245,240,0.65);margin-bottom:28px; }
+.page-hero__desc { font-size:17px;font-weight:300;color:rgba(232,245,240,0.75);line-height:1.7;max-width:560px;margin-bottom:36px; }
+.btn-primary { display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:14px 28px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s; }
+.btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,112,10,0.35); }
+.btn-ghost { display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:400;padding:14px 24px;background:transparent;color:var(--ink-muted);border:1px solid var(--border);border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s; }
+.btn-ghost:hover { background:var(--frost);color:var(--forest);border-color:var(--verde); }
+.btn-forest { display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:14px 28px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s; }
+.btn-forest:hover { background:var(--forest-mid);transform:translateY(-1px); }
+.section-eyebrow { font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--verde);margin-bottom:12px; }
+.section-headline { font-family:var(--font-display);font-size:clamp(32px,4vw,48px);font-weight:500;color:var(--ink);line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px; }
+.section-desc { font-size:17px;color:var(--ink-muted);line-height:1.7;max-width:540px; }
+.trust-bar { background:var(--white);border-bottom:1px solid var(--border-light);padding:18px 0; }
+.trust-bar__inner { display:flex;align-items:center;justify-content:space-between;gap:24px; }
+.trust-item { display:flex;align-items:center;gap:10px; }
+.trust-item__icon { width:36px;height:36px;background:var(--frost);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+.trust-item__text strong { display:block;font-size:13px;font-weight:500;color:var(--ink); }
+.trust-item__text span { font-size:12px;color:var(--ink-light); }
+.trust-divider { width:1px;height:28px;background:var(--border-light); }
+.card-grid { display:grid;gap:20px; }
+.card-grid--2 { grid-template-columns:repeat(2,1fr); }
+.card-grid--3 { grid-template-columns:repeat(3,1fr); }
+.card-grid--4 { grid-template-columns:repeat(4,1fr); }
+.card { background:var(--white);border-radius:var(--r-xl);padding:32px 28px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);transition:all 0.25s; }
+.card:hover { transform:translateY(-4px);box-shadow:var(--shadow-md); }
+.card__icon { width:52px;height:52px;background:var(--frost);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:transform 0.2s; }
+.card:hover .card__icon { transform:scale(1.08); }
+.card__title { font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin-bottom:8px; }
+.card__desc { font-size:14px;color:var(--ink-muted);line-height:1.6;margin-bottom:16px; }
+.card__link { font-size:13px;font-weight:500;color:var(--verde);display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s;text-decoration:none; }
+.card:hover .card__link { gap:10px; }
+.cta-band { padding:80px 0;background:var(--amber);position:relative;overflow:hidden; }
+.cta-band::before { content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.07); }
+.cta-band__inner { text-align:center;position:relative;z-index:1; }
+.cta-band__label { font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px; }
+.cta-band__headline { font-family:var(--font-display);font-size:clamp(36px,5vw,52px);font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:36px; }
+.cta-band__sub { font-size:18px;color:rgba(255,255,255,0.8);margin-bottom:36px;font-style:italic;font-family:var(--font-display); }
+.btn-white { display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:14px 28px;background:var(--white);color:var(--amber);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s; }
+.btn-white:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+.btn-outline-white { display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:400;padding:14px 24px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.5);border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.22s; }
+.btn-outline-white:hover { background:rgba(255,255,255,0.15); }
+.faq-item { border-bottom:1px solid var(--border-light);padding:20px 0; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:16px;font-weight:500;color:var(--ink);gap:16px; }
+.faq-q svg { flex-shrink:0;transition:transform 0.3s;color:var(--verde); }
+.faq-item.open .faq-q svg { transform:rotate(45deg); }
+.faq-a { font-size:15px;color:var(--ink-muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s; }
+.faq-item.open .faq-a { max-height:400px;padding-top:12px; }
+@media(max-width:1024px) { .card-grid--4{grid-template-columns:1fr 1fr} .card-grid--3{grid-template-columns:1fr 1fr} }
+@media(max-width:768px) { .card-grid--2,.card-grid--3,.card-grid--4{grid-template-columns:1fr} .trust-bar__inner{flex-wrap:wrap;gap:16px} .trust-divider{display:none} .page-hero{padding:100px 0 60px} }
 
-
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.product-card{background:var(--parchment);border-radius:var(--r-xl);overflow:hidden;border:1px solid transparent;box-shadow:var(--shadow-sm);transition:all 0.25s;text-decoration:none;display:block;color:inherit;position:relative}
-.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--border)}
-.product-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--verde);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
-.product-card:hover::before{transform:scaleX(1)}
-.product-card--featured{background:var(--forest)}
-.product-card--featured:hover{background:var(--forest-mid);border-color:transparent}
-.product-card--featured::before{background:var(--amber)}
-.pc-banner{height:120px;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;overflow:hidden}
-.pc-body{padding:28px}
-.pc-tag{display:inline-flex;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-full);background:var(--amber-light);color:var(--amber);margin-bottom:14px}
-.product-card--featured .pc-tag{background:rgba(255,255,255,0.15);color:var(--mist)}
-.pc-title{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em}
-.product-card--featured .pc-title{color:var(--white)}
-.pc-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;margin-bottom:16px}
-.product-card--featured .pc-desc{color:rgba(232,245,240,0.7)}
-.pc-features{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
-.pc-feature{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-muted)}
-.product-card--featured .pc-feature{color:rgba(232,245,240,0.8)}
-.pc-link{font-size:13px;font-weight:500;color:var(--verde);display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s}
-.product-card:hover .pc-link{gap:10px}
-.product-card--featured .pc-link{color:var(--mist)}
-.compare-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
-.compare-table th{background:var(--forest);color:var(--white);padding:14px 16px;text-align:left;font-size:13px;font-weight:500}
-.compare-table th:first-child{border-radius:var(--r-sm) 0 0 0}
-.compare-table th:last-child{border-radius:0 var(--r-sm) 0 0}
-.compare-table td{padding:13px 16px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
-.compare-table tr:hover td{background:var(--frost)}
-.check-td{color:var(--verde);font-weight:500}
-.cross-td{color:#C0392B}
-@media(max-width:1024px){.products-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.products-grid{grid-template-columns:1fr}}
+.products-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px; }
+.pcard { background:var(--white);border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);transition:all 0.25s;text-decoration:none;display:block;color:inherit; }
+.pcard:hover { transform:translateY(-6px);box-shadow:var(--shadow-lg); }
+.pcard__banner { height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden; }
+.pcard__body { padding:24px; }
+.pcard__tag { display:inline-flex;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-full);background:var(--amber-light);color:var(--amber);margin-bottom:12px; }
+.pcard__title { font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:8px; }
+.pcard__desc { font-size:14px;color:var(--ink-muted);line-height:1.6;margin-bottom:16px; }
+.pcard__features { display:flex;flex-direction:column;gap:6px;margin-bottom:20px; }
+.pcard__feat { display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-muted); }
+.pcard__link { font-size:13px;font-weight:500;color:var(--verde);display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s; }
+.pcard:hover .pcard__link { gap:10px; }
+.compare-table { width:100%;border-collapse:collapse;margin-top:32px; }
+.compare-table th { background:var(--forest);color:var(--white);padding:14px 16px;text-align:left;font-size:13px;font-weight:500; }
+.compare-table td { padding:12px 16px;font-size:13px;border-bottom:1px solid var(--border-light);color:var(--ink-muted); }
+.compare-table tr:hover td { background:var(--frost); }
+.chk { color:var(--verde);font-weight:500; }
+@media(max-width:1024px) { .products-grid{grid-template-columns:1fr 1fr} }
+@media(max-width:768px) { .products-grid{grid-template-columns:1fr} }
 
 </style>
 </head>
@@ -1636,132 +1600,171 @@ body {
   </div>
 </nav>
 
+
 <section class="page-hero">
   <div class="page-hero__bg">
-    <div class="page-hero__bg-c" style="width:500px;height:500px;top:-200px;right:-100px"></div>
-    <div class="page-hero__bg-c" style="width:280px;height:280px;top:60px;right:260px"></div>
+    <div class="page-hero__bg-circle" style="width:500px;height:500px;top:-150px;right:-100px;"></div>
+    <div class="page-hero__bg-circle" style="width:300px;height:300px;top:100px;right:220px;"></div>
   </div>
   <div class="container">
     <p class="page-hero__eyebrow" data-es="Todos los seguros en español" data-en="All insurance in Spanish">Todos los seguros en español</p>
     <h1 class="page-hero__title"><span data-es="El seguro que" data-en="The insurance">El seguro que</span><br><em data-es="tu familia merece." data-en="your family deserves.">tu familia merece.</em></h1>
-    <p class="page-hero__subtitle" data-es="Comparamos, explicamos y te conectamos. Sin presión, sin letra chica." data-en="We compare, explain, and connect you. No pressure, no fine print.">Comparamos, explicamos y te conectamos. Sin presión, sin letra chica.</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <p class="page-hero__subtitle" data-es="Comparamos, explicamos y te conectamos. Sin presión, sin letra chica." data-en="We compare, explain and connect you. No pressure, no fine print.">Comparamos, explicamos y te conectamos. Sin presión, sin letra chica.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <a href="cotizar.html" class="btn-primary" data-es="Cotizar gratis ahora" data-en="Get free quote now">Cotizar gratis ahora <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="Ver guías" data-en="View guides">Ver guías</a>
+      <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25);" data-es="Ver guías" data-en="View guides">Ver guías</a>
     </div>
   </div>
 </section>
 
-<div class="trust-bar"><div class="container"><div class="trust-bar__inner">
-  <div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="trust-item__text"><strong data-es="100% Gratis" data-en="100% Free">100% Gratis</strong><span data-es="Sin cargos ocultos" data-en="No hidden fees">Sin cargos ocultos</span></div></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg></div><div class="trust-item__text"><strong>ES / EN</strong><span data-es="Agentes bilingües" data-en="Bilingual agents">Agentes bilingües</span></div></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="trust-item__text"><strong data-es="50+ Compañías" data-en="50+ Companies">50+ Compañías</strong><span data-es="Comparamos todas" data-en="We compare all">Comparamos todas</span></div></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="trust-item__text"><strong data-es="&lt; 24 horas" data-en="&lt; 24 hours">&lt; 24 horas</strong><span data-es="Respuesta rápida" data-en="Fast response">Respuesta rápida</span></div></div>
-</div></div></div>
+<div class="trust-bar"><div class="container"><div class="trust-bar__inner"><div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="trust-item__text"><strong data-es="100% Gratis" data-en="100% Free">100% Gratis</strong><span data-es="Sin cargos ocultos" data-en="No hidden fees">Sin cargos ocultos</span></div></div><div class="trust-divider"></div><div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg></div><div class="trust-item__text"><strong data-es="Bilingüe" data-en="Bilingual">Bilingüe</strong><span data-es="ES / EN" data-en="ES / EN">ES / EN</span></div></div><div class="trust-divider"></div><div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div><div class="trust-item__text"><strong data-es="50+ Compañías" data-en="50+ Companies">50+ Compañías</strong><span data-es="Comparamos todas" data-en="We compare all">Comparamos todas</span></div></div><div class="trust-divider"></div><div class="trust-item"><div class="trust-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="trust-item__text"><strong data-es="Respuesta rápida" data-en="Fast response">Respuesta rápida</strong><span data-es="Menos de 24h" data-en="Less than 24h">Menos de 24h</span></div></div></div></div></div>
 
-<section style="padding:80px 0;background:var(--parchment)">
+<section style="padding:80px 0;background:var(--parchment);">
   <div class="container">
-    <div style="text-align:center;margin-bottom:16px">
+    <div style="text-align:center;margin-bottom:8px;">
       <p class="section-eyebrow" data-es="Nuestros productos" data-en="Our products">Nuestros productos</p>
       <h2 class="section-headline" data-es="Todo el seguro que necesitas" data-en="All the insurance you need">Todo el seguro que necesitas</h2>
-      <p class="section-desc" style="margin:0 auto" data-es="Te explicamos en español claro para que tomes la mejor decisión para tu familia." data-en="We explain clearly so you can make the best decision for your family.">Te explicamos en español claro para que tomes la mejor decisión.</p>
+      <p class="section-desc" style="margin:0 auto;" data-es="Explora cada tipo de seguro. Te explicamos en español claro." data-en="Explore each type of insurance. We explain in clear language.">Explora cada tipo. Te explicamos en español claro.</p>
     </div>
     <div class="products-grid">
-      <a href="seguro-auto.html" class="product-card product-card--featured anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#0B3D2E,#1D9E75)"><span style="opacity:0.2;font-size:80px">🚗</span></div>
-        <div class="pc-body">
-          <div class="pc-tag" data-es="★ Más popular" data-en="★ Most popular">★ Más popular</div>
-          <h3 class="pc-title" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</h3>
-          <p class="pc-desc" data-es="Compara 50+ aseguradoras. Desde $89/mes. Opciones sin licencia disponibles." data-en="Compare 50+ insurers. From $89/mo. No-license options available.">Compara 50+ aseguradoras. Desde $89/mes.</p>
-          <div class="pc-features"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Opciones sin licencia" data-en="No-license options">Opciones sin licencia</span></div>
-          <span class="pc-link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
+      <a href="seguro-auto.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#0B3D2E,#1D9E75);">
+          <span style="font-size:56px;position:absolute;opacity:0.15;">🚗</span>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><rect x="7" y="14" width="10" height="6" rx="1"/></svg>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" data-es="★ Más popular" data-en="★ Most popular">★ Más popular</div>
+          <h3 class="pcard__title" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</h3>
+          <p class="pcard__desc" data-es="Compara 50+ aseguradoras. Desde $89/mes. Con o sin licencia." data-en="Compare 50+ insurers. From $89/mo. With or without license.">Compara 50+ aseguradoras. Desde $89/mes.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Opciones sin licencia disponibles" data-en="Options without license available">Opciones sin licencia disponibles</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="SR-22 aceptado" data-en="SR-22 accepted">SR-22 aceptado</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Pago mensual o anual" data-en="Monthly or annual payment">Pago mensual o anual</span></div>
+          </div>
+          <span class="pcard__link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
         </div>
       </a>
-      <a href="seguro-hogar.html" class="product-card anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#E8F5F0,#B5D4F4)"><span>🏠</span></div>
-        <div class="pc-body">
-          <div class="pc-tag" style="background:var(--frost);color:var(--verde)" data-es="FL especialidad" data-en="FL specialty">FL especialidad</div>
-          <h3 class="pc-title" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</h3>
-          <p class="pc-desc" data-es="Huracanes, inundaciones, viento. Cobertura especial para Florida." data-en="Hurricanes, floods, wind. Special coverage for Florida.">Huracanes, inundaciones, viento.</p>
-          <span class="pc-link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
+      <a href="seguro-hogar.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#E8F5F0,#B5D4F4);">
+          <span style="font-size:60px;opacity:0.55;">🏠</span>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" style="background:var(--frost);color:var(--verde);" data-es="Florida especialidad" data-en="Florida specialty">Florida especialidad</div>
+          <h3 class="pcard__title" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</h3>
+          <p class="pcard__desc" data-es="Protege tu casa contra huracanes, inundaciones y más." data-en="Protect your home from hurricanes, floods and more.">Protege tu casa contra huracanes, inundaciones y más.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Cobertura de huracán" data-en="Hurricane coverage">Cobertura de huracán</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Casa y apartamento" data-en="House and apartment">Casa y apartamento</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Renters insurance también" data-en="Renters insurance too">Renters insurance también</span></div>
+          </div>
+          <span class="pcard__link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
         </div>
       </a>
-      <a href="seguro-vida.html" class="product-card anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#EEEDFE,#CEC3F6)"><span>💚</span></div>
-        <div class="pc-body">
-          <div class="pc-tag" style="background:#EEEDFE;color:#3C3489" data-es="Desde $15/mes" data-en="From $15/mo">Desde $15/mes</div>
-          <h3 class="pc-title" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</h3>
-          <p class="pc-desc" data-es="El regalo más grande que le puedes dar a tu familia. Solo 43% de hispanos lo tiene." data-en="The greatest gift for your family. Only 43% of Hispanics have it.">El regalo más grande para tu familia.</p>
-          <span class="pc-link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
+      <a href="seguro-vida.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#EEEDFE,#CEC3F6);">
+          <span style="font-size:60px;opacity:0.55;">💚</span>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" style="background:#EEEDFE;color:#3C3489;" data-es="Protege tu familia" data-en="Protect your family">Protege tu familia</div>
+          <h3 class="pcard__title" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</h3>
+          <p class="pcard__desc" data-es="Desde $15/mes. Sin examen médico disponible." data-en="From $15/mo. No medical exam available.">El regalo más grande para tu familia. Desde $15/mes.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Term life desde $15/mes" data-en="Term life from $15/mo">Term life desde $15/mes</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Sin examen médico disponible" data-en="No medical exam available">Sin examen médico disponible</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Whole y term life" data-en="Whole and term life">Whole y term life</span></div>
+          </div>
+          <span class="pcard__link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
         </div>
       </a>
-      <a href="seguro-medico.html" class="product-card anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#FAEEDF,#F5C4B3)"><span>🏥</span></div>
-        <div class="pc-body">
-          <div class="pc-tag" style="background:#FAEEDF;color:#854F0B">ACA · Medicaid · CHIP</div>
-          <h3 class="pc-title" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</h3>
-          <p class="pc-desc" data-es="Entiende tus opciones de salud en español. Subsidios disponibles." data-en="Understand your health options in Spanish. Subsidies available.">Entiende tus opciones. Subsidios disponibles.</p>
-          <span class="pc-link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
+      <a href="seguro-medico.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#FAECDF,#F5C4B3);">
+          <span style="font-size:60px;opacity:0.55;">🏥</span>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" style="background:#FAECDF;color:#854F0B;">ACA · Medicaid · CHIP</div>
+          <h3 class="pcard__title" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</h3>
+          <p class="pcard__desc" data-es="ACA, Medicaid, CHIP. $0 con subsidio disponible." data-en="ACA, Medicaid, CHIP. $0 with available subsidy.">ACA, Medicaid, CHIP. $0 con subsidio disponible.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Opciones para inmigrantes" data-en="Options for immigrants">Opciones para inmigrantes</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Subsidios del gobierno" data-en="Government subsidies">Subsidios del gobierno</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="CHIP para tus hijos" data-en="CHIP for your children">CHIP para tus hijos</span></div>
+          </div>
+          <span class="pcard__link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
         </div>
       </a>
-      <a href="seguro-negocio.html" class="product-card anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#F7F5F1,#D3D1C7)"><span>🏢</span></div>
-        <div class="pc-body">
-          <div class="pc-tag" data-es="Comercial · LLC" data-en="Commercial · LLC">Comercial · LLC</div>
-          <h3 class="pc-title" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</h3>
-          <p class="pc-desc" data-es="Para emprendedores hispanos. LLC, food trucks, contratistas." data-en="For Hispanic entrepreneurs. LLC, food trucks, contractors.">Para emprendedores hispanos.</p>
-          <span class="pc-link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
+      <a href="seguro-negocio.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#F7F5F1,#D3D1C7);">
+          <span style="font-size:60px;opacity:0.55;">🏢</span>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" data-es="Comercial · LLC" data-en="Commercial · LLC">Comercial · LLC</div>
+          <h3 class="pcard__title" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</h3>
+          <p class="pcard__desc" data-es="Para emprendedores hispanos. LLC, restaurantes, contratistas." data-en="For Hispanic entrepreneurs. LLC, restaurants, contractors.">Para emprendedores hispanos. LLC, restaurantes, contratistas.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="General liability" data-en="General liability">General liability</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Food trucks y restaurantes" data-en="Food trucks and restaurants">Food trucks y restaurantes</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Contratistas y landscapers" data-en="Contractors and landscapers">Contratistas y landscapers</span></div>
+          </div>
+          <span class="pcard__link" data-es="Ver opciones →" data-en="See options →">Ver opciones →</span>
         </div>
       </a>
-      <a href="cotizar.html" class="product-card anim-scroll">
-        <div class="pc-banner" style="background:linear-gradient(135deg,#FEF0DC,#FAC775)"><span>✨</span></div>
-        <div class="pc-body">
-          <div class="pc-tag">Renters · Moto · Más</div>
-          <h3 class="pc-title" data-es="Más Seguros" data-en="More Insurance">Más Seguros</h3>
-          <p class="pc-desc" data-es="Renters, motos, barcos, mascotas, viaje y más." data-en="Renters, motorcycles, boats, pets, travel and more.">Renters, motos, mascotas, viaje y más.</p>
-          <span class="pc-link" data-es="Cotizar ahora →" data-en="Get quote now →">Cotizar ahora →</span>
+      <a href="cotizar.html" class="pcard">
+        <div class="pcard__banner" style="background:linear-gradient(135deg,#FEF0DC,#FAC775);">
+          <span style="font-size:60px;opacity:0.55;">✨</span>
+        </div>
+        <div class="pcard__body">
+          <div class="pcard__tag" data-es="Y más..." data-en="And more...">Y más...</div>
+          <h3 class="pcard__title" data-es="Más Seguros" data-en="More Insurance">Más Seguros</h3>
+          <p class="pcard__desc" data-es="Renters, motos, mascotas, viaje y más. Si lo necesitas, lo encontramos." data-en="Renters, motorcycles, pets, travel and more.">Renters, motos, mascotas, viaje y más.</p>
+          <div class="pcard__features">
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Renters insurance" data-en="Renters insurance">Renters insurance</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Motocicletas y scooters" data-en="Motorcycles and scooters">Motocicletas y scooters</span></div>
+            <div class="pcard__feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Mascotas y viaje" data-en="Pets and travel">Mascotas y viaje</span></div>
+          </div>
+          <span class="pcard__link" data-es="Cotizar ahora →" data-en="Get quote now →">Cotizar ahora →</span>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<section style="padding:80px 0;background:var(--white)">
-  <div class="container" style="max-width:860px">
-    <div style="text-align:center">
+<section style="padding:80px 0;background:var(--white);">
+  <div class="container--narrow">
+    <div style="text-align:center;">
       <p class="section-eyebrow" data-es="Comparación rápida" data-en="Quick comparison">Comparación rápida</p>
       <h2 class="section-headline" data-es="¿Cuál seguro necesitas primero?" data-en="Which insurance do you need first?">¿Cuál seguro necesitas primero?</h2>
     </div>
-    <div style="overflow-x:auto;margin-top:32px">
+    <div style="overflow-x:auto;margin-top:32px;">
       <table class="compare-table">
         <thead><tr>
-          <th data-es="Tipo" data-en="Type">Tipo</th>
+          <th data-es="Tipo de seguro" data-en="Insurance type">Tipo de seguro</th>
           <th data-es="¿Obligatorio?" data-en="Required?">¿Obligatorio?</th>
           <th data-es="Precio aprox." data-en="Approx. price">Precio aprox.</th>
-          <th data-es="Sin licencia" data-en="No license">Sin licencia</th>
+          <th data-es="¿Sin licencia?" data-en="No license?">¿Sin licencia?</th>
         </tr></thead>
         <tbody>
-          <tr><td data-es="Seguro de Auto" data-en="Auto">Seguro de Auto</td><td><span class="check-td" data-es="✓ Sí (Florida)" data-en="✓ Yes (FL)">✓ Sí (Florida)</span></td><td data-es="Desde $89/mes" data-en="From $89/mo">Desde $89/mes</td><td><span class="check-td" data-es="✓ Opciones disponibles" data-en="✓ Options available">✓ Disponible</span></td></tr>
-          <tr><td data-es="Seguro de Hogar" data-en="Home">Seguro de Hogar</td><td data-es="Si tienes hipoteca" data-en="If you have mortgage">Si tienes hipoteca</td><td data-es="Desde $120/mes" data-en="From $120/mo">Desde $120/mes</td><td data-es="No aplica" data-en="N/A">—</td></tr>
-          <tr><td data-es="Seguro de Vida" data-en="Life">Seguro de Vida</td><td><span class="cross-td" data-es="No obligatorio" data-en="Not required">No obligatorio</span></td><td data-es="Desde $15/mes" data-en="From $15/mo">Desde $15/mes</td><td>—</td></tr>
-          <tr><td data-es="Seguro Médico" data-en="Health">Seguro Médico</td><td data-es="Recomendado" data-en="Recommended">Recomendado</td><td data-es="$0 con subsidio" data-en="$0 with subsidy">$0 con subsidio</td><td>—</td></tr>
-          <tr><td data-es="Seguro Negocio" data-en="Business">Seguro Negocio</td><td data-es="Si tienes LLC" data-en="If you have LLC">Si tienes LLC</td><td data-es="Desde $50/mes" data-en="From $50/mo">Desde $50/mes</td><td>—</td></tr>
+          <tr><td data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</td><td><span class="chk" data-es="✓ Sí (en FL)" data-en="✓ Yes (in FL)">✓ Sí (en FL)</span></td><td data-es="Desde $89/mes" data-en="From $89/mo">Desde $89/mes</td><td><span class="chk" data-es="✓ Opciones disponibles" data-en="✓ Options available">✓ Opciones disponibles</span></td></tr>
+          <tr><td data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</td><td data-es="Si tienes hipoteca" data-en="If you have mortgage">Si tienes hipoteca</td><td data-es="Desde $120/mes" data-en="From $120/mo">Desde $120/mes</td><td data-es="No aplica" data-en="N/A">No aplica</td></tr>
+          <tr><td data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</td><td style="color:#C0392B;" data-es="✗ No obligatorio" data-en="✗ Not required">✗ No obligatorio</td><td data-es="Desde $15/mes" data-en="From $15/mo">Desde $15/mes</td><td data-es="No aplica" data-en="N/A">No aplica</td></tr>
+          <tr><td data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</td><td data-es="Recomendado" data-en="Recommended">Recomendado</td><td data-es="$0 con subsidio" data-en="$0 with subsidy">$0 con subsidio</td><td data-es="No aplica" data-en="N/A">No aplica</td></tr>
+          <tr><td data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</td><td data-es="Si tienes LLC/negocio" data-en="If you have LLC">Si tienes LLC/negocio</td><td data-es="Desde $50/mes" data-en="From $50/mo">Desde $50/mes</td><td data-es="No aplica" data-en="N/A">No aplica</td></tr>
         </tbody>
       </table>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="cotizar.html" class="btn-primary" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="container"><div class="cta-band__inner">
-    <div class="cta-band__label" data-es="Gratis · Bilingüe · Sin presión" data-en="Free · Bilingual · No pressure">Gratis · Bilingüe · Sin presión</div>
-    <h2 class="cta-band__headline" data-es="Cotiza tu seguro ahora.<br>Tarda 2 minutos." data-en="Get your insurance quote now.<br>Takes 2 minutes.">Cotiza tu seguro ahora.<br>Tarda 2 minutos.</h2>
-    <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>
-  </div></div>
-</section>
+<section class="cta-band"><div class="container"><div class="cta-band__inner">
+  <div class="cta-band__label" data-es="Gratis · Bilingüe · Sin presión" data-en="Free · Bilingual · No pressure">Gratis · Bilingüe · Sin presión</div>
+  <h2 class="cta-band__headline" data-es="Cotiza tu seguro hoy.<br>Tarda 2 minutos." data-en="Get your insurance quote today.<br>Takes 2 minutes.">Cotiza tu seguro hoy.<br>Tarda 2 minutos.</h2>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    <a href="guias.html" class="btn-outline-white" data-es="Ver guías" data-en="View guides">Ver guías</a>
+  </div>
+</div></div></section>
 
 <footer class="footer">
   <div class="container">
@@ -1787,18 +1790,18 @@ body {
       <div>
         <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
         <ul class="footer__links">
-          <li><a href="seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
-          <li><a href="seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
-          <li><a href="seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
-          <li><a href="seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
-          <li><a href="seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+          <li><a href="#" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="#" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="#" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="#" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="#" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
         </ul>
       </div>
 
       <div>
         <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
         <ul class="footer__links">
-          <li><a href="guias.html" data-es="Guías en Español" data-en="Guides in Spanish">Guías en Español</a></li>
+          <li><a href="#" data-es="Guías en Español" data-en="Guides in Spanish">Guías en Español</a></li>
           <li><a href="#" data-es="Glosario de Seguros" data-en="Insurance Glossary">Glosario de Seguros</a></li>
           <li><a href="#" data-es="Calculadora" data-en="Calculator">Calculadora</a></li>
           <li><a href="#" data-es="Blog" data-en="Blog">Blog</a></li>
@@ -1809,7 +1812,7 @@ body {
       <div>
         <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
         <ul class="footer__links">
-          <li><a href="nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="#" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
           <li><a href="#" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
           <li><a href="#" data-es="Para agencias" data-en="For agencies">Para agencias</a></li>
           <li><a href="#" data-es="Contacto" data-en="Contact">Contacto</a></li>
@@ -1828,15 +1831,20 @@ body {
     </div>
   </div>
 </footer>
+
+
 <script>
+
 function toggleMobileMenu() {
-  const d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle');
-  const o=d.classList.contains('open');
-  d.classList.toggle('open',!o); t.classList.toggle('open',!o);
+  const d = document.getElementById('mobileDrawer');
+  const t = document.getElementById('mobileToggle');
+  const open = d.classList.contains('open');
+  d.classList.toggle('open', !open);
+  t.classList.toggle('open', !open);
 }
 function closeMobileMenu() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('mobileToggle').classList.remove('open');
+  document.getElementById('mobileDrawer')?.classList.remove('open');
+  document.getElementById('mobileToggle')?.classList.remove('open');
 }
 let currentLang = localStorage.getItem('norte_lang') || 'es';
 function setLang(lang) {
@@ -1844,39 +1852,29 @@ function setLang(lang) {
   localStorage.setItem('norte_lang', lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-es]').forEach(el => {
-    const text = el.getAttribute('data-' + lang);
-    if (!text) return;
-    if (el.tagName==='INPUT') el.placeholder=text; else el.innerHTML=text;
+    const t = el.getAttribute('data-' + lang);
+    if (t) { if (el.tagName === 'INPUT') el.placeholder = t; else el.innerHTML = t; }
   });
-  const es=document.getElementById('btnEs'), en=document.getElementById('btnEn');
-  if (es) { es.classList.toggle('active', lang==='es'); en.classList.toggle('active', lang==='en'); }
-  const ci=document.getElementById('chatInput');
-  if (ci) ci.placeholder = lang==='es' ? 'Escribe tu pregunta...' : 'Type your question...';
+  const btnEs = document.getElementById('btnEs');
+  const btnEn = document.getElementById('btnEn');
+  if (btnEs) { btnEs.classList.toggle('active', lang === 'es'); btnEn.classList.toggle('active', lang === 'en'); }
 }
 window.addEventListener('scroll', () => {
-  const nav=document.getElementById('nav');
-  if(nav) nav.classList.toggle('scrolled', window.scrollY>20);
+  document.getElementById('nav')?.classList.toggle('scrolled', window.scrollY > 20);
 });
 document.addEventListener('DOMContentLoaded', () => {
   setLang(currentLang);
-  const path=window.location.pathname.split('/').pop();
-  document.querySelectorAll('.nav__links a, .nav__drawer-links a').forEach(a => {
-    if(a.getAttribute('href')===path){a.style.color='var(--forest)';a.style.background='var(--frost)';a.style.borderRadius='999px';}
-  });
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
-  },{threshold:0.1});
-  document.querySelectorAll('.anim-scroll').forEach(el=>{
-    el.style.opacity='0';el.style.transform='translateY(20px)';
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.anim-on-scroll').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
     el.style.transition='opacity 0.5s ease, transform 0.5s ease';
     obs.observe(el);
   });
 });
-function toggleFaq(el) {
-  const item=el.closest('.faq-item'), open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!open) item.classList.add('open');
-}
+
+
 </script>
 </body>
 </html>
