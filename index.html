@@ -1495,10 +1495,10 @@ body {
       </a>
 
       <ul class="nav__links" id="navLinks">
-        <li><a href="#seguros" data-es="Seguros" data-en="Insurance">Seguros</a></li>
-        <li><a href="#guias" data-es="Guías" data-en="Guides">Guías</a></li>
-        <li><a href="#herramientas" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
-        <li><a href="#estados" data-es="Estados" data-en="States">Estados</a></li>
+        <li><a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="estados.html" data-es="Estados" data-en="States">Estados</a></li>
       </ul>
 
       <div style="display:flex;align-items:center;gap:12px;">
@@ -1506,8 +1506,8 @@ body {
           <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
           <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
         </div>
-        <a href="#preguntar" class="nav__cta" data-es="Pregunta gratis" data-en="Ask for free">
-          Pregunta gratis
+        <a href="cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">
+          Cotizar gratis
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
@@ -1519,12 +1519,12 @@ body {
     <!-- Mobile drawer -->
     <div class="nav__drawer" id="mobileDrawer">
       <ul class="nav__drawer-links">
-        <li><a href="#seguros" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
-        <li><a href="#guias" onclick="closeMobileMenu()" data-es="Gu&#237;as" data-en="Guides">Gu&#237;as</a></li>
-        <li><a href="#herramientas" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
-        <li><a href="#estados" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+        <li><a href="seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="guias.html" onclick="closeMobileMenu()" data-es="Gu&#237;as" data-en="Guides">Gu&#237;as</a></li>
+        <li><a href="herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
       </ul>
-      <a href="#preguntar" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Pregunta gratis &#8594;" data-en="Ask for free &#8594;">Pregunta gratis &#8594;</a>
+      <a href="cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis &#8594;" data-en="Get free quote &#8594;">Cotizar gratis &#8594;</a>
     </div>
   </div>
 </nav>
@@ -2203,8 +2203,8 @@ body {
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      JAVASCRIPT
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<script src="https://js.puter.com/v2/"></script>
 <script>
-// ── Mobile Menu ──────────────────────────────
 function toggleMobileMenu() {
   const drawer = document.getElementById('mobileDrawer');
   const toggle = document.getElementById('mobileToggle');
@@ -2259,7 +2259,7 @@ function setLang(lang) {
   }
 }
 
-// ── AI Chat ──────────────────────────────────
+// ── AI Chat (Gemini via Puter.js — free, no API key) ──────────────
 async function sendMessage() {
   const input = document.getElementById('chatInput');
   const question = input.value.trim();
@@ -2268,43 +2268,29 @@ async function sendMessage() {
   input.value = '';
   const chatBody = document.getElementById('chatBody');
 
-  // Hide chips after first message
   const chips = document.getElementById('qaChips');
   if (chips) chips.style.display = 'none';
 
-  // User bubble
   const userBubble = document.createElement('div');
   userBubble.className = 'chat-bubble chat-bubble--user';
   userBubble.textContent = question;
   chatBody.appendChild(userBubble);
 
-  // Loading dots
   const loadingBubble = document.createElement('div');
   loadingBubble.className = 'chat-bubble chat-bubble--bot';
   loadingBubble.innerHTML = '<div class="chat-dots"><div class="chat-dot"></div><div class="chat-dot"></div><div class="chat-dot"></div></div>';
   chatBody.appendChild(loadingBubble);
-
   chatBody.scrollTop = chatBody.scrollHeight;
 
   const systemPrompt = currentLang === 'es'
-    ? `Eres Norte, el asistente de seguros bilingüe de Norte Financial — la guía financiera para hispanos en EE.UU. Explica seguros en español claro y accesible. El usuario puede ser inmigrante reciente o bilingüe. Sé cálido, directo y honesto. Sin tecnicismos innecesarios. Sin presionar a comprar. Responde en máximo 3 párrafos cortos. No eres un agente de seguros — eres un amigo experto que informa.`
-    : `You are Norte, the bilingual insurance assistant of Norte Financial — the financial guide for Hispanics in the US. Explain insurance in clear, accessible language. The user may be a recent immigrant or bilingual. Be warm, direct and honest. No unnecessary jargon. No pressure to buy. Answer in maximum 3 short paragraphs. You are not an insurance agent — you are a knowledgeable friend who informs.`;
+    ? 'Eres Norte, el asistente de seguros bilingüe de Norte Financial — la guía financiera para hispanos en EE.UU. Explica seguros en español claro y accesible. Sé cálido, directo y honesto. Sin tecnicismos innecesarios. Sin presionar a comprar. Responde en máximo 3 párrafos cortos.'
+    : 'You are Norte, the bilingual insurance assistant of Norte Financial. Explain insurance clearly and accessibly. Be warm, direct and honest. No unnecessary jargon. No pressure to buy. Answer in maximum 3 short paragraphs.';
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: question }]
-      })
-    });
-
-    const data = await response.json();
-    const reply = data.content?.[0]?.text || (currentLang === 'es' ? 'Hubo un error. Por favor intenta de nuevo.' : 'There was an error. Please try again.');
-
+    // Gemini via Puter.js — completely free, no API key needed
+    const fullPrompt = systemPrompt + '\n\nUser question: ' + question;
+    const response = await puter.ai.chat(fullPrompt, { model: 'gemini-2.0-flash' });
+    const reply = (typeof response === 'string' ? response : response?.message?.content?.[0]?.text || response?.toString()) || (currentLang === 'es' ? 'Hubo un error. Por favor intenta de nuevo.' : 'There was an error. Please try again.');
     loadingBubble.innerHTML = '';
     loadingBubble.textContent = reply;
   } catch(e) {
