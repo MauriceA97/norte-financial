@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script>
+// Apply saved language before page renders to prevent flash
+(function(){
+  var lang = localStorage.getItem('norte_lang');
+  if(lang && lang !== 'es') document.documentElement.setAttribute('data-lang-init', lang);
+})();
+</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Herramientas gratuitas de seguros en español: calculadoras, comparadores y asistente AI para tomar las mejores decisiones.">
 <title>Herramientas de Seguros — Norte Financial</title>
@@ -954,16 +961,20 @@ function setLang(lang) {
   document.getElementById('btnEs').classList.toggle('active', lang === 'es');
   document.getElementById('btnEn').classList.toggle('active', lang === 'en');
 }
-// Auto-apply saved language on page load
-(function(){
-  if(currentLang !== 'es') setLang(currentLang);
+// Apply saved language — runs immediately AND after DOM is ready
+function applyLang(){
+  if(currentLang && currentLang !== 'es') setLang(currentLang);
   else {
     var btnEs = document.getElementById('btnEs');
     var btnEn = document.getElementById('btnEn');
-    if(btnEs) btnEs.classList.add('active');
-    if(btnEn) btnEn.classList.remove('active');
+    if(btnEs){ btnEs.classList.add('active'); }
+    if(btnEn){ btnEn.classList.remove('active'); }
   }
-})();
+}
+// Run immediately (DOM already built since script is at bottom)
+applyLang();
+// Run again after ALL scripts finish loading (catches async script resets)
+window.addEventListener('load', applyLang);
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
 });
