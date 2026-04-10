@@ -862,7 +862,7 @@ function closeMobileMenu() {
   document.getElementById('mobileDrawer').classList.remove('open');
   document.getElementById('mobileToggle').classList.remove('open');
 }
-let currentLang = 'es';
+let currentLang = localStorage.getItem('norte_lang') || 'es';
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
