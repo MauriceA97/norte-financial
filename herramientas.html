@@ -933,7 +933,6 @@ body {
     </div>
   </div>
 </footer>
-<script src="https://js.puter.com/v2/"></script>
 <script>
 function toggleMobileMenu() {
   const drawer = document.getElementById('mobileDrawer');
@@ -1027,15 +1026,18 @@ async function sendToolsMessage() {
   loadB.innerHTML = '<div class="chat-dots"><div class="chat-dot-anim"></div><div class="chat-dot-anim"></div><div class="chat-dot-anim"></div></div>';
   body.appendChild(loadB);
   body.scrollTop = body.scrollHeight;
-  const lang = window.NORTE?.currentLang || 'es';
-  const system = lang === 'es'
-    ? 'Eres Norte, asistente de seguros bilingüe de Norte Financial. Responde en español claro y amigable. Máximo 3 párrafos cortos.'
-    : 'You are Norte, bilingual insurance assistant at Norte Financial. Respond clearly and friendly in English. Maximum 3 short paragraphs.';
+  const lang = currentLang || 'es';
   try {
-    const r = await puter.ai.chat(system + '\n\nUser: ' + question, { model: 'gemini-2.0-flash' });
-    const reply = typeof r === 'string' ? r : r?.message?.content?.[0]?.text || r?.toString() || 'Error. Intenta de nuevo.';
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: question, language: lang })
+    });
+    const data = await r.json();
+    const reply = data.reply || (lang === 'es' ? 'Error. Intenta de nuevo.' : 'Error. Please try again.');
     loadB.innerHTML = '';
-    loadB.textContent = reply;
+    // Linkify cotizar.html reference
+    loadB.innerHTML = reply.replace(/→ cotizar\.html/g, '→ <a href="cotizar.html" style="color:var(--forest);font-weight:500">Cotizar gratis</a>');
   } catch(e) {
     loadB.innerHTML = '';
     loadB.textContent = lang === 'es' ? 'Error de conexión. Intenta de nuevo.' : 'Connection error. Try again.';

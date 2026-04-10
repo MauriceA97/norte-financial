@@ -2210,7 +2210,6 @@ body {
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      JAVASCRIPT
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<script src="https://js.puter.com/v2/"></script>
 <script>
 function toggleMobileMenu() {
   const drawer = document.getElementById('mobileDrawer');
@@ -2290,17 +2289,16 @@ async function sendMessage() {
   chatBody.appendChild(loadingBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  const systemPrompt = currentLang === 'es'
-    ? 'Eres Norte, el asistente de seguros bilingüe de Norte Financial — la guía financiera para hispanos en EE.UU. Explica seguros en español claro y accesible. Sé cálido, directo y honesto. Sin tecnicismos innecesarios. Sin presionar a comprar. Responde en máximo 3 párrafos cortos.'
-    : 'You are Norte, the bilingual insurance assistant of Norte Financial. Explain insurance clearly and accessibly. Be warm, direct and honest. No unnecessary jargon. No pressure to buy. Answer in maximum 3 short paragraphs.';
-
   try {
-    // Gemini via Puter.js — completely free, no API key needed
-    const fullPrompt = systemPrompt + '\n\nUser question: ' + question;
-    const response = await puter.ai.chat(fullPrompt, { model: 'gemini-2.0-flash' });
-    const reply = (typeof response === 'string' ? response : response?.message?.content?.[0]?.text || response?.toString()) || (currentLang === 'es' ? 'Hubo un error. Por favor intenta de nuevo.' : 'There was an error. Please try again.');
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: question, language: currentLang || 'es' })
+    });
+    const data = await r.json();
+    const reply = data.reply || (currentLang === 'es' ? 'Hubo un error. Por favor intenta de nuevo.' : 'There was an error. Please try again.');
     loadingBubble.innerHTML = '';
-    loadingBubble.textContent = reply;
+    loadingBubble.innerHTML = reply.replace(/→ cotizar\.html/g, '→ <a href="cotizar.html" style="color:var(--mist);font-weight:500;text-decoration:none">Cotizar gratis</a>');
   } catch(e) {
     loadingBubble.innerHTML = '';
     loadingBubble.textContent = currentLang === 'es'
