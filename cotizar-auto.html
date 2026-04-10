@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cotiza tu seguro de auto gratis. Formulario completo para Progressive, GEICO, State Farm y más. En español e inglés.">
+<title data-es="Cotizar Seguro de Auto — Norte Financial" data-en="Auto Insurance Quote — Norte Financial">Cotizar Seguro de Auto — Norte Financial</title>
+<script>(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0B3D2E;--forest-mid:#0F5240;--verde:#1D9E75;--mist:#7EC4A8;--frost:#E8F5F0;--amber:#D4700A;--amber-light:#FEF0DC;--ink:#1A1A1A;--ink-muted:#4A4A4A;--ink-light:#7A7A7A;--parchment:#F7F5F1;--white:#fff;--border:rgba(11,61,46,0.12);--border-light:rgba(11,61,46,0.07);--shadow-sm:0 1px 3px rgba(11,61,46,0.08);--shadow-md:0 4px 16px rgba(11,61,46,0.10);--shadow-lg:0 12px 40px rgba(11,61,46,0.12);--r-sm:8px;--r-md:12px;--r-lg:18px;--r-xl:28px;--r-full:999px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--parchment);overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,241,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light);transition:box-shadow 0.3s}
+.nav.scrolled{box-shadow:var(--shadow-sm)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav__logomark{width:36px;height:36px;background:var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.2s}
+.nav__logo:hover .nav__logomark{transform:rotate(-5deg)}
+.nav__wordmark{display:flex;flex-direction:column;line-height:1}
+.nav__wordmark-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest);letter-spacing:-0.01em}
+.nav__wordmark-sub{font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-top:1px}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav__links a{font-size:14px;color:var(--ink-muted);text-decoration:none;padding:6px 14px;border-radius:var(--r-full);transition:all 0.18s}
+.nav__links a:hover{color:var(--forest);background:var(--frost)}
+.nav__lang{display:flex;align-items:center;gap:4px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-full);padding:3px}
+.nav__lang-btn{font-family:var(--font-body);font-size:12px;font-weight:500;padding:4px 12px;border-radius:var(--r-full);border:none;cursor:pointer;background:transparent;color:var(--ink-light);transition:all 0.15s}
+.nav__lang-btn.active{background:var(--forest);color:var(--white)}
+.nav__cta{font-family:var(--font-body);font-size:14px;font-weight:500;padding:9px 20px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px}
+.nav__cta:hover{background:var(--forest-mid);transform:translateY(-1px)}
+.nav__mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px;border:none;background:none;cursor:pointer}
+.nav__mobile-toggle span{display:block;width:22px;height:2px;background:var(--forest);border-radius:2px;transition:all 0.3s}
+.nav__mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__mobile-toggle.open span:nth-child(2){opacity:0}
+.nav__mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__drawer{display:none;flex-direction:column;border-top:1px solid var(--border-light);padding:12px 0 16px;background:rgba(247,245,241,0.98)}
+.nav__drawer.open{display:flex}
+.nav__drawer-links{list-style:none;display:flex;flex-direction:column}
+.nav__drawer-links a{display:block;padding:13px 24px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border-light)}
+.nav__drawer-links a:hover{background:var(--frost)}
+.nav__drawer-cta{display:block;margin:12px 24px 0;padding:13px 20px;background:var(--amber);color:var(--white);text-decoration:none;border-radius:var(--r-full);font-size:15px;font-weight:500;text-align:center}
+
+/* HERO */
+.page-hero{background:var(--forest);padding:96px 0 48px;position:relative;overflow:hidden}
+.page-hero__bg-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--mist)}
+.hero-title{font-family:var(--font-display);font-size:clamp(32px,4.5vw,48px);font-weight:500;color:var(--white);line-height:1.15;letter-spacing:-0.02em;margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--mist)}
+.hero-desc{font-size:16px;color:rgba(232,245,240,0.72);line-height:1.7;max-width:500px}
+.hero-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-lg);padding:20px 24px;text-align:center;min-width:160px}
+.hero-badge__num{font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--white)}
+.hero-badge__label{font-size:12px;color:var(--mist);margin-top:4px}
+
+/* PROGRESS STEPPER */
+.stepper-wrap{background:var(--white);border-bottom:1px solid var(--border-light);padding:20px 0;position:sticky;top:64px;z-index:40}
+.stepper{display:flex;align-items:center;gap:0;max-width:720px;margin:0 auto;padding:0 24px}
+.step-item{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;position:relative;cursor:pointer}
+.step-item:not(:last-child)::after{content:'';position:absolute;right:0;top:16px;width:calc(100% - 32px);height:2px;background:var(--border-light);transform:translateX(50%);z-index:0;transition:background 0.3s}
+.step-item.done:not(:last-child)::after{background:var(--verde)}
+.step-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;background:var(--white);border:2px solid var(--border);color:var(--ink-light);transition:all 0.3s;z-index:1;position:relative}
+.step-item.active .step-dot{background:var(--forest);border-color:var(--forest);color:var(--white);box-shadow:0 0 0 4px rgba(11,61,46,0.1)}
+.step-item.done .step-dot{background:var(--verde);border-color:var(--verde);color:var(--white)}
+.step-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-light);text-align:center;white-space:nowrap}
+.step-item.active .step-label{color:var(--forest)}
+.step-item.done .step-label{color:var(--verde)}
+
+/* FORM AREA */
+.form-area{padding:40px 0 80px}
+.form-section{display:none}
+.form-section.active{display:block}
+.section-header{margin-bottom:32px}
+.section-header h2{font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:8px}
+.section-header p{font-size:15px;color:var(--ink-muted);line-height:1.6}
+
+/* FORM CARD */
+.form-card{background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:var(--shadow-sm);padding:32px;margin-bottom:24px}
+.form-card__title{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--verde);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border-light)}
+
+/* GRID */
+.fgrid{display:grid;gap:16px;margin-bottom:16px}
+.fgrid-2{grid-template-columns:1fr 1fr}
+.fgrid-3{grid-template-columns:1fr 1fr 1fr}
+
+/* FIELDS */
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.flabel{font-size:13px;font-weight:500;color:var(--ink-muted)}
+.flabel .req{color:var(--verde);margin-left:2px}
+.flabel .opt{font-size:11px;font-weight:400;color:var(--ink-light);margin-left:4px}
+.fhint{font-size:11px;color:var(--ink-light);margin-top:3px}
+.finput,.fselect{font-family:var(--font-body);font-size:14px;color:var(--ink);padding:10px 14px;background:var(--parchment);border:1.5px solid var(--border);border-radius:var(--r-md);outline:none;transition:all 0.18s;width:100%;-webkit-appearance:none}
+.fselect{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237A7A7A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.finput:focus,.fselect:focus{border-color:var(--verde);background:var(--white);box-shadow:0 0 0 3px rgba(29,158,117,0.1)}
+.finput::placeholder{color:var(--ink-light)}
+.finput.error,.fselect.error{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.1)}
+.ferror{font-size:11px;color:#ef4444;margin-top:3px;display:none}
+.fgroup.has-error .ferror{display:block}
+.fgroup.has-error .finput,.fgroup.has-error .fselect{border-color:#ef4444}
+
+/* RADIO / CHECKBOX GROUPS */
+.radio-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.radio-pill{display:flex;align-items:center;gap:7px;padding:8px 16px;border:1.5px solid var(--border);border-radius:var(--r-full);background:var(--parchment);cursor:pointer;font-size:13px;color:var(--ink-muted);transition:all 0.15s;user-select:none}
+.radio-pill input{display:none}
+.radio-pill:hover{border-color:var(--verde);color:var(--ink)}
+.radio-pill.checked{border-color:var(--forest);background:var(--frost);color:var(--forest);font-weight:500}
+
+.checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.checkbox-item{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1.5px solid var(--border);border-radius:var(--r-md);background:var(--parchment);cursor:pointer;font-size:13px;color:var(--ink-muted);transition:all 0.15s;user-select:none}
+.checkbox-item input[type=checkbox]{accent-color:var(--forest);width:14px;height:14px;cursor:pointer;flex-shrink:0}
+.checkbox-item:hover{border-color:var(--verde)}
+.checkbox-item.checked{border-color:var(--verde);background:var(--frost);color:var(--ink)}
+
+/* NAVIGATION BUTTONS */
+.form-nav{display:flex;align-items:center;gap:12px;padding-top:8px}
+.btn-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;color:var(--ink-muted);background:none;border:1px solid var(--border);border-radius:var(--r-full);cursor:pointer;padding:10px 20px;transition:all 0.18s}
+.btn-back:hover{color:var(--ink);border-color:var(--ink-muted)}
+.btn-next{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:12px 32px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;transition:all 0.2s;flex:1;justify-content:center}
+.btn-next:hover{background:var(--forest-mid);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-submit{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:12px 32px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;transition:all 0.22s;flex:1;justify-content:center}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,112,10,0.35)}
+.btn-submit:disabled{opacity:0.7;cursor:not-allowed;transform:none}
+
+/* TCPA */
+.tcpa{display:flex;align-items:flex-start;gap:10px;padding:14px;background:var(--frost);border:1px solid rgba(29,158,117,0.2);border-radius:var(--r-md);cursor:pointer;margin-top:4px}
+.tcpa input{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--forest);cursor:pointer}
+.tcpa-text{font-size:12px;color:var(--ink-muted);line-height:1.6}
+
+/* SUCCESS */
+.success-wrap{display:none;text-align:center;padding:60px 24px}
+.success-wrap.visible{display:block}
+.success-icon{width:72px;height:72px;border-radius:50%;background:var(--frost);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);margin-bottom:10px}
+.success-desc{font-size:16px;color:var(--ink-muted);line-height:1.7;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.next-steps{background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-light);padding:24px;max-width:480px;margin:0 auto 28px;text-align:left}
+.next-step-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-muted);padding:7px 0}
+.success-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-forest{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s}
+.btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s}
+
+/* INFO BOX */
+.info-box{background:var(--amber-light);border:1px solid rgba(212,112,10,0.2);border-radius:var(--r-md);padding:12px 16px;margin-bottom:20px;font-size:13px;color:var(--amber);line-height:1.6}
+.info-box strong{font-weight:500}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--white);padding:48px 0 28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-brand .brand-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--white)}
+.footer-brand .brand-sub{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.footer-tagline{font-family:var(--font-display);font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);margin-top:8px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.18s}
+.footer-links a:hover{color:var(--mist)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav__links,.nav__cta{display:none}
+  .nav__mobile-toggle{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-badge{display:none}
+  .fgrid-2,.fgrid-3{grid-template-columns:1fr}
+  .checkbox-grid{grid-template-columns:1fr}
+  .stepper .step-label{display:none}
+  .form-nav{flex-direction:column}
+  .btn-next,.btn-submit{width:100%}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <div class="nav__logomark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg></div>
+        <div class="nav__wordmark"><span class="nav__wordmark-name">Norte</span><span class="nav__wordmark-sub">Financial</span></div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="estados.html" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="nav__lang"><button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button><button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button></div>
+        <a href="cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
+        <button class="nav__mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="seguros.html" onclick="closeMobileMenu()">Seguros</a></li>
+        <li><a href="guias.html" onclick="closeMobileMenu()">Guías</a></li>
+        <li><a href="herramientas.html" onclick="closeMobileMenu()">Herramientas</a></li>
+        <li><a href="estados.html" onclick="closeMobileMenu()">Estados</a></li>
+      </ul>
+      <a href="cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero__bg-circle" style="width:400px;height:400px;top:-120px;right:-80px"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow" data-es="Seguro de Auto · Cotización Gratis" data-en="Auto Insurance · Free Quote">Seguro de Auto · Cotización Gratis</p>
+        <h1 class="hero-title" data-es="Tu cotización de auto<br><em>completa y exacta.</em>" data-en="Your auto quote<br><em>complete and accurate.</em>">Tu cotización de auto<br><em>completa y exacta.</em></h1>
+        <p class="hero-desc" data-es="Todos los datos que Progressive, GEICO y otras compañías necesitan para darte el precio real — sin sorpresas." data-en="All the data Progressive, GEICO and other companies need to give you the real price — no surprises.">Todos los datos que Progressive, GEICO y otras compañías necesitan para darte el precio real.</p>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge__num">50+</div>
+        <div class="hero-badge__label" data-es="Compañías comparadas" data-en="Companies compared">Compañías comparadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP PROGRESS -->
+<div class="stepper-wrap">
+  <div class="stepper" id="stepper">
+    <div class="step-item active" id="step-indicator-1" onclick="goToStep(1)"><div class="step-dot">1</div><div class="step-label" data-es="Vehículo" data-en="Vehicle">Vehículo</div></div>
+    <div class="step-item" id="step-indicator-2" onclick="goToStep(2)"><div class="step-dot">2</div><div class="step-label" data-es="Conductor" data-en="Driver">Conductor</div></div>
+    <div class="step-item" id="step-indicator-3" onclick="goToStep(3)"><div class="step-dot">3</div><div class="step-label" data-es="Historial" data-en="History">Historial</div></div>
+    <div class="step-item" id="step-indicator-4" onclick="goToStep(4)"><div class="step-dot">4</div><div class="step-label" data-es="Cobertura" data-en="Coverage">Cobertura</div></div>
+    <div class="step-item" id="step-indicator-5" onclick="goToStep(5)"><div class="step-dot">5</div><div class="step-label" data-es="Contacto" data-en="Contact">Contacto</div></div>
+  </div>
+</div>
+
+<div class="form-area">
+  <div class="narrow">
+
+    <!-- ═══ STEP 1: VEHICLE ═══ -->
+    <div class="form-section active" id="section-1">
+      <div class="section-header">
+        <h2 data-es="Tu vehículo" data-en="Your vehicle">Tu vehículo</h2>
+        <p data-es="Información del auto que quieres asegurar. El VIN es opcional pero acelera el proceso." data-en="Information about the vehicle you want to insure. VIN is optional but speeds up the process.">Información del auto que quieres asegurar.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="DETALLES DEL VEHÍCULO" data-en="VEHICLE DETAILS">DETALLES DEL VEHÍCULO</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_year" data-es="Año <span class='req'>*</span>" data-en="Year <span class='req'>*</span>">Año <span class="req">*</span></label>
+            <select class="fselect" id="vehicle_year" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option>
+              <option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option>
+              <option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option>
+              <option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option>
+              <option>2005 or older</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_make" data-es="Marca <span class='req'>*</span>" data-en="Make <span class='req'>*</span>">Marca <span class="req">*</span></label>
+            <select class="fselect" id="vehicle_make" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option><option>Cadillac</option>
+              <option>Chevrolet</option><option>Chrysler</option><option>Dodge</option><option>Ford</option><option>GMC</option>
+              <option>Honda</option><option>Hyundai</option><option>Infiniti</option><option>Jeep</option><option>Kia</option>
+              <option>Lexus</option><option>Lincoln</option><option>Mazda</option><option>Mercedes-Benz</option>
+              <option>Mitsubishi</option><option>Nissan</option><option>Ram</option><option>Subaru</option>
+              <option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Other</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_model" data-es="Modelo <span class='req'>*</span>" data-en="Model <span class='req'>*</span>">Modelo <span class="req">*</span></label>
+            <input class="finput" type="text" id="vehicle_model" placeholder="Camry, F-150, Civic..." required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_trim" data-es="Versión / Trim <span class='opt'>(opcional)</span>" data-en="Trim / Style <span class='opt'>(optional)</span>">Versión / Trim <span class="opt">(opcional)</span></label>
+            <input class="finput" type="text" id="vehicle_trim" placeholder="LX, SE, EX, XLE...">
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_vin" data-es="VIN <span class='opt'>(opcional — acelera la cotización)</span>" data-en="VIN <span class='opt'>(optional — speeds up quote)</span>">VIN <span class="opt">(opcional)</span></label>
+            <input class="finput" type="text" id="vehicle_vin" placeholder="1HGCM82633A123456" maxlength="17">
+            <span class="fhint" data-es="17 caracteres. En el tablero o en el título del vehículo." data-en="17 characters. On dashboard or vehicle title.">17 caracteres. En el tablero o en el título del vehículo.</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_ownership" data-es="Estado del vehículo <span class='req'>*</span>" data-en="Vehicle ownership <span class='req'>*</span>">Estado del vehículo <span class="req">*</span></label>
+            <select class="fselect" id="vehicle_ownership" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="owned" data-es="Propio (pagado)" data-en="Owned (paid off)">Propio (pagado)</option>
+              <option value="financed" data-es="Financiado / Con préstamo" data-en="Financed / Loan">Financiado / Con préstamo</option>
+              <option value="leased" data-es="Arrendado (lease)" data-en="Leased">Arrendado (lease)</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="vehicle_use" data-es="Uso principal <span class='req'>*</span>" data-en="Primary use <span class='req'>*</span>">Uso principal <span class="req">*</span></label>
+            <select class="fselect" id="vehicle_use" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="commute" data-es="Trabajo / Escuela (commute)" data-en="Work / School commute">Trabajo / Escuela</option>
+              <option value="pleasure" data-es="Uso personal / Placer" data-en="Personal / Pleasure">Uso personal / Placer</option>
+              <option value="business" data-es="Uso de negocio" data-en="Business use">Uso de negocio</option>
+              <option value="rideshare" data-es="Rideshare (Uber / Lyft)" data-en="Rideshare (Uber / Lyft)">Rideshare (Uber / Lyft)</option>
+              <option value="farm" data-es="Granja / Rancho" data-en="Farm / Ranch">Granja / Rancho</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="annual_miles" data-es="Millas al año <span class='req'>*</span>" data-en="Annual miles driven <span class='req'>*</span>">Millas al año <span class="req">*</span></label>
+            <select class="fselect" id="annual_miles" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="under5k" data-es="Menos de 5,000" data-en="Under 5,000">Menos de 5,000</option>
+              <option value="5k_7.5k">5,000 – 7,500</option>
+              <option value="7.5k_10k">7,500 – 10,000</option>
+              <option value="10k_15k">10,000 – 15,000</option>
+              <option value="15k_20k">15,000 – 20,000</option>
+              <option value="over20k" data-es="Más de 20,000" data-en="Over 20,000">Más de 20,000</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="garaging_zip" data-es="ZIP donde se guarda el auto <span class='req'>*</span>" data-en="ZIP where vehicle is garaged <span class='req'>*</span>">ZIP donde se guarda el auto <span class="req">*</span></label>
+            <input class="finput" type="text" id="garaging_zip" placeholder="33101" maxlength="5" pattern="\d{5}" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="garaging_state" data-es="Estado <span class='req'>*</span>" data-en="State <span class='req'>*</span>">Estado <span class="req">*</span></label>
+            <select class="fselect" id="garaging_state" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option>FL</option><option>TX</option><option>CA</option><option>NY</option><option>IL</option>
+              <option>AZ</option><option>NJ</option><option>GA</option><option>NC</option><option>CO</option>
+              <option>VA</option><option>WA</option><option>MA</option><option>OH</option><option>PA</option>
+              <option data-es="Otro estado" data-en="Other state">Other</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+      </div>
+      <!-- Additional vehicles -->
+      <div class="form-card">
+        <div class="form-card__title" data-es="¿TIENES MÁS VEHÍCULOS?" data-en="ADDITIONAL VEHICLES?">¿TIENES MÁS VEHÍCULOS?</div>
+        <div class="fgroup">
+          <label class="flabel" data-es="¿Cuántos autos quieres asegurar?" data-en="How many vehicles do you want to insure?">¿Cuántos autos quieres asegurar?</label>
+          <div class="radio-group">
+            <label class="radio-pill checked" id="vehicles-1"><input type="radio" name="num_vehicles" value="1" checked onchange="radioPill('vehicles-1','vehicles-2','vehicles-3')"><span>1</span></label>
+            <label class="radio-pill" id="vehicles-2"><input type="radio" name="num_vehicles" value="2" onchange="radioPill('vehicles-2','vehicles-1','vehicles-3')"><span>2</span></label>
+            <label class="radio-pill" id="vehicles-3"><input type="radio" name="num_vehicles" value="3+" onchange="radioPill('vehicles-3','vehicles-1','vehicles-2')"><span data-es="3 o más" data-en="3 or more">3 o más</span></label>
+          </div>
+          <span class="fhint" data-es="El descuento multi-auto puede ahorrarte 10-25%" data-en="Multi-vehicle discount can save you 10–25%">El descuento multi-auto puede ahorrarte 10-25%</span>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-next" onclick="nextStep(1)">
+          <span data-es="Siguiente: Conductor" data-en="Next: Driver">Siguiente: Conductor</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 2: DRIVER ═══ -->
+    <div class="form-section" id="section-2">
+      <div class="section-header">
+        <h2 data-es="Conductor principal" data-en="Primary driver">Conductor principal</h2>
+        <p data-es="Información personal del conductor principal. Las aseguradoras usan estos datos para calcular tu tarifa." data-en="Personal information of the primary driver. Insurers use this to calculate your rate.">Información personal del conductor principal.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="INFORMACIÓN PERSONAL" data-en="PERSONAL INFORMATION">INFORMACIÓN PERSONAL</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="first_name" data-es="Nombre <span class='req'>*</span>" data-en="First Name <span class='req'>*</span>">Nombre <span class="req">*</span></label>
+            <input class="finput" type="text" id="first_name" placeholder="Maria" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="last_name" data-es="Apellido <span class='req'>*</span>" data-en="Last Name <span class='req'>*</span>">Apellido <span class="req">*</span></label>
+            <input class="finput" type="text" id="last_name" placeholder="González" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="dob" data-es="Fecha de nacimiento <span class='req'>*</span>" data-en="Date of Birth <span class='req'>*</span>">Fecha de nacimiento <span class="req">*</span></label>
+            <input class="finput" type="date" id="dob" required>
+            <span class="fhint" data-es="La edad afecta significativamente la tarifa" data-en="Age significantly affects your rate">La edad afecta significativamente la tarifa</span>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="gender" data-es="Género <span class='req'>*</span>" data-en="Gender <span class='req'>*</span>">Género <span class="req">*</span></label>
+            <select class="fselect" id="gender" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="M" data-es="Masculino" data-en="Male">Masculino</option>
+              <option value="F" data-es="Femenino" data-en="Female">Femenino</option>
+              <option value="X" data-es="No binario / Prefiero no decir" data-en="Non-binary / Prefer not to say">No binario / Prefiero no decir</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="marital_status" data-es="Estado civil <span class='req'>*</span>" data-en="Marital Status <span class='req'>*</span>">Estado civil <span class="req">*</span></label>
+            <select class="fselect" id="marital_status" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="single" data-es="Soltero/a" data-en="Single">Soltero/a</option>
+              <option value="married" data-es="Casado/a" data-en="Married">Casado/a</option>
+              <option value="domestic" data-es="Pareja doméstica" data-en="Domestic Partner">Pareja doméstica</option>
+              <option value="divorced" data-es="Divorciado/a" data-en="Divorced">Divorciado/a</option>
+              <option value="widowed" data-es="Viudo/a" data-en="Widowed">Viudo/a</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="education" data-es="Nivel educativo <span class='req'>*</span>" data-en="Education Level <span class='req'>*</span>">Nivel educativo <span class="req">*</span></label>
+            <select class="fselect" id="education" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="no_hs" data-es="Sin diploma de preparatoria" data-en="No high school diploma">Sin diploma de preparatoria</option>
+              <option value="hs" data-es="Preparatoria / GED" data-en="High school / GED">Preparatoria / GED</option>
+              <option value="some_college" data-es="Algo de universidad" data-en="Some college">Algo de universidad</option>
+              <option value="associate" data-es="Asociado (2 años)" data-en="Associate degree">Asociado (2 años)</option>
+              <option value="bachelor" data-es="Licenciatura" data-en="Bachelor's degree">Licenciatura</option>
+              <option value="graduate" data-es="Postgrado / Maestría / Doctorado" data-en="Graduate degree">Postgrado / Maestría / Doctorado</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="occupation" data-es="Ocupación <span class='req'>*</span>" data-en="Occupation <span class='req'>*</span>">Ocupación <span class="req">*</span></label>
+            <select class="fselect" id="occupation" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="blue_collar" data-es="Empleado – Trabajo manual" data-en="Employed – Blue collar">Empleado – Trabajo manual</option>
+              <option value="white_collar" data-es="Empleado – Oficina / Profesional" data-en="Employed – White collar / Professional">Empleado – Oficina / Profesional</option>
+              <option value="self_employed" data-es="Trabajador independiente" data-en="Self-employed">Trabajador independiente</option>
+              <option value="military_active" data-es="Militar (activo)" data-en="Military (Active duty)">Militar (activo)</option>
+              <option value="military_veteran" data-es="Militar (veterano / retirado)" data-en="Military (Veteran / Retired)">Militar (veterano / retirado)</option>
+              <option value="student" data-es="Estudiante" data-en="Student">Estudiante</option>
+              <option value="retired" data-es="Jubilado/a" data-en="Retired">Jubilado/a</option>
+              <option value="homemaker" data-es="Ama de casa" data-en="Homemaker">Ama de casa</option>
+              <option value="unemployed" data-es="Desempleado/a" data-en="Unemployed">Desempleado/a</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="homeowner" data-es="¿Eres propietario de casa? <span class='req'>*</span>" data-en="Do you own a home? <span class='req'>*</span>">¿Eres propietario de casa? <span class="req">*</span></label>
+            <select class="fselect" id="homeowner" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="yes" data-es="Sí – dueño de casa" data-en="Yes – homeowner">Sí – dueño de casa</option>
+              <option value="rent" data-es="No – rento / alquilo" data-en="No – renter">No – rento / alquilo</option>
+              <option value="live_with_family" data-es="Vivo con familia" data-en="Live with family">Vivo con familia</option>
+            </select>
+            <span class="fhint" data-es="Los propietarios suelen recibir descuentos de seguro de auto" data-en="Homeowners often receive auto insurance discounts">Los propietarios suelen recibir descuentos</span>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="LICENCIA DE CONDUCIR" data-en="DRIVER'S LICENSE">LICENCIA DE CONDUCIR</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="license_status" data-es="Estado de la licencia <span class='req'>*</span>" data-en="License Status <span class='req'>*</span>">Estado de la licencia <span class="req">*</span></label>
+            <select class="fselect" id="license_status" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="valid_us" data-es="Válida – EE.UU." data-en="Valid – US license">Válida – EE.UU.</option>
+              <option value="valid_foreign" data-es="Válida – Licencia extranjera" data-en="Valid – Foreign license">Válida – Licencia extranjera</option>
+              <option value="permit" data-es="Solo permiso de aprendizaje" data-en="Learner's permit only">Solo permiso de aprendizaje</option>
+              <option value="none" data-es="Sin licencia" data-en="No license">Sin licencia</option>
+              <option value="suspended" data-es="Suspendida / Revocada" data-en="Suspended / Revoked">Suspendida / Revocada</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="license_state" data-es="Estado / País de la licencia <span class='req'>*</span>" data-en="License State / Country <span class='req'>*</span>">Estado / País de la licencia <span class="req">*</span></label>
+            <select class="fselect" id="license_state" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option>FL</option><option>TX</option><option>CA</option><option>NY</option><option>IL</option>
+              <option>AZ</option><option>NJ</option><option>GA</option><option>NC</option><option>CO</option>
+              <option>VA</option><option>WA</option><option>OH</option><option>PA</option><option>MA</option>
+              <option value="other_us" data-es="Otro estado de EE.UU." data-en="Other US state">Otro estado de EE.UU.</option>
+              <option value="mexico" data-es="México" data-en="Mexico">México</option>
+              <option value="other_foreign" data-es="Otro país" data-en="Other country">Otro país</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="license_years" data-es="Años con licencia <span class='req'>*</span>" data-en="Years licensed <span class='req'>*</span>">Años con licencia <span class="req">*</span></label>
+            <select class="fselect" id="license_years" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="lt1" data-es="Menos de 1 año" data-en="Less than 1 year">Menos de 1 año</option>
+              <option value="1_2" data-es="1–2 años" data-en="1–2 years">1–2 años</option>
+              <option value="3_5" data-es="3–5 años" data-en="3–5 years">3–5 años</option>
+              <option value="6_9" data-es="6–9 años" data-en="6–9 years">6–9 años</option>
+              <option value="10plus" data-es="10+ años" data-en="10+ years">10+ años</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="license_number" data-es="Número de licencia <span class='opt'>(opcional)</span>" data-en="License Number <span class='opt'>(optional)</span>">Número de licencia <span class="opt">(opcional)</span></label>
+            <input class="finput" type="text" id="license_number" placeholder="D123-456-78-910-0">
+            <span class="fhint" data-es="Acelera la cotización final con la aseguradora" data-en="Speeds up the final quote with the carrier">Acelera la cotización final</span>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label class="flabel" data-es="¿Hay conductores adicionales en el hogar?" data-en="Any additional drivers in the household?">¿Hay conductores adicionales en el hogar?</label>
+          <div class="radio-group">
+            <label class="radio-pill checked" id="add-drivers-no"><input type="radio" name="add_drivers" value="no" checked onchange="radioPill('add-drivers-no','add-drivers-yes')"><span data-es="No" data-en="No">No</span></label>
+            <label class="radio-pill" id="add-drivers-yes"><input type="radio" name="add_drivers" value="yes" onchange="radioPill('add-drivers-yes','add-drivers-no')"><span data-es="Sí — agregar conductor" data-en="Yes — add driver">Sí — agregar conductor</span></label>
+          </div>
+          <span class="fhint" data-es="Todos los conductores del hogar deben ser declarados para una cotización precisa" data-en="All household drivers must be disclosed for an accurate quote">Todos los conductores del hogar deben ser declarados</span>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(2)">← <span data-es="Vehículo" data-en="Vehicle">Vehículo</span></button>
+        <button class="btn-next" onclick="nextStep(2)">
+          <span data-es="Siguiente: Historial" data-en="Next: Driving History">Siguiente: Historial</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 3: DRIVING HISTORY ═══ -->
+    <div class="form-section" id="section-3">
+      <div class="section-header">
+        <h2 data-es="Historial de manejo" data-en="Driving history">Historial de manejo</h2>
+        <p data-es="Tu historial de manejo es uno de los factores más importantes para calcular tu tarifa." data-en="Your driving history is one of the most important factors in calculating your rate.">Tu historial de manejo es uno de los factores más importantes.</p>
+      </div>
+      <div class="info-box" data-es="<strong>¿Por qué preguntan esto?</strong> Las aseguradoras revisan tu historial al hacer la cotización final. Dar información exacta evita que tu tarifa cambie después." data-en="<strong>Why do they ask this?</strong> Insurers check your driving record when finalizing the quote. Accurate info prevents rate changes later."><strong>¿Por qué preguntan esto?</strong> Las aseguradoras revisan tu historial al hacer la cotización final. Dar información exacta evita que tu tarifa cambie después.</div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="ACCIDENTES Y VIOLACIONES (ÚLTIMOS 3 AÑOS)" data-en="ACCIDENTS & VIOLATIONS (LAST 3 YEARS)">ACCIDENTES Y VIOLACIONES</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="accidents_3yr" data-es="Accidentes con tu culpa <span class='req'>*</span>" data-en="At-fault accidents <span class='req'>*</span>">Accidentes con tu culpa <span class="req">*</span></label>
+            <select class="fselect" id="accidents_3yr" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="0" data-es="Ninguno" data-en="None">Ninguno</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3plus" data-es="3 o más" data-en="3 or more">3 o más</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="violations_3yr" data-es="Multas / Infracciones <span class='req'>*</span>" data-en="Tickets / Violations <span class='req'>*</span>">Multas / Infracciones <span class="req">*</span></label>
+            <select class="fselect" id="violations_3yr" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="none" data-es="Ninguna" data-en="None">Ninguna</option>
+              <option value="1_minor" data-es="1 menor (exceso de velocidad, etc.)" data-en="1 minor (speeding, etc.)">1 menor</option>
+              <option value="2_minor" data-es="2 menores" data-en="2 minor violations">2 menores</option>
+              <option value="1_major" data-es="1 mayor (DUI, conducción temeraria)" data-en="1 major (DUI, reckless driving)">1 mayor (DUI, etc.)</option>
+              <option value="multiple_major" data-es="Múltiples mayores" data-en="Multiple major violations">Múltiples mayores</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" data-es="¿DUI / DWI en los últimos 5 años? <span class='req'>*</span>" data-en="DUI / DWI in the last 5 years? <span class='req'>*</span>">¿DUI / DWI en los últimos 5 años? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-pill checked" id="dui-no"><input type="radio" name="dui" value="no" checked onchange="radioPill('dui-no','dui-yes')"><span data-es="No" data-en="No">No</span></label>
+              <label class="radio-pill" id="dui-yes"><input type="radio" name="dui" value="yes" onchange="radioPill('dui-yes','dui-no')"><span data-es="Sí" data-en="Yes">Sí</span></label>
+            </div>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" data-es="¿Necesitas SR-22 / FR-44? <span class='req'>*</span>" data-en="SR-22 / FR-44 required? <span class='req'>*</span>">¿Necesitas SR-22 / FR-44? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-pill checked" id="sr22-no"><input type="radio" name="sr22" value="no" checked onchange="radioPill('sr22-no','sr22-yes')"><span data-es="No" data-en="No">No</span></label>
+              <label class="radio-pill" id="sr22-yes"><input type="radio" name="sr22" value="yes" onchange="radioPill('sr22-yes','sr22-no')"><span data-es="Sí" data-en="Yes">Sí</span></label>
+            </div>
+            <span class="fhint" data-es="SR-22 es requerido en Florida para conductores de alto riesgo" data-en="SR-22 is required in Florida for high-risk drivers">SR-22 requerido para conductores de alto riesgo en FL</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="SEGURO ACTUAL" data-en="CURRENT INSURANCE">SEGURO ACTUAL</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="current_insurance" data-es="Estado de seguro actual <span class='req'>*</span>" data-en="Current insurance status <span class='req'>*</span>">Estado de seguro actual <span class="req">*</span></label>
+            <select class="fselect" id="current_insurance" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="insured_6plus" data-es="Asegurado – 6+ meses continuos" data-en="Insured – 6+ months continuous">Asegurado – 6+ meses continuos</option>
+              <option value="insured_lt6" data-es="Asegurado – menos de 6 meses" data-en="Insured – less than 6 months">Asegurado – menos de 6 meses</option>
+              <option value="lapsed_30" data-es="Vencido hace menos de 30 días" data-en="Lapsed less than 30 days">Vencido hace menos de 30 días</option>
+              <option value="lapsed_30plus" data-es="Vencido hace más de 30 días" data-en="Lapsed 30+ days">Vencido hace más de 30 días</option>
+              <option value="never" data-es="Nunca he tenido seguro" data-en="Never been insured">Nunca he tenido seguro</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="current_carrier" data-es="Aseguradora actual <span class='opt'>(si aplica)</span>" data-en="Current carrier <span class='opt'>(if applicable)</span>">Aseguradora actual <span class="opt">(si aplica)</span></label>
+            <select class="fselect" id="current_carrier">
+              <option value="" data-es="Ninguna / No aplica" data-en="None / N/A">Ninguna / No aplica</option>
+              <option>Allstate</option><option>GEICO</option><option>Progressive</option>
+              <option>State Farm</option><option>USAA</option><option>Liberty Mutual</option>
+              <option>Farmers</option><option>Nationwide</option><option>Travelers</option>
+              <option>Citizens (FL)</option><option>Universal (FL)</option>
+              <option data-es="Otra" data-en="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="current_coverage_level" data-es="Cobertura actual <span class='opt'>(si aplica)</span>" data-en="Current coverage level <span class='opt'>(if applicable)</span>">Cobertura actual <span class="opt">(si aplica)</span></label>
+            <select class="fselect" id="current_coverage_level">
+              <option value="" data-es="No aplica" data-en="N/A">No aplica</option>
+              <option value="min_only" data-es="Solo mínimo del estado" data-en="State minimum only">Solo mínimo del estado</option>
+              <option value="liability_only" data-es="Solo responsabilidad civil" data-en="Liability only">Solo responsabilidad civil</option>
+              <option value="full_coverage" data-es="Cobertura completa" data-en="Full coverage">Cobertura completa</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="years_insured" data-es="Años continuos asegurado <span class='opt'>(opcional)</span>" data-en="Continuous years insured <span class='opt'>(optional)</span>">Años continuos asegurado <span class="opt">(opcional)</span></label>
+            <select class="fselect" id="years_insured">
+              <option value="" data-es="No aplica" data-en="N/A">No aplica</option>
+              <option value="lt1" data-es="Menos de 1 año" data-en="Less than 1 year">Menos de 1 año</option>
+              <option value="1_2" data-es="1–2 años" data-en="1–2 years">1–2 años</option>
+              <option value="3_5" data-es="3–5 años" data-en="3–5 years">3–5 años</option>
+              <option value="6_9" data-es="6–9 años" data-en="6–9 years">6–9 años</option>
+              <option value="10plus" data-es="10+ años" data-en="10+ years">10+ años</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(3)">← <span data-es="Conductor" data-en="Driver">Conductor</span></button>
+        <button class="btn-next" onclick="nextStep(3)">
+          <span data-es="Siguiente: Cobertura" data-en="Next: Coverage">Siguiente: Cobertura</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 4: COVERAGE ═══ -->
+    <div class="form-section" id="section-4">
+      <div class="section-header">
+        <h2 data-es="Cobertura deseada" data-en="Coverage preferences">Cobertura deseada</h2>
+        <p data-es="Dinos qué tipo de protección necesitas. Si no estás seguro, selecciona 'Recomiéndame' y tu agente te explicará." data-en="Tell us what protection you need. If unsure, select 'Recommend for me' and your agent will explain.">Dinos qué tipo de protección necesitas.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="TIPO DE COBERTURA" data-en="COVERAGE TYPE">TIPO DE COBERTURA</div>
+        <div class="fgrid">
+          <div class="fgroup">
+            <label class="flabel" for="coverage_type" data-es="Cobertura que necesitas <span class='req'>*</span>" data-en="Coverage you need <span class='req'>*</span>">Cobertura que necesitas <span class="req">*</span></label>
+            <select class="fselect" id="coverage_type" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="fl_min" data-es="Mínimo de FL: PIP $10K + PDL $10K" data-en="FL minimum: PIP $10K + PDL $10K">Mínimo de FL: PIP $10K + PDL $10K</option>
+              <option value="liability_only" data-es="Solo responsabilidad civil (Liability)" data-en="Liability only">Solo responsabilidad civil</option>
+              <option value="full_coverage" data-es="Cobertura completa (Liability + Comp + Collision)" data-en="Full coverage (Liability + Comp + Collision)">Cobertura completa</option>
+              <option value="recommend" data-es="Recomiéndame la mejor opción" data-en="Recommend the best option for me">Recomiéndame la mejor opción</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="liability_limits" data-es="Límites de responsabilidad civil <span class='req'>*</span>" data-en="Liability limits <span class='req'>*</span>">Límites de responsabilidad civil <span class="req">*</span></label>
+            <select class="fselect" id="liability_limits" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="fl_min" data-es="Mínimo FL (10/20/10)" data-en="FL minimum (10/20/10)">Mínimo FL (10/20/10)</option>
+              <option value="25_50_25">25/50/25</option>
+              <option value="50_100_50">50/100/50</option>
+              <option value="100_300_100" data-es="100/300/100 (recomendado)" data-en="100/300/100 (recommended)">100/300/100 (recomendado)</option>
+              <option value="250_500_250">250/500/250</option>
+              <option value="unsure" data-es="No sé — que me recomienden" data-en="Not sure — recommend for me">No sé — que me recomienden</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="deductible" data-es="Deducible de colisión/comprensiva <span class='req'>*</span>" data-en="Collision/Comprehensive deductible <span class='req'>*</span>">Deducible <span class="req">*</span></label>
+            <select class="fselect" id="deductible" required>
+              <option value="" data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+              <option value="250">$250</option>
+              <option value="500">$500</option>
+              <option value="1000">$1,000</option>
+              <option value="2000">$2,000</option>
+              <option value="unsure" data-es="No sé" data-en="Not sure">No sé</option>
+            </select>
+            <span class="fhint" data-es="Deducible más alto = prima más baja" data-en="Higher deductible = lower premium">Deducible más alto = prima más baja</span>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label class="flabel" for="effective_date" data-es="Fecha de inicio deseada <span class='req'>*</span>" data-en="Desired start date <span class='req'>*</span>">Fecha de inicio deseada <span class="req">*</span></label>
+          <input class="finput" type="date" id="effective_date" required style="max-width:240px">
+          <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="COBERTURAS ADICIONALES (OPCIONAL)" data-en="OPTIONAL ADD-ONS">COBERTURAS ADICIONALES</div>
+        <div class="fgroup">
+          <label class="flabel" data-es="¿Cuáles te interesan?" data-en="Which ones interest you?">¿Cuáles te interesan?</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="roadside"><span data-es="Asistencia en carretera" data-en="Roadside Assistance">Asistencia en carretera</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="rental"><span data-es="Reembolso de auto de renta" data-en="Rental Car Reimbursement">Reembolso de auto de renta</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="gap"><span data-es="Gap Insurance" data-en="Gap Insurance">Gap Insurance</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="um"><span data-es="Motorista no asegurado (UM/UIM)" data-en="Uninsured/Underinsured Motorist">Motorista no asegurado</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="medpay"><span data-es="Pagos médicos (MedPay)" data-en="Medical Payments (MedPay)">Pagos médicos (MedPay)</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="addons" value="rideshare"><span data-es="Cobertura rideshare (Uber/Lyft)" data-en="Rideshare Coverage (Uber/Lyft)">Cobertura rideshare</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="DESCUENTOS POSIBLES" data-en="POTENTIAL DISCOUNTS">DESCUENTOS POSIBLES</div>
+        <div class="fgroup">
+          <label class="flabel" data-es="Marca todos los que apliquen:" data-en="Check all that apply:">Marca todos los que apliquen:</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="good_student"><span data-es="Buen estudiante (promedio B+)" data-en="Good student (B+ GPA)">Buen estudiante</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="multi_car"><span data-es="Múltiples autos" data-en="Multi-car">Múltiples autos</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="homeowner_disc"><span data-es="Soy propietario de casa" data-en="Homeowner">Soy propietario de casa</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="military"><span data-es="Militar / Veterano" data-en="Military / Veteran">Militar / Veterano</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="telematics"><span data-es="Programa de conducción segura (telematics)" data-en="Safe driver / telematics program">Programa telematics</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="paid_full"><span data-es="Pago en su totalidad" data-en="Pay in full">Pago en su totalidad</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="paperless"><span data-es="Sin papel (paperless)" data-en="Paperless billing">Sin papel</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="discounts" value="bundle"><span data-es="Bundle auto + hogar" data-en="Bundle auto + home">Bundle auto + hogar</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-back" onclick="prevStep(4)">← <span data-es="Historial" data-en="History">Historial</span></button>
+        <button class="btn-next" onclick="nextStep(4)">
+          <span data-es="Siguiente: Contacto" data-en="Next: Contact">Siguiente: Contacto</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 5: CONTACT ═══ -->
+    <div class="form-section" id="section-5">
+      <div class="section-header">
+        <h2 data-es="Información de contacto" data-en="Contact information">Información de contacto</h2>
+        <p data-es="Un agente bilingüe te contactará con tu cotización completa en menos de 24 horas." data-en="A bilingual agent will contact you with your complete quote within 24 hours.">Un agente bilingüe te contactará con tu cotización completa.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card__title" data-es="TUS DATOS DE CONTACTO" data-en="YOUR CONTACT DETAILS">TUS DATOS DE CONTACTO</div>
+        <div class="fgrid fgrid-2">
+          <div class="fgroup">
+            <label class="flabel" for="email" data-es="Email <span class='req'>*</span>" data-en="Email <span class='req'>*</span>">Email <span class="req">*</span></label>
+            <input class="finput" type="email" id="email" placeholder="maria@email.com" required>
+            <span class="ferror" data-es="Email válido requerido" data-en="Valid email required">Email válido requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="phone" data-es="Teléfono <span class='req'>*</span>" data-en="Phone <span class='req'>*</span>">Teléfono <span class="req">*</span></label>
+            <input class="finput" type="tel" id="phone" placeholder="(786) 555-0100" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fgroup">
+            <label class="flabel" for="address" data-es="Dirección <span class='req'>*</span>" data-en="Street Address <span class='req'>*</span>">Dirección <span class="req">*</span></label>
+            <input class="finput" type="text" id="address" placeholder="123 Main St" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-3">
+          <div class="fgroup">
+            <label class="flabel" for="city" data-es="Ciudad <span class='req'>*</span>" data-en="City <span class='req'>*</span>">Ciudad <span class="req">*</span></label>
+            <input class="finput" type="text" id="city" placeholder="Miami" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="state_contact" data-es="Estado <span class='req'>*</span>" data-en="State <span class='req'>*</span>">Estado <span class="req">*</span></label>
+            <select class="fselect" id="state_contact" required>
+              <option value="">—</option>
+              <option>FL</option><option>TX</option><option>CA</option><option>NY</option><option>IL</option>
+              <option>AZ</option><option>NJ</option><option>GA</option><option>NC</option><option>CO</option>
+              <option>VA</option><option>WA</option><option>OH</option><option>PA</option><option>MA</option>
+              <option data-es="Otro" data-en="Other">Other</option>
+            </select>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="zip_contact" data-es="ZIP <span class='req'>*</span>" data-en="ZIP <span class='req'>*</span>">ZIP <span class="req">*</span></label>
+            <input class="finput" type="text" id="zip_contact" placeholder="33101" maxlength="5" required>
+            <span class="ferror" data-es="Requerido" data-en="Required">Requerido</span>
+          </div>
+        </div>
+        <div class="fgrid fgrid-3">
+          <div class="fgroup">
+            <label class="flabel" for="preferred_contact" data-es="Método de contacto preferido" data-en="Preferred contact method">Método de contacto preferido</label>
+            <select class="fselect" id="preferred_contact">
+              <option value="phone" data-es="Llamada telefónica" data-en="Phone call">Llamada telefónica</option>
+              <option value="text" data-es="Mensaje de texto" data-en="Text message">Mensaje de texto</option>
+              <option value="email" data-es="Email" data-en="Email">Email</option>
+              <option value="any" data-es="Cualquiera" data-en="Any">Cualquiera</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="best_time" data-es="Mejor hora para llamar" data-en="Best time to call">Mejor hora para llamar</label>
+            <select class="fselect" id="best_time">
+              <option value="morning" data-es="Mañana (8am–12pm)" data-en="Morning (8am–12pm)">Mañana (8am–12pm)</option>
+              <option value="afternoon" data-es="Tarde (12pm–5pm)" data-en="Afternoon (12pm–5pm)">Tarde (12pm–5pm)</option>
+              <option value="evening" data-es="Noche (5pm–8pm)" data-en="Evening (5pm–8pm)">Noche (5pm–8pm)</option>
+              <option value="any" data-es="Cualquier hora" data-en="Any time">Cualquier hora</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label class="flabel" for="preferred_language" data-es="Idioma preferido" data-en="Preferred language">Idioma preferido</label>
+            <select class="fselect" id="preferred_language">
+              <option value="es" data-es="Español" data-en="Spanish">Español</option>
+              <option value="en" data-es="Inglés" data-en="English">Inglés</option>
+              <option value="both" data-es="Cualquiera" data-en="Either">Cualquiera</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- TCPA -->
+      <label class="tcpa">
+        <input type="checkbox" id="tcpaCheck">
+        <span class="tcpa-text" data-es="Al enviar, acepto ser contactado por agentes de seguros asociados a Norte Financial por teléfono, texto o email para recibir cotizaciones de seguro de auto. Entiendo que no es una condición de compra y que puedo retirar mi consentimiento en cualquier momento. He leído y acepto la política de privacidad." data-en="By submitting, I agree to be contacted by insurance agents associated with Norte Financial by phone, text, or email to receive auto insurance quotes. I understand this is not a condition of purchase and I may withdraw my consent at any time. I have read and accept the privacy policy.">
+          Al enviar, acepto ser contactado por agentes de seguros asociados a Norte Financial para recibir cotizaciones. No es condición de compra. Puedo retirar mi consentimiento en cualquier momento.
+        </span>
+      </label>
+      <div class="form-nav" style="margin-top:16px">
+        <button class="btn-back" onclick="prevStep(5)">← <span data-es="Cobertura" data-en="Coverage">Cobertura</span></button>
+        <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+          <span data-es="Enviar y obtener cotización" data-en="Submit and get quote">Enviar y obtener cotización</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p style="font-size:11px;color:var(--ink-light);margin-top:12px;text-align:center" data-es="Tu información nunca se vende. Solo se comparte con agentes licenciados en tu estado." data-en="Your information is never sold. Only shared with licensed agents in your state.">Tu información nunca se vende. Solo se comparte con agentes licenciados en tu estado.</p>
+    </div>
+
+    <!-- ═══ SUCCESS ═══ -->
+    <div class="success-wrap" id="successWrap">
+      <div class="success-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h2 class="success-title" data-es="¡Cotización recibida!" data-en="Quote request received!">¡Cotización recibida!</h2>
+      <p class="success-desc" data-es="Tu información completa fue enviada. Un agente bilingüe especializado en seguros de auto te contactará en menos de 24 horas con múltiples opciones." data-en="Your complete information was submitted. A bilingual auto insurance specialist will contact you within 24 hours with multiple options.">Tu información completa fue enviada. Un agente bilingüe te contactará pronto.</p>
+      <div class="next-steps">
+        <div class="next-step-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Recibimos tu solicitud completa de cotización de auto" data-en="We received your complete auto insurance quote request">Recibimos tu solicitud completa</span></div>
+        <div class="next-step-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Un agente la enviará a Progressive, GEICO y otras" data-en="An agent will submit it to Progressive, GEICO and others">Un agente la enviará a Progressive, GEICO y otras</span></div>
+        <div class="next-step-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><span data-es="Te presentaremos las mejores tarifas en tu idioma" data-en="We'll present you the best rates in your language">Te presentaremos las mejores tarifas en tu idioma</span></div>
+      </div>
+      <div class="success-actions">
+        <a href="guias.html" class="btn-forest" data-es="Leer sobre seguro de auto" data-en="Read about auto insurance">Leer sobre seguro de auto</a>
+        <a href="cotizar.html" class="btn-amber" data-es="Cotizar otro seguro" data-en="Quote another insurance">Cotizar otro seguro</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Norte</div>
+        <div class="brand-sub">Financial</div>
+        <div class="footer-tagline">Tu norte financiero.</div>
+      </div>
+      <div class="footer-links">
+        <a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a>
+        <a href="guias.html" data-es="Guías" data-en="Guides">Guías</a>
+        <a href="herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a>
+        <a href="cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
+      </div>
+    </div>
+    <div class="footer-copy" data-es="© 2025 Norte Financial. Información educativa, no asesoría legal." data-en="© 2025 Norte Financial. Educational information, not legal advice.">© 2025 Norte Financial. Información educativa, no asesoría legal.</div>
+  </div>
+</footer>
+
+<script>
+// ── Supabase ─────────────────────────────────
+const SUPA_URL = 'https://agodvsflcfhfcxtlykpf.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb2R2c2ZsY2ZoZmN4dGx5a3BmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NTU2NTMsImV4cCI6MjA5MTMzMTY1M30.KDg8lPRPfyMXYQ6SQK3LcoIhSFqNZBAELlJIUWRC9mw';
+
+// ── Language ──────────────────────────────────
+let currentLang = localStorage.getItem('norte_lang') || 'es';
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('norte_lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const t = el.getAttribute('data-' + lang);
+    if (t) { if (el.tagName === 'INPUT') el.placeholder = t; else el.innerHTML = t; }
+  });
+  document.getElementById('btnEs').classList.toggle('active', lang === 'es');
+  document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+}
+function applyLang() {
+  if (currentLang !== 'es') setLang(currentLang);
+  else { document.getElementById('btnEs').classList.add('active'); document.getElementById('btnEn').classList.remove('active'); }
+}
+applyLang();
+window.addEventListener('load', applyLang);
+
+// ── Step navigation ───────────────────────────
+let currentStep = 1;
+const totalSteps = 5;
+
+function goToStep(n) {
+  if (n > currentStep) return; // can only go back via dots
+  showStep(n);
+}
+
+function nextStep(from) {
+  if (!validateStep(from)) return;
+  showStep(from + 1);
+}
+
+function prevStep(from) {
+  showStep(from - 1);
+}
+
+function showStep(n) {
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  const sec = document.getElementById('section-' + n);
+  if (sec) { sec.classList.add('active'); sec.style.animation = 'fadeUp 0.4s ease both'; }
+  currentStep = n;
+  updateStepper(n);
+  setLang(currentLang); // re-apply language on step change
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateStepper(active) {
+  for (let i = 1; i <= totalSteps; i++) {
+    const el = document.getElementById('step-indicator-' + i);
+    el.classList.remove('active', 'done');
+    if (i < active) { el.classList.add('done'); el.querySelector('.step-dot').innerHTML = '✓'; }
+    else if (i === active) { el.classList.add('active'); el.querySelector('.step-dot').textContent = i; }
+    else { el.querySelector('.step-dot').textContent = i; }
+  }
+}
+
+// ── Validation ────────────────────────────────
+function validateStep(step) {
+  const section = document.getElementById('section-' + step);
+  const required = section.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(el => {
+    const group = el.closest('.fgroup');
+    if (!el.value.trim()) {
+      group?.classList.add('has-error');
+      valid = false;
+    } else {
+      group?.classList.remove('has-error');
+    }
+  });
+  if (!valid) {
+    const firstErr = section.querySelector('.has-error');
+    firstErr?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  return valid;
+}
+
+// ── Radio pills ───────────────────────────────
+function radioPill(activeId, ...others) {
+  document.getElementById(activeId)?.classList.add('checked');
+  others.forEach(id => document.getElementById(id)?.classList.remove('checked'));
+}
+
+// ── Checkbox items ────────────────────────────
+document.querySelectorAll('.checkbox-item').forEach(item => {
+  item.addEventListener('change', () => item.classList.toggle('checked', item.querySelector('input').checked));
+});
+
+// ── Submit ────────────────────────────────────
+async function submitForm() {
+  if (!validateStep(5)) return;
+  if (!document.getElementById('tcpaCheck').checked) {
+    alert(currentLang === 'es' ? 'Por favor acepta los términos para continuar.' : 'Please accept the terms to continue.');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> ' + (currentLang === 'es' ? 'Enviando...' : 'Submitting...');
+
+  const getAddons = () => Array.from(document.querySelectorAll('input[name="addons"]:checked')).map(i => i.value).join(', ');
+  const getDiscounts = () => Array.from(document.querySelectorAll('input[name="discounts"]:checked')).map(i => i.value).join(', ');
+
+  const payload = {
+    insurance_type: 'auto',
+    source: 'norte-auto-quote-form',
+    utm_source: new URLSearchParams(location.search).get('utm_source') || '',
+    utm_medium: new URLSearchParams(location.search).get('utm_medium') || '',
+    page_url: location.href,
+    // Vehicle
+    vehicle_year: document.getElementById('vehicle_year').value,
+    vehicle_make: document.getElementById('vehicle_make').value,
+    vehicle_model: document.getElementById('vehicle_model').value,
+    vehicle_trim: document.getElementById('vehicle_trim').value,
+    vehicle_vin: document.getElementById('vehicle_vin').value,
+    vehicle_ownership: document.getElementById('vehicle_ownership').value,
+    vehicle_use: document.getElementById('vehicle_use').value,
+    annual_miles: document.getElementById('annual_miles').value,
+    garaging_zip: document.getElementById('garaging_zip').value,
+    garaging_state: document.getElementById('garaging_state').value,
+    num_vehicles: document.querySelector('input[name="num_vehicles"]:checked')?.value || '1',
+    // Driver
+    first_name: document.getElementById('first_name').value.trim(),
+    last_name: document.getElementById('last_name').value.trim(),
+    dob: document.getElementById('dob').value,
+    gender: document.getElementById('gender').value,
+    marital_status: document.getElementById('marital_status').value,
+    education: document.getElementById('education').value,
+    occupation: document.getElementById('occupation').value,
+    homeowner: document.getElementById('homeowner').value,
+    license_status: document.getElementById('license_status').value,
+    license_state: document.getElementById('license_state').value,
+    license_years: document.getElementById('license_years').value,
+    license_number: document.getElementById('license_number').value,
+    has_additional_drivers: document.querySelector('input[name="add_drivers"]:checked')?.value || 'no',
+    // History
+    accidents_3yr: document.getElementById('accidents_3yr').value,
+    violations_3yr: document.getElementById('violations_3yr').value,
+    dui: document.querySelector('input[name="dui"]:checked')?.value || 'no',
+    sr22: document.querySelector('input[name="sr22"]:checked')?.value || 'no',
+    current_insurance: document.getElementById('current_insurance').value,
+    current_carrier: document.getElementById('current_carrier').value,
+    current_coverage_level: document.getElementById('current_coverage_level').value,
+    years_insured: document.getElementById('years_insured').value,
+    // Coverage
+    coverage_type: document.getElementById('coverage_type').value,
+    liability_limits: document.getElementById('liability_limits').value,
+    deductible: document.getElementById('deductible').value,
+    effective_date: document.getElementById('effective_date').value,
+    addons_requested: getAddons(),
+    discounts_applicable: getDiscounts(),
+    // Contact
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    address: document.getElementById('address').value.trim(),
+    city: document.getElementById('city').value.trim(),
+    state: document.getElementById('state_contact').value,
+    zip: document.getElementById('zip_contact').value.trim(),
+    preferred_contact: document.getElementById('preferred_contact').value,
+    best_time: document.getElementById('best_time').value,
+    preferred_language: document.getElementById('preferred_language').value,
+    tcpa_consent: true,
+    tcpa_timestamp: new Date().toISOString(),
+    status: 'new'
+  };
+
+  // Save to Supabase
+  try {
+    await fetch(`${SUPA_URL}/rest/v1/leads`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}`, 'Prefer': 'return=minimal' },
+      body: JSON.stringify(payload)
+    });
+  } catch(e) {
+    try {
+      const b = JSON.parse(localStorage.getItem('norte_leads_backup') || '[]');
+      b.push({ ...payload, saved_at: new Date().toISOString() });
+      localStorage.setItem('norte_leads_backup', JSON.stringify(b));
+    } catch(_) {}
+  }
+
+  // Show success
+  document.getElementById('section-5').style.display = 'none';
+  document.querySelector('.stepper-wrap').style.display = 'none';
+  const sw = document.getElementById('successWrap');
+  sw.classList.add('visible');
+  sw.style.animation = 'fadeUp 0.6s ease both';
+  sw.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setLang(currentLang);
+}
+
+// ── Nav ───────────────────────────────────────
+function toggleMobileMenu() {
+  document.getElementById('mobileDrawer').classList.toggle('open');
+  document.getElementById('mobileToggle').classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('mobileToggle').classList.remove('open');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+});
+</script>
+</body>
+</html>
