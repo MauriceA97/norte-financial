@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cotizar Seguro de Vida — Norte Financial</title>
+<script>(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0B3D2E;--forest-mid:#0F5240;--verde:#1D9E75;--mist:#7EC4A8;--frost:#E8F5F0;--amber:#D4700A;--amber-light:#FEF0DC;--ink:#1A1A1A;--ink-muted:#4A4A4A;--ink-light:#7A7A7A;--parchment:#F7F5F1;--white:#fff;--border:rgba(11,61,46,0.12);--border-light:rgba(11,61,46,0.07);--shadow-sm:0 1px 3px rgba(11,61,46,0.08);--shadow-md:0 4px 16px rgba(11,61,46,0.10);--r-sm:8px;--r-md:12px;--r-lg:18px;--r-xl:28px;--r-full:999px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--parchment);overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,241,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light);transition:box-shadow 0.3s}.nav.scrolled{box-shadow:var(--shadow-sm)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav__logomark{width:36px;height:36px;background:var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.2s}
+.nav__logo:hover .nav__logomark{transform:rotate(-5deg)}
+.nav__wordmark{display:flex;flex-direction:column;line-height:1}
+.nav__wordmark-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest);letter-spacing:-0.01em}
+.nav__wordmark-sub{font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-light);margin-top:1px}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav__links a{font-size:14px;color:var(--ink-muted);text-decoration:none;padding:6px 14px;border-radius:var(--r-full);transition:all 0.18s}
+.nav__links a:hover{color:var(--forest);background:var(--frost)}
+.nav__lang{display:flex;align-items:center;gap:4px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-full);padding:3px}
+.nav__lang-btn{font-family:var(--font-body);font-size:12px;font-weight:500;padding:4px 12px;border-radius:var(--r-full);border:none;cursor:pointer;background:transparent;color:var(--ink-light);transition:all 0.15s}
+.nav__lang-btn.active{background:var(--forest);color:var(--white)}
+.nav__cta{font-family:var(--font-body);font-size:14px;font-weight:500;padding:9px 20px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px}
+.nav__cta:hover{background:var(--forest-mid);transform:translateY(-1px)}
+.nav__mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px;border:none;background:none;cursor:pointer}
+.nav__mobile-toggle span{display:block;width:22px;height:2px;background:var(--forest);border-radius:2px;transition:all 0.3s}
+.nav__mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav__mobile-toggle.open span:nth-child(2){opacity:0}.nav__mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__drawer{display:none;flex-direction:column;border-top:1px solid var(--border-light);padding:12px 0 16px;background:rgba(247,245,241,0.98)}
+.nav__drawer.open{display:flex}
+.nav__drawer-links{list-style:none;display:flex;flex-direction:column}
+.nav__drawer-links a{display:block;padding:13px 24px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border-light)}
+.nav__drawer-links a:hover{background:var(--frost)}
+.nav__drawer-cta{display:block;margin:12px 24px 0;padding:13px 20px;background:var(--amber);color:var(--white);text-decoration:none;border-radius:var(--r-full);font-size:15px;font-weight:500;text-align:center}
+.page-hero{background:var(--forest);padding:96px 0 48px;position:relative;overflow:hidden}
+.page-hero__bg-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist);margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--mist)}
+.hero-title{font-family:var(--font-display);font-size:clamp(32px,4.5vw,48px);font-weight:500;color:var(--white);line-height:1.15;letter-spacing:-0.02em;margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--mist)}
+.hero-desc{font-size:16px;color:rgba(232,245,240,0.72);line-height:1.7;max-width:500px}
+.form-area{padding:40px 0 80px}
+.form-card{background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:var(--shadow-sm);padding:32px;margin-bottom:24px}
+.form-card__title{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--verde);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border-light)}
+.section-header{margin-bottom:32px}
+.section-header h2{font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:8px}
+.section-header p{font-size:15px;color:var(--ink-muted);line-height:1.6}
+.fgrid{display:grid;gap:16px;margin-bottom:16px}.fgrid-2{grid-template-columns:1fr 1fr}.fgrid-3{grid-template-columns:1fr 1fr 1fr}
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.flabel{font-size:13px;font-weight:500;color:var(--ink-muted)}.flabel .req{color:var(--verde);margin-left:2px}.flabel .opt{font-size:11px;font-weight:400;color:var(--ink-light);margin-left:4px}
+.fhint{font-size:11px;color:var(--ink-light);margin-top:3px}
+.finput,.fselect{font-family:var(--font-body);font-size:14px;color:var(--ink);padding:10px 14px;background:var(--parchment);border:1.5px solid var(--border);border-radius:var(--r-md);outline:none;transition:all 0.18s;width:100%;-webkit-appearance:none}
+.fselect{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237A7A7A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.finput:focus,.fselect:focus{border-color:var(--verde);background:var(--white);box-shadow:0 0 0 3px rgba(29,158,117,0.1)}
+.finput::placeholder{color:var(--ink-light)}
+.ferror{font-size:11px;color:#ef4444;margin-top:3px;display:none}
+.fgroup.has-error .ferror{display:block}.fgroup.has-error .finput,.fgroup.has-error .fselect{border-color:#ef4444}
+.radio-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.radio-pill{display:flex;align-items:center;gap:7px;padding:8px 16px;border:1.5px solid var(--border);border-radius:var(--r-full);background:var(--parchment);cursor:pointer;font-size:13px;color:var(--ink-muted);transition:all 0.15s;user-select:none}
+.radio-pill input{display:none}.radio-pill:hover{border-color:var(--verde);color:var(--ink)}.radio-pill.checked{border-color:var(--forest);background:var(--frost);color:var(--forest);font-weight:500}
+.checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.checkbox-item{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1.5px solid var(--border);border-radius:var(--r-md);background:var(--parchment);cursor:pointer;font-size:13px;color:var(--ink-muted);transition:all 0.15s;user-select:none}
+.checkbox-item input[type=checkbox]{accent-color:var(--forest);width:14px;height:14px;cursor:pointer;flex-shrink:0}
+.checkbox-item:hover{border-color:var(--verde)}.checkbox-item.checked{border-color:var(--verde);background:var(--frost);color:var(--ink)}
+.form-nav{display:flex;align-items:center;gap:12px;padding-top:8px}
+.btn-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;color:var(--ink-muted);background:none;border:1px solid var(--border);border-radius:var(--r-full);cursor:pointer;padding:10px 20px;transition:all 0.18s}
+.btn-back:hover{color:var(--ink);border-color:var(--ink-muted)}
+.btn-next{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:12px 32px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;transition:all 0.2s;flex:1;justify-content:center}
+.btn-next:hover{background:var(--forest-mid);transform:translateY(-1px)}
+.btn-submit{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:500;padding:12px 32px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;transition:all 0.22s;flex:1;justify-content:center}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,112,10,0.35)}.btn-submit:disabled{opacity:0.7;cursor:not-allowed;transform:none}
+.tcpa{display:flex;align-items:flex-start;gap:10px;padding:14px;background:var(--frost);border:1px solid rgba(29,158,117,0.2);border-radius:var(--r-md);cursor:pointer;margin-top:4px}
+.tcpa input{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--forest);cursor:pointer}.tcpa-text{font-size:12px;color:var(--ink-muted);line-height:1.6}
+.success-wrap{display:none;text-align:center;padding:60px 24px}.success-wrap.visible{display:block}
+.success-icon{width:72px;height:72px;border-radius:50%;background:var(--frost);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);margin-bottom:10px}
+.success-desc{font-size:16px;color:var(--ink-muted);line-height:1.7;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.success-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-forest{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--forest);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s}
+.btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);cursor:pointer;text-decoration:none;transition:all 0.2s}
+.info-box{background:var(--amber-light);border:1px solid rgba(212,112,10,0.2);border-radius:var(--r-md);padding:12px 16px;margin-bottom:20px;font-size:13px;color:var(--amber);line-height:1.6}
+.footer{background:var(--ink);color:var(--white);padding:48px 0 28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-brand .brand-name{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--white)}.footer-brand .brand-sub{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3)}.footer-tagline{font-family:var(--font-display);font-size:14px;font-style:italic;color:rgba(255,255,255,0.4);margin-top:8px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.18s}.footer-links a:hover{color:var(--mist)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
+@media(max-width:768px){.nav__links,.nav__cta{display:none}.nav__mobile-toggle{display:flex}.fgrid-2,.fgrid-3{grid-template-columns:1fr}.checkbox-grid{grid-template-columns:1fr}.form-nav{flex-direction:column}.btn-next,.btn-submit{width:100%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container"><div class="nav__inner">
+    <a href="/" class="nav__logo"><div class="nav__logomark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg></div><div class="nav__wordmark"><span class="nav__wordmark-name">Norte</span><span class="nav__wordmark-sub">Financial</span></div></a>
+    <ul class="nav__links" id="navLinks"><li><a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li><li><a href="guias.html" data-es="Guías" data-en="Guides">Guías</a></li><li><a href="herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li><li><a href="estados.html" data-es="Estados" data-en="States">Estados</a></li></ul>
+    <div style="display:flex;align-items:center;gap:12px"><div class="nav__lang"><button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button><button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button></div><a href="cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a><button class="nav__mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button></div>
+  </div>
+  <div class="nav__drawer" id="mobileDrawer"><ul class="nav__drawer-links"><li><a href="seguros.html" onclick="closeMobileMenu()">Seguros</a></li><li><a href="guias.html" onclick="closeMobileMenu()">Guías</a></li><li><a href="herramientas.html" onclick="closeMobileMenu()">Herramientas</a></li><li><a href="estados.html" onclick="closeMobileMenu()">Estados</a></li></ul><a href="cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()">Cotizar gratis →</a></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero__bg-circle" style="width:400px;height:400px;top:-120px;right:-80px"></div>
+  <div class="container">
+    <p class="hero-eyebrow" data-es="Seguro de Vida · Cotización Gratis" data-en="Life Insurance · Free Quote">Seguro de Vida · Cotización Gratis</p>
+    <h1 class="hero-title" data-es="Protege tu familia<br><em>con el plan correcto.</em>" data-en="Protect your family<br><em>with the right plan.</em>">Protege tu familia<br><em>con el plan correcto.</em></h1>
+    <p class="hero-desc" data-es="Término, universal, o entera — todos los datos que las aseguradoras necesitan para darte el precio exacto." data-en="Term, universal, or whole — all the data insurers need to give you an exact price.">Term, universal, o entera — el formulario completo para una cotización exacta.</p>
+  </div>
+</section>
+
+<div class="form-area"><div class="narrow">
+
+<!-- SINGLE FORM - Life doesn't need steps for simplicity but we'll split into 2 -->
+<div id="section-1">
+  <div class="section-header"><h2 data-es="Sobre ti" data-en="About you">Sobre ti</h2><p data-es="Tu edad, salud y estilo de vida son los factores principales en el seguro de vida." data-en="Your age, health and lifestyle are the main factors in life insurance.">Tu edad, salud y estilo de vida son los factores principales.</p></div>
+  <div class="info-box" data-es="<strong>¿Por qué preguntan sobre salud?</strong> El seguro de vida requiere suscripción médica. Estas respuestas permiten al agente encontrar la aseguradora más conveniente para tu perfil." data-en="<strong>Why do they ask about health?</strong> Life insurance requires medical underwriting. These answers help the agent find the best insurer for your profile."><strong>¿Por qué sobre salud?</strong> El seguro de vida requiere suscripción médica. Estas respuestas ayudan al agente a encontrar la mejor aseguradora para tu perfil.</div>
+  <div class="form-card">
+    <div class="form-card__title" data-es="INFORMACIÓN PERSONAL" data-en="PERSONAL INFORMATION">INFORMACIÓN PERSONAL</div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_first" data-es="Nombre <span class='req'>*</span>" data-en="First Name <span class='req'>*</span>">Nombre <span class="req">*</span></label><input class="finput" type="text" id="life_first" placeholder="Maria" required><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_last" data-es="Apellido <span class='req'>*</span>" data-en="Last Name <span class='req'>*</span>">Apellido <span class="req">*</span></label><input class="finput" type="text" id="life_last" placeholder="González" required><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_dob" data-es="Fecha de nacimiento <span class='req'>*</span>" data-en="Date of Birth <span class='req'>*</span>">Fecha de nacimiento <span class="req">*</span></label><input class="finput" type="date" id="life_dob" required><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_gender" data-es="Género <span class='req'>*</span>" data-en="Gender <span class='req'>*</span>">Género <span class="req">*</span></label>
+        <select class="fselect" id="life_gender" required><option value="">—</option><option value="M" data-es="Masculino" data-en="Male">Masculino</option><option value="F" data-es="Femenino" data-en="Female">Femenino</option></select><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_state" data-es="Estado <span class='req'>*</span>" data-en="State <span class='req'>*</span>">Estado <span class="req">*</span></label>
+        <select class="fselect" id="life_state" required><option value="">—</option><option>FL</option><option>TX</option><option>CA</option><option>NY</option><option>IL</option><option>AZ</option><option>Other</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_zip" data-es="ZIP <span class='req'>*</span>" data-en="ZIP <span class='req'>*</span>">ZIP <span class="req">*</span></label><input class="finput" type="text" id="life_zip" placeholder="33101" maxlength="5" required><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_marital" data-es="Estado civil <span class='req'>*</span>" data-en="Marital Status <span class='req'>*</span>">Estado civil <span class="req">*</span></label>
+        <select class="fselect" id="life_marital" required><option value="">—</option><option value="single" data-es="Soltero/a" data-en="Single">Soltero/a</option><option value="married" data-es="Casado/a" data-en="Married">Casado/a</option><option value="divorced" data-es="Divorciado/a" data-en="Divorced">Divorciado/a</option><option value="widowed" data-es="Viudo/a" data-en="Widowed">Viudo/a</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_dependents" data-es="Número de dependientes <span class='req'>*</span>" data-en="Number of dependents <span class='req'>*</span>">Dependientes <span class="req">*</span></label>
+        <select class="fselect" id="life_dependents" required><option value="">—</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4plus" data-es="4 o más" data-en="4 or more">4 o más</option></select><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_income" data-es="Ingreso anual (tuyo) <span class='req'>*</span>" data-en="Annual income (yours) <span class='req'>*</span>">Ingreso anual <span class="req">*</span></label>
+        <select class="fselect" id="life_income" required><option value="">—</option><option value="under25k">Under $25,000</option><option value="25_50k">$25,000 – $50,000</option><option value="50_75k">$50,000 – $75,000</option><option value="75_100k">$75,000 – $100,000</option><option value="100_150k">$100,000 – $150,000</option><option value="over150k">Over $150,000</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_net_worth" data-es="Patrimonio neto estimado <span class='opt'>(opcional)</span>" data-en="Estimated net worth <span class='opt'>(optional)</span>">Patrimonio neto <span class="opt">(opcional)</span></label>
+        <select class="fselect" id="life_net_worth"><option value="">—</option><option value="under100k">Under $100K</option><option value="100_250k">$100K – $250K</option><option value="250_500k">$250K – $500K</option><option value="500k_1m">$500K – $1M</option><option value="over1m">Over $1M</option></select></div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-card__title" data-es="SALUD Y ESTILO DE VIDA" data-en="HEALTH & LIFESTYLE">SALUD Y ESTILO DE VIDA</div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_height" data-es="Altura <span class='req'>*</span>" data-en="Height <span class='req'>*</span>">Altura <span class="req">*</span></label>
+        <select class="fselect" id="life_height" required><option value="">—</option><option>4'10"</option><option>4'11"</option><option>5'0"</option><option>5'1"</option><option>5'2"</option><option>5'3"</option><option>5'4"</option><option>5'5"</option><option>5'6"</option><option>5'7"</option><option>5'8"</option><option>5'9"</option><option>5'10"</option><option>5'11"</option><option>6'0"</option><option>6'1"</option><option>6'2"</option><option>6'3"+</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_weight" data-es="Peso (lbs) <span class='req'>*</span>" data-en="Weight (lbs) <span class='req'>*</span>">Peso (lbs) <span class="req">*</span></label><input class="finput" type="number" id="life_weight" placeholder="150" min="80" max="500" required><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="tobacco" data-es="¿Usa tabaco / nicotina? <span class='req'>*</span>" data-en="Tobacco / nicotine use? <span class='req'>*</span>">¿Usa tabaco / nicotina? <span class="req">*</span></label>
+        <select class="fselect" id="tobacco" required><option value="">—</option><option value="never" data-es="Nunca" data-en="Never">Nunca</option><option value="former" data-es="Ex-fumador (más de 12 meses)" data-en="Former smoker (12+ months)">Ex-fumador (12+ meses)</option><option value="current_cig" data-es="Fumador actual — cigarrillos" data-en="Current — cigarettes">Fumador — cigarrillos</option><option value="current_vape" data-es="Fumador actual — vapeo/e-cig" data-en="Current — vaping/e-cig">Vapeo / e-cig</option><option value="current_cigar" data-es="Cigarros (ocasional)" data-en="Cigars (occasional)">Cigarros (ocasional)</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="health_rating" data-es="Salud general <span class='req'>*</span>" data-en="Overall health <span class='req'>*</span>">Salud general <span class="req">*</span></label>
+        <select class="fselect" id="health_rating" required><option value="">—</option><option value="excellent" data-es="Excelente — sin condiciones" data-en="Excellent — no conditions">Excelente — sin condiciones</option><option value="very_good" data-es="Muy buena — condiciones controladas" data-en="Very good — controlled conditions">Muy buena — condiciones controladas</option><option value="good" data-es="Buena — condiciones menores" data-en="Good — minor conditions">Buena</option><option value="fair" data-es="Regular — condiciones activas" data-en="Fair — active conditions">Regular</option><option value="poor" data-es="Mala" data-en="Poor">Mala</option></select><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="family_history" data-es="Historial familiar de enfermedades <span class='req'>*</span>" data-en="Family medical history <span class='req'>*</span>">Historial familiar <span class="req">*</span></label>
+        <select class="fselect" id="family_history" required><option value="">—</option><option value="none" data-es="Sin historial significativo" data-en="No significant history">Sin historial significativo</option><option value="heart" data-es="Enfermedades cardíacas (padres antes de 60)" data-en="Heart disease (parents before 60)">Cardíacas (padres &lt;60)</option><option value="cancer" data-es="Cáncer (padres antes de 60)" data-en="Cancer (parents before 60)">Cáncer (padres &lt;60)</option><option value="diabetes" data-es="Diabetes" data-en="Diabetes">Diabetes</option><option value="multiple" data-es="Múltiples condiciones" data-en="Multiple conditions">Múltiples condiciones</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" data-es="Condiciones médicas actuales:" data-en="Current medical conditions:">Condiciones médicas actuales:</label>
+        <div class="checkbox-grid" style="margin-top:6px">
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="none"><span data-es="Ninguna" data-en="None">Ninguna</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="diabetes"><span>Diabetes</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="hypertension"><span data-es="Hipertensión" data-en="Hypertension">Hipertensión</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="heart"><span data-es="Cardíacas" data-en="Heart disease">Cardíacas</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="cancer_hist"><span data-es="Historial de cáncer" data-en="Cancer history">Historial cáncer</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="conditions" value="other_cond"><span data-es="Otra condición" data-en="Other condition">Otra condición</span></label>
+        </div></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" data-es="Actividades de alto riesgo:" data-en="High-risk activities:">Actividades de alto riesgo:</label>
+        <div class="checkbox-grid" style="margin-top:6px">
+          <label class="checkbox-item"><input type="checkbox" name="risky" value="none_risky"><span data-es="Ninguna" data-en="None">Ninguna</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="risky" value="aviation"><span data-es="Aviación privada" data-en="Private aviation">Aviación privada</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="risky" value="extreme_sports"><span data-es="Deportes extremos" data-en="Extreme sports">Deportes extremos</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="risky" value="hazardous_job"><span data-es="Trabajo peligroso" data-en="Hazardous occupation">Trabajo peligroso</span></label>
+        </div></div>
+      <div class="fgroup"><label class="flabel" for="dui_life" data-es="¿DUI o infracciones graves en 3 años? <span class='req'>*</span>" data-en="DUI or major violations in 3 years? <span class='req'>*</span>">¿DUI o infracciones graves? <span class="req">*</span></label>
+        <select class="fselect" id="dui_life" required><option value="">—</option><option value="no" data-es="No" data-en="No">No</option><option value="yes" data-es="Sí" data-en="Yes">Sí</option></select><span class="ferror">Requerido</span></div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-card__title" data-es="COBERTURA DESEADA" data-en="DESIRED COVERAGE">COBERTURA DESEADA</div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_type" data-es="Tipo de seguro de vida <span class='req'>*</span>" data-en="Life insurance type <span class='req'>*</span>">Tipo de seguro <span class="req">*</span></label>
+        <select class="fselect" id="life_type" required><option value="">—</option><option value="term" data-es="Término (Term Life) — más económico" data-en="Term Life — most affordable">Término (Term Life)</option><option value="whole" data-es="Vida entera (Whole Life) — acumula valor" data-en="Whole Life — builds cash value">Vida entera (Whole Life)</option><option value="universal" data-es="Universal Life — flexible" data-en="Universal Life — flexible">Universal Life</option><option value="iul" data-es="IUL — ligado a índice" data-en="IUL — indexed universal">IUL (Indexed Universal)</option><option value="not_sure" data-es="No sé — que me asesoren" data-en="Not sure — advise me">No sé — que me asesoren</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="coverage_amount" data-es="Monto de cobertura deseado <span class='req'>*</span>" data-en="Desired coverage amount <span class='req'>*</span>">Monto de cobertura <span class="req">*</span></label>
+        <select class="fselect" id="coverage_amount" required><option value="">—</option><option value="under100k">Under $100,000</option><option value="100_250k">$100,000 – $250,000</option><option value="250_500k">$250,000 – $500,000</option><option value="500k_1m">$500,000 – $1,000,000</option><option value="over1m">Over $1,000,000</option><option value="recommend" data-es="Recomiéndame" data-en="Recommend for me">Recomiéndame</option></select><span class="fhint" data-es="Regla general: 10–12x tu ingreso anual" data-en="General rule: 10–12x your annual income">Regla general: 10–12x tu ingreso anual</span><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="term_length" data-es="Duración del término <span class='opt'>(si aplica)</span>" data-en="Term length <span class='opt'>(if applicable)</span>">Duración del término <span class="opt">(si term life)</span></label>
+        <select class="fselect" id="term_length"><option value="">—</option><option value="10yr" data-es="10 años" data-en="10 years">10 años</option><option value="15yr" data-es="15 años" data-en="15 years">15 años</option><option value="20yr" data-es="20 años" data-en="20 years">20 años</option><option value="25yr" data-es="25 años" data-en="25 years">25 años</option><option value="30yr" data-es="30 años" data-en="30 years">30 años</option></select></div>
+      <div class="fgroup"><label class="flabel" for="life_purpose" data-es="Propósito principal <span class='req'>*</span>" data-en="Primary purpose <span class='req'>*</span>">Propósito principal <span class="req">*</span></label>
+        <select class="fselect" id="life_purpose" required><option value="">—</option><option value="family_income" data-es="Reemplazar ingreso familiar" data-en="Replace family income">Reemplazar ingreso familiar</option><option value="mortgage" data-es="Pagar la hipoteca" data-en="Pay off mortgage">Pagar la hipoteca</option><option value="education" data-es="Educación de los hijos" data-en="Children's education">Educación de los hijos</option><option value="burial" data-es="Gastos funerales / finales" data-en="Burial / final expenses">Gastos funerales</option><option value="estate" data-es="Planificación patrimonial" data-en="Estate planning">Planificación patrimonial</option><option value="business" data-es="Continuidad de negocio" data-en="Business continuity">Continuidad de negocio</option></select><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="beneficiary_name" data-es="Beneficiario principal (nombre) <span class='opt'>(opcional)</span>" data-en="Primary beneficiary (name) <span class='opt'>(optional)</span>">Beneficiario principal <span class="opt">(opcional)</span></label><input class="finput" type="text" id="beneficiary_name" placeholder="Ana González" data-es-placeholder="Ana González" data-en-placeholder="Ana González"></div>
+      <div class="fgroup"><label class="flabel" for="beneficiary_rel" data-es="Relación con el beneficiario" data-en="Relationship to beneficiary">Relación con beneficiario</label>
+        <select class="fselect" id="beneficiary_rel"><option value="">—</option><option value="spouse" data-es="Cónyuge / Pareja" data-en="Spouse / Partner">Cónyuge / Pareja</option><option value="child" data-es="Hijo/a" data-en="Child">Hijo/a</option><option value="parent" data-es="Padre / Madre" data-en="Parent">Padre / Madre</option><option value="sibling" data-es="Hermano/a" data-en="Sibling">Hermano/a</option><option value="other" data-es="Otro" data-en="Other">Otro</option></select></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="existing_coverage" data-es="¿Ya tienes seguro de vida? <span class='req'>*</span>" data-en="Do you have existing life insurance? <span class='req'>*</span>">¿Ya tienes seguro de vida? <span class="req">*</span></label>
+        <select class="fselect" id="existing_coverage" required><option value="">—</option><option value="no" data-es="No" data-en="No">No</option><option value="employer" data-es="Sí — solo el del empleador" data-en="Yes — employer only">Sí — solo del empleador</option><option value="private" data-es="Sí — tengo una póliza privada" data-en="Yes — private policy">Sí — póliza privada</option><option value="both" data-es="Sí — empleador y privado" data-en="Yes — both employer and private">Sí — ambos</option></select><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_budget" data-es="Presupuesto mensual aproximado" data-en="Approximate monthly budget">Presupuesto mensual aproximado</label>
+        <select class="fselect" id="life_budget"><option value="">—</option><option value="under50" data-es="Menos de $50" data-en="Under $50">Menos de $50/mes</option><option value="50_100">$50–$100/mes</option><option value="100_200">$100–$200/mes</option><option value="over200" data-es="Más de $200" data-en="Over $200">Más de $200/mes</option></select></div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-card__title" data-es="TUS DATOS DE CONTACTO" data-en="YOUR CONTACT DETAILS">TUS DATOS DE CONTACTO</div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_email" data-es="Email <span class='req'>*</span>" data-en="Email <span class='req'>*</span>">Email <span class="req">*</span></label><input class="finput" type="email" id="life_email" placeholder="maria@email.com" required><span class="ferror">Requerido</span></div>
+      <div class="fgroup"><label class="flabel" for="life_phone" data-es="Teléfono <span class='req'>*</span>" data-en="Phone <span class='req'>*</span>">Teléfono <span class="req">*</span></label><input class="finput" type="tel" id="life_phone" placeholder="(786) 555-0100" required><span class="ferror">Requerido</span></div>
+    </div>
+    <div class="fgrid fgrid-2">
+      <div class="fgroup"><label class="flabel" for="life_best_time" data-es="Mejor hora para llamar" data-en="Best time to call">Mejor hora para llamar</label>
+        <select class="fselect" id="life_best_time"><option value="morning" data-es="Mañana (8am–12pm)" data-en="Morning">Mañana</option><option value="afternoon" data-es="Tarde (12–5pm)" data-en="Afternoon">Tarde</option><option value="evening" data-es="Noche (5–8pm)" data-en="Evening">Noche</option><option value="any" data-es="Cualquier hora" data-en="Any time">Cualquier hora</option></select></div>
+      <div class="fgroup"><label class="flabel" for="life_lang" data-es="Idioma preferido" data-en="Preferred language">Idioma preferido</label>
+        <select class="fselect" id="life_lang"><option value="es">Español</option><option value="en">English</option><option value="both" data-es="Cualquiera" data-en="Either">Cualquiera</option></select></div>
+    </div>
+  </div>
+
+  <label class="tcpa"><input type="checkbox" id="tcpaCheck"><span class="tcpa-text" data-es="Al enviar, acepto ser contactado por agentes de seguro de vida asociados a Norte Financial. No es condición de compra. Puedo retirar mi consentimiento en cualquier momento." data-en="By submitting, I agree to be contacted by life insurance agents associated with Norte Financial. Not a condition of purchase. I may withdraw consent at any time.">Al enviar, acepto ser contactado por agentes de seguro de vida de Norte Financial. No es condición de compra.</span></label>
+  <div class="form-nav" style="margin-top:16px">
+    <button class="btn-submit" id="submitBtn" onclick="submitForm()" data-es="Enviar y obtener cotización →" data-en="Submit and get quote →">Enviar y obtener cotización →</button>
+  </div>
+  <p style="font-size:11px;color:var(--ink-light);margin-top:12px;text-align:center" data-es="Tu información nunca se vende. Solo se comparte con agentes licenciados en tu estado." data-en="Your info is never sold. Only shared with licensed agents in your state.">Tu información nunca se vende.</p>
+</div>
+
+<div class="success-wrap" id="successWrap">
+  <div class="success-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+  <h2 class="success-title" data-es="¡Cotización de vida recibida!" data-en="Life insurance quote received!">¡Cotización recibida!</h2>
+  <p class="success-desc" data-es="Un agente especializado en seguro de vida te contactará pronto con las mejores opciones para tu perfil." data-en="A life insurance specialist will contact you soon with the best options for your profile.">Un agente especializado te contactará pronto.</p>
+  <div class="success-actions"><a href="guias.html" class="btn-forest">Guías de seguro de vida</a><a href="cotizar.html" class="btn-amber" data-es="Cotizar otro seguro" data-en="Quote another">Cotizar otro seguro</a></div>
+</div>
+</div></div>
+
+<footer class="footer"><div class="container">
+  <div class="footer-inner"><div class="footer-brand"><div class="brand-name">Norte</div><div class="brand-sub">Financial</div><div class="footer-tagline">Tu norte financiero.</div></div>
+  <div class="footer-links"><a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a><a href="guias.html" data-es="Guías" data-en="Guides">Guías</a><a href="cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></div></div>
+  <div class="footer-copy" data-es="© 2025 Norte Financial. Información educativa, no asesoría legal." data-en="© 2025 Norte Financial. Educational information, not legal advice.">© 2025 Norte Financial. Información educativa, no asesoría legal.</div>
+</div></footer>
+
+<script>
+const SUPA_URL='https://agodvsflcfhfcxtlykpf.supabase.co';
+const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb2R2c2ZsY2ZoZmN4dGx5a3BmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NTU2NTMsImV4cCI6MjA5MTMzMTY1M30.KDg8lPRPfyMXYQ6SQK3LcoIhSFqNZBAELlJIUWRC9mw';
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t;}});document.getElementById('btnEs').classList.toggle('active',lang==='es');document.getElementById('btnEn').classList.toggle('active',lang==='en');}
+function applyLang(){if(currentLang!=='es')setLang(currentLang);else{document.getElementById('btnEs').classList.add('active');document.getElementById('btnEn').classList.remove('active');}}
+applyLang();window.addEventListener('load',applyLang);
+document.querySelectorAll('.checkbox-item').forEach(item=>{item.addEventListener('change',()=>item.classList.toggle('checked',item.querySelector('input').checked));});
+function validateAll(){const req=document.querySelectorAll('[required]');let v=true;req.forEach(el=>{const g=el.closest('.fgroup');if(!el.value.trim()){g?.classList.add('has-error');v=false;}else g?.classList.remove('has-error');});if(!v)document.querySelector('.has-error')?.scrollIntoView({behavior:'smooth',block:'center'});return v;}
+async function submitForm(){
+  if(!validateAll())return;
+  if(!document.getElementById('tcpaCheck').checked){alert(currentLang==='es'?'Por favor acepta los términos.':'Please accept the terms.');return;}
+  const btn=document.getElementById('submitBtn');btn.disabled=true;
+  btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> '+(currentLang==='es'?'Enviando...':'Submitting...');
+  const getChecked=(name)=>Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i=>i.value).join(', ');
+  const payload={
+    insurance_type:'vida',source:'norte-vida-quote',page_url:location.href,status:'new',
+    tcpa_consent:true,tcpa_timestamp:new Date().toISOString(),
+    first_name:document.getElementById('life_first').value.trim(),
+    last_name:document.getElementById('life_last').value.trim(),
+    dob:document.getElementById('life_dob').value,
+    gender:document.getElementById('life_gender').value,
+    state:document.getElementById('life_state').value,
+    zip:document.getElementById('life_zip').value,
+    marital_status:document.getElementById('life_marital').value,
+    email:document.getElementById('life_email').value.trim(),
+    phone:document.getElementById('life_phone').value.trim(),
+    best_time:document.getElementById('life_best_time').value,
+    preferred_language:document.getElementById('life_lang').value,
+    // Life-specific stored in notes field as JSON
+    notes: JSON.stringify({
+      dependents:document.getElementById('life_dependents').value,
+      income:document.getElementById('life_income').value,
+      height:document.getElementById('life_height').value,
+      weight:document.getElementById('life_weight').value,
+      tobacco:document.getElementById('tobacco').value,
+      health_rating:document.getElementById('health_rating').value,
+      family_history:document.getElementById('family_history').value,
+      conditions:getChecked('conditions'),
+      risky_activities:getChecked('risky'),
+      life_type:document.getElementById('life_type').value,
+      coverage_amount:document.getElementById('coverage_amount').value,
+      term_length:document.getElementById('term_length').value,
+      life_purpose:document.getElementById('life_purpose').value,
+      beneficiary_name:document.getElementById('beneficiary_name').value,
+      beneficiary_rel:document.getElementById('beneficiary_rel').value,
+      existing_coverage:document.getElementById('existing_coverage').value,
+      budget:document.getElementById('life_budget').value
+    })
+  };
+  try{await fetch(`${SUPA_URL}/rest/v1/leads`,{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Prefer':'return=minimal'},body:JSON.stringify(payload)});}catch(e){try{const b=JSON.parse(localStorage.getItem('norte_leads_backup')||'[]');b.push({...payload,saved_at:new Date().toISOString()});localStorage.setItem('norte_leads_backup',JSON.stringify(b));}catch(_){}}
+  document.getElementById('section-1').style.display='none';
+  const sw=document.getElementById('successWrap');sw.classList.add('visible');sw.style.animation='fadeUp 0.6s ease both';sw.scrollIntoView({behavior:'smooth',block:'center'});setLang(currentLang);
+}
+function toggleMobileMenu(){document.getElementById('mobileDrawer').classList.toggle('open');document.getElementById('mobileToggle').classList.toggle('open');}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open');}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>20);});
+</script>
+</body>
+</html>
