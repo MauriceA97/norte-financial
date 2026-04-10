@@ -6,9 +6,11 @@
 <title>Norte Financial — Lead Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 <style>
-:root{--forest:#0B3D2E;--verde:#1D9E75;--amber:#D4700A;--mist:#7EC4A8}
+:root{--forest:#0B3D2E;--verde:#1D9E75;--amber:#D4700A;--mist:#7EC4A8;--red:#ef4444;--blue:#3b82f6}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
+
+/* ── LOGIN ── */
 #loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh}
 .login-card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:48px 40px;width:400px;text-align:center}
 .login-logo{font-family:'Playfair Display';font-size:32px;color:#7EC4A8;margin-bottom:4px}
@@ -19,6 +21,8 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
 .login-btn{width:100%;padding:13px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s}
 .login-btn:hover{background:#16875f;transform:translateY(-1px)}
 .login-err{color:#f87171;font-size:13px;margin-top:10px;display:none}
+
+/* ── LAYOUT ── */
 #dashboard{display:none;min-height:100vh}
 .topbar{background:#1a1f2e;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
 .topbar-left{display:flex;align-items:center;gap:14px}
@@ -28,37 +32,61 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
 .topbar-clock{font-size:12px;color:#475569}
 .btn-logout{font-size:12px;color:#64748b;background:none;border:1px solid rgba(255,255,255,0.08);padding:6px 14px;border-radius:6px;cursor:pointer;transition:all 0.2s;font-family:inherit}
 .btn-logout:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.2)}
-.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:20px 24px 0}
-.stat{background:#1a1f2e;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px}
+
+/* ── TABS ── */
+.view-tabs{display:flex;align-items:center;gap:4px;padding:16px 24px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.vtab{padding:8px 18px;font-family:inherit;font-size:13px;font-weight:500;color:#475569;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.18s;margin-bottom:-1px}
+.vtab:hover{color:#94a3b8}
+.vtab.active{color:#7EC4A8;border-bottom-color:#7EC4A8}
+.vtab .count{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;font-size:10px;border-radius:50%;background:rgba(255,255,255,0.08);margin-left:6px}
+.vtab.active .count{background:rgba(29,158,117,0.2);color:#6ee7b7}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:16px 24px 0}
+.stat{background:#1a1f2e;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px}
 .stat.green{border-color:rgba(29,158,117,0.25);background:rgba(29,158,117,0.05)}
-.stat-label{font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
-.stat-num{font-family:'Playfair Display';font-size:30px;line-height:1}
+.stat.gold{border-color:rgba(251,191,36,0.25);background:rgba(251,191,36,0.05)}
+.stat-label{font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px}
+.stat-num{font-family:'Playfair Display';font-size:26px;line-height:1}
 .stat.green .stat-num{color:#7EC4A8}
-.stat-sub{font-size:11px;color:#334155;margin-top:4px}
-.filter-bar{display:flex;align-items:center;gap:10px;padding:16px 24px;flex-wrap:wrap}
+.stat.gold .stat-num{color:#fcd34d}
+.stat-sub{font-size:10px;color:#334155;margin-top:3px}
+
+/* ── FILTERS ── */
+.filter-bar{display:flex;align-items:center;gap:8px;padding:14px 24px;flex-wrap:wrap}
 .filter-bar label{font-size:12px;color:#475569}
-.fselect,.fsearch{padding:8px 12px;background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:6px;color:#e2e8f0;font-family:inherit;font-size:13px;outline:none;cursor:pointer;transition:border-color 0.2s}
-.fselect:focus,.fsearch:focus{border-color:#1D9E75}
-.fsearch{width:220px}
-.filter-actions{margin-left:auto;display:flex;gap:8px}
-.btn-refresh{display:flex;align-items:center;gap:6px;padding:8px 16px;background:#1D9E75;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s}
+.fsel,.fsearch{padding:7px 11px;background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:6px;color:#e2e8f0;font-family:inherit;font-size:13px;outline:none;cursor:pointer;transition:border-color 0.2s}
+.fsel:focus,.fsearch:focus{border-color:#1D9E75}
+.fsearch{width:200px}
+.fbar-right{margin-left:auto;display:flex;gap:8px}
+.btn-sm{display:flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:6px;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.btn-refresh{background:#1D9E75;color:#fff}
 .btn-refresh:hover{background:#16875f}
-.btn-export{display:flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(212,112,10,0.12);color:#fb923c;border:1px solid rgba(212,112,10,0.25);border-radius:6px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s}
-.btn-export:hover{background:rgba(212,112,10,0.25)}
-.table-wrap{padding:0 24px 32px;overflow-x:auto}
-.tbl{width:100%;border-collapse:collapse;font-size:13px}
-.tbl th{padding:10px 12px;text-align:left;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:#475569;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap}
-.tbl td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;color:#94a3b8}
+.btn-export-csv{background:rgba(212,112,10,0.12);color:#fb923c;border:1px solid rgba(212,112,10,0.25)}
+.btn-export-csv:hover{background:rgba(212,112,10,0.25)}
+.btn-export-pkg{background:rgba(139,92,246,0.12);color:#c4b5fd;border:1px solid rgba(139,92,246,0.25)}
+.btn-export-pkg:hover{background:rgba(139,92,246,0.25)}
+
+/* ── TABLE ── */
+.table-wrap{padding:0 24px 20px;overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{padding:9px 11px;text-align:left;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:#475569;border-bottom:1px solid rgba(255,255,255,0.06);white-space:nowrap}
+.tbl td{padding:10px 11px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;color:#94a3b8}
 .tbl tr:hover td{background:rgba(255,255,255,0.015)}
-.name-cell{font-weight:500;color:#e2e8f0}
+.name-cell{font-weight:500;color:#e2e8f0;white-space:nowrap}
 .phone-cell a{color:#7EC4A8;text-decoration:none}
 .phone-cell a:hover{color:#4ade80}
-.email-cell{font-size:12px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.email-cell{max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
 .date-cell{font-size:11px;color:#475569;white-space:nowrap}
-.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;white-space:nowrap}
+.revenue-cell{font-family:'Playfair Display';font-size:14px;color:#fcd34d;font-weight:500}
+.revenue-cell.zero{color:#334155}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:500;white-space:nowrap}
 .b-new{background:rgba(29,158,117,0.15);color:#6ee7b7}
 .b-contacted{background:rgba(59,130,246,0.15);color:#93c5fd}
 .b-sold{background:rgba(251,191,36,0.15);color:#fcd34d}
+.b-deleted{background:rgba(239,68,68,0.15);color:#fca5a5}
 .b-auto{background:rgba(139,92,246,0.15);color:#c4b5fd}
 .b-hogar{background:rgba(249,115,22,0.15);color:#fdba74}
 .b-vida{background:rgba(236,72,153,0.15);color:#f9a8d4}
@@ -67,38 +95,81 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
 .b-otro{background:rgba(148,163,184,0.1);color:#94a3b8}
 .b-es{background:rgba(59,130,246,0.1);color:#93c5fd}
 .b-en{background:rgba(248,113,113,0.1);color:#fca5a5}
-.actions{display:flex;gap:5px}
-.ab{padding:4px 10px;border-radius:4px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+
+/* ACTION BUTTONS */
+.actions{display:flex;gap:4px;flex-wrap:nowrap}
+.ab{padding:3px 9px;border-radius:4px;font-family:inherit;font-size:10px;font-weight:500;cursor:pointer;transition:all 0.15s;white-space:nowrap}
 .ab-refer{background:rgba(29,158,117,0.12);color:#6ee7b7;border:1px solid rgba(29,158,117,0.2)}
 .ab-refer:hover{background:rgba(29,158,117,0.28)}
 .ab-contact{background:rgba(59,130,246,0.12);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)}
 .ab-contact:hover{background:rgba(59,130,246,0.28)}
 .ab-sold{background:rgba(251,191,36,0.12);color:#fcd34d;border:1px solid rgba(251,191,36,0.2)}
 .ab-sold:hover{background:rgba(251,191,36,0.28)}
-.empty{text-align:center;padding:64px 20px;color:#334155}
-.empty-icon{font-size:48px;margin-bottom:12px}
-.empty p{font-size:15px}
-.loading-msg{text-align:center;padding:40px;color:#334155;font-size:14px}
+.ab-delete{background:rgba(239,68,68,0.1);color:#fca5a5;border:1px solid rgba(239,68,68,0.2)}
+.ab-delete:hover{background:rgba(239,68,68,0.25)}
+.ab-restore{background:rgba(29,158,117,0.12);color:#6ee7b7;border:1px solid rgba(29,158,117,0.2)}
+.ab-restore:hover{background:rgba(29,158,117,0.28)}
+.ab-perm{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
+.ab-perm:hover{background:rgba(239,68,68,0.35)}
+
+/* SELECT CHECKBOX */
+.tbl th input[type=checkbox], .tbl td input[type=checkbox]{accent-color:#1D9E75;width:14px;height:14px;cursor:pointer}
+
+/* BULK BAR */
+.bulk-bar{display:none;align-items:center;gap:12px;padding:10px 24px;background:rgba(139,92,246,0.08);border-bottom:1px solid rgba(139,92,246,0.15)}
+.bulk-bar.visible{display:flex}
+.bulk-count{font-size:13px;color:#c4b5fd;font-weight:500}
+.bulk-actions{display:flex;gap:8px}
+
+/* EMPTY / LOADING */
+.empty{text-align:center;padding:56px 20px;color:#334155}
+.empty-icon{font-size:44px;margin-bottom:10px}
+.empty p{font-size:14px}
+.loading-msg{text-align:center;padding:40px;color:#334155;font-size:13px}
+
+/* SETTINGS */
 .settings-bar{display:flex;align-items:center;gap:8px;padding:0 24px 20px;flex-wrap:wrap}
 .settings-bar span{font-size:12px;color:#334155}
 .pass-input{padding:6px 10px;background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:5px;color:#e2e8f0;font-size:12px;font-family:inherit;outline:none;width:180px}
 .btn-save-pass{padding:6px 12px;background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.08);border-radius:5px;font-size:12px;font-family:inherit;cursor:pointer}
 .btn-save-pass:hover{background:rgba(255,255,255,0.1);color:#e2e8f0}
+
+/* ── MODALS ── */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;align-items:center;justify-content:center}
 .overlay.open{display:flex}
 .modal{background:#1a1f2e;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 32px;width:600px;max-width:92vw;max-height:88vh;overflow-y:auto}
-.modal-title{font-family:'Playfair Display';font-size:22px;color:#e2e8f0;margin-bottom:4px}
+.modal-sm{width:440px}
+.modal-title{font-family:'Playfair Display';font-size:20px;color:#e2e8f0;margin-bottom:4px}
 .modal-sub{font-size:13px;color:#64748b;margin-bottom:20px}
-.sheet{background:#0f1117;border-radius:8px;padding:20px;font-size:12px;line-height:1.9;color:#cbd5e1;white-space:pre-wrap;font-family:'Courier New',monospace;border:1px solid rgba(255,255,255,0.05);margin-bottom:16px;max-height:380px;overflow-y:auto}
+.sheet{background:#0f1117;border-radius:8px;padding:18px;font-size:11px;line-height:1.9;color:#cbd5e1;white-space:pre-wrap;font-family:'Courier New',monospace;border:1px solid rgba(255,255,255,0.05);margin-bottom:16px;max-height:360px;overflow-y:auto}
 .modal-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-copy{padding:9px 18px;background:rgba(29,158,117,0.15);color:#6ee7b7;border:1px solid rgba(29,158,117,0.25);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.2s}
+.btn-copy{padding:8px 16px;background:rgba(29,158,117,0.15);color:#6ee7b7;border:1px solid rgba(29,158,117,0.25);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.2s}
 .btn-copy:hover{background:rgba(29,158,117,0.3)}
-.btn-email{padding:9px 18px;background:#D4700A;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-email{padding:8px 16px;background:#D4700A;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .btn-email:hover{background:#b85e08}
-.btn-close-modal{padding:9px 18px;background:rgba(255,255,255,0.04);color:#64748b;border:1px solid rgba(255,255,255,0.08);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;margin-left:auto}
+.btn-close-modal{padding:8px 16px;background:rgba(255,255,255,0.04);color:#64748b;border:1px solid rgba(255,255,255,0.08);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;margin-left:auto}
 .btn-close-modal:hover{color:#e2e8f0}
-@media(max-width:1024px){.stats-row{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.stats-row{grid-template-columns:1fr 1fr}.topbar,.filter-bar,.stats-row,.table-wrap,.settings-bar{padding-left:16px;padding-right:16px}.fsearch{width:150px}}
+.btn-danger{padding:8px 16px;background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.2s}
+.btn-danger:hover{background:rgba(239,68,68,0.3)}
+.btn-primary-modal{padding:8px 16px;background:#1D9E75;color:#fff;border:none;border-radius:6px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.2s;font-weight:500}
+.btn-primary-modal:hover{background:#16875f}
+
+/* FORM FIELDS IN MODAL */
+.mform-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.mform-row.full{grid-template-columns:1fr}
+.mfield{display:flex;flex-direction:column;gap:5px}
+.mlabel{font-size:12px;color:#64748b;font-weight:500}
+.minput,.mselect{padding:9px 12px;background:#0f1117;border:1.5px solid rgba(255,255,255,0.08);border-radius:7px;color:#e2e8f0;font-family:inherit;font-size:14px;outline:none;transition:border-color 0.18s;width:100%}
+.minput:focus,.mselect:focus{border-color:#1D9E75}
+.mselect{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:32px}
+.warn-box{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:14px;margin-bottom:16px;font-size:13px;color:#fca5a5;line-height:1.6}
+
+/* REVENUE INLINE INPUT */
+.rev-input{padding:3px 8px;background:#0f1117;border:1px solid rgba(251,191,36,0.2);border-radius:5px;color:#fcd34d;font-family:'Playfair Display';font-size:13px;outline:none;width:80px;text-align:right}
+.rev-input:focus{border-color:#fcd34d}
+
+@media(max-width:1200px){.stats-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.stats-row{grid-template-columns:1fr 1fr}.topbar,.filter-bar,.stats-row,.table-wrap,.settings-bar,.view-tabs,.bulk-bar{padding-left:16px;padding-right:16px}.fsearch{width:140px}}
 </style>
 </head>
 <body>
@@ -118,6 +189,7 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
 <!-- DASHBOARD -->
 <div id="dashboard">
 
+  <!-- Topbar -->
   <div class="topbar">
     <div class="topbar-left">
       <span class="topbar-logo">Norte Financial</span>
@@ -129,100 +201,212 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
     </div>
   </div>
 
+  <!-- View Tabs -->
+  <div class="view-tabs">
+    <button class="vtab active" id="tab-active" onclick="switchView('active')">Active Leads <span class="count" id="cnt-active">0</span></button>
+    <button class="vtab" id="tab-sold" onclick="switchView('sold')">Sold <span class="count" id="cnt-sold">0</span></button>
+    <button class="vtab" id="tab-deleted" onclick="switchView('deleted')">🗑️ Deleted <span class="count" id="cnt-deleted">0</span></button>
+  </div>
+
+  <!-- Stats -->
   <div class="stats-row">
-    <div class="stat green"><div class="stat-label">Total Leads</div><div class="stat-num" id="sTotal">—</div><div class="stat-sub">All time</div></div>
+    <div class="stat green"><div class="stat-label">Total Active</div><div class="stat-num" id="sTotal">—</div><div class="stat-sub">All time</div></div>
     <div class="stat"><div class="stat-label">New (24h)</div><div class="stat-num" id="sToday">—</div><div class="stat-sub">Last 24 hours</div></div>
     <div class="stat"><div class="stat-label">Not Contacted</div><div class="stat-num" id="sNew">—</div><div class="stat-sub">Needs follow-up</div></div>
     <div class="stat"><div class="stat-label">Contacted</div><div class="stat-num" id="sContacted">—</div><div class="stat-sub">In progress</div></div>
     <div class="stat"><div class="stat-label">Sold</div><div class="stat-num" id="sSold">—</div><div class="stat-sub">Closed</div></div>
+    <div class="stat gold"><div class="stat-label">Total Revenue</div><div class="stat-num" id="sRevenue">$0</div><div class="stat-sub">From sold leads</div></div>
   </div>
 
-  <div class="filter-bar">
+  <!-- Filters -->
+  <div class="filter-bar" id="filterBar">
     <label>Filter:</label>
-    <select class="fselect" id="fType" onchange="doFilter()">
+    <select class="fsel" id="fType" onchange="doFilter()">
       <option value="">All Types</option>
-      <option value="auto">Auto</option>
-      <option value="hogar">Home</option>
-      <option value="vida">Life</option>
-      <option value="salud">Health</option>
-      <option value="negocio">Business</option>
-      <option value="otro">Other</option>
+      <option value="auto">Auto</option><option value="hogar">Home</option>
+      <option value="vida">Life</option><option value="salud">Health</option>
+      <option value="negocio">Business</option><option value="otro">Other</option>
     </select>
-    <select class="fselect" id="fState" onchange="doFilter()">
+    <select class="fsel" id="fState" onchange="doFilter()">
       <option value="">All States</option>
-      <option value="FL">Florida</option>
-      <option value="TX">Texas</option>
-      <option value="CA">California</option>
-      <option value="NY">New York</option>
-      <option value="IL">Illinois</option>
-      <option value="OTHER">Other</option>
+      <option value="FL">Florida</option><option value="TX">Texas</option>
+      <option value="CA">California</option><option value="NY">New York</option>
+      <option value="IL">Illinois</option><option value="OTHER">Other</option>
     </select>
-    <select class="fselect" id="fStatus" onchange="doFilter()">
+    <select class="fsel" id="fStatus" onchange="doFilter()">
       <option value="">All Statuses</option>
-      <option value="new">New</option>
-      <option value="contacted">Contacted</option>
-      <option value="sold">Sold</option>
+      <option value="new">New</option><option value="contacted">Contacted</option><option value="sold">Sold</option>
     </select>
-    <select class="fselect" id="fLang" onchange="doFilter()">
+    <select class="fsel" id="fLang" onchange="doFilter()">
       <option value="">All Languages</option>
-      <option value="es">Spanish</option>
-      <option value="en">English</option>
+      <option value="es">Spanish</option><option value="en">English</option>
     </select>
-    <input class="fsearch" type="text" id="fSearch" placeholder="Search name, phone, email, ZIP..." oninput="doFilter()">
-    <div class="filter-actions">
-      <button class="btn-refresh" onclick="loadLeads()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-        Refresh
+    <input class="fsearch" type="text" id="fSearch" placeholder="Search name, phone, ZIP..." oninput="doFilter()">
+    <div class="fbar-right">
+      <button class="btn-sm btn-refresh" onclick="loadLeads()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>Refresh
       </button>
-      <button class="btn-export" onclick="exportCSV()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        Export CSV
+      <button class="btn-sm btn-export-csv" onclick="exportCSV()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export CSV
+      </button>
+      <button class="btn-sm btn-export-pkg" onclick="openPackageModal()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Send Package
       </button>
     </div>
   </div>
 
+  <!-- Bulk action bar -->
+  <div class="bulk-bar" id="bulkBar">
+    <span class="bulk-count" id="bulkCount">0 selected</span>
+    <div class="bulk-actions">
+      <button class="btn-sm btn-export-csv" onclick="exportSelectedCSV()">📥 Export Selected</button>
+      <button class="btn-sm btn-export-pkg" onclick="openPackageModal(true)">📦 Package Selected</button>
+      <button class="btn-sm ab-delete" style="padding:7px 14px" onclick="bulkDelete()">🗑️ Delete Selected</button>
+      <button class="btn-sm" style="background:rgba(255,255,255,0.06);color:#64748b;border:1px solid rgba(255,255,255,0.08)" onclick="clearSelection()">✕ Clear</button>
+    </div>
+  </div>
+
+  <!-- Table -->
   <div class="table-wrap">
-    <div id="tContainer">
-      <div class="loading-msg">Loading leads...</div>
-    </div>
+    <div id="tContainer"><div class="loading-msg">Loading leads...</div></div>
   </div>
 
+  <!-- Settings -->
   <div class="settings-bar">
-    <span>Change admin password:</span>
+    <span>Change password:</span>
     <input type="password" class="pass-input" id="newPass" placeholder="New password">
-    <button class="btn-save-pass" onclick="savePass()">Save Password</button>
-    <span id="passSaved" style="display:none;font-size:12px;color:#6ee7b7">✓ Password updated</span>
+    <button class="btn-save-pass" onclick="savePass()">Save</button>
+    <span id="passSaved" style="display:none;font-size:12px;color:#6ee7b7">✓ Saved</span>
   </div>
 
 </div>
 
-<!-- REFERRAL MODAL -->
-<div class="overlay" id="modal">
+<!-- ── REFERRAL MODAL ── -->
+<div class="overlay" id="modalRefer">
   <div class="modal">
     <div class="modal-title">Lead Referral Sheet</div>
-    <div class="modal-sub" id="modalSub">Ready to send to any agent or carrier</div>
+    <div class="modal-sub" id="referSub">Ready to send to any agent or carrier</div>
     <div class="sheet" id="sheetContent"></div>
     <div class="modal-btns">
-      <button class="btn-copy" onclick="copySheet()">📋 Copy Text</button>
-      <a class="btn-email" id="mailtoLink" href="#" target="_blank">✉️ Open in Email</a>
-      <button class="btn-close-modal" onclick="closeModal()">Close</button>
+      <button class="btn-copy" onclick="copySheet()">📋 Copy</button>
+      <a class="btn-email" id="mailtoLink" href="#" target="_blank">✉️ Email</a>
+      <button class="btn-close-modal" onclick="closeModal('modalRefer')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── SELL MODAL (mark sold + revenue + sold_to) ── -->
+<div class="overlay" id="modalSell">
+  <div class="modal modal-sm">
+    <div class="modal-title">Mark as Sold</div>
+    <div class="modal-sub" id="sellSubtitle">Record the sale details</div>
+    <div class="mform-row">
+      <div class="mfield">
+        <label class="mlabel">Revenue Received ($)</label>
+        <input class="minput" type="number" id="sellRevenue" placeholder="0.00" min="0" step="0.01">
+      </div>
+      <div class="mfield">
+        <label class="mlabel">Sold To (Agency / Carrier)</label>
+        <input class="minput" type="text" id="sellSoldTo" placeholder="e.g. Progressive, AgentName">
+      </div>
+    </div>
+    <div class="mform-row full">
+      <div class="mfield">
+        <label class="mlabel">Lead Package / Notes</label>
+        <input class="minput" type="text" id="sellPackage" placeholder="e.g. FL Auto Bundle, EverQuote Q2">
+      </div>
+    </div>
+    <div class="modal-btns" style="margin-top:4px">
+      <button class="btn-primary-modal" onclick="confirmSell()">💰 Confirm Sale</button>
+      <button class="btn-close-modal" onclick="closeModal('modalSell')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── DELETE MODAL ── -->
+<div class="overlay" id="modalDelete">
+  <div class="modal modal-sm">
+    <div class="modal-title">Delete Lead</div>
+    <div class="modal-sub" id="deleteSub">This moves the lead to the Deleted tab</div>
+    <div class="warn-box">⚠️ The lead will be moved to the Deleted tab. You can restore it at any time. Permanent deletion is available from the Deleted tab.</div>
+    <div class="mform-row full">
+      <div class="mfield">
+        <label class="mlabel">Reason for deletion</label>
+        <select class="mselect" id="deleteReason">
+          <option value="duplicate">Duplicate lead</option>
+          <option value="bad_contact">Bad contact info</option>
+          <option value="not_interested">Not interested</option>
+          <option value="no_response">No response after follow-up</option>
+          <option value="test">Test / dummy lead</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-btns" style="margin-top:8px">
+      <button class="btn-danger" onclick="confirmDelete()">🗑️ Move to Deleted</button>
+      <button class="btn-close-modal" onclick="closeModal('modalDelete')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── PACKAGE MODAL ── -->
+<div class="overlay" id="modalPackage">
+  <div class="modal">
+    <div class="modal-title">Send Lead Package</div>
+    <div class="modal-sub" id="packageSub">Prepare a formatted package to send to agencies or buyers</div>
+    <div class="mform-row">
+      <div class="mfield">
+        <label class="mlabel">Package Name</label>
+        <input class="minput" type="text" id="pkgName" placeholder="e.g. FL Auto Leads — April 2025">
+      </div>
+      <div class="mfield">
+        <label class="mlabel">Recipient (Agency / Buyer)</label>
+        <input class="minput" type="text" id="pkgRecipient" placeholder="e.g. Progressive FL Agency">
+      </div>
+    </div>
+    <div class="mform-row">
+      <div class="mfield">
+        <label class="mlabel">Price per Lead ($)</label>
+        <input class="minput" type="number" id="pkgPricePerLead" placeholder="25.00" min="0" step="0.01">
+      </div>
+      <div class="mfield">
+        <label class="mlabel">Contact Email</label>
+        <input class="minput" type="email" id="pkgEmail" placeholder="agent@company.com">
+      </div>
+    </div>
+    <div id="pkgPreview" style="margin:4px 0 16px"></div>
+    <div class="modal-btns">
+      <button class="btn-primary-modal" onclick="generatePackage()">📦 Generate Package</button>
+      <button class="btn-close-modal" onclick="closeModal('modalPackage')">Cancel</button>
+    </div>
+    <div id="pkgSheetWrap" style="display:none;margin-top:16px">
+      <div class="sheet" id="pkgSheet"></div>
+      <div class="modal-btns">
+        <button class="btn-copy" onclick="copyPkg()">📋 Copy Package</button>
+        <a class="btn-email" id="pkgMailto" href="#" target="_blank">✉️ Email Package</a>
+        <button class="btn-sm btn-export-csv" onclick="exportPkgCSV()" style="padding:8px 16px">📥 CSV</button>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
+// ── Config ──────────────────────────────────────────
 const SUPA_URL = 'https://agodvsflcfhfcxtlykpf.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnb2R2c2ZsY2ZoZmN4dGx5a3BmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NTU2NTMsImV4cCI6MjA5MTMzMTY1M30.KDg8lPRPfyMXYQ6SQK3LcoIhSFqNZBAELlJIUWRC9mw';
 const DEFAULT_PASS = 'Norte2025!';
 
-let allLeads = [], filtered = [];
+let allLeads = [], filtered = [], currentView = 'active';
+let selectedIds = new Set();
+let pendingLeadId = null, pendingLeadData = null;
+let pkgLeads = [];
 
-const TYPE_LABEL = {auto:'Auto Insurance',hogar:'Home Insurance',vida:'Life Insurance',salud:'Health Insurance',negocio:'Business Insurance',otro:'Other Insurance'};
-const TIME_LABEL = {morning:'Morning (8am–12pm)',afternoon:'Afternoon (12–5pm)',evening:'Evening (5–8pm)',any:'Any time',any_time:'Any time'};
-const LIC_LABEL  = {us:'US License',foreign:'Foreign License',no:'None'};
-const INS_LABEL  = {yes:'Active insurance',no:'No insurance',expired:'Expired / Cancelled'};
+const TYPE_LABEL  = {auto:'Auto Insurance',hogar:'Home Insurance',vida:'Life Insurance',salud:'Health Insurance',negocio:'Business Insurance',otro:'Other Insurance'};
+const TIME_LABEL  = {morning:'Morning (8am–12pm)',afternoon:'Afternoon (12–5pm)',evening:'Evening (5–8pm)',any:'Any time',any_time:'Any time'};
+const LIC_LABEL   = {us:'US License',foreign:'Foreign License',no:'None'};
+const INS_LABEL   = {yes:'Active insurance',no:'No insurance',expired:'Expired'};
 
-// ── Auth ──
+// ── Auth ──────────────────────────────────────────
 function getPass(){ return localStorage.getItem('nf_admin_pass')||DEFAULT_PASS; }
 function doLogin(){
   if(document.getElementById('passInput').value===getPass()){
@@ -253,64 +437,104 @@ function savePass(){
   }}catch(e){}}
 })();
 
-// ── Clock ──
+// ── Clock ──────────────────────────────────────────
 function startClock(){
   const el=document.getElementById('clockEl');
   const t=()=>el.textContent=new Date().toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
   t(); setInterval(t,30000);
 }
 
-// ── Load ──
+// ── Load ──────────────────────────────────────────
 async function loadLeads(){
-  document.getElementById('tContainer').innerHTML='<div class="loading-msg">Loading leads...</div>';
+  document.getElementById('tContainer').innerHTML='<div class="loading-msg">Loading...</div>';
   try{
-    const r=await fetch(`${SUPA_URL}/rest/v1/leads?select=*&order=created_at.desc&limit=1000`,
+    const r=await fetch(`${SUPA_URL}/rest/v1/leads?select=*&order=created_at.desc&limit=2000`,
       {headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});
-    if(!r.ok) throw new Error('Supabase returned '+r.status);
+    if(!r.ok) throw new Error('Supabase '+r.status);
     allLeads=await r.json();
-    updateStats(); doFilter();
+    updateStats(); updateTabCounts(); doFilter();
   }catch(e){
-    document.getElementById('tContainer').innerHTML=`<div class="loading-msg" style="color:#f87171">Error loading leads: ${e.message}<br><span style="font-size:12px;color:#475569">Check that the "leads" table exists in Supabase and RLS policy allows anon reads — or add a service role key.</span></div>`;
+    document.getElementById('tContainer').innerHTML=`<div class="loading-msg" style="color:#f87171">Error: ${e.message}<br><span style="font-size:11px;color:#334155">Check that the leads table exists in Supabase.</span></div>`;
   }
 }
 
+// ── Stats ──────────────────────────────────────────
 function updateStats(){
-  const cut=Date.now()-86400000;
-  document.getElementById('sTotal').textContent=allLeads.length;
-  document.getElementById('sToday').textContent=allLeads.filter(l=>new Date(l.created_at)>cut).length;
-  document.getElementById('sNew').textContent=allLeads.filter(l=>!l.status||l.status==='new').length;
-  document.getElementById('sContacted').textContent=allLeads.filter(l=>l.status==='contacted').length;
-  document.getElementById('sSold').textContent=allLeads.filter(l=>l.status==='sold').length;
+  const active = allLeads.filter(l=>!l.deleted);
+  const cut = Date.now()-86400000;
+  document.getElementById('sTotal').textContent = active.length;
+  document.getElementById('sToday').textContent = active.filter(l=>new Date(l.created_at)>cut).length;
+  document.getElementById('sNew').textContent = active.filter(l=>!l.status||l.status==='new').length;
+  document.getElementById('sContacted').textContent = active.filter(l=>l.status==='contacted').length;
+  document.getElementById('sSold').textContent = active.filter(l=>l.status==='sold').length;
+  const rev = allLeads.filter(l=>l.status==='sold'&&l.revenue>0).reduce((s,l)=>s+(parseFloat(l.revenue)||0),0);
+  document.getElementById('sRevenue').textContent = '$'+rev.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 }
 
-function doFilter(){
-  const ty=document.getElementById('fType').value;
-  const st=document.getElementById('fState').value;
-  const sx=document.getElementById('fStatus').value;
-  const la=document.getElementById('fLang').value;
-  const q=document.getElementById('fSearch').value.toLowerCase();
-  filtered=allLeads.filter(l=>{
-    if(ty&&l.insurance_type!==ty)return false;
-    if(st&&l.state!==st)return false;
-    if(sx){const s=l.status||'new';if(s!==sx)return false;}
-    if(la&&l.preferred_language!==la)return false;
-    if(q){const h=[l.first_name,l.last_name,l.email,l.phone,l.zip,l.state].join(' ').toLowerCase();if(!h.includes(q))return false;}
-    return true;
+function updateTabCounts(){
+  document.getElementById('cnt-active').textContent = allLeads.filter(l=>!l.deleted&&l.status!=='sold').length;
+  document.getElementById('cnt-sold').textContent = allLeads.filter(l=>!l.deleted&&l.status==='sold').length;
+  document.getElementById('cnt-deleted').textContent = allLeads.filter(l=>l.deleted).length;
+}
+
+// ── View switching ─────────────────────────────────
+function switchView(view){
+  currentView = view;
+  selectedIds.clear(); updateBulkBar();
+  ['active','sold','deleted'].forEach(v=>{
+    document.getElementById('tab-'+v).classList.toggle('active',v===view);
   });
+  const fb = document.getElementById('filterBar');
+  fb.style.display = view==='deleted' ? 'none' : 'flex';
+  doFilter();
+}
+
+// ── Filter ─────────────────────────────────────────
+function doFilter(){
+  let pool;
+  if(currentView==='deleted')       pool = allLeads.filter(l=>l.deleted);
+  else if(currentView==='sold')     pool = allLeads.filter(l=>!l.deleted&&l.status==='sold');
+  else                              pool = allLeads.filter(l=>!l.deleted&&l.status!=='sold');
+
+  if(currentView!=='deleted'){
+    const ty=document.getElementById('fType').value;
+    const st=document.getElementById('fState').value;
+    const sx=document.getElementById('fStatus').value;
+    const la=document.getElementById('fLang').value;
+    const q=document.getElementById('fSearch').value.toLowerCase();
+    pool=pool.filter(l=>{
+      if(ty&&l.insurance_type!==ty)return false;
+      if(st&&l.state!==st)return false;
+      if(sx){const s=l.status||'new';if(s!==sx)return false;}
+      if(la&&l.preferred_language!==la)return false;
+      if(q){const h=[l.first_name,l.last_name,l.email,l.phone,l.zip,l.state].join(' ').toLowerCase();if(!h.includes(q))return false;}
+      return true;
+    });
+  }
+  filtered=pool;
   renderTable();
 }
 
+// ── Render Table ───────────────────────────────────
 function renderTable(){
   const c=document.getElementById('tContainer');
   if(!filtered.length){
-    c.innerHTML=`<div class="empty"><div class="empty-icon">📭</div><p>${allLeads.length?'No leads match the current filters.':'No leads yet — they\'ll appear here when someone submits the quote form.'}</p></div>`;
+    const msgs = {active:'No active leads match filters.',sold:'No sold leads yet.',deleted:'No deleted leads.'};
+    c.innerHTML=`<div class="empty"><div class="empty-icon">${currentView==='deleted'?'🗑️':'📭'}</div><p>${allLeads.length?msgs[currentView]:'No leads yet — they\'ll appear when someone fills out the quote form.'}</p></div>`;
     return;
   }
+
+  const isDeleted = currentView==='deleted';
+  const isSold    = currentView==='sold';
+
   let html=`<table class="tbl"><thead><tr>
+    <th><input type="checkbox" id="selectAll" onchange="toggleSelectAll(this)"></th>
     <th>Date</th><th>Name</th><th>Phone</th><th>Email</th><th>Type</th>
-    <th>State</th><th>ZIP</th><th>Vehicle</th><th>License</th>
-    <th>Lang</th><th>Best Time</th><th>Status</th><th>Actions</th>
-  </tr></thead><tbody>`;
+    <th>State</th><th>ZIP</th>`;
+  if(!isDeleted) html+=`<th>Vehicle</th><th>License</th><th>Lang</th><th>Status</th>`;
+  if(isSold||isDeleted) html+=`<th>Revenue</th><th>Sold To</th>`;
+  if(isDeleted) html+=`<th>Reason</th><th>Deleted</th>`;
+  html+=`<th>Actions</th></tr></thead><tbody>`;
 
   filtered.forEach(l=>{
     const d=new Date(l.created_at);
@@ -319,64 +543,173 @@ function renderTable(){
     const type=l.insurance_type||'otro';
     const status=l.status||'new';
     const vehicle=l.vehicle_year&&l.vehicle_make?`${l.vehicle_year} ${l.vehicle_make}`:'—';
-    const safe=JSON.stringify(l).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&#39;');
+    const rev=parseFloat(l.revenue)||0;
+    const safe=encodeLeadForAttr(l);
+    const isSelected=selectedIds.has(l.id);
 
-    html+=`<tr>
+    html+=`<tr data-id="${l.id}">
+      <td><input type="checkbox" class="row-check" value="${l.id}" ${isSelected?'checked':''} onchange="toggleRow('${l.id}',this)"></td>
       <td class="date-cell">${date}</td>
       <td class="name-cell">${esc(name)}</td>
       <td class="phone-cell">${l.phone?`<a href="tel:${l.phone}">${esc(l.phone)}</a>`:'—'}</td>
       <td class="email-cell" title="${esc(l.email||'')}">${esc(l.email||'—')}</td>
-      <td><span class="badge b-${type}">${TYPE_LABEL[type]||type}</span></td>
+      <td><span class="badge b-${type}">${TYPE_LABEL[type]?.split(' ')[0]||type}</span></td>
       <td>${l.state||'—'}</td>
-      <td>${l.zip||'—'}</td>
-      <td style="font-size:12px">${esc(vehicle)}</td>
-      <td style="font-size:12px">${LIC_LABEL[l.has_license]||l.has_license||'—'}</td>
-      <td><span class="badge ${l.preferred_language==='en'?'b-en':'b-es'}">${l.preferred_language==='en'?'EN':'ES'}</span></td>
-      <td style="font-size:12px;white-space:nowrap">${TIME_LABEL[l.best_time]||l.best_time||'—'}</td>
-      <td><span class="badge b-${status}">${status.charAt(0).toUpperCase()+status.slice(1)}</span></td>
-      <td><div class="actions">
-        <button class="ab ab-refer" onclick='openModal(${safe})'>📋 Refer</button>
-        <button class="ab ab-contact" onclick="markStatus('${l.id}','contacted',this)">✓ Contacted</button>
-        <button class="ab ab-sold" onclick="markStatus('${l.id}','sold',this)">💰 Sold</button>
-      </div></td>
-    </tr>`;
+      <td>${l.zip||'—'}</td>`;
+
+    if(!isDeleted){
+      html+=`<td style="font-size:11px;white-space:nowrap">${esc(vehicle)}</td>
+        <td style="font-size:11px">${LIC_LABEL[l.has_license]||l.has_license||'—'}</td>
+        <td><span class="badge ${l.preferred_language==='en'?'b-en':'b-es'}">${l.preferred_language==='en'?'EN':'ES'}</span></td>
+        <td><span class="badge b-${status}">${status.charAt(0).toUpperCase()+status.slice(1)}</span></td>`;
+    }
+    if(isSold||isDeleted){
+      html+=`<td class="revenue-cell ${rev===0?'zero':''}">
+        ${isSold?`<input class="rev-input" type="number" value="${rev||''}" placeholder="0" min="0" step="0.01"
+          onblur="saveRevenue('${l.id}',this.value)" onkeydown="if(event.key==='Enter')this.blur()">`:
+          (rev>0?'$'+rev.toFixed(2):'—')}
+      </td>
+      <td style="font-size:11px;color:#94a3b8">${esc(l.sold_to||'—')}</td>`;
+    }
+    if(isDeleted){
+      const delDate = l.deleted_at ? new Date(l.deleted_at).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '—';
+      html+=`<td><span class="badge b-deleted" style="font-size:10px">${esc(l.deleted_reason||'—')}</span></td>
+        <td class="date-cell">${delDate}</td>`;
+    }
+
+    html+=`<td><div class="actions">`;
+    if(isDeleted){
+      html+=`<button class="ab ab-restore" onclick="restoreLead('${l.id}',this)">↩ Restore</button>
+        <button class="ab ab-perm" onclick="permDelete('${l.id}',this)">✕ Delete Forever</button>`;
+    } else {
+      html+=`<button class="ab ab-refer" onclick='openRefer(${safe})'>📋 Refer</button>`;
+      if(status!=='sold') html+=`<button class="ab ab-contact" onclick="markContacted('${l.id}',this)">✓ Contacted</button>
+        <button class="ab ab-sold" onclick="openSell('${l.id}','${esc(name)}')">💰 Sell</button>`;
+      html+=`<button class="ab ab-delete" onclick="openDelete('${l.id}','${esc(name)}')">🗑️</button>`;
+    }
+    html+=`</div></td></tr>`;
   });
   html+='</tbody></table>';
   c.innerHTML=html;
 }
 
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function encodeLeadForAttr(l){ return JSON.stringify(l).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&#39;'); }
 
-// ── Status Update ──
-async function markStatus(id,status,btn){
-  const orig=btn.textContent; btn.textContent='...'; btn.disabled=true;
-  try{
-    const body={status};
-    if(status==='contacted') body.contacted_at=new Date().toISOString();
-    if(status==='sold') body.sold_at=new Date().toISOString();
-    await fetch(`${SUPA_URL}/rest/v1/leads?id=eq.${id}`,{
-      method:'PATCH',
-      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-      body:JSON.stringify(body)
-    });
-    const l=allLeads.find(x=>x.id===id); if(l) l.status=status;
-    updateStats(); doFilter();
-  }catch(e){btn.textContent=orig;btn.disabled=false;}
+// ── Selection ──────────────────────────────────────
+function toggleSelectAll(cb){
+  const checks=document.querySelectorAll('.row-check');
+  checks.forEach(c=>{ c.checked=cb.checked; if(cb.checked) selectedIds.add(c.value); else selectedIds.delete(c.value); });
+  updateBulkBar();
+}
+function toggleRow(id,cb){ if(cb.checked) selectedIds.add(id); else selectedIds.delete(id); updateBulkBar(); }
+function clearSelection(){ selectedIds.clear(); document.querySelectorAll('.row-check').forEach(c=>c.checked=false); const sa=document.getElementById('selectAll'); if(sa) sa.checked=false; updateBulkBar(); }
+function updateBulkBar(){
+  const bar=document.getElementById('bulkBar');
+  bar.classList.toggle('visible',selectedIds.size>0);
+  document.getElementById('bulkCount').textContent=selectedIds.size+' selected';
 }
 
-// ── Referral Sheet ──
-function openModal(l){
+// ── Status updates ─────────────────────────────────
+async function markContacted(id,btn){
+  const orig=btn.textContent; btn.textContent='...'; btn.disabled=true;
+  await patchLead(id,{status:'contacted',contacted_at:new Date().toISOString()});
+  const l=allLeads.find(x=>x.id===id); if(l) l.status='contacted';
+  updateStats(); updateTabCounts(); doFilter();
+}
+
+async function saveRevenue(id, val){
+  const rev = parseFloat(val)||0;
+  await patchLead(id,{revenue:rev});
+  const l=allLeads.find(x=>x.id===id); if(l) l.revenue=rev;
+  updateStats();
+}
+
+// ── Sell Modal ─────────────────────────────────────
+function openSell(id, name){
+  pendingLeadId=id;
+  document.getElementById('sellSubtitle').textContent=`Lead: ${name}`;
+  document.getElementById('sellRevenue').value='';
+  document.getElementById('sellSoldTo').value='';
+  document.getElementById('sellPackage').value='';
+  document.getElementById('modalSell').classList.add('open');
+}
+async function confirmSell(){
+  const rev=parseFloat(document.getElementById('sellRevenue').value)||0;
+  const soldTo=document.getElementById('sellSoldTo').value.trim();
+  const pkg=document.getElementById('sellPackage').value.trim();
+  await patchLead(pendingLeadId,{status:'sold',sold_at:new Date().toISOString(),revenue:rev,sold_to:soldTo,lead_package:pkg});
+  const l=allLeads.find(x=>x.id===pendingLeadId);
+  if(l){l.status='sold';l.revenue=rev;l.sold_to=soldTo;l.lead_package=pkg;}
+  updateStats(); updateTabCounts(); doFilter();
+  closeModal('modalSell');
+}
+
+// ── Delete Modal ───────────────────────────────────
+function openDelete(id, name){
+  pendingLeadId=id;
+  document.getElementById('deleteSub').textContent=`Lead: ${name}`;
+  document.getElementById('modalDelete').classList.add('open');
+}
+async function confirmDelete(){
+  const reason=document.getElementById('deleteReason').value;
+  await patchLead(pendingLeadId,{deleted:true,deleted_at:new Date().toISOString(),deleted_reason:reason});
+  const l=allLeads.find(x=>x.id===pendingLeadId);
+  if(l){l.deleted=true;l.deleted_at=new Date().toISOString();l.deleted_reason=reason;}
+  updateStats(); updateTabCounts(); doFilter();
+  closeModal('modalDelete');
+}
+async function bulkDelete(){
+  if(!selectedIds.size) return;
+  if(!confirm(`Delete ${selectedIds.size} selected leads? They can be restored from the Deleted tab.`)) return;
+  for(const id of selectedIds){
+    await patchLead(id,{deleted:true,deleted_at:new Date().toISOString(),deleted_reason:'bulk_delete'});
+    const l=allLeads.find(x=>x.id===id); if(l){l.deleted=true;l.deleted_reason='bulk_delete';}
+  }
+  selectedIds.clear(); updateStats(); updateTabCounts(); doFilter(); updateBulkBar();
+}
+
+// ── Restore / Permanent Delete ─────────────────────
+async function restoreLead(id,btn){
+  btn.textContent='...'; btn.disabled=true;
+  await patchLead(id,{deleted:false,deleted_at:null,deleted_reason:null});
+  const l=allLeads.find(x=>x.id===id); if(l){l.deleted=false;l.deleted_reason=null;}
+  updateStats(); updateTabCounts(); doFilter();
+}
+async function permDelete(id,btn){
+  if(!confirm('Permanently delete this lead? This CANNOT be undone.')) return;
+  btn.textContent='...'; btn.disabled=true;
+  await fetch(`${SUPA_URL}/rest/v1/leads?id=eq.${id}`,{
+    method:'DELETE',
+    headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}
+  });
+  allLeads=allLeads.filter(l=>l.id!==id);
+  updateStats(); updateTabCounts(); doFilter();
+}
+
+// ── Referral Sheet ─────────────────────────────────
+function openRefer(l){
   const name=[l.first_name,l.last_name].filter(Boolean).join(' ')||'N/A';
   const date=new Date(l.created_at).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'});
   const vehicle=l.vehicle_year&&l.vehicle_make?`${l.vehicle_year} ${l.vehicle_make}`:'N/A';
+  const sheet=buildSheet(l, name, date, vehicle);
+  document.getElementById('sheetContent').textContent=sheet;
+  document.getElementById('referSub').textContent=`${name} · ${TYPE_LABEL[l.insurance_type]||l.insurance_type}`;
+  window._sheet=sheet;
+  const sub=encodeURIComponent(`Insurance Lead: ${name} — ${TYPE_LABEL[l.insurance_type]||l.insurance_type}`);
+  document.getElementById('mailtoLink').href=`mailto:?subject=${sub}&body=${encodeURIComponent(sheet)}`;
+  document.getElementById('modalRefer').classList.add('open');
+}
 
-  const sheet=`════════════════════════════════════════════════
+function buildSheet(l, name, date, vehicle){
+  return `════════════════════════════════════════════════
   NORTE FINANCIAL — LEAD REFERRAL SHEET
 ════════════════════════════════════════════════
 
 Date Submitted:    ${date}
 Insurance Type:    ${TYPE_LABEL[l.insurance_type]||l.insurance_type||'N/A'}
 Lead ID:           ${l.id||'N/A'}
+${l.lead_package?`Package:           ${l.lead_package}`:''}
 
 ── CONTACT ──────────────────────────────────────
 
@@ -410,38 +743,118 @@ Landing Page:      ${l.page_url||'nortefinancial.com/cotizar'}
   Norte Financial · nortefinancial.com
   Generated: ${new Date().toLocaleString('en-US')}
 ════════════════════════════════════════════════`;
-
-  document.getElementById('sheetContent').textContent=sheet;
-  document.getElementById('modalSub').textContent=`${name} · ${TYPE_LABEL[l.insurance_type]||l.insurance_type}`;
-  window._sheet=sheet;
-
-  const sub=encodeURIComponent(`Insurance Lead: ${name} — ${TYPE_LABEL[l.insurance_type]||l.insurance_type}`);
-  document.getElementById('mailtoLink').href=`mailto:?subject=${sub}&body=${encodeURIComponent(sheet)}`;
-  document.getElementById('modal').classList.add('open');
 }
-function closeModal(){document.getElementById('modal').classList.remove('open');}
-function copySheet(){
-  navigator.clipboard.writeText(window._sheet||'').then(()=>{
-    const b=document.querySelector('.btn-copy');
-    b.textContent='✓ Copied!'; setTimeout(()=>b.textContent='📋 Copy Text',2000);
+
+function copySheet(){ navigator.clipboard.writeText(window._sheet||'').then(()=>{ const b=document.querySelector('.btn-copy'); b.textContent='✓ Copied!'; setTimeout(()=>b.textContent='📋 Copy',2000); }); }
+
+// ── Package Modal ──────────────────────────────────
+function openPackageModal(useSelection=false){
+  pkgLeads = useSelection && selectedIds.size>0
+    ? filtered.filter(l=>selectedIds.has(l.id))
+    : filtered.filter(l=>!l.deleted);
+  document.getElementById('packageSub').textContent = `${pkgLeads.length} leads selected for this package`;
+  document.getElementById('pkgPreview').innerHTML = `<div style="font-size:12px;color:#475569;padding:8px;background:#0f1117;border-radius:6px">${pkgLeads.length} leads · Types: ${[...new Set(pkgLeads.map(l=>TYPE_LABEL[l.insurance_type]?.split(' ')[0]||l.insurance_type))].join(', ')}</div>`;
+  document.getElementById('pkgSheetWrap').style.display='none';
+  document.getElementById('pkgName').value='';
+  document.getElementById('pkgRecipient').value='';
+  document.getElementById('pkgPricePerLead').value='';
+  document.getElementById('pkgEmail').value='';
+  document.getElementById('modalPackage').classList.add('open');
+}
+
+function generatePackage(){
+  const name=document.getElementById('pkgName').value.trim()||'Lead Package';
+  const recipient=document.getElementById('pkgRecipient').value.trim()||'Recipient';
+  const ppl=parseFloat(document.getElementById('pkgPricePerLead').value)||0;
+  const email=document.getElementById('pkgEmail').value.trim();
+  const total=ppl*pkgLeads.length;
+  const date=new Date().toLocaleString('en-US',{dateStyle:'long'});
+
+  let sheet=`════════════════════════════════════════════════
+  NORTE FINANCIAL — LEAD PACKAGE
+  ${name}
+════════════════════════════════════════════════
+
+Date:              ${date}
+Prepared For:      ${recipient}
+Total Leads:       ${pkgLeads.length}
+Price Per Lead:    ${ppl>0?'$'+ppl.toFixed(2):'TBD'}
+Total Value:       ${total>0?'$'+total.toFixed(2):'TBD'}
+TCPA Compliant:    YES — All leads have provided consent
+
+────────────────────────────────────────────────
+  LEAD DETAILS
+────────────────────────────────────────────────
+
+`;
+  pkgLeads.forEach((l,i)=>{
+    const name2=[l.first_name,l.last_name].filter(Boolean).join(' ')||'N/A';
+    sheet+=`Lead #${i+1} · ${TYPE_LABEL[l.insurance_type]||l.insurance_type||'N/A'}
+  Name:      ${name2}
+  Phone:     ${l.phone||'N/A'}
+  Email:     ${l.email||'N/A'}
+  ZIP/State: ${l.zip||'N/A'} / ${l.state||'N/A'}
+  Language:  ${l.preferred_language==='es'?'Spanish':'English'}
+  ${l.insurance_type==='auto'&&l.vehicle_year?`Vehicle:   ${l.vehicle_year} ${l.vehicle_make||''}`:``}
+  TCPA:      ${l.tcpa_consent?'YES':'NO'} · ${new Date(l.tcpa_timestamp||l.created_at).toLocaleDateString('en-US')}
+  Lead ID:   ${l.id}
+
+`;
   });
-}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+  sheet+=`════════════════════════════════════════════════
+  Norte Financial · nortefinancial.com
+  ${email?'Contact: '+email:''}
+  Generated: ${new Date().toLocaleString('en-US')}
+════════════════════════════════════════════════`;
 
-// ── CSV Export ──
-function exportCSV(){
-  const cols=['id','created_at','status','insurance_type','first_name','last_name','phone','email','zip','state','vehicle_year','vehicle_make','has_license','current_insurance','preferred_language','best_time','tcpa_consent','tcpa_timestamp','utm_source','utm_medium','utm_campaign','contacted_at','sold_at','notes'];
-  const csv=[cols.join(','),...filtered.map(l=>cols.map(c=>{
+  document.getElementById('pkgSheet').textContent=sheet;
+  document.getElementById('pkgSheetWrap').style.display='block';
+  window._pkgSheet=sheet;
+  window._pkgLeads=pkgLeads;
+  const sub=encodeURIComponent(name+` — ${pkgLeads.length} Leads`);
+  document.getElementById('pkgMailto').href=`mailto:${email}?subject=${sub}&body=${encodeURIComponent(sheet)}`;
+}
+
+function copyPkg(){ navigator.clipboard.writeText(window._pkgSheet||'').then(()=>{ const b=document.querySelector('#pkgSheetWrap .btn-copy'); b.textContent='✓ Copied!'; setTimeout(()=>b.textContent='📋 Copy Package',2000); }); }
+
+function exportPkgCSV(){
+  if(!window._pkgLeads?.length) return;
+  exportCSVFromLeads(window._pkgLeads, 'norte-package-'+new Date().toISOString().slice(0,10)+'.csv');
+}
+
+// ── CSV Export ─────────────────────────────────────
+function exportCSV(){ exportCSVFromLeads(filtered, 'norte-leads-'+new Date().toISOString().slice(0,10)+'.csv'); }
+function exportSelectedCSV(){
+  const sel=filtered.filter(l=>selectedIds.has(l.id));
+  exportCSVFromLeads(sel||filtered, 'norte-selected-'+new Date().toISOString().slice(0,10)+'.csv');
+}
+function exportCSVFromLeads(leads, filename){
+  const cols=['id','created_at','status','insurance_type','first_name','last_name','phone','email','zip','state','vehicle_year','vehicle_make','has_license','current_insurance','preferred_language','best_time','tcpa_consent','tcpa_timestamp','utm_source','utm_medium','utm_campaign','revenue','sold_to','lead_package','contacted_at','sold_at','notes'];
+  const csv=[cols.join(','),...leads.map(l=>cols.map(c=>{
     let v=l[c]??''; v=String(v);
     return v.includes(',')||v.includes('"')||v.includes('\n')?`"${v.replace(/"/g,'""')}"`  :v;
   }).join(','))].join('\n');
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));
-  a.download=`norte-leads-${new Date().toISOString().slice(0,10)}.csv`;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  a.download=filename; document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
-document.getElementById('passInput').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+// ── Patch helper ───────────────────────────────────
+async function patchLead(id, body){
+  try{
+    await fetch(`${SUPA_URL}/rest/v1/leads?id=eq.${id}`,{
+      method:'PATCH',
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify(body)
+    });
+  }catch(e){ console.error('patch error',e); }
+}
+
+// ── Modal helpers ──────────────────────────────────
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{ if(e.target===o) o.classList.remove('open'); }));
+
+document.getElementById('passInput').addEventListener('keydown',e=>{ if(e.key==='Enter') doLogin(); });
 </script>
 </body>
 </html>
