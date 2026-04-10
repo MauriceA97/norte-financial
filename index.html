@@ -2224,10 +2224,11 @@ function closeMobileMenu() {
 }
 
 // ── Language System ──────────────────────────
-let currentLang = 'es';
+let currentLang = localStorage.getItem('norte_lang') || 'es';
 
 function setLang(lang) {
   currentLang = lang;
+  localStorage.setItem('norte_lang', lang);
   document.documentElement.lang = lang;
 
   document.querySelectorAll('[data-es]').forEach(el => {
@@ -2309,6 +2310,16 @@ function sendChip(el) {
 }
 
 // ── Nav scroll ───────────────────────────────
+// Auto-apply saved language on page load
+(function(){
+  if(currentLang !== 'es') setLang(currentLang);
+  else {
+    var btnEs = document.getElementById('btnEs');
+    var btnEn = document.getElementById('btnEn');
+    if(btnEs) btnEs.classList.add('active');
+    if(btnEn) btnEn.classList.remove('active');
+  }
+})();
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('nav');
   nav.classList.toggle('scrolled', window.scrollY > 20);
