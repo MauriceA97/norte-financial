@@ -532,6 +532,8 @@ function goStep(n) {
     const el = document.getElementById('step'+i);
     if(el) el.style.display = i===n ? 'block' : 'none';
   });
+  // Re-apply current language to newly visible step elements
+  setLang(currentLang);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -600,9 +602,12 @@ async function submitLead() {
 }
 
 // ── Nav / Lang ───────────────────────────────
-let currentLang = 'es';
+// Read saved language from localStorage — survives step navigation
+let currentLang = localStorage.getItem('norte_lang') || 'es';
+
 function setLang(lang) {
   currentLang = lang;
+  localStorage.setItem('norte_lang', lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-es]').forEach(el=>{
     const t = el.getAttribute('data-'+lang);
@@ -611,6 +616,16 @@ function setLang(lang) {
   document.getElementById('btnEs').classList.toggle('active', lang==='es');
   document.getElementById('btnEn').classList.toggle('active', lang==='en');
 }
+
+// Apply saved language immediately on page load
+(function initLang(){
+  if(currentLang !== 'es') {
+    setLang(currentLang);
+  } else {
+    document.getElementById('btnEs').classList.add('active');
+    document.getElementById('btnEn').classList.remove('active');
+  }
+})();
 function toggleMobileMenu(){
   document.getElementById('mobileDrawer').classList.toggle('open');
   document.getElementById('mobileToggle').classList.toggle('open');
