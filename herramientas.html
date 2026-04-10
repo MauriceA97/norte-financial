@@ -641,7 +641,7 @@ body {
 <style>
 .tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
 .tool-card{background:var(--white);border-radius:var(--r-xl);padding:36px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);transition:all 0.25s}
-.tool-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.tool-card:hover{box-shadow:var(--shadow-md)}
 .tool-card__header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
 .tool-card__icon{width:56px;height:56px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px}
 .tool-card__title{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:4px}
@@ -655,7 +655,37 @@ body {
 .calc-result{background:var(--forest);color:var(--white);border-radius:var(--r-md);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:12px}
 .calc-result__label{font-size:13px;color:var(--mist)}
 .calc-result__num{font-family:var(--font-display);font-size:26px;font-weight:500}
-@media(max-width:768px){.tools-grid{grid-template-columns:1fr}}
+
+/* ── Norte AI Chat Widget ── */
+.chat-widget{background:var(--parchment);border-radius:var(--r-lg);border:1px solid var(--border);overflow:hidden;margin-top:8px}
+.chat-header{display:flex;align-items:center;gap:12px;padding:14px 20px;background:var(--forest);border-bottom:1px solid rgba(255,255,255,0.08)}
+.chat-avatar{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-info{flex:1}
+.chat-info strong{display:block;font-size:14px;font-weight:500;color:var(--white)}
+.chat-info span{font-size:12px;color:var(--mist)}
+.chat-status{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mist)}
+.chat-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px 20px 0}
+.chat-chip{padding:7px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-full);font-family:var(--font-body);font-size:13px;color:var(--ink-muted);cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.chat-chip:hover{border-color:var(--verde);color:var(--forest);background:var(--frost)}
+.chat-body{min-height:200px;max-height:340px;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.chat-bubble{padding:12px 16px;border-radius:var(--r-lg);font-size:14px;line-height:1.6;max-width:88%}
+.chat-bubble--bot{background:var(--white);border:1px solid var(--border-light);color:var(--ink);border-bottom-left-radius:4px;align-self:flex-start;box-shadow:var(--shadow-sm)}
+.chat-bubble--user{background:var(--forest);color:var(--white);border-bottom-right-radius:4px;align-self:flex-end}
+.chat-dots{display:flex;gap:4px;align-items:center;padding:4px 0}
+.chat-dot-anim{width:7px;height:7px;background:var(--ink-light);border-radius:50%;animation:dotBounce 1.2s infinite}
+.chat-dot-anim:nth-child(2){animation-delay:0.2s}
+.chat-dot-anim:nth-child(3){animation-delay:0.4s}
+@keyframes dotBounce{0%,80%,100%{transform:scale(0.7);opacity:0.4}40%{transform:scale(1);opacity:1}}
+.chat-input-row{display:flex;align-items:center;gap:0;padding:12px 16px;background:var(--white);border-top:1px solid var(--border-light)}
+.chat-input-field{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--r-full);font-family:var(--font-body);font-size:14px;color:var(--ink);outline:none;background:var(--parchment);transition:border-color 0.18s}
+.chat-input-field:focus{border-color:var(--verde);background:var(--white)}
+.chat-send{width:38px;height:38px;background:var(--forest);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:8px;flex-shrink:0;transition:all 0.2s}
+.chat-send:hover{background:var(--forest-mid);transform:scale(1.05)}
+.powered-by{text-align:center;font-size:11px;color:var(--ink-light);padding:8px 16px 12px;background:var(--white)}
+
+@media(max-width:768px){.tools-grid{grid-template-columns:1fr}.chat-body{max-height:240px}}
 </style>
 </head>
 <body>
