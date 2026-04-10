@@ -523,6 +523,22 @@ if(tipoParam) window.addEventListener('DOMContentLoaded', ()=>{
 });
 
 function selectType(el, type) {
+  // Dedicated forms for all main lines
+  const formMap = {
+    auto:    'cotizar-auto.html',
+    hogar:   'cotizar-hogar.html',
+    vida:    'cotizar-vida.html',
+    salud:   'cotizar-salud.html',
+    negocio: 'cotizar-negocio.html'
+  };
+  if (formMap[type]) {
+    // Preserve language and any UTM params
+    const params = new URLSearchParams(location.search);
+    const dest = formMap[type] + (params.toString() ? '?' + params.toString() : '');
+    window.location.href = dest;
+    return;
+  }
+  // "otro" — keep the original inline flow
   document.querySelectorAll('.type-tile').forEach(t=>t.classList.remove('selected'));
   el.classList.add('selected');
   lead.insurance_type = type;
