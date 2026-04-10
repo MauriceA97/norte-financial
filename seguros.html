@@ -1859,6 +1859,16 @@ function setLang(lang) {
   const btnEn = document.getElementById('btnEn');
   if (btnEs) { btnEs.classList.toggle('active', lang === 'es'); btnEn.classList.toggle('active', lang === 'en'); }
 }
+// Auto-apply saved language on page load
+(function(){
+  if(currentLang !== 'es') setLang(currentLang);
+  else {
+    var btnEs = document.getElementById('btnEs');
+    var btnEn = document.getElementById('btnEn');
+    if(btnEs) btnEs.classList.add('active');
+    if(btnEn) btnEn.classList.remove('active');
+  }
+})();
 window.addEventListener('scroll', () => {
   document.getElementById('nav')?.classList.toggle('scrolled', window.scrollY > 20);
 });
