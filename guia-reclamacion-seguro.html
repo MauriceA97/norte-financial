@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title>Cómo hacer una reclamación de seguro en EE.UU. — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,163 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Guía Práctica · Reclamaciones · Paso a paso" data-en="Practical Guide · Claims · Step by step">Guía Práctica · Reclamaciones · Paso a paso</p>
+    <h1 class="page-hero__title" data-es="Cómo hacer una reclamación de seguro en EE.UU." data-en="How to File an Insurance Claim in the U.S.">Cómo hacer una reclamación de seguro en EE.UU.</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
-    </div>
+<style>
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light)}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:"+";font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta"><span class="article-tag">Guía práctica</span><span class="article-meta-item">🕐 6 min lectura</span><span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span></div>
+    <div id="content-es"><p class="article-intro">Después de un accidente o pérdida, saber exactamente qué hacer puede ser la diferencia entre recibir el pago completo o quedarte con menos de lo que mereces. Esta guía te lleva paso a paso.</p>
+<div class="article-toc"><h4>En esta guía</h4><ol>
+<li><a href="#inmediato">Qué hacer inmediatamente después del incidente</a></li>
+<li><a href="#notificar">Cómo notificar a tu aseguradora</a></li>
+<li><a href="#proceso">El proceso de reclamación paso a paso</a></li>
+<li><a href="#documentos">Documentos que debes reunir</a></li>
+<li><a href="#disputar">¿Qué hacer si no estás de acuerdo con el pago?</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol></div>
+<h2 class="article-h2" id="inmediato">Qué hacer inmediatamente después del incidente</h2>
+<h3 class="article-h3">En caso de accidente de auto</h3>
+<ol class="article-ol">
+<li>Verifica si hay lesionados y llama al 911 si es necesario</li>
+<li>Mueve los vehículos fuera del tráfico si es seguro hacerlo</li>
+<li>Intercambia información: nombre, teléfono, aseguradora, número de póliza y placa del otro conductor</li>
+<li><strong>Toma fotos y videos de todo:</strong> daños a ambos vehículos, posición de los autos, señales de tráfico, condiciones del camino</li>
+<li>Obtén información de testigos si los hay</li>
+<li>NO admitas culpa aunque creas que fue tu error</li>
+</ol>
+<h3 class="article-h3">En caso de daño a la propiedad (hogar)</h3>
+<ol class="article-ol">
+<li>Asegura la seguridad de tu familia primero</li>
+<li>Documenta los daños con fotos y videos ANTES de hacer reparaciones de emergencia</li>
+<li>Haz reparaciones temporales solo si son necesarias para prevenir más daños (guarda todos los recibos)</li>
+<li>No tires nada — tu aseguradora necesita ver los daños</li>
+<li>Llama a tu aseguradora lo antes posible</li>
+</ol>
+<div class="callout amber"><strong>Error crítico a evitar</strong><p>Hacer reparaciones permanentes antes de que el ajustador (adjuster) de la aseguradora evalúe los daños. Esto puede resultar en la denegación de tu reclamación.</p></div>
+<h2 class="article-h2" id="notificar">Cómo notificar a tu aseguradora</h2>
+<p class="article-p">Notifica a tu aseguradora lo antes posible — la mayoría de las pólizas requieren notificación "oportuna". Las formas de notificar:</p>
+<ul class="article-ul">
+<li><strong>App móvil:</strong> La mayoría de las grandes aseguradoras tienen apps donde puedes iniciar una reclamación directamente</li>
+<li><strong>Teléfono:</strong> El número está en tu tarjeta de seguro y en tu póliza</li>
+<li><strong>Portal web:</strong> Muchas aseguradoras permiten reclamaciones 24/7 en línea</li>
+<li><strong>Tu agente:</strong> Si tienes un agente independiente, puede ayudarte a navegar el proceso</li>
+</ul>
+<h2 class="article-h2" id="proceso">El proceso de reclamación paso a paso</h2>
+<ol class="article-ol">
+<li><strong>Presentación (Filing):</strong> Notificas la reclamación. Recibes un número de reclamación y se asigna un ajustador.</li>
+<li><strong>Investigación:</strong> El ajustador investiga — puede contactarte para información adicional, inspeccionar el vehículo o propiedad.</li>
+<li><strong>Evaluación:</strong> El ajustador determina la extensión de los daños y cuánto pagará el seguro.</li>
+<li><strong>Oferta de pago:</strong> Recibes una oferta de liquidación. Tienes derecho a negociar.</li>
+<li><strong>Pago:</strong> Si aceptas, recibes el pago menos tu deducible.</li>
+</ol>
+<h2 class="article-h2" id="documentos">Documentos que debes reunir</h2>
+<ul class="article-ul">
+<li>Número de póliza y datos de tu aseguradora</li>
+<li>Reporte de policía o bomberos (si aplicable)</li>
+<li>Fotos y videos del daño</li>
+<li>Estimados de reparación de 2-3 talleres o contratistas</li>
+<li>Recibos de gastos relacionados (hotel, auto de renta, reparaciones temporales)</li>
+<li>Lista de objetos dañados o robados con valor estimado (para hogar)</li>
+<li>Registro médico y facturas si hay lesiones</li>
+</ul>
+<h2 class="article-h2" id="disputar">¿Qué hacer si no estás de acuerdo con el pago?</h2>
+<p class="article-p">Si crees que la oferta de tu aseguradora es injusta, tienes opciones:</p>
+<ul class="article-ul">
+<li><strong>Negociar directamente:</strong> Presenta estimados independientes que respalden tu posición</li>
+<li><strong>Solicitar apelación interna:</strong> Pide que otro ajustador revise tu caso</li>
+<li><strong>Contratar un public adjuster:</strong> Un ajustador independiente que trabaja para ti (cobra 10-20% del pago)</li>
+<li><strong>Departamento de seguros de Florida:</strong> Presenta una queja ante el Florida Department of Financial Services</li>
+<li><strong>Mediación:</strong> Proceso alternativo de resolución de disputas disponible en Florida</li>
+</ul>
+<div class="inline-cta"><div class="inline-cta__text"><strong>¿Tienes el seguro correcto?</strong><p>Antes de que ocurra algo, asegúrate de tener la cobertura adecuada</p></div><a href="cotizar.html" class="btn-amber">Revisar mi cobertura →</a></div>
+<div class="faq-section"><h2 class="article-h2">Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Cuánto tiempo tiene mi aseguradora para pagar mi reclamación?</div><div class="faq-a">En Florida, la aseguradora debe acusar recibo de la reclamación dentro de 14 días, tomar una decisión en 90 días, y pagar dentro de 20 días de acordar el monto. Hay penalidades por pagos tardíos sin causa justificada.</div></div>
+<div class="faq-item"><div class="faq-q">¿Presentar una reclamación sube mi prima?</div><div class="faq-a">Posiblemente. Depende de la aseguradora, tipo de reclamación y tu historial. Reclamaciones por tu culpa (at-fault) generalmente suben más las primas que las no-fault. Para daños pequeños puede convenir más pagar de tu bolsillo y no hacer reclamación.</div></div>
+<div class="faq-item"><div class="faq-q">¿Necesito un abogado para mi reclamación?</div><div class="faq-a">Para reclamaciones simples, no. Para situaciones complejas con lesiones graves, disputas de cobertura, o si la aseguradora niega tu reclamación injustamente, un abogado de seguros (de preferencia especializado en bad faith) puede ser valioso.</div></div>
+</div></div>
+    <div id="content-en" style="display:none"><p class="article-intro">After an accident or loss, knowing exactly what to do can be the difference between receiving a full payment or getting less than you deserve. This guide takes you through the process step by step.</p>
+<h2 class="article-h2">What to do immediately after an incident</h2>
+<h3 class="article-h3">Auto accident</h3>
+<ol class="article-ol">
+<li>Check for injuries and call 911 if needed</li>
+<li>Exchange information: name, phone, insurer, policy number, license plate</li>
+<li>Take photos and videos of everything: damage to both vehicles, road conditions</li>
+<li>Get witness information if available</li>
+<li>Do NOT admit fault even if you think it was your error</li>
+</ol>
+<div class="callout amber"><strong>Critical mistake to avoid</strong><p>Making permanent repairs before the insurance adjuster evaluates the damage. This can result in denial of your claim.</p></div>
+<h2 class="article-h2">The claims process step by step</h2>
+<ol class="article-ol">
+<li><strong>Filing:</strong> You notify the claim. You receive a claim number and an adjuster is assigned.</li>
+<li><strong>Investigation:</strong> The adjuster investigates — may contact you for additional information.</li>
+<li><strong>Evaluation:</strong> The adjuster determines the extent of damages and how much the insurance will pay.</li>
+<li><strong>Settlement offer:</strong> You receive a settlement offer. You have the right to negotiate.</li>
+<li><strong>Payment:</strong> If you accept, you receive payment minus your deductible.</li>
+</ol>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Do you have the right coverage?</strong><p>Before something happens, make sure you have adequate coverage</p></div><a href="cotizar.html" class="btn-amber">Review my coverage →</a></div>
+<div class="faq-section"><h2 class="article-h2">FAQ</h2>
+<div class="faq-item"><div class="faq-q">How long does my insurer have to pay my claim in Florida?</div><div class="faq-a">In Florida, the insurer must acknowledge receipt within 14 days, make a coverage decision within 90 days, and pay within 20 days of agreeing on an amount.</div></div>
+<div class="faq-item"><div class="faq-q">Will filing a claim raise my premium?</div><div class="faq-a">Possibly. At-fault claims generally raise premiums more than no-fault. For small damages, it may be better to pay out of pocket and not file a claim.</div></div>
+</div></div>
+    <div class="article-end-cta"><a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a></div>
   </div>
-</section>
+</section><script>
+function switchArticleLang(lang){
+  var es=document.getElementById("content-es");
+  var en=document.getElementById("content-en");
+  if(es) es.style.display=lang==="es"?"block":"none";
+  if(en) en.style.display=lang==="en"?"block":"none";
+}
+var _orig=window.setLang;
+window.setLang=function(lang){_orig(lang);switchArticleLang(lang);};
+switchArticleLang(localStorage.getItem("norte_lang")||"es");
+document.querySelectorAll(".faq-q").forEach(function(q){
+  q.addEventListener("click",function(){
+    var item=q.closest(".faq-item"),open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function(i){i.classList.remove("open");});
+    if(!open) item.classList.add("open");
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>

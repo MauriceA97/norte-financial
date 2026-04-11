@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title>ACA, Medicaid y CHIP en español: guía 2025 — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,143 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Seguro Médico · ACA · Medicaid · CHIP" data-en="Health Insurance · ACA · Medicaid · CHIP">Seguro Médico · ACA · Medicaid · CHIP</p>
+    <h1 class="page-hero__title" data-es="ACA, Medicaid y CHIP en español: guía 2025" data-en="ACA, Medicaid & CHIP in Spanish: 2025 Guide">ACA, Medicaid y CHIP en español: guía 2025</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
-    </div>
+<style>
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light)}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:"+";font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta"><span class="article-tag">Salud · ACA · Medicaid</span><span class="article-meta-item">🕐 9 min lectura</span><span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span></div>
+    <div id="content-es"><p class="article-intro">Millones de hispanos en EE.UU. no tienen seguro médico porque creen que no califican o que es demasiado caro. Esta guía te explica todas las opciones disponibles en 2025 — muchas son gratuitas o casi gratuitas.</p>
+<div class="article-toc"><h4>En esta guía</h4><ol>
+<li><a href="#aca">¿Qué es el ACA (Obamacare)?</a></li>
+<li><a href="#subsidios">Subsidios: cuánto puedes ahorrar</a></li>
+<li><a href="#medicaid">Medicaid: si tu ingreso es bajo</a></li>
+<li><a href="#chip">CHIP: para los niños</a></li>
+<li><a href="#inmigrantes">Opciones según tu estatus migratorio</a></li>
+<li><a href="#inscripcion">Cuándo y cómo inscribirse</a></li>
+</ol></div>
+<h2 class="article-h2" id="aca">¿Qué es el ACA (Affordable Care Act)?</h2>
+<p class="article-p">El ACA, conocido como "Obamacare", es la ley federal que creó el mercado de seguros de salud (Health Insurance Marketplace). A través del Marketplace, puedes comprar seguro de salud privado con posibilidad de recibir subsidios del gobierno para reducir el costo.</p>
+<div class="callout"><strong>Punto clave</strong><p>Las aseguradoras NO pueden negarte cobertura por condiciones preexistentes. Ni cobrarte más por tener enfermedades previas.</p></div>
+<h2 class="article-h2" id="subsidios">Subsidios: cuánto puedes ahorrar en 2025</h2>
+<p class="article-p">Si tus ingresos están entre el 100% y 400% del nivel federal de pobreza (FPL), puedes recibir subsidios que reducen significativamente tu prima mensual. Con las mejoras de la American Rescue Plan, muchas familias con ingresos moderados pagan muy poco.</p>
+<table class="data-table">
+<tr><th>Tamaño del hogar</th><th>Ingreso máximo para subsidio (400% FPL 2025)</th></tr>
+<tr><td>1 persona</td><td>$60,240/año</td></tr>
+<tr><td>2 personas</td><td>$81,760/año</td></tr>
+<tr><td>3 personas</td><td>$103,280/año</td></tr>
+<tr><td>4 personas</td><td>$124,800/año</td></tr>
+</table>
+<div class="callout amber"><strong>El Plan Silver y los subsidios adicionales (CSR)</strong><p>Si tu ingreso es entre 100-250% del FPL, el Plan Silver del Marketplace te da subsidios adicionales que reducen no solo la prima sino también los deducibles y copagos. Puede ser la mejor opción disponible.</p></div>
+<h2 class="article-h2" id="medicaid">Medicaid: seguro gratuito si tu ingreso es bajo</h2>
+<p class="article-p">Medicaid es el programa de salud del gobierno para personas con ingresos bajos. En la mayoría de los estados, si tu ingreso familiar está por debajo del 138% del FPL, calificas para Medicaid — que es completamente gratuito o casi sin costo.</p>
+<ul class="article-ul">
+<li><strong>Adultos:</strong> En estados que expandieron Medicaid, adultos hasta el 138% FPL califican</li>
+<li><strong>Mujeres embarazadas:</strong> Cobertura especial con ingresos más altos permitidos</li>
+<li><strong>Niños:</strong> Generalmente hasta el 200-300% FPL (ver CHIP abajo)</li>
+<li><strong>Florida:</strong> Florida no expandió completamente Medicaid — hay una "brecha" para adultos sin hijos con ingresos muy bajos</li>
+</ul>
+<h2 class="article-h2" id="chip">CHIP: seguro de salud para tus hijos</h2>
+<p class="article-p">El Children's Health Insurance Program (CHIP) cubre a niños de familias con ingresos demasiado altos para Medicaid pero que no pueden pagar un seguro privado. En Florida, KidCare cubre a niños hasta los 18 años cuyas familias ganan hasta el 200% del FPL.</p>
+<h2 class="article-h2" id="inmigrantes">Opciones según tu estatus migratorio</h2>
+<table class="data-table">
+<tr><th>Estatus</th><th>ACA/Marketplace</th><th>Medicaid</th><th>CHIP</th></tr>
+<tr><td>Ciudadano / Residente permanente</td><td>✓ Sí</td><td>✓ Sí (5 años espera para Medicaid)</td><td>✓ Sí</td></tr>
+<tr><td>DACA</td><td>✗ No</td><td>✗ No (federal)</td><td>✗ No (federal)</td></tr>
+<tr><td>TPS</td><td>✓ Sí</td><td>Varía por estado</td><td>Varía por estado</td></tr>
+<tr><td>Visa de trabajo válida</td><td>✓ Sí</td><td>Limitado</td><td>Varía</td></tr>
+<tr><td>Sin documentos</td><td>✗ No</td><td>Solo emergencias</td><td>Varía por estado</td></tr>
+</table>
+<h2 class="article-h2" id="inscripcion">Cuándo y cómo inscribirse</h2>
+<p class="article-p"><strong>Período de inscripción abierta (Open Enrollment):</strong> Del 1 de noviembre al 15 de enero del año siguiente. Este es el período para inscribirse o cambiar tu plan.</p>
+<p class="article-p"><strong>Período especial de inscripción (Special Enrollment Period):</strong> Puedes inscribirte fuera del período abierto si tienes un "evento calificante":</p>
+<ul class="article-ul">
+<li>Perdiste tu seguro de trabajo</li>
+<li>Te casaste o divorciaste</li>
+<li>Tuviste o adoptaste un hijo</li>
+<li>Te mudaste a otro estado</li>
+<li>Tu ingreso cambió significativamente</li>
+</ul>
+<div class="inline-cta"><div class="inline-cta__text"><strong>¿Necesitas ayuda para inscribirte?</strong><p>Nuestros agentes bilingües te guían por el proceso completamente gratis</p></div><a href="cotizar-salud.html" class="btn-amber">Encontrar mi plan →</a></div>
+<div class="faq-section"><h2 class="article-h2">Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Hay multa por no tener seguro médico?</div><div class="faq-a">A nivel federal, desde 2019 no hay penalidad por no tener seguro. Sin embargo, algunos estados sí tienen su propio mandato y penalidades. En Florida no hay penalidad estatal.</div></div>
+<div class="faq-item"><div class="faq-q">¿Puedo usar el Marketplace si trabajo por cuenta propia (self-employed)?</div><div class="faq-a">Sí. El Marketplace es especialmente útil para trabajadores independientes y dueños de pequeños negocios que no tienen seguro de empleador. Puedes deducir las primas como gasto de negocio.</div></div>
+<div class="faq-item"><div class="faq-q">¿El Medicaid cubre los dientes y la vista?</div><div class="faq-a">Generalmente sí para niños (CHIP incluye dental y visión). Para adultos, la cobertura dental y de visión en Medicaid varía por estado. En Florida, Medicaid para adultos incluye servicios dentales de emergencia y atención de emergencia oftalmológica.</div></div>
+</div></div>
+    <div id="content-en" style="display:none"><p class="article-intro">Millions of Hispanics in the U.S. don't have health insurance because they believe they don't qualify or it's too expensive. This guide explains all available 2025 options — many are free or nearly free.</p>
+<h2 class="article-h2">What is the ACA (Obamacare)?</h2>
+<p class="article-p">The ACA created the Health Insurance Marketplace where you can buy private health insurance with possible government subsidies to reduce costs. Insurers CANNOT deny you coverage for pre-existing conditions.</p>
+<h2 class="article-h2">Subsidies: how much can you save in 2025</h2>
+<p class="article-p">If your income is between 100% and 400% of the Federal Poverty Level (FPL), you can receive subsidies that significantly reduce your monthly premium.</p>
+<table class="data-table">
+<tr><th>Household size</th><th>Max income for subsidy (400% FPL 2025)</th></tr>
+<tr><td>1 person</td><td>$60,240/year</td></tr>
+<tr><td>2 people</td><td>$81,760/year</td></tr>
+<tr><td>4 people</td><td>$124,800/year</td></tr>
+</table>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Find your health plan</strong><p>Bilingual agents guide you through the process for free</p></div><a href="cotizar-salud.html" class="btn-amber">Find my plan →</a></div>
+<div class="faq-section"><h2 class="article-h2">FAQ</h2>
+<div class="faq-item"><div class="faq-q">Is there a penalty for not having health insurance?</div><div class="faq-a">At the federal level, since 2019 there is no penalty for not having insurance. Florida has no state penalty either.</div></div>
+<div class="faq-item"><div class="faq-q">Can I use the Marketplace if I'm self-employed?</div><div class="faq-a">Yes. The Marketplace is especially useful for self-employed workers and small business owners. You can deduct premiums as a business expense.</div></div>
+</div></div>
+    <div class="article-end-cta"><a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a></div>
   </div>
-</section>
+</section><script>
+function switchArticleLang(lang){
+  var es=document.getElementById("content-es");
+  var en=document.getElementById("content-en");
+  if(es) es.style.display=lang==="es"?"block":"none";
+  if(en) en.style.display=lang==="en"?"block":"none";
+}
+var _orig=window.setLang;
+window.setLang=function(lang){_orig(lang);switchArticleLang(lang);};
+switchArticleLang(localStorage.getItem("norte_lang")||"es");
+document.querySelectorAll(".faq-q").forEach(function(q){
+  q.addEventListener("click",function(){
+    var item=q.closest(".faq-item"),open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function(i){i.classList.remove("open");});
+    if(!open) item.classList.add("open");
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>

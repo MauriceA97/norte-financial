@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title>Seguro de vida para hispanos en EE.UU. — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,143 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Seguro de Vida · Para tu familia" data-en="Life Insurance · For your family">Seguro de Vida · Para tu familia</p>
+    <h1 class="page-hero__title" data-es="Seguro de vida para hispanos en EE.UU." data-en="Life Insurance for Hispanics in the U.S.">Seguro de vida para hispanos en EE.UU.</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
-    </div>
+<style>
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light)}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:"+";font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta"><span class="article-tag">Vida · Para tu familia</span><span class="article-meta-item">🕐 6 min lectura</span><span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span></div>
+    <div id="content-es"><p class="article-intro">Solo el 43% de los hispanos en EE.UU. tiene seguro de vida, comparado con el 65% de la población general. Esta guía desmonta los mitos y te explica cómo proteger a tu familia por menos de lo que imaginas.</p>
+<div class="article-toc"><h4>En esta guía</h4><ol>
+<li><a href="#por-que">¿Por qué tan pocos hispanos tienen seguro de vida?</a></li>
+<li><a href="#tipos">Tipos de seguro de vida explicados</a></li>
+<li><a href="#cuanto">¿Cuánto seguro de vida necesitas?</a></li>
+<li><a href="#costos">Costos reales: ejemplos prácticos</a></li>
+<li><a href="#inmigrantes">¿Pueden los inmigrantes obtener seguro de vida?</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol></div>
+<h2 class="article-h2" id="por-que">¿Por qué tan pocos hispanos tienen seguro de vida?</h2>
+<p class="article-p">Los estudios muestran que la brecha de seguro de vida en la comunidad hispana no es por falta de interés — sino por barreras de información, idioma y confianza. Los mitos más comunes que previenen a las familias hispanas de asegurarse:</p>
+<ul class="article-ul">
+<li><strong>"Es muy caro"</strong> — Un hombre de 35 años en buena salud puede obtener $500,000 de seguro de término por tan solo $25-$35 al mes</li>
+<li><strong>"No califico por mi estatus migratorio"</strong> — Los residentes permanentes (green card) y muchos titulares de visa pueden obtener seguro de vida. Incluso personas con ITIN pueden calificar con algunas aseguradoras.</li>
+<li><strong>"Mi empleador me da seguro"</strong> — El seguro del empleador generalmente es solo 1-2 veces tu salario anual, lo cual es insuficiente para proteger a una familia. Y desaparece si cambias de trabajo.</li>
+<li><strong>"Soy joven y sano, no lo necesito"</strong> — Precisamente por eso es el mejor momento para comprarlo. El costo aumenta significativamente con la edad.</li>
+</ul>
+<h2 class="article-h2" id="tipos">Tipos de seguro de vida: explicados simplemente</h2>
+<h3 class="article-h3">Seguro de término (Term Life) — el más popular</h3>
+<p class="article-p">Cobertura por un período específico: 10, 15, 20 o 30 años. Si falleces durante ese período, tus beneficiarios reciben el monto pactado. Si no falleces, la póliza expira sin valor. <strong>La opción más económica y directa.</strong> Ideal para cubrir la hipoteca, la educación de los hijos y el ingreso familiar.</p>
+<h3 class="article-h3">Seguro de vida entera (Whole Life)</h3>
+<p class="article-p">Cobertura permanente de por vida, con un componente de ahorro (valor en efectivo) que crece con el tiempo. Las primas son significativamente más altas que el seguro de término, pero la cobertura nunca expira. Útil para planificación patrimonial y estrategias fiscales.</p>
+<h3 class="article-h3">Universal Life (Vida Universal)</h3>
+<p class="article-p">Similar al whole life pero con más flexibilidad en primas y cobertura. Puede vincular el crecimiento del valor en efectivo a índices de mercado (IUL - Indexed Universal Life). Popular entre quienes buscan combinar protección con acumulación de riqueza a largo plazo.</p>
+<table class="data-table">
+<tr><th>Tipo</th><th>Duración</th><th>Prima mensual aprox. (35 años, hombre, $500K)</th><th>Ideal para</th></tr>
+<tr><td>Term (20 años)</td><td>20 años fijos</td><td>$28-$45</td><td>Familias jóvenes con hipoteca</td></tr>
+<tr><td>Whole Life</td><td>Permanente</td><td>$350-$550</td><td>Planificación patrimonial</td></tr>
+<tr><td>Universal Life</td><td>Permanente</td><td>$150-$300</td><td>Acumulación y protección</td></tr>
+</table>
+<h2 class="article-h2" id="cuanto">¿Cuánto seguro de vida necesitas?</h2>
+<p class="article-p">La regla general es: <strong>10 a 12 veces tu ingreso anual</strong>. Pero la fórmula más precisa considera:</p>
+<ul class="article-ul">
+<li>Reemplazar tu ingreso para tu familia por 10-15 años</li>
+<li>Pagar la hipoteca completamente</li>
+<li>Financiar la educación universitaria de cada hijo (~$80,000-$150,000 por hijo)</li>
+<li>Cubrir deudas existentes</li>
+<li>Gastos funerales y finales (~$15,000-$25,000)</li>
+</ul>
+<div class="callout"><strong>Ejemplo real</strong><p>Carlos, 38 años, ingreso anual $65,000, hipoteca de $250,000, dos hijos. Debería considerar una póliza de al menos $1,000,000 — que con seguro de término de 20 años puede costar $60-$80 al mes.</p></div>
+<h2 class="article-h2" id="inmigrantes">¿Pueden los inmigrantes obtener seguro de vida en EE.UU.?</h2>
+<p class="article-p">Sí, en muchos casos. Aquí la guía según estatus migratorio:</p>
+<ul class="article-ul">
+<li><strong>Residentes permanentes (Green Card):</strong> Acceso completo al mercado de seguros de vida, igual que ciudadanos.</li>
+<li><strong>Titulares de visa de trabajo (H1-B, L1, TN, E2):</strong> La mayoría de las aseguradoras los aceptan si llevan suficiente tiempo en EE.UU. (generalmente 2+ años).</li>
+<li><strong>DACA y TPS:</strong> Algunas aseguradoras aceptan. Se requiere explorar opciones con agentes especializados.</li>
+<li><strong>Sin documentos:</strong> Muy limitado. Algunas aseguradoras de vida final de gasto (burial insurance) son más accesibles.</li>
+</ul>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Protege a tu familia hoy</strong><p>Cotizaciones de seguro de vida desde $15/mes con agentes bilingües</p></div><a href="cotizar-vida.html" class="btn-amber">Cotizar seguro de vida →</a></div>
+<div class="faq-section"><h2 class="article-h2">Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Necesito examen médico para obtener seguro de vida?</div><div class="faq-a">Depende del tipo y monto. Para pólizas de hasta $500,000 muchas aseguradoras ofrecen "no-exam" policies con respuestas a un cuestionario de salud. Para montos más altos generalmente se requiere un examen médico básico.</div></div>
+<div class="faq-item"><div class="faq-q">¿El beneficiario tiene que pagar impuestos sobre el pago del seguro de vida?</div><div class="faq-a">En general, los pagos de seguro de vida por fallecimiento son libres de impuestos federales para el beneficiario. Sin embargo, si el pago genera intereses, esos sí pueden estar sujetos a impuestos. Consulta un asesor fiscal para tu situación específica.</div></div>
+<div class="faq-item"><div class="faq-q">¿Puedo poner a mis hijos como beneficiarios?</div><div class="faq-a">Puedes nombrarlos, pero si son menores de edad no pueden recibir directamente los fondos. Se recomienda establecer un fideicomiso o designar a un adulto de confianza como custodio.</div></div>
+</div></div>
+    <div id="content-en" style="display:none"><p class="article-intro">Only 43% of Hispanics in the U.S. have life insurance, compared to 65% of the general population. This guide debunks the myths and explains how to protect your family for less than you think.</p>
+<h2 class="article-h2">Types of life insurance explained simply</h2>
+<h3 class="article-h3">Term Life — the most popular</h3>
+<p class="article-p">Coverage for a specific period: 10, 15, 20, or 30 years. If you die during that period, your beneficiaries receive the agreed amount. The most affordable and straightforward option — ideal for covering a mortgage, children's education, and family income replacement.</p>
+<h3 class="article-h3">Whole Life</h3>
+<p class="article-p">Permanent lifetime coverage with a cash value component that grows over time. Premiums are significantly higher than term life, but coverage never expires. Useful for estate planning.</p>
+<table class="data-table">
+<tr><th>Type</th><th>Duration</th><th>Approx. monthly premium (age 35, male, $500K)</th></tr>
+<tr><td>Term (20 years)</td><td>20 fixed years</td><td>$28-$45</td></tr>
+<tr><td>Whole Life</td><td>Permanent</td><td>$350-$550</td></tr>
+<tr><td>Universal Life</td><td>Permanent</td><td>$150-$300</td></tr>
+</table>
+<h2 class="article-h2">How much life insurance do you need?</h2>
+<p class="article-p">The general rule: <strong>10 to 12 times your annual income</strong>. A more precise formula includes: replacing your income for 10-15 years, paying off the mortgage, funding each child's college education (~$80K-$150K), covering existing debts, and final expenses (~$15K-$25K).</p>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Protect your family today</strong><p>Life insurance quotes from $15/month with bilingual agents</p></div><a href="cotizar-vida.html" class="btn-amber">Get life insurance quote →</a></div>
+<div class="faq-section"><h2 class="article-h2">FAQ</h2>
+<div class="faq-item"><div class="faq-q">Do I need a medical exam to get life insurance?</div><div class="faq-a">It depends on the type and amount. For policies up to $500,000, many insurers offer "no-exam" policies with a health questionnaire. Higher amounts generally require a basic medical exam.</div></div>
+<div class="faq-item"><div class="faq-q">Does the beneficiary pay taxes on life insurance proceeds?</div><div class="faq-a">Generally, life insurance death benefits are federal income tax-free for the beneficiary. Consult a tax advisor for your specific situation.</div></div>
+</div></div>
+    <div class="article-end-cta"><a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a></div>
   </div>
-</section>
+</section><script>
+function switchArticleLang(lang){
+  var es=document.getElementById("content-es");
+  var en=document.getElementById("content-en");
+  if(es) es.style.display=lang==="es"?"block":"none";
+  if(en) en.style.display=lang==="en"?"block":"none";
+}
+var _orig=window.setLang;
+window.setLang=function(lang){_orig(lang);switchArticleLang(lang);};
+switchArticleLang(localStorage.getItem("norte_lang")||"es");
+document.querySelectorAll(".faq-q").forEach(function(q){
+  q.addEventListener("click",function(){
+    var item=q.closest(".faq-item"),open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function(i){i.classList.remove("open");});
+    if(!open) item.classList.add("open");
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>

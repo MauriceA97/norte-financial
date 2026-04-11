@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title>Seguro de auto sin licencia en Florida — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,138 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Seguro de Auto · Sin Licencia · Florida" data-en="Auto Insurance · No License · Florida">Seguro de Auto · Sin Licencia · Florida</p>
+    <h1 class="page-hero__title" data-es="Seguro de auto sin licencia en Florida" data-en="Car Insurance Without a License in Florida">Seguro de auto sin licencia en Florida</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
+
+<style>
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light)}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none;transition:color 0.18s}
+.article-toc li a:hover{color:var(--forest)}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:"+";font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="article-tag">Auto · Sin licencia</span>
+      <span class="article-meta-item">🕐 6 min lectura</span>
+      <span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span>
+    </div>
+    <div id="content-es"><p class="article-intro">Miles de hispanos en Florida manejan sin licencia americana. Aquí te explicamos exactamente qué opciones tienes, qué aseguradoras lo aceptan, y cómo protegerte legalmente.</p>
+<div class="article-toc"><h4>En esta guía</h4><ol>
+<li><a href="#si-posible">¿Es posible asegurar un auto sin licencia?</a></li>
+<li><a href="#opciones">Tus opciones reales en Florida</a></li>
+<li><a href="#requisitos">¿Qué necesitas para asegurarte?</a></li>
+<li><a href="#costos">Costos reales del seguro sin licencia</a></li>
+<li><a href="#alternativas">Alternativas legales: ITIN, licencia extranjera</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol></div>
+<h2 class="article-h2" id="si-posible">¿Es posible asegurar un auto sin licencia americana?</h2>
+<p class="article-p">Sí. En Florida es posible obtener seguro de auto sin licencia americana. No es fácil, pero existen aseguradoras que trabajan con conductores en esta situación, especialmente en mercados con alta población hispana como Miami-Dade, Broward y Orange County.</p>
+<div class="callout"><strong>Lo que sí puedes hacer</strong><p>Asegurar el vehículo a nombre de alguien con licencia (cónyuge, familiar) mientras tú eres conductor adicional. Esto es completamente legal y es una de las opciones más usadas.</p></div>
+<h2 class="article-h2" id="opciones">Tus opciones reales en Florida</h2>
+<h3 class="article-h3">Opción 1: Asegurar con licencia extranjera</h3>
+<p class="article-p">Florida reconoce licencias extranjeras válidas. Si tienes una licencia vigente de México, Colombia, Venezuela, Cuba u otro país, muchas aseguradoras la aceptan. Carriers como Progressive, GEICO y algunas aseguradoras regionales de FL trabajan con licencias internacionales.</p>
+<h3 class="article-h3">Opción 2: Seguro con ITIN (sin SSN)</h3>
+<p class="article-p">Algunas aseguradoras aceptan el ITIN (Individual Taxpayer Identification Number) en lugar del Social Security Number. Esto amplía significativamente las opciones disponibles.</p>
+<h3 class="article-h3">Opción 3: Póliza a nombre de un familiar con licencia</h3>
+<p class="article-p">El vehículo se asegura a nombre de tu cónyuge, padres u otro familiar con licencia americana, y tú apareces como conductor adicional. El titular debe ser el propietario legal del vehículo.</p>
+<h3 class="article-h3">Opción 4: Agentes especializados en mercado hispano</h3>
+<p class="article-p">Muchos agentes independientes en Miami, Orlando y Tampa tienen experiencia específica con clientes sin documentación completa y saben qué carriers aceptar en cada situación.</p>
+<table class="data-table">
+<tr><th>Opción</th><th>Requiere</th><th>Costo aproximado</th></tr>
+<tr><td>Licencia extranjera</td><td>Licencia vigente del país de origen</td><td>$120-$250/mes</td></tr>
+<tr><td>ITIN + licencia extranjera</td><td>ITIN y licencia extranjera</td><td>$140-$280/mes</td></tr>
+<tr><td>Póliza a nombre de familiar</td><td>Familiar con licencia y ser co-propietario</td><td>$90-$180/mes</td></tr>
+</table>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Habla con un agente bilingüe</strong><p>Te encontramos la mejor opción para tu situación específica</p></div><a href="cotizar-auto.html" class="btn-amber">Cotizar sin licencia →</a></div>
+<h2 class="article-h2" id="requisitos">¿Qué necesitas para asegurarte?</h2>
+<ul class="article-ul">
+<li><strong>Identificación válida:</strong> Pasaporte vigente, matrícula consular, o licencia del país de origen</li>
+<li><strong>Datos del vehículo:</strong> VIN, año, marca, modelo del auto</li>
+<li><strong>Dirección en Florida:</strong> Donde se guarda el vehículo habitualmente</li>
+<li><strong>Historial de manejo:</strong> Si tienes historial de seguro previo (en EE.UU. o en tu país), ayuda a bajar la prima</li>
+</ul>
+<h2 class="article-h2" id="costos">Costos reales del seguro sin licencia</h2>
+<p class="article-p">Sin licencia americana, puedes esperar pagar entre un 20% y 50% más que alguien con licencia completa. En Florida, el seguro mínimo requerido (PIP + PDL) puede costar entre $100 y $200 al mes para alguien sin licencia americana.</p>
+<div class="callout amber"><strong>El mínimo legal en Florida (PIP)</strong><p>Florida requiere Personal Injury Protection (PIP) de $10,000 y Property Damage Liability (PDL) de $10,000. Este es el mínimo indispensable para manejar legalmente — pero puede no ser suficiente para cubrir daños reales.</p></div>
+<div class="faq-section"><h2 class="article-h2">Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Puedo manejar en Florida con licencia de México?</div><div class="faq-a">Sí, Florida reconoce licencias extranjeras válidas para visitantes temporales y residentes con visa vigente. Si eres residente permanente o ciudadano, debes obtener una licencia de Florida dentro de 30 días de establecer residencia.</div></div>
+<div class="faq-item"><div class="faq-q">¿Me puede multar la policía si tengo seguro pero no licencia americana?</div><div class="faq-a">Tener seguro es obligatorio. No tener licencia de Florida cuando debes tenerla es una violación separada. Es importante regularizar tu situación migratoria y de licencia lo antes posible.</div></div>
+<div class="faq-item"><div class="faq-q">¿El seguro cubre accidentes aunque no tenga licencia?</div><div class="faq-a">Depende de la póliza y las circunstancias. Algunas pólizas excluyen cobertura si el conductor operaba ilegalmente. Es crucial leer tu póliza y ser transparente con tu agente sobre tu situación.</div></div>
+</div></div>
+    <div id="content-en" style="display:none"><p class="article-intro">Thousands of Hispanics in Florida drive without a U.S. license. Here we explain exactly what options you have, which insurers accept it, and how to protect yourself legally.</p>
+<h2 class="article-h2">Is it possible to insure a car without a U.S. license?</h2>
+<p class="article-p">Yes. In Florida it is possible to get auto insurance without a U.S. driver's license. It's not easy, but there are insurers that work with drivers in this situation, especially in markets with high Hispanic populations like Miami-Dade, Broward, and Orange County.</p>
+<h2 class="article-h2">Your real options in Florida</h2>
+<h3 class="article-h3">Option 1: Insure with a foreign license</h3>
+<p class="article-p">Florida recognizes valid foreign licenses. If you have a valid license from Mexico, Colombia, Venezuela, Cuba, or another country, many insurers accept it. Carriers like Progressive, GEICO, and some regional FL insurers work with international licenses.</p>
+<h3 class="article-h3">Option 2: Insurance with ITIN (without SSN)</h3>
+<p class="article-p">Some insurers accept an ITIN (Individual Taxpayer Identification Number) instead of a Social Security Number. This significantly expands available options.</p>
+<h3 class="article-h3">Option 3: Policy under a family member with a license</h3>
+<p class="article-p">The vehicle is insured under your spouse, parents, or another family member with a U.S. license, and you appear as an additional driver. The policyholder must be the legal owner of the vehicle.</p>
+<div class="callout amber"><strong>Florida minimum (PIP)</strong><p>Florida requires Personal Injury Protection (PIP) of $10,000 and Property Damage Liability (PDL) of $10,000. This is the legal minimum to drive — but may not be enough to cover real damages.</p></div>
+<div class="faq-section"><h2 class="article-h2">FAQ</h2>
+<div class="faq-item"><div class="faq-q">Can I drive in Florida with a Mexican license?</div><div class="faq-a">Yes, Florida recognizes valid foreign licenses for temporary visitors and residents with a valid visa. If you are a permanent resident or citizen, you must obtain a Florida license within 30 days of establishing residency.</div></div>
+<div class="faq-item"><div class="faq-q">Does insurance cover accidents even without a license?</div><div class="faq-a">It depends on the policy. Some policies exclude coverage if the driver was operating illegally. It's crucial to read your policy and be transparent with your agent about your situation.</div></div>
+</div></div>
+    <div class="article-end-cta">
+      <a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a>
     </div>
   </div>
 </section>
+<script>
+function switchArticleLang(lang){
+  var es=document.getElementById('content-es');
+  var en=document.getElementById('content-en');
+  if(es) es.style.display=lang==='es'?'block':'none';
+  if(en) en.style.display=lang==='en'?'block':'none';
+}
+var _origSetLang2=window.setLang;
+window.setLang=function(lang){ _origSetLang2(lang); switchArticleLang(lang); };
+switchArticleLang(localStorage.getItem('norte_lang')||'es');
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.closest('.faq-item');
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>

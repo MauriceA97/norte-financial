@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title data-es="¿Qué es un deducible? Guía completa — Norte Financial" data-en="What is a Deductible? Complete Guide — Norte Financial">¿Qué es un deducible? Guía completa — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,213 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Glosario de Seguros · Conceptos Básicos" data-en="Insurance Glossary · Basic Concepts">Glosario de Seguros · Conceptos Básicos</p>
+    <h1 class="page-hero__title" data-es="¿Qué es un deducible?<br>Guía completa" data-en="What is a Deductible? Complete Guide">¿Qué es un deducible?<br>Guía completa</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
+
+
+<style>
+/* ── Article styles ── */
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light);display:flex;align-items:center;gap:5px}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none;transition:color 0.18s}
+.article-toc li a:hover{color:var(--forest)}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap;transition:all 0.2s}
+.inline-cta .btn-amber:hover{transform:translateY(-1px)}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:'+';font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta">
+      <span class="article-tag">Concepto esencial</span>
+      <span class="article-meta-item">🕐 5 min lectura</span>
+      <span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span>
+      <span class="article-meta-item" data-es="Bilingüe ES/EN" data-en="Bilingual ES/EN">Bilingüe ES/EN</span>
+    </div>
+    <div data-es="1" data-en="0" id="content-es">
+<p class="article-intro">El deducible es uno de los conceptos más importantes del seguro — y uno de los más confusos. Esta guía te explica exactamente qué es, cómo funciona, y cómo elegir el correcto para tu situación.</p>
+<div class="article-toc">
+  <h4>En esta guía</h4>
+  <ol>
+    <li><a href="#que-es">¿Qué es un deducible?</a></li>
+    <li><a href="#como-funciona">Cómo funciona en la práctica</a></li>
+    <li><a href="#tipos">Tipos de deducibles</a></li>
+    <li><a href="#alto-vs-bajo">Deducible alto vs. bajo: ¿cuál conviene?</a></li>
+    <li><a href="#florida">Deducibles especiales en Florida</a></li>
+    <li><a href="#faq">Preguntas frecuentes</a></li>
+  </ol>
+</div>
+<h2 class="article-h2" id="que-es">¿Qué es un deducible?</h2>
+<p class="article-p">Un <strong>deducible</strong> es la cantidad de dinero que tú pagas de tu bolsillo antes de que tu aseguradora comience a pagar por un siniestro. Es básicamente tu "participación" en el costo de cualquier reclamación.</p>
+<p class="article-p">Por ejemplo: si tienes un accidente y los daños cuestan $3,000, y tu deducible es de $500, tú pagas los primeros $500 y tu seguro paga los $2,500 restantes.</p>
+<div class="callout">
+  <strong>Fórmula simple</strong>
+  <p>Costo total del daño − Tu deducible = Lo que paga tu seguro</p>
+</div>
+<h2 class="article-h2" id="como-funciona">Cómo funciona en la práctica</h2>
+<p class="article-p">El deducible se aplica <em>por reclamación</em> en la mayoría de los seguros de auto y hogar. Esto significa que cada vez que presentas una reclamación, debes pagar tu deducible antes de que el seguro cubra el resto.</p>
+<table class="data-table">
+  <tr><th>Daño total</th><th>Tu deducible</th><th>Paga el seguro</th></tr>
+  <tr><td>$800</td><td>$1,000</td><td>$0 (daño menor que deducible)</td></tr>
+  <tr><td>$2,500</td><td>$500</td><td>$2,000</td></tr>
+  <tr><td>$15,000</td><td>$1,000</td><td>$14,000</td></tr>
+  <tr><td>$50,000</td><td>$2,500</td><td>$47,500</td></tr>
+</table>
+<div class="callout amber">
+  <strong>Importante</strong>
+  <p>Si el daño es menor que tu deducible, NO tiene sentido hacer una reclamación — pagas el total tú mismo y además puede subir tu prima.</p>
+</div>
+<h2 class="article-h2" id="tipos">Tipos de deducibles más comunes</h2>
+<h3 class="article-h3">Deducible fijo (Fixed Deductible)</h3>
+<p class="article-p">Es una cantidad fija en dólares: $250, $500, $1,000 o más. El más común en seguros de auto. Sabes exactamente cuánto pagarás antes de que el seguro cubra el resto.</p>
+<h3 class="article-h3">Deducible porcentual (Percentage Deductible)</h3>
+<p class="article-p">Se calcula como un porcentaje del valor asegurado de tu propiedad. Muy común en seguros de hogar en Florida para huracanes. Si tu casa está asegurada en $300,000 y el deducible es 2%, pagarías $6,000 antes de que el seguro cubra.</p>
+<h3 class="article-h3">Deducible anual (Annual/Calendar Year Deductible)</h3>
+<p class="article-p">Común en seguros de salud. Lo pagas una vez al año — después de alcanzar el monto, el seguro cubre el 100% (o un porcentaje) del resto del año.</p>
+<div class="inline-cta">
+  <div class="inline-cta__text">
+    <strong>Calcula tu deducible ideal</strong>
+    <p>Usa nuestra calculadora gratuita para saber exactamente cuánto pagarías</p>
+  </div>
+  <a href="herramientas.html" class="btn-amber">Calcular ahora →</a>
+</div>
+<h2 class="article-h2" id="alto-vs-bajo">Deducible alto vs. bajo: ¿cuál conviene?</h2>
+<p class="article-p">Esta es la pregunta del millón. La relación es directa: <strong>a mayor deducible, menor prima mensual</strong>. Y viceversa.</p>
+<table class="data-table">
+  <tr><th>Característica</th><th>Deducible bajo ($250-$500)</th><th>Deducible alto ($1,000-$2,500)</th></tr>
+  <tr><td>Prima mensual</td><td>Más alta</td><td>Más baja</td></tr>
+  <tr><td>Pago inicial en siniestro</td><td>Más bajo</td><td>Más alto</td></tr>
+  <tr><td>Ideal para</td><td>Bajo ahorro de emergencia</td><td>Fondo de emergencia disponible</td></tr>
+  <tr><td>Recomendado si...</td><td>Primer auto, área de alto riesgo</td><td>Buen historial, ahorro disponible</td></tr>
+</table>
+<div class="callout">
+  <strong>Regla general</strong>
+  <p>Elige el deducible más alto que puedas pagar cómodamente de tu bolsillo si ocurriera un siniestro mañana. Si no tienes $1,000 de reserva, no elijas ese deducible.</p>
+</div>
+<h2 class="article-h2" id="florida">Deducibles especiales en Florida</h2>
+<p class="article-p">Florida tiene reglas especiales que debes conocer:</p>
+<ul class="article-ul">
+  <li><strong>Deducible de huracán:</strong> Separado de tu deducible regular. Suele ser 2% o 5% del valor asegurado de tu hogar — puede ser miles de dólares.</li>
+  <li><strong>PIP (Personal Injury Protection):</strong> El seguro de auto en Florida requiere mínimo $10,000 de PIP. Tu deducible de PIP puede ser $0, $250, $500 o $1,000.</li>
+  <li><strong>Citizens Property Insurance:</strong> El seguro del estado tiene sus propias reglas de deducible para huracanes y no-huracanes.</li>
+</ul>
+<div class="faq-section">
+  <h2 class="article-h2">Preguntas frecuentes</h2>
+  <div class="faq-item"><div class="faq-q">¿El deducible se paga antes o después del seguro?</div><div class="faq-a">Tú pagas primero tu deducible, y el seguro cubre el resto. En la práctica, el seguro generalmente deduce tu participación del pago total que te envían.</div></div>
+  <div class="faq-item"><div class="faq-q">¿Debo pagar el deducible si el accidente no fue mi culpa?</div><div class="faq-a">Depende. Si el otro conductor tiene seguro y fue su culpa, su seguro debería cubrir todo. Si usas tu propio seguro (cobertura de colisión), pagas tu deducible aunque no fuera tu culpa — pero puedes recuperarlo si tu seguro lo recobra del otro.</div></div>
+  <div class="faq-item"><div class="faq-q">¿Puedo cambiar mi deducible después de contratar el seguro?</div><div class="faq-a">Sí. Generalmente puedes ajustar tu deducible en la renovación de póliza o incluso durante el período de vigencia, aunque puede haber un costo por hacer el cambio. Consulta con tu agente.</div></div>
+  <div class="faq-item"><div class="faq-q">¿Qué pasa si no puedo pagar mi deducible después de un siniestro?</div><div class="faq-a">El seguro puede retener el pago hasta que acuerdes cómo cubrir tu parte. Algunos talleres o contratistas aceptan pagos a plazos para tu deducible. Es importante tener un fondo de emergencia que cubra al menos tu deducible.</div></div>
+</div></div>
+    <div data-es="0" data-en="1" id="content-en" style="display:none">
+<p class="article-intro">A deductible is one of the most important insurance concepts — and one of the most misunderstood. This guide explains exactly what it is, how it works, and how to choose the right one for your situation.</p>
+<div class="article-toc">
+  <h4>In this guide</h4>
+  <ol>
+    <li><a href="#what-is">What is a deductible?</a></li>
+    <li><a href="#how-works">How it works in practice</a></li>
+    <li><a href="#types">Types of deductibles</a></li>
+    <li><a href="#high-vs-low">High vs. low deductible: which is better?</a></li>
+    <li><a href="#florida">Special Florida deductibles</a></li>
+    <li><a href="#faq-en">Frequently asked questions</a></li>
+  </ol>
+</div>
+<h2 class="article-h2" id="what-is">What is a deductible?</h2>
+<p class="article-p">A <strong>deductible</strong> is the amount of money you pay out of pocket before your insurance company starts paying for a claim. It's your share of the cost of any covered loss.</p>
+<p class="article-p">For example: if you have an accident and the damage costs $3,000, and your deductible is $500, you pay the first $500 and your insurance pays the remaining $2,500.</p>
+<div class="callout">
+  <strong>Simple formula</strong>
+  <p>Total cost of damage − Your deductible = What your insurance pays</p>
+</div>
+<h2 class="article-h2" id="how-works">How it works in practice</h2>
+<p class="article-p">The deductible applies <em>per claim</em> for most auto and home insurance policies. This means every time you file a claim, you must pay your deductible before insurance covers the rest.</p>
+<table class="data-table">
+  <tr><th>Total damage</th><th>Your deductible</th><th>Insurance pays</th></tr>
+  <tr><td>$800</td><td>$1,000</td><td>$0 (damage less than deductible)</td></tr>
+  <tr><td>$2,500</td><td>$500</td><td>$2,000</td></tr>
+  <tr><td>$15,000</td><td>$1,000</td><td>$14,000</td></tr>
+  <tr><td>$50,000</td><td>$2,500</td><td>$47,500</td></tr>
+</table>
+<div class="callout amber">
+  <strong>Important</strong>
+  <p>If the damage is less than your deductible, it does NOT make sense to file a claim — you pay everything yourself and your premium may still go up.</p>
+</div>
+<h2 class="article-h2" id="high-vs-low">High vs. low deductible: which is better?</h2>
+<p class="article-p">The relationship is direct: <strong>higher deductible = lower monthly premium</strong>. And vice versa.</p>
+<table class="data-table">
+  <tr><th>Feature</th><th>Low deductible ($250-$500)</th><th>High deductible ($1,000-$2,500)</th></tr>
+  <tr><td>Monthly premium</td><td>Higher</td><td>Lower</td></tr>
+  <tr><td>Out-of-pocket at claim</td><td>Lower</td><td>Higher</td></tr>
+  <tr><td>Best for</td><td>Limited emergency savings</td><td>Available emergency fund</td></tr>
+</table>
+<div class="callout">
+  <strong>General rule</strong>
+  <p>Choose the highest deductible you could comfortably pay out of pocket if a loss happened tomorrow. If you don't have $1,000 in savings, don't choose that deductible.</p>
+</div>
+<div class="faq-section">
+  <h2 class="article-h2" id="faq-en">Frequently asked questions</h2>
+  <div class="faq-item"><div class="faq-q">Do I pay the deductible before or after the insurance company?</div><div class="faq-a">You pay first, and insurance covers the rest. In practice, the insurer typically deducts your share from the total payment they send you or the repair shop.</div></div>
+  <div class="faq-item"><div class="faq-q">Do I pay a deductible if the accident wasn't my fault?</div><div class="faq-a">It depends. If the other driver was at fault and is insured, their insurance should cover everything. If you use your own collision coverage, you'll pay your deductible — but you may recover it if your insurer pursues the other driver.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I change my deductible after buying insurance?</div><div class="faq-a">Yes. You can usually adjust your deductible at renewal or sometimes mid-policy, though there may be a fee. Talk to your agent about the best timing.</div></div>
+</div></div>
+    <div class="article-end-cta">
+      <a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a>
     </div>
   </div>
 </section>
+<script>
+function switchArticleLang(lang){
+  document.getElementById('content-es').style.display = lang==='es' ? 'block' : 'none';
+  document.getElementById('content-en').style.display = lang==='en' ? 'block' : 'none';
+}
+// Hook into setLang
+const _origSetLang = window.setLang;
+window.setLang = function(lang){
+  _origSetLang(lang);
+  switchArticleLang(lang);
+};
+// Apply on load
+switchArticleLang(localStorage.getItem('norte_lang')||'es');
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>

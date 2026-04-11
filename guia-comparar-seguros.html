@@ -643,7 +643,7 @@ body {
   .cta-band__actions { flex-direction: column; align-items: center; }
 }
 </style>
-<title>Guía de Seguros — Norte Financial</title>
+<title>Cómo comparar cotizaciones de seguro: 5 errores que evitar — Norte Financial</title>
 </head>
 <body>
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -701,21 +701,143 @@ body {
 </nav>
 <section class="page-hero">
   <div class="container">
-    <p class="page-hero__eyebrow" data-es="Guía en español" data-en="Guide in Spanish">Guía en español</p>
-    <h1 class="page-hero__title"><em data-es="Aprende seguros" data-en="Learn insurance">Aprende seguros</em><br><span data-es="en tu idioma." data-en="in your language.">en tu idioma.</span></h1>
+    <p class="page-hero__eyebrow" data-es="Educación · Comparar Seguros · Ahorra dinero" data-en="Education · Compare Insurance · Save Money">Educación · Comparar Seguros · Ahorra dinero</p>
+    <h1 class="page-hero__title" data-es="Cómo comparar cotizaciones de seguro: 5 errores que evitar" data-en="How to Compare Insurance Quotes: 5 Mistakes to Avoid">Cómo comparar cotizaciones de seguro: 5 errores que evitar</h1>
     <a href="guias.html" class="btn-ghost" style="color:rgba(232,245,240,0.8);border-color:rgba(232,245,240,0.25)" data-es="← Todas las guías" data-en="← All guides">← Todas las guías</a>
   </div>
 </section>
-<section style="padding:80px 0;background:var(--parchment)">
-  <div class="container--narrow" style="text-align:center">
-    <h2 class="section-headline" data-es="Guía próximamente" data-en="Guide coming soon">Guía próximamente</h2>
-    <p class="section-desc" style="margin:16px auto 32px" data-es="Esta guía completa estará disponible pronto. Mientras tanto, puedes preguntarle a Norte AI." data-en="This complete guide will be available soon. In the meantime, you can ask Norte AI.">Guía completa próximamente. Mientras tanto, pregúntale a Norte AI.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="herramientas.html" class="btn-primary" data-es="Preguntar a Norte AI →" data-en="Ask Norte AI →">Preguntar a Norte AI →</a>
-      <a href="cotizar.html" class="btn-ghost" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a>
-    </div>
+<style>
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+.article-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);background:var(--frost);padding:4px 10px;border-radius:var(--r-full)}
+.article-meta-item{font-size:13px;color:var(--ink-light)}
+.article-intro{font-size:18px;line-height:1.75;color:var(--ink-muted);margin-bottom:36px;font-style:italic}
+.article-toc{background:var(--frost);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:40px;border:1px solid rgba(29,158,117,0.15)}
+.article-toc h4{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--verde);margin-bottom:12px}
+.article-toc ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.article-toc li a{font-size:14px;color:var(--ink-muted);text-decoration:none}
+.article-h2{font-family:var(--font-display);font-size:clamp(22px,2.8vw,28px);font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.article-p{font-size:16px;line-height:1.8;color:var(--ink-muted);margin-bottom:18px}
+.article-ul,.article-ol{margin:16px 0 20px 20px;display:flex;flex-direction:column;gap:8px}
+.article-ul li,.article-ol li{font-size:15px;line-height:1.7;color:var(--ink-muted)}
+.callout{background:var(--frost);border-left:4px solid var(--verde);border-radius:0 var(--r-md) var(--r-md) 0;padding:16px 20px;margin:28px 0}
+.callout.amber{background:var(--amber-light);border-left-color:var(--amber)}
+.callout strong{color:var(--forest);display:block;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:0.06em}
+.callout p{font-size:14px;color:var(--ink-muted);margin:0;line-height:1.7}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.data-table th{background:var(--forest);color:white;padding:11px 14px;text-align:left;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.07em}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border-light);color:var(--ink-muted)}
+.data-table tr:nth-child(even) td{background:var(--frost)}
+.inline-cta{background:var(--forest);color:white;border-radius:var(--r-xl);padding:28px 32px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text strong{display:block;font-family:var(--font-display);font-size:20px;margin-bottom:4px}
+.inline-cta__text p{font-size:14px;color:rgba(232,245,240,0.75);margin:0}
+.inline-cta .btn-amber{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:500;padding:11px 22px;background:var(--amber);color:white;border-radius:var(--r-full);text-decoration:none;white-space:nowrap}
+.faq-section{margin:48px 0}
+.faq-item{border:1px solid var(--border-light);border-radius:var(--r-md);margin-bottom:8px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:500;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white)}
+.faq-q::after{content:"+";font-size:20px;color:var(--verde);flex-shrink:0}
+.faq-item.open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--ink-muted);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+.article-end-cta{text-align:center;padding:48px 0 0}
+</style>
+<section style="padding:60px 0 80px;background:var(--parchment)">
+  <div class="article-wrap">
+    <div class="article-meta"><span class="article-tag">Educación · Ahorra dinero</span><span class="article-meta-item">🕐 5 min lectura</span><span class="article-meta-item" data-es="Actualizado 2025" data-en="Updated 2025">Actualizado 2025</span></div>
+    <div id="content-es"><p class="article-intro">Comparar seguros correctamente puede ahorrarte miles de dólares. Pero hay 5 errores críticos que la mayoría de las personas comete — y que pueden costarte caro si hay un siniestro.</p>
+<div class="article-toc"><h4>En esta guía</h4><ol>
+<li><a href="#error1">Error #1: Comparar solo el precio</a></li>
+<li><a href="#error2">Error #2: No leer las exclusiones</a></li>
+<li><a href="#error3">Error #3: Subestimar la cobertura de responsabilidad</a></li>
+<li><a href="#error4">Error #4: No comparar en el momento correcto</a></li>
+<li><a href="#error5">Error #5: No preguntar sobre todos los descuentos</a></li>
+<li><a href="#checklist">Checklist: cómo comparar correctamente</a></li>
+</ol></div>
+<h2 class="article-h2" id="error1">Error #1: Comparar solo el precio</h2>
+<p class="article-p">El error más común. Elegir la prima más baja sin considerar qué cubre realmente puede resultar en una sorpresa dolorosa cuando tienes una reclamación. Una póliza más barata puede tener:</p>
+<ul class="article-ul">
+<li>Límites de cobertura muy bajos que no cubren daños reales</li>
+<li>Deducibles más altos que te dejan pagando la mayor parte</li>
+<li>Exclusiones importantes que eliminan la cobertura en situaciones comunes</li>
+<li>Compañía con mala reputación en el pago de reclamaciones</li>
+</ul>
+<div class="callout"><strong>La métrica correcta</strong><p>Compara el valor total: precio + límites de cobertura + deducible + reputación del servicio de reclamaciones. El precio solo no te dice nada.</p></div>
+<h2 class="article-h2" id="error2">Error #2: No leer las exclusiones de la póliza</h2>
+<p class="article-p">Toda póliza de seguro tiene exclusiones — situaciones que NO están cubiertas. Estas están escritas en letra pequeña pero son críticas. Exclusiones comunes que sorprenden a la gente:</p>
+<ul class="article-ul">
+<li><strong>Seguro de auto:</strong> Uso comercial (Uber, delivery), conducir sin licencia válida, daños intencionales</li>
+<li><strong>Seguro de hogar:</strong> Inundaciones (requiere póliza separada), terremotos, mantenimiento normal</li>
+<li><strong>Seguro de vida:</strong> Suicidio en los primeros 2 años, actividades de alto riesgo no declaradas</li>
+<li><strong>Seguro de salud:</strong> Tratamientos experimentales, cosméticos, condiciones preexistentes en período de espera</li>
+</ul>
+<h2 class="article-h2" id="error3">Error #3: Subestimar los límites de responsabilidad civil</h2>
+<p class="article-p">Los límites mínimos requeridos por el estado son generalmente insuficientes para protegerte en un accidente grave. Si causas un accidente donde alguien resulta gravemente herido y tienes solo el mínimo de Florida (10/20/10), podrías ser personalmente responsable por cientos de miles de dólares.</p>
+<div class="callout amber"><strong>Recomendación de expertos</strong><p>Para protección real, la mayoría de los expertos recomiendan límites de 100/300/100 como mínimo. Si tienes activos significativos (casa pagada, ahorros, negocio), considera también una póliza de paraguas (umbrella) de $1 millón adicional.</p></div>
+<h2 class="article-h2" id="error4">Error #4: No comparar en el momento correcto</h2>
+<p class="article-p">El mejor momento para comparar cotizaciones:</p>
+<ul class="article-ul">
+<li><strong>30-60 días antes de la renovación:</strong> Tienes tiempo para cambiar sin lapsos en cobertura</li>
+<li><strong>Después de mejorar tu historial:</strong> Si llevas 3 años sin accidentes, tu tarifa puede bajar significativamente</li>
+<li><strong>Después de un cambio de vida:</strong> Matrimonio, nuevo hijo, casa nueva, nuevo vehículo — todos afectan las primas</li>
+<li><strong>Una vez al año como mínimo:</strong> Los precios cambian constantemente</li>
+</ul>
+<h2 class="article-h2" id="error5">Error #5: No preguntar sobre todos los descuentos</h2>
+<p class="article-p">Las aseguradoras no siempre mencionan todos los descuentos disponibles — debes preguntar específicamente. Descuentos que frecuentemente se pierden:</p>
+<ul class="article-ul">
+<li>Descuento por lealtad (llevar varios años con la misma compañía)</li>
+<li>Descuento profesional (maestros, enfermeras, ingenieros, militares)</li>
+<li>Descuento por completar curso de conducción defensiva</li>
+<li>Descuento por instalar dispositivos de seguridad adicionales</li>
+<li>Descuento por facturación electrónica y pago automático</li>
+</ul>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Compara cotizaciones ahora</strong><p>Te ayudamos a comparar correctamente — sin cometer estos errores</p></div><a href="cotizar.html" class="btn-amber">Comparar cotizaciones →</a></div>
+<h2 class="article-h2" id="checklist">Checklist: cómo comparar cotizaciones correctamente</h2>
+<ol class="article-ol">
+<li>Obtén al menos 3-5 cotizaciones con los mismos niveles de cobertura</li>
+<li>Verifica los límites de responsabilidad (no solo el precio)</li>
+<li>Revisa el deducible de cada opción y asegúrate de poder pagarlo</li>
+<li>Lee las exclusiones principales de cada póliza</li>
+<li>Revisa el historial de quejas de cada aseguradora (NAIC Consumer Information Source)</li>
+<li>Pregunta por TODOS los descuentos disponibles para tu perfil</li>
+<li>Considera el servicio de reclamaciones, no solo el precio</li>
+</ol>
+<div class="faq-section"><h2 class="article-h2">Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Comparar cotizaciones afecta mi crédito?</div><div class="faq-a">No. Las consultas de seguro son "soft inquiries" que no afectan tu score de crédito. Puedes comparar con tantas aseguradoras como quieras sin preocupación.</div></div>
+<div class="faq-item"><div class="faq-q">¿Es mejor usar un agente o comparar en línea?</div><div class="faq-a">Idealmente ambos. Los agentes independientes pueden acceder a múltiples aseguradoras y encontrar opciones que no encuentras en línea. Pero las herramientas de comparación en línea son útiles para tener una idea del rango de precios antes de hablar con un agente.</div></div>
+</div></div>
+    <div id="content-en" style="display:none"><p class="article-intro">Comparing insurance correctly can save you thousands of dollars. But there are 5 critical mistakes most people make — that can cost you dearly when you have a claim.</p>
+<h2 class="article-h2">Mistake #1: Comparing only the price</h2>
+<p class="article-p">Choosing the lowest premium without considering what it actually covers can result in a painful surprise when you file a claim. A cheaper policy may have very low coverage limits, high deductibles, important exclusions, or a company with poor claims service reputation.</p>
+<h2 class="article-h2">Mistake #2: Not reading the policy exclusions</h2>
+<p class="article-p">Every insurance policy has exclusions — situations NOT covered. Common surprises: auto (commercial use, Uber/delivery), home (floods require separate policy, earthquakes), life (suicide in first 2 years), health (experimental treatments).</p>
+<h2 class="article-h2">Mistake #3: Underestimating liability limits</h2>
+<p class="article-p">State minimum limits are generally insufficient for serious accidents. Florida's minimum (10/20/10) could leave you personally liable for hundreds of thousands in a serious accident.</p>
+<div class="callout amber"><strong>Expert recommendation</strong><p>Most experts recommend at least 100/300/100 limits. If you have significant assets, also consider a $1 million umbrella policy.</p></div>
+<div class="inline-cta"><div class="inline-cta__text"><strong>Compare quotes now</strong><p>We help you compare correctly — without making these mistakes</p></div><a href="cotizar.html" class="btn-amber">Compare quotes →</a></div>
+<div class="faq-section"><h2 class="article-h2">FAQ</h2>
+<div class="faq-item"><div class="faq-q">Does comparing quotes affect my credit?</div><div class="faq-a">No. Insurance inquiries are soft pulls that don't affect your credit score. You can compare with as many insurers as you want without concern.</div></div>
+</div></div>
+    <div class="article-end-cta"><a href="cotizar.html" class="btn-primary" data-es="Cotizar seguro gratis →" data-en="Get free quote →">Cotizar seguro gratis →</a></div>
   </div>
-</section>
+</section><script>
+function switchArticleLang(lang){
+  var es=document.getElementById("content-es");
+  var en=document.getElementById("content-en");
+  if(es) es.style.display=lang==="es"?"block":"none";
+  if(en) en.style.display=lang==="en"?"block":"none";
+}
+var _orig=window.setLang;
+window.setLang=function(lang){_orig(lang);switchArticleLang(lang);};
+switchArticleLang(localStorage.getItem("norte_lang")||"es");
+document.querySelectorAll(".faq-q").forEach(function(q){
+  q.addEventListener("click",function(){
+    var item=q.closest(".faq-item"),open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function(i){i.classList.remove("open");});
+    if(!open) item.classList.add("open");
+  });
+});
+</script>
 <section class="cta-band"><div class="container"><div class="cta-band__inner">
   <h2 class="cta-band__headline" data-es="¿Tienes preguntas?" data-en="Have questions?">¿Tienes preguntas?</h2>
   <div class="cta-band__actions"><a href="cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>
