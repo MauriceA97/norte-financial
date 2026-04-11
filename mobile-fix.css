@@ -1,0 +1,275 @@
+/* ============================================================
+   Norte Financial — Mobile Margins & Responsive Patch
+   ------------------------------------------------------------
+   Loaded last on every page so it wins specificity ties.
+   ALL rules are wrapped in @media (max-width: ...) so desktop
+   styling is 100% unaffected. Touch nothing > 768px.
+   ============================================================ */
+
+/* ── Tablet & phone ────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Container breathing room — was 24px, way too much on phones.
+     Reduce to 18px so content has 36px total horizontal margin
+     instead of 48px (that's ~5% of a 360px screen back to content). */
+  .container,
+  .container--narrow {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* New review/legal containers */
+  .review,
+  .prose {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Page hero — keep vertical padding from base, just cap horizontal */
+  .page-hero .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .page-hero__title {
+    font-size: clamp(30px, 7.5vw, 48px);
+    line-height: 1.12;
+  }
+  .page-hero__desc {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* CTA band — reduce side padding so headline doesn't crowd edges */
+  .cta-band {
+    padding: 56px 0;
+  }
+  .cta-band__headline {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  /* Section / general headlines */
+  .section-headline {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  /* ── Carrier review pages ── */
+  .rating-card {
+    padding: 24px 20px;
+  }
+  .rating-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .rating-title {
+    font-size: 26px;
+  }
+  .rating-score .num {
+    font-size: 38px;
+  }
+  .stars {
+    font-size: 20px;
+  }
+  .rating-cta {
+    width: 100%;
+  }
+  .rating-cta .btn-primary,
+  .rating-cta .btn-ghost {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  /* Pros/Cons box */
+  .pros-cons {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pc-box {
+    padding: 16px 18px;
+  }
+
+  /* Pillar list — switch to compact 2-line layout */
+  .pillar {
+    grid-template-columns: 1fr 70px;
+    gap: 8px 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .pillar .pname {
+    grid-column: 1;
+  }
+  .pillar .pscore {
+    grid-column: 2;
+    text-align: right;
+    font-size: 18px;
+  }
+  .pillar .pnote {
+    grid-column: 1 / -1;
+    font-size: 12px;
+  }
+
+  /* Methodology / disclosure / TOC boxes */
+  .disclosure {
+    padding: 12px 14px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  .methodology-box {
+    padding: 14px 16px;
+    font-size: 12px;
+  }
+  .toc {
+    padding: 14px 16px;
+  }
+  .toc ol {
+    margin-left: 18px;
+    font-size: 13px;
+  }
+
+  /* Byline */
+  .byline {
+    padding: 14px 18px;
+    gap: 10px;
+  }
+  .byline-info strong {
+    font-size: 13px;
+  }
+  .byline-info span {
+    font-size: 11px;
+  }
+
+  /* Long-form prose typography */
+  .prose h2,
+  .review h2 {
+    font-size: 23px;
+    margin: 36px 0 12px;
+  }
+  .prose h3,
+  .review h3 {
+    font-size: 18px;
+    margin: 24px 0 10px;
+  }
+  .prose p,
+  .review p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Comparison tables — let the table scroll horizontally inside its
+     own scroll container without forcing the whole page to scroll. */
+  .compare-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .compare-table th,
+  .compare-table td {
+    padding: 10px 8px;
+    white-space: nowrap;
+  }
+  .compare-table .carrier-cell strong {
+    font-size: 13px;
+  }
+  .compare-table .carrier-cell span {
+    display: none; /* hide the long tagline on mobile */
+  }
+  .compare-table .btn-get-quote {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  /* Card grids — defensive (some pages don't import shared.css's collapse) */
+  .card-grid--2,
+  .card-grid--3,
+  .card-grid--4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer — make the column layout actually breathe on mobile */
+  .footer {
+    padding: 56px 0 32px;
+  }
+  .footer .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    margin-bottom: 40px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .footer__legal {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  /* Nav container padding */
+  .nav .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* ── Small phones (≤ 480px) ────────────────────────────── */
+@media (max-width: 480px) {
+  .container,
+  .container--narrow,
+  .review,
+  .prose,
+  .page-hero .container,
+  .footer .container,
+  .nav .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .page-hero__title {
+    font-size: clamp(26px, 8.5vw, 38px);
+  }
+  .page-hero__desc {
+    font-size: 14px;
+  }
+
+  .cta-band {
+    padding: 48px 0;
+  }
+  .cta-band__headline {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  /* Carrier review */
+  .rating-card {
+    padding: 20px 16px;
+  }
+  .rating-title {
+    font-size: 22px;
+  }
+  .rating-score .num {
+    font-size: 32px;
+  }
+
+  /* Tighter list margins */
+  .review ul,
+  .review ol,
+  .prose ul,
+  .prose ol {
+    margin-left: 18px;
+  }
+
+  /* Buttons stack full-width inside .rating-cta */
+  .rating-cta {
+    flex-direction: column;
+  }
+  .rating-cta .btn-primary,
+  .rating-cta .btn-ghost {
+    width: 100%;
+  }
+}
