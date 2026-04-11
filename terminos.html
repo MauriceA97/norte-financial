@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Términos de servicio de Norte Financial. Qué puedes esperar del sitio, limitaciones y obligaciones legales.">
+<title>Términos de Servicio — Norte Financial</title>
+<link rel="stylesheet" href="/shared.css">
+<script src="/norte-track.js" defer></script>
+<style>
+.prose{max-width:760px;margin:0 auto;padding:0 24px;font-size:16px;line-height:1.75;color:var(--ink-muted)}
+.prose h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.prose h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.prose p{margin-bottom:16px}
+.prose ul,.prose ol{margin:12px 0 20px 24px}
+.prose li{margin-bottom:8px}
+.prose a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--forest)}
+.prose strong{color:var(--ink);font-weight:500}
+.prose .updated{display:inline-block;font-size:13px;color:var(--ink-light);background:var(--frost);padding:6px 14px;border-radius:var(--r-full);margin-bottom:32px}
+.prose .callout{background:var(--frost);border-left:3px solid var(--verde);padding:20px 24px;border-radius:var(--r-md);margin:24px 0;font-size:15px}
+.prose .callout strong{color:var(--forest)}
+.prose-wrap{padding:60px 0 100px;background:var(--parchment)}
+.toc{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:20px 24px;margin-bottom:40px}
+.toc-title{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px}
+.toc ol{margin-left:20px;font-size:14px}
+.toc li{margin-bottom:4px}
+.toc a{color:var(--ink-muted)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="/cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="/cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Legal" data-en="Legal">Legal</p>
+    <h1 class="page-hero__title" data-es="Términos de <em>Servicio</em>" data-en="Terms of <em>Service</em>">Términos de <em>Servicio</em></h1>
+    <p class="page-hero__desc" data-es="Las reglas para usar nortefinancial.com. Léelos antes de enviar un formulario de cotización." data-en="The rules for using nortefinancial.com. Read them before submitting a quote form.">Las reglas para usar nortefinancial.com. Léelos antes de enviar un formulario de cotización.</p>
+  </div>
+</section>
+<section class="prose-wrap"><div class="prose">
+<p class="updated" data-es="Última actualización: 11 de abril de 2026" data-en="Last updated: April 11, 2026">Última actualización: 11 de abril de 2026</p>
+
+<h2 data-es="1. Aceptación de los términos" data-en="1. Acceptance of terms">1. Aceptación de los términos</h2>
+<p data-es="Al acceder o usar nortefinancial.com (el &quot;Sitio&quot;), aceptas estar legalmente obligado por estos Términos de Servicio y nuestra <a href='/privacidad.html'>Política de Privacidad</a>. Si no aceptas, no uses el Sitio." data-en="By accessing or using nortefinancial.com (the &quot;Site&quot;), you agree to be legally bound by these Terms of Service and our <a href='/privacidad.html'>Privacy Policy</a>. If you do not agree, do not use the Site.">Al acceder o usar nortefinancial.com (el "Sitio"), aceptas estar legalmente obligado por estos Términos de Servicio y nuestra <a href='/privacidad.html'>Política de Privacidad</a>. Si no aceptas, no uses el Sitio.</p>
+
+<h2 data-es="2. Qué es Norte Financial" data-en="2. What Norte Financial is">2. Qué es Norte Financial</h2>
+<p data-es="Norte Financial es una plataforma educativa y de comparación de seguros. Conectamos consumidores con aseguradoras, agentes licenciados y redes de afiliados. <strong>No somos una aseguradora ni una agencia de seguros licenciada.</strong> No emitimos pólizas, no vendemos seguros directamente y no tomamos decisiones de suscripción." data-en="Norte Financial is an educational insurance comparison platform. We connect consumers with insurers, licensed agents, and affiliate networks. <strong>We are not an insurance carrier or a licensed insurance agency.</strong> We do not issue policies, sell insurance directly, or make underwriting decisions.">Norte Financial es una plataforma educativa y de comparación de seguros. Conectamos consumidores con aseguradoras, agentes licenciados y redes de afiliados. <strong>No somos una aseguradora ni una agencia de seguros licenciada.</strong> No emitimos pólizas, no vendemos seguros directamente y no tomamos decisiones de suscripción.</p>
+
+<h2 data-es="3. No es asesoría legal, financiera o de seguros" data-en="3. Not legal, financial, or insurance advice">3. No es asesoría legal, financiera o de seguros</h2>
+<p data-es="El contenido del Sitio — incluyendo guías, reseñas, comparaciones y respuestas de Norte AI — es solo para propósitos educativos e informativos. No constituye asesoría legal, financiera, de seguros o profesional. Antes de comprar una póliza o tomar una decisión financiera, consulta a un agente licenciado en tu estado." data-en="Site content — including guides, reviews, comparisons, and Norte AI responses — is for educational and informational purposes only. It does not constitute legal, financial, insurance, or professional advice. Before purchasing a policy or making a financial decision, consult a licensed agent in your state.">El contenido del Sitio — incluyendo guías, reseñas, comparaciones y respuestas de Norte AI — es solo para propósitos educativos e informativos. No constituye asesoría legal, financiera, de seguros o profesional. Antes de comprar una póliza o tomar una decisión financiera, consulta a un agente licenciado en tu estado.</p>
+
+<h2 data-es="4. Elegibilidad" data-en="4. Eligibility">4. Elegibilidad</h2>
+<p data-es="Para usar Norte Financial debes tener al menos 18 años de edad y residir en Estados Unidos. Al enviar un formulario de cotización certificas que cumples estos requisitos y que la información que proporcionas es verdadera y precisa." data-en="To use Norte Financial you must be at least 18 years old and a resident of the United States. By submitting a quote form you certify that you meet these requirements and that the information you provide is true and accurate.">Para usar Norte Financial debes tener al menos 18 años de edad y residir en Estados Unidos. Al enviar un formulario de cotización certificas que cumples estos requisitos y que la información que proporcionas es verdadera y precisa.</p>
+
+<h2 data-es="5. Uso aceptable" data-en="5. Acceptable use">5. Uso aceptable</h2>
+<p data-es="No puedes:" data-en="You may not:">No puedes:</p>
+<ul>
+  <li data-es="Enviar información falsa, fraudulenta o de otra persona sin su consentimiento." data-en="Submit false, fraudulent, or another person's information without consent.">Enviar información falsa, fraudulenta o de otra persona sin su consentimiento.</li>
+  <li data-es="Usar el Sitio para enviar spam, phishing o ataques automatizados." data-en="Use the Site to send spam, phishing, or automated attacks.">Usar el Sitio para enviar spam, phishing o ataques automatizados.</li>
+  <li data-es="Intentar acceder a áreas no públicas del Sitio o de sus sistemas." data-en="Attempt to access non-public areas of the Site or its systems.">Intentar acceder a áreas no públicas del Sitio o de sus sistemas.</li>
+  <li data-es="Usar scrapers, bots o cualquier herramienta automatizada para recolectar contenido sin nuestro permiso escrito." data-en="Use scrapers, bots, or any automated tool to collect content without our written permission.">Usar scrapers, bots o cualquier herramienta automatizada para recolectar contenido sin nuestro permiso escrito.</li>
+  <li data-es="Violar cualquier ley aplicable, incluyendo leyes de seguros estatales, TCPA, CAN-SPAM, o CCPA." data-en="Violate any applicable law, including state insurance laws, TCPA, CAN-SPAM, or CCPA.">Violar cualquier ley aplicable, incluyendo leyes de seguros estatales, TCPA, CAN-SPAM, o CCPA.</li>
+</ul>
+
+<h2 data-es="6. Enlaces a terceros y divulgación de afiliados" data-en="6. Third-party links and affiliate disclosure">6. Enlaces a terceros y divulgación de afiliados</h2>
+<p data-es="El Sitio contiene enlaces a aseguradoras, redes de afiliados y otros servicios de terceros. Algunos de estos enlaces son enlaces de afiliados — Norte Financial puede recibir una comisión si haces clic o compras a través de ellos. Esto no afecta el precio que pagas. Ver nuestra <a href='/divulgacion.html'>Divulgación de Afiliados</a> para detalles completos." data-en="The Site contains links to insurers, affiliate networks, and other third-party services. Some of these links are affiliate links — Norte Financial may receive a commission if you click or purchase through them. This does not affect the price you pay. See our <a href='/divulgacion.html'>Affiliate Disclosure</a> for full details.">El Sitio contiene enlaces a aseguradoras, redes de afiliados y otros servicios de terceros. Algunos de estos enlaces son enlaces de afiliados — Norte Financial puede recibir una comisión si haces clic o compras a través de ellos. Esto no afecta el precio que pagas. Ver nuestra <a href='/divulgacion.html'>Divulgación de Afiliados</a> para detalles completos.</p>
+<p data-es="No controlamos sitios de terceros y no somos responsables de sus prácticas de privacidad, contenido o servicios." data-en="We do not control third-party sites and are not responsible for their privacy practices, content, or services.">No controlamos sitios de terceros y no somos responsables de sus prácticas de privacidad, contenido o servicios.</p>
+
+<h2 data-es="7. Propiedad intelectual" data-en="7. Intellectual property">7. Propiedad intelectual</h2>
+<p data-es="El nombre Norte Financial, el logotipo, el diseño del sitio, las guías, las comparaciones y todo el contenido original son propiedad de Norte Financial o sus licenciantes y están protegidos por leyes de derechos de autor y marcas registradas de Estados Unidos. Los logotipos y marcas de aseguradoras pertenecen a sus respectivos dueños." data-en="The Norte Financial name, logo, site design, guides, comparisons, and all original content are the property of Norte Financial or its licensors and are protected by United States copyright and trademark laws. Insurer logos and trademarks belong to their respective owners.">El nombre Norte Financial, el logotipo, el diseño del sitio, las guías, las comparaciones y todo el contenido original son propiedad de Norte Financial o sus licenciantes y están protegidos por leyes de derechos de autor y marcas registradas de Estados Unidos. Los logotipos y marcas de aseguradoras pertenecen a sus respectivos dueños.</p>
+
+<h2 data-es="8. Descargos de responsabilidad" data-en="8. Disclaimers">8. Descargos de responsabilidad</h2>
+<p data-es="El Sitio se proporciona &quot;tal cual&quot; y &quot;según disponibilidad&quot;, sin garantías de ningún tipo, expresas o implícitas. No garantizamos que las cotizaciones mostradas sean las más bajas disponibles, que las aseguradoras te ofrecerán una póliza, que el contenido sea completo o esté libre de errores, o que el Sitio estará siempre disponible." data-en="The Site is provided &quot;as is&quot; and &quot;as available&quot;, without warranties of any kind, express or implied. We do not warrant that quotes shown are the lowest available, that insurers will offer you a policy, that content is complete or error-free, or that the Site will always be available.">El Sitio se proporciona "tal cual" y "según disponibilidad", sin garantías de ningún tipo, expresas o implícitas. No garantizamos que las cotizaciones mostradas sean las más bajas disponibles, que las aseguradoras te ofrecerán una póliza, que el contenido sea completo o esté libre de errores, o que el Sitio estará siempre disponible.</p>
+
+<h2 data-es="9. Limitación de responsabilidad" data-en="9. Limitation of liability">9. Limitación de responsabilidad</h2>
+<p data-es="En la máxima extensión permitida por la ley, Norte Financial, sus fundadores, empleados, afiliados y proveedores no serán responsables por daños indirectos, incidentales, especiales, consecuenciales o punitivos que surjan del uso del Sitio, incluyendo pero no limitado a: pérdida de ganancias, pérdida de datos, cotizaciones inexactas, o decisiones de cobertura. Nuestra responsabilidad total máxima está limitada a $100 USD." data-en="To the maximum extent permitted by law, Norte Financial, its founders, employees, affiliates, and providers shall not be liable for indirect, incidental, special, consequential, or punitive damages arising from use of the Site, including but not limited to: lost profits, lost data, inaccurate quotes, or coverage decisions. Our total maximum liability is limited to $100 USD.">En la máxima extensión permitida por la ley, Norte Financial, sus fundadores, empleados, afiliados y proveedores no serán responsables por daños indirectos, incidentales, especiales, consecuenciales o punitivos que surjan del uso del Sitio, incluyendo pero no limitado a: pérdida de ganancias, pérdida de datos, cotizaciones inexactas, o decisiones de cobertura. Nuestra responsabilidad total máxima está limitada a $100 USD.</p>
+
+<h2 data-es="10. Indemnización" data-en="10. Indemnification">10. Indemnización</h2>
+<p data-es="Aceptas indemnizar y mantener libre de responsabilidad a Norte Financial por cualquier reclamo, daño, pérdida o gasto (incluyendo honorarios legales razonables) que surja de tu uso del Sitio, tu violación de estos Términos, o tu violación de derechos de terceros." data-en="You agree to indemnify and hold Norte Financial harmless from any claim, damage, loss, or expense (including reasonable legal fees) arising from your use of the Site, your violation of these Terms, or your violation of third-party rights.">Aceptas indemnizar y mantener libre de responsabilidad a Norte Financial por cualquier reclamo, daño, pérdida o gasto (incluyendo honorarios legales razonables) que surja de tu uso del Sitio, tu violación de estos Términos, o tu violación de derechos de terceros.</p>
+
+<h2 data-es="11. Ley aplicable y disputas" data-en="11. Governing law and disputes">11. Ley aplicable y disputas</h2>
+<p data-es="Estos Términos se rigen por las leyes del Estado de Florida, Estados Unidos, sin considerar conflictos de leyes. Cualquier disputa se resolverá en los tribunales estatales o federales ubicados en Miami-Dade County, Florida, y aceptas la jurisdicción personal de esos tribunales." data-en="These Terms are governed by the laws of the State of Florida, United States, without regard to conflict-of-law principles. Any dispute will be resolved in state or federal courts located in Miami-Dade County, Florida, and you consent to the personal jurisdiction of those courts.">Estos Términos se rigen por las leyes del Estado de Florida, Estados Unidos, sin considerar conflictos de leyes. Cualquier disputa se resolverá en los tribunales estatales o federales ubicados en Miami-Dade County, Florida, y aceptas la jurisdicción personal de esos tribunales.</p>
+
+<h2 data-es="12. Modificaciones" data-en="12. Modifications">12. Modificaciones</h2>
+<p data-es="Podemos modificar estos Términos en cualquier momento. La versión actualizada se publicará en esta página con la nueva fecha de &quot;Última actualización&quot;. Tu uso continuado del Sitio después de un cambio constituye aceptación." data-en="We may modify these Terms at any time. The updated version will be posted on this page with the new &quot;Last updated&quot; date. Your continued use of the Site after a change constitutes acceptance.">Podemos modificar estos Términos en cualquier momento. La versión actualizada se publicará en esta página con la nueva fecha de "Última actualización". Tu uso continuado del Sitio después de un cambio constituye aceptación.</p>
+
+<h2 data-es="13. Contacto" data-en="13. Contact">13. Contacto</h2>
+<p data-es="Preguntas sobre estos Términos: <a href='/contacto.html'>nortefinancial.com/contacto</a> · legal@nortefinancial.com" data-en="Questions about these Terms: <a href='/contacto.html'>nortefinancial.com/contact</a> · legal@nortefinancial.com">Preguntas sobre estos Términos: <a href='/contacto.html'>nortefinancial.com/contacto</a> · legal@nortefinancial.com</p>
+</div></section><section class="cta-band"><div class="container"><div class="cta-band__inner">
+  <h2 class="cta-band__headline" data-es="¿Listo para cotizar?" data-en="Ready for your quote?">¿Listo para cotizar?</h2>
+  <p class="cta-band__sub" data-es="Gratis, bilingüe, sin presión." data-en="Free, bilingual, no pressure.">Gratis, bilingüe, sin presión.</p>
+  <div class="cta-band__actions"><a href="/cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>
+</div></div></section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+          <li><a href="/estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

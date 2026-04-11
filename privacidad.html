@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Política de privacidad de Norte Financial. Qué información recopilamos, cómo la usamos, tus derechos bajo CCPA/CPRA.">
+<title>Política de Privacidad — Norte Financial</title>
+<link rel="stylesheet" href="/shared.css">
+<script src="/norte-track.js" defer></script>
+<style>
+.prose{max-width:760px;margin:0 auto;padding:0 24px;font-size:16px;line-height:1.75;color:var(--ink-muted)}
+.prose h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.prose h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.prose p{margin-bottom:16px}
+.prose ul,.prose ol{margin:12px 0 20px 24px}
+.prose li{margin-bottom:8px}
+.prose a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--forest)}
+.prose strong{color:var(--ink);font-weight:500}
+.prose .updated{display:inline-block;font-size:13px;color:var(--ink-light);background:var(--frost);padding:6px 14px;border-radius:var(--r-full);margin-bottom:32px}
+.prose .callout{background:var(--frost);border-left:3px solid var(--verde);padding:20px 24px;border-radius:var(--r-md);margin:24px 0;font-size:15px}
+.prose .callout strong{color:var(--forest)}
+.prose-wrap{padding:60px 0 100px;background:var(--parchment)}
+.toc{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:20px 24px;margin-bottom:40px}
+.toc-title{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px}
+.toc ol{margin-left:20px;font-size:14px}
+.toc li{margin-bottom:4px}
+.toc a{color:var(--ink-muted)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="/cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="/cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Legal" data-en="Legal">Legal</p>
+    <h1 class="page-hero__title" data-es="Política de <em>Privacidad</em>" data-en="Privacy <em>Policy</em>">Política de <em>Privacidad</em></h1>
+    <p class="page-hero__desc" data-es="Cómo recopilamos, usamos y compartimos tu información. Incluye tus derechos bajo CCPA, CPRA y cómo optar por no vender tus datos." data-en="How we collect, use, and share your information. Includes your CCPA/CPRA rights and how to opt out of data sales.">Cómo recopilamos, usamos y compartimos tu información. Incluye tus derechos bajo CCPA, CPRA y cómo optar por no vender tus datos.</p>
+  </div>
+</section>
+<section class="prose-wrap"><div class="prose">
+<p class="updated" data-es="Última actualización: 11 de abril de 2026" data-en="Last updated: April 11, 2026">Última actualización: 11 de abril de 2026</p>
+
+<div class="toc">
+  <div class="toc-title" data-es="Contenido" data-en="Contents">Contenido</div>
+  <ol>
+    <li><a href="#quienes" data-es="Quiénes somos" data-en="Who we are">Quiénes somos</a></li>
+    <li><a href="#recopilamos" data-es="Información que recopilamos" data-en="Information we collect">Información que recopilamos</a></li>
+    <li><a href="#uso" data-es="Cómo usamos tu información" data-en="How we use your information">Cómo usamos tu información</a></li>
+    <li><a href="#compartir" data-es="Con quién compartimos" data-en="Who we share with">Con quién compartimos</a></li>
+    <li><a href="#tcpa" data-es="Consentimiento TCPA" data-en="TCPA consent">Consentimiento TCPA</a></li>
+    <li><a href="#derechos" data-es="Tus derechos (CCPA/CPRA)" data-en="Your rights (CCPA/CPRA)">Tus derechos (CCPA/CPRA)</a></li>
+    <li><a href="#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a></li>
+    <li><a href="#cookies" data-es="Cookies y tracking" data-en="Cookies and tracking">Cookies y tracking</a></li>
+    <li><a href="#seguridad" data-es="Seguridad" data-en="Security">Seguridad</a></li>
+    <li><a href="#menores" data-es="Menores de edad" data-en="Minors">Menores de edad</a></li>
+    <li><a href="#cambios" data-es="Cambios a esta política" data-en="Changes to this policy">Cambios a esta política</a></li>
+    <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+  </ol>
+</div>
+
+<h2 id="quienes" data-es="1. Quiénes somos" data-en="1. Who we are">1. Quiénes somos</h2>
+<p data-es="Norte Financial (&quot;nosotros&quot;, &quot;nuestro&quot; o &quot;Norte&quot;) opera el sitio web nortefinancial.com. Somos una plataforma educativa y de comparación de seguros diseñada para hispanos en Estados Unidos. No somos una aseguradora ni una agencia licenciada; somos un generador de clientes potenciales (lead generator) que conecta consumidores con aseguradoras, agentes licenciados y redes de afiliados de seguros." data-en="Norte Financial (&quot;we&quot;, &quot;our&quot;, or &quot;Norte&quot;) operates the nortefinancial.com website. We are an educational insurance comparison platform designed for Hispanics in the United States. We are not an insurance carrier or a licensed agency; we are a lead generator that connects consumers with insurers, licensed agents, and insurance affiliate networks.">Norte Financial ("nosotros", "nuestro" o "Norte") opera el sitio web nortefinancial.com. Somos una plataforma educativa y de comparación de seguros diseñada para hispanos en Estados Unidos. No somos una aseguradora ni una agencia licenciada; somos un generador de clientes potenciales (lead generator) que conecta consumidores con aseguradoras, agentes licenciados y redes de afiliados de seguros.</p>
+
+<p data-es="Esta Política de Privacidad explica qué información recopilamos, cómo la usamos, con quién la compartimos y tus derechos sobre ella. Al usar nortefinancial.com aceptas las prácticas descritas aquí." data-en="This Privacy Policy explains what information we collect, how we use it, who we share it with, and your rights regarding it. By using nortefinancial.com you accept the practices described here.">Esta Política de Privacidad explica qué información recopilamos, cómo la usamos, con quién la compartimos y tus derechos sobre ella. Al usar nortefinancial.com aceptas las prácticas descritas aquí.</p>
+
+<h2 id="recopilamos" data-es="2. Información que recopilamos" data-en="2. Information we collect">2. Información que recopilamos</h2>
+
+<h3 data-es="Información que tú nos proporcionas" data-en="Information you provide to us">Información que tú nos proporcionas</h3>
+<p data-es="Cuando solicitas una cotización a través de cualquier formulario de Norte Financial, recopilamos la información que ingresas, incluyendo:" data-en="When you request a quote through any Norte Financial form, we collect the information you enter, including:">Cuando solicitas una cotización a través de cualquier formulario de Norte Financial, recopilamos la información que ingresas, incluyendo:</p>
+<ul>
+  <li data-es="Información de contacto: nombre, apellido, correo electrónico, número de teléfono, dirección, ciudad, estado y código postal." data-en="Contact information: first name, last name, email, phone number, address, city, state, and zip code.">Información de contacto: nombre, apellido, correo electrónico, número de teléfono, dirección, ciudad, estado y código postal.</li>
+  <li data-es="Información demográfica: fecha de nacimiento, género, estado civil, educación, ocupación, estatus de propietario de vivienda." data-en="Demographic information: date of birth, gender, marital status, education, occupation, homeowner status.">Información demográfica: fecha de nacimiento, género, estado civil, educación, ocupación, estatus de propietario de vivienda.</li>
+  <li data-es="Información del vehículo (para cotizaciones de auto): año, marca, modelo, VIN, uso, millaje anual, conductores adicionales, historial de accidentes, violaciones e historial de DUI." data-en="Vehicle information (for auto quotes): year, make, model, VIN, usage, annual mileage, additional drivers, accident history, violations, and DUI history.">Información del vehículo (para cotizaciones de auto): año, marca, modelo, VIN, uso, millaje anual, conductores adicionales, historial de accidentes, violaciones e historial de DUI.</li>
+  <li data-es="Información de la vivienda (para cotizaciones de hogar): dirección, antigüedad, construcción, tipo de techo, sistemas, reclamos anteriores." data-en="Home information (for home quotes): address, age, construction, roof type, systems, prior claims.">Información de la vivienda (para cotizaciones de hogar): dirección, antigüedad, construcción, tipo de techo, sistemas, reclamos anteriores.</li>
+  <li data-es="Información de salud y vida (para cotizaciones correspondientes): historial médico básico, tabaquismo, beneficiarios, cantidad de cobertura deseada." data-en="Health and life information (for related quotes): basic medical history, tobacco use, beneficiaries, desired coverage amount.">Información de salud y vida (para cotizaciones correspondientes): historial médico básico, tabaquismo, beneficiarios, cantidad de cobertura deseada.</li>
+  <li data-es="Información del seguro actual: aseguradora, límites de cobertura, deducibles, fecha de vencimiento, años asegurado." data-en="Current insurance information: carrier, coverage limits, deductibles, expiration date, years insured.">Información del seguro actual: aseguradora, límites de cobertura, deducibles, fecha de vencimiento, años asegurado.</li>
+  <li data-es="Consentimiento TCPA: registro de tu casilla de consentimiento con marca de tiempo y dirección IP." data-en="TCPA consent: record of your consent checkbox with timestamp and IP address.">Consentimiento TCPA: registro de tu casilla de consentimiento con marca de tiempo y dirección IP.</li>
+</ul>
+
+<h3 data-es="Información recopilada automáticamente" data-en="Automatically collected information">Información recopilada automáticamente</h3>
+<ul>
+  <li data-es="Dirección IP, identificador único de dispositivo (visitor ID), tipo de navegador, sistema operativo, idioma preferido." data-en="IP address, unique device identifier (visitor ID), browser type, operating system, preferred language.">Dirección IP, identificador único de dispositivo (visitor ID), tipo de navegador, sistema operativo, idioma preferido.</li>
+  <li data-es="Páginas visitadas, tiempo en el sitio, enlaces clicados, referidor (referrer)." data-en="Pages visited, time on site, links clicked, referrer.">Páginas visitadas, tiempo en el sitio, enlaces clicados, referidor (referrer).</li>
+  <li data-es="Parámetros UTM y datos de campañas publicitarias (utm_source, utm_medium, utm_campaign, utm_content)." data-en="UTM parameters and advertising campaign data (utm_source, utm_medium, utm_campaign, utm_content).">Parámetros UTM y datos de campañas publicitarias (utm_source, utm_medium, utm_campaign, utm_content).</li>
+  <li data-es="Eventos de clic en enlaces de afiliados o patrocinados, registrados para análisis de conversión y reportes a socios." data-en="Click events on affiliate or sponsored links, logged for conversion analysis and partner reporting.">Eventos de clic en enlaces de afiliados o patrocinados, registrados para análisis de conversión y reportes a socios.</li>
+</ul>
+
+<h2 id="uso" data-es="3. Cómo usamos tu información" data-en="3. How we use your information">3. Cómo usamos tu información</h2>
+<p data-es="Usamos tu información personal para:" data-en="We use your personal information to:">Usamos tu información personal para:</p>
+<ul>
+  <li data-es="Procesar tu solicitud de cotización y emparejarte con aseguradoras, agentes licenciados o redes de afiliados que ofrezcan pólizas relevantes." data-en="Process your quote request and match you with insurers, licensed agents, or affiliate networks that offer relevant policies.">Procesar tu solicitud de cotización y emparejarte con aseguradoras, agentes licenciados o redes de afiliados que ofrezcan pólizas relevantes.</li>
+  <li data-es="Permitir que esos socios te contacten directamente con cotizaciones, llamadas, mensajes de texto o correos electrónicos, conforme a tu consentimiento TCPA." data-en="Allow those partners to contact you directly with quotes, calls, text messages, or emails, in accordance with your TCPA consent.">Permitir que esos socios te contacten directamente con cotizaciones, llamadas, mensajes de texto o correos electrónicos, conforme a tu consentimiento TCPA.</li>
+  <li data-es="Mejorar el sitio, medir tráfico y optimizar nuestras páginas educativas." data-en="Improve the site, measure traffic, and optimize our educational pages.">Mejorar el sitio, medir tráfico y optimizar nuestras páginas educativas.</li>
+  <li data-es="Cumplir con obligaciones legales, prevenir fraude y responder a solicitudes gubernamentales válidas." data-en="Comply with legal obligations, prevent fraud, and respond to valid government requests.">Cumplir con obligaciones legales, prevenir fraude y responder a solicitudes gubernamentales válidas.</li>
+  <li data-es="Operar nuestro modelo de negocio: generación de leads de seguros, marketing de afiliados y publicidad programática." data-en="Operate our business model: insurance lead generation, affiliate marketing, and programmatic advertising.">Operar nuestro modelo de negocio: generación de leads de seguros, marketing de afiliados y publicidad programática.</li>
+</ul>
+
+<h2 id="compartir" data-es="4. Con quién compartimos tu información" data-en="4. Who we share your information with">4. Con quién compartimos tu información</h2>
+<p data-es="Compartimos tu información con las siguientes categorías de terceros:" data-en="We share your information with the following categories of third parties:">Compartimos tu información con las siguientes categorías de terceros:</p>
+<ul>
+  <li data-es="<strong>Aseguradoras y agentes licenciados:</strong> cuando solicitas una cotización, enviamos tus datos a aseguradoras o agentes participantes que ofrezcan pólizas en tu estado." data-en="<strong>Insurers and licensed agents:</strong> when you request a quote, we send your data to participating insurers or agents who offer policies in your state."><strong>Aseguradoras y agentes licenciados:</strong> cuando solicitas una cotización, enviamos tus datos a aseguradoras o agentes participantes que ofrezcan pólizas en tu estado.</li>
+  <li data-es="<strong>Redes de afiliados de seguros:</strong> EverQuote, MediaAlpha, QuinStreet u otras redes con las que tengamos acuerdos. Estas redes tienen sus propias políticas de privacidad que te recomendamos revisar." data-en="<strong>Insurance affiliate networks:</strong> EverQuote, MediaAlpha, QuinStreet, or other networks we have agreements with. These networks have their own privacy policies that we recommend you review."><strong>Redes de afiliados de seguros:</strong> EverQuote, MediaAlpha, QuinStreet u otras redes con las que tengamos acuerdos. Estas redes tienen sus propias políticas de privacidad que te recomendamos revisar.</li>
+  <li data-es="<strong>Proveedores de servicios:</strong> Supabase (base de datos), Vercel (hosting), Anthropic (asistente de IA), Google Analytics (analítica). Estos proveedores solo procesan datos bajo nuestras instrucciones." data-en="<strong>Service providers:</strong> Supabase (database), Vercel (hosting), Anthropic (AI assistant), Google Analytics (analytics). These providers only process data under our instructions."><strong>Proveedores de servicios:</strong> Supabase (base de datos), Vercel (hosting), Anthropic (asistente de IA), Google Analytics (analítica). Estos proveedores solo procesan datos bajo nuestras instrucciones.</li>
+  <li data-es="<strong>Autoridades legales:</strong> cuando la ley lo exija o para proteger derechos, seguridad o propiedad." data-en="<strong>Legal authorities:</strong> when required by law or to protect rights, safety, or property."><strong>Autoridades legales:</strong> cuando la ley lo exija o para proteger derechos, seguridad o propiedad.</li>
+</ul>
+<div class="callout">
+<p data-es="<strong>Importante:</strong> Al enviar un formulario de cotización entiendes y aceptas que tu información será compartida con múltiples aseguradoras y redes de afiliados para que te contacten con ofertas. Esta compartición es una función central del servicio de Norte Financial." data-en="<strong>Important:</strong> By submitting a quote form you understand and agree that your information will be shared with multiple insurers and affiliate networks so they can contact you with offers. This sharing is a core function of Norte Financial's service."><strong>Importante:</strong> Al enviar un formulario de cotización entiendes y aceptas que tu información será compartida con múltiples aseguradoras y redes de afiliados para que te contacten con ofertas. Esta compartición es una función central del servicio de Norte Financial.</p>
+</div>
+
+<h2 id="tcpa" data-es="5. Consentimiento TCPA" data-en="5. TCPA consent">5. Consentimiento TCPA</h2>
+<p data-es="Cuando marcas la casilla de consentimiento TCPA en nuestros formularios de cotización, autorizas expresamente que Norte Financial, sus socios aseguradores, agentes licenciados y redes de afiliados te contacten al número de teléfono proporcionado mediante llamadas automatizadas, mensajes de texto SMS pregrabados y correos electrónicos, incluso si tu número está en la lista Do-Not-Call. Tu consentimiento no es condición para ninguna compra. Puedes retirar tu consentimiento en cualquier momento enviando &quot;STOP&quot; por SMS o contactándonos a <a href='/contacto.html'>contacto</a>." data-en="When you check the TCPA consent box on our quote forms, you expressly authorize Norte Financial, its insurance partners, licensed agents, and affiliate networks to contact you at the phone number provided using automated calls, prerecorded SMS text messages, and emails, even if your number is on the Do-Not-Call list. Your consent is not a condition of any purchase. You may withdraw your consent at any time by replying &quot;STOP&quot; to SMS or by contacting us at <a href='/contacto.html'>contact</a>.">Cuando marcas la casilla de consentimiento TCPA en nuestros formularios de cotización, autorizas expresamente que Norte Financial, sus socios aseguradores, agentes licenciados y redes de afiliados te contacten al número de teléfono proporcionado mediante llamadas automatizadas, mensajes de texto SMS pregrabados y correos electrónicos, incluso si tu número está en la lista Do-Not-Call. Tu consentimiento no es condición para ninguna compra. Puedes retirar tu consentimiento en cualquier momento enviando "STOP" por SMS o contactándonos a <a href='/contacto.html'>contacto</a>.</p>
+
+<h2 id="derechos" data-es="6. Tus derechos (CCPA/CPRA)" data-en="6. Your rights (CCPA/CPRA)">6. Tus derechos (CCPA/CPRA)</h2>
+<p data-es="Si eres residente de California, tienes los siguientes derechos bajo la California Consumer Privacy Act (CCPA) y la California Privacy Rights Act (CPRA):" data-en="If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA):">Si eres residente de California, tienes los siguientes derechos bajo la California Consumer Privacy Act (CCPA) y la California Privacy Rights Act (CPRA):</p>
+<ul>
+  <li data-es="Derecho a saber qué información personal recopilamos, usamos, compartimos o vendemos sobre ti." data-en="Right to know what personal information we collect, use, share, or sell about you.">Derecho a saber qué información personal recopilamos, usamos, compartimos o vendemos sobre ti.</li>
+  <li data-es="Derecho a eliminar tu información personal (con excepciones legales)." data-en="Right to delete your personal information (with legal exceptions).">Derecho a eliminar tu información personal (con excepciones legales).</li>
+  <li data-es="Derecho a corregir información inexacta." data-en="Right to correct inaccurate information.">Derecho a corregir información inexacta.</li>
+  <li data-es="Derecho a optar por no participar (opt-out) en la venta o compartición de tu información personal." data-en="Right to opt out of the sale or sharing of your personal information.">Derecho a optar por no participar (opt-out) en la venta o compartición de tu información personal.</li>
+  <li data-es="Derecho a no ser discriminado por ejercer tus derechos." data-en="Right to non-discrimination for exercising your rights.">Derecho a no ser discriminado por ejercer tus derechos.</li>
+  <li data-es="Derecho a limitar el uso de información personal sensible." data-en="Right to limit the use of sensitive personal information.">Derecho a limitar el uso de información personal sensible.</li>
+</ul>
+<p data-es="Para ejercer cualquiera de estos derechos, contáctanos a través de <a href='/contacto.html'>nuestra página de contacto</a>. Responderemos dentro de 45 días calendario." data-en="To exercise any of these rights, contact us through <a href='/contacto.html'>our contact page</a>. We will respond within 45 calendar days.">Para ejercer cualquiera de estos derechos, contáctanos a través de <a href='/contacto.html'>nuestra página de contacto</a>. Responderemos dentro de 45 días calendario.</p>
+
+<h2 id="no-vender" data-es="7. No vender mi información personal" data-en="7. Do Not Sell My Personal Information">7. No vender mi información personal</h2>
+<p data-es="Bajo CCPA/CPRA, la transferencia de datos de lead a aseguradoras y redes de afiliados a cambio de compensación puede considerarse una &quot;venta&quot; o &quot;compartir&quot;. Si eres residente de California y deseas optar por no vender/compartir tu información:" data-en="Under CCPA/CPRA, the transfer of lead data to insurers and affiliate networks in exchange for compensation may be considered a &quot;sale&quot; or &quot;share&quot;. If you are a California resident and wish to opt out of the sale/sharing of your information:">Bajo CCPA/CPRA, la transferencia de datos de lead a aseguradoras y redes de afiliados a cambio de compensación puede considerarse una "venta" o "compartir". Si eres residente de California y deseas optar por no vender/compartir tu información:</p>
+<ul>
+  <li data-es="Envíanos un correo a <strong>privacidad@nortefinancial.com</strong> con el asunto &quot;No Vender Mi Información&quot; y tu nombre completo + correo electrónico o número de teléfono usado en el formulario." data-en="Email us at <strong>privacy@nortefinancial.com</strong> with the subject &quot;Do Not Sell My Information&quot; and your full name + email or phone number used on the form.">Envíanos un correo a <strong>privacidad@nortefinancial.com</strong> con el asunto "No Vender Mi Información" y tu nombre completo + correo electrónico o número de teléfono usado en el formulario.</li>
+  <li data-es="Visita <a href='/contacto.html'>nuestra página de contacto</a> y envía la solicitud a través del formulario." data-en="Visit <a href='/contacto.html'>our contact page</a> and submit the request through the form.">Visita <a href='/contacto.html'>nuestra página de contacto</a> y envía la solicitud a través del formulario.</li>
+</ul>
+<p data-es="Procesaremos tu solicitud dentro de 15 días hábiles. Ten en cuenta que optar por no vender no afectará las cotizaciones que ya hayas solicitado antes de la fecha de tu solicitud." data-en="We will process your request within 15 business days. Please note that opting out will not affect quotes you have already requested before the date of your request.">Procesaremos tu solicitud dentro de 15 días hábiles. Ten en cuenta que optar por no vender no afectará las cotizaciones que ya hayas solicitado antes de la fecha de tu solicitud.</p>
+
+<h2 id="cookies" data-es="8. Cookies y tecnologías de tracking" data-en="8. Cookies and tracking technologies">8. Cookies y tecnologías de tracking</h2>
+<p data-es="Usamos cookies, localStorage y píxeles de tracking para:" data-en="We use cookies, localStorage, and tracking pixels to:">Usamos cookies, localStorage y píxeles de tracking para:</p>
+<ul>
+  <li data-es="Recordar tu preferencia de idioma (ES/EN)." data-en="Remember your language preference (ES/EN).">Recordar tu preferencia de idioma (ES/EN).</li>
+  <li data-es="Generar un identificador anónimo de visitante (visitor ID) para atribuir clics y conversiones." data-en="Generate an anonymous visitor ID to attribute clicks and conversions.">Generar un identificador anónimo de visitante (visitor ID) para atribuir clics y conversiones.</li>
+  <li data-es="Registrar parámetros UTM de campañas publicitarias." data-en="Record UTM parameters from advertising campaigns.">Registrar parámetros UTM de campañas publicitarias.</li>
+  <li data-es="Medir tráfico y comportamiento con Google Analytics 4." data-en="Measure traffic and behavior with Google Analytics 4.">Medir tráfico y comportamiento con Google Analytics 4.</li>
+  <li data-es="Servir anuncios relevantes a través de Google AdSense (si está habilitado)." data-en="Serve relevant ads through Google AdSense (if enabled).">Servir anuncios relevantes a través de Google AdSense (si está habilitado).</li>
+</ul>
+<p data-es="Puedes desactivar las cookies en la configuración de tu navegador. Desactivarlas puede afectar la funcionalidad del sitio, como la preferencia de idioma." data-en="You can disable cookies in your browser settings. Disabling them may affect site functionality, such as language preference.">Puedes desactivar las cookies en la configuración de tu navegador. Desactivarlas puede afectar la funcionalidad del sitio, como la preferencia de idioma.</p>
+
+<h2 id="seguridad" data-es="9. Seguridad" data-en="9. Security">9. Seguridad</h2>
+<p data-es="Usamos cifrado HTTPS en todas las páginas, almacenamos tu información en infraestructura segura (Supabase con Row-Level Security) y limitamos el acceso interno a personal autorizado. Sin embargo, ningún sistema es 100% seguro; no podemos garantizar la seguridad absoluta de tu información." data-en="We use HTTPS encryption on all pages, store your information on secure infrastructure (Supabase with Row-Level Security), and limit internal access to authorized personnel. However, no system is 100% secure; we cannot guarantee absolute security of your information.">Usamos cifrado HTTPS en todas las páginas, almacenamos tu información en infraestructura segura (Supabase con Row-Level Security) y limitamos el acceso interno a personal autorizado. Sin embargo, ningún sistema es 100% seguro; no podemos garantizar la seguridad absoluta de tu información.</p>
+
+<h2 id="menores" data-es="10. Menores de edad" data-en="10. Minors">10. Menores de edad</h2>
+<p data-es="Norte Financial no está dirigido a menores de 18 años. No recopilamos conscientemente información personal de menores. Si crees que un menor nos ha enviado información, contáctanos y la eliminaremos." data-en="Norte Financial is not directed to minors under 18. We do not knowingly collect personal information from minors. If you believe a minor has submitted information to us, contact us and we will delete it.">Norte Financial no está dirigido a menores de 18 años. No recopilamos conscientemente información personal de menores. Si crees que un menor nos ha enviado información, contáctanos y la eliminaremos.</p>
+
+<h2 id="cambios" data-es="11. Cambios a esta política" data-en="11. Changes to this policy">11. Cambios a esta política</h2>
+<p data-es="Podemos actualizar esta política de tiempo en tiempo. Publicaremos la versión actualizada en esta página con una nueva fecha de &quot;Última actualización&quot;. Cambios materiales serán comunicados de forma prominente." data-en="We may update this policy from time to time. We will post the updated version on this page with a new &quot;Last updated&quot; date. Material changes will be communicated prominently.">Podemos actualizar esta política de tiempo en tiempo. Publicaremos la versión actualizada en esta página con una nueva fecha de "Última actualización". Cambios materiales serán comunicados de forma prominente.</p>
+
+<h2 id="contacto" data-es="12. Contacto" data-en="12. Contact">12. Contacto</h2>
+<p data-es="Para preguntas sobre privacidad o para ejercer tus derechos:" data-en="For privacy questions or to exercise your rights:">Para preguntas sobre privacidad o para ejercer tus derechos:</p>
+<ul>
+  <li data-es="Correo: <strong>privacidad@nortefinancial.com</strong>" data-en="Email: <strong>privacy@nortefinancial.com</strong>">Correo: <strong>privacidad@nortefinancial.com</strong></li>
+  <li data-es="Web: <a href='/contacto.html'>nortefinancial.com/contacto</a>" data-en="Web: <a href='/contacto.html'>nortefinancial.com/contact</a>">Web: <a href='/contacto.html'>nortefinancial.com/contacto</a></li>
+</ul>
+</div></section><section class="cta-band"><div class="container"><div class="cta-band__inner">
+  <h2 class="cta-band__headline" data-es="¿Listo para cotizar?" data-en="Ready for your quote?">¿Listo para cotizar?</h2>
+  <p class="cta-band__sub" data-es="Gratis, bilingüe, sin presión." data-en="Free, bilingual, no pressure.">Gratis, bilingüe, sin presión.</p>
+  <div class="cta-band__actions"><a href="/cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>
+</div></div></section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+          <li><a href="/estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

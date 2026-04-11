@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contacta a Norte Financial. Correo, dirección postal, soporte de privacidad y oportunidades de afiliación.">
+<title>Contacto — Norte Financial</title>
+<link rel="stylesheet" href="/shared.css">
+<script src="/norte-track.js" defer></script>
+<style>
+.prose{max-width:760px;margin:0 auto;padding:0 24px;font-size:16px;line-height:1.75;color:var(--ink-muted)}
+.prose h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.prose h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:32px 0 12px}
+.prose p{margin-bottom:16px}
+.prose ul,.prose ol{margin:12px 0 20px 24px}
+.prose li{margin-bottom:8px}
+.prose a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--forest)}
+.prose strong{color:var(--ink);font-weight:500}
+.prose .updated{display:inline-block;font-size:13px;color:var(--ink-light);background:var(--frost);padding:6px 14px;border-radius:var(--r-full);margin-bottom:32px}
+.prose .callout{background:var(--frost);border-left:3px solid var(--verde);padding:20px 24px;border-radius:var(--r-md);margin:24px 0;font-size:15px}
+.prose .callout strong{color:var(--forest)}
+.prose-wrap{padding:60px 0 100px;background:var(--parchment)}
+.toc{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:20px 24px;margin-bottom:40px}
+.toc-title{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px}
+.toc ol{margin-left:20px;font-size:14px}
+.toc li{margin-bottom:4px}
+.toc a{color:var(--ink-muted)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="/cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="/cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Habla con nosotros" data-en="Talk to us">Habla con nosotros</p>
+    <h1 class="page-hero__title" data-es="<em>Contacto</em>" data-en="<em>Contact</em>"><em>Contacto</em></h1>
+    <p class="page-hero__desc" data-es="Soporte bilingüe. Respondemos correos dentro de 1 día hábil. Para cotizaciones, usa el formulario — es 10 veces más rápido." data-en="Bilingual support. We reply to emails within 1 business day. For quotes, use the form — it's 10x faster.">Soporte bilingüe. Respondemos correos dentro de 1 día hábil. Para cotizaciones, usa el formulario — es 10 veces más rápido.</p>
+  </div>
+</section>
+<section class="prose-wrap"><div class="prose">
+<div class="callout">
+<p data-es="¿Necesitas ayuda con una cotización? La forma más rápida es <a href='/cotizar.html'>completar el formulario de cotización</a> — te emparejamos con aseguradoras en minutos, sin costo." data-en="Need help with a quote? The fastest path is to <a href='/cotizar.html'>complete the quote form</a> — we match you with insurers in minutes, at no cost.">¿Necesitas ayuda con una cotización? La forma más rápida es <a href='/cotizar.html'>completar el formulario de cotización</a> — te emparejamos con aseguradoras en minutos, sin costo.</p>
+</div>
+
+<h2 data-es="Contacto general" data-en="General contact">Contacto general</h2>
+<p data-es="<strong>Correo:</strong> hola@nortefinancial.com<br><strong>Web:</strong> nortefinancial.com" data-en="<strong>Email:</strong> hola@nortefinancial.com<br><strong>Web:</strong> nortefinancial.com"><strong>Correo:</strong> hola@nortefinancial.com<br><strong>Web:</strong> nortefinancial.com</p>
+
+<h2 data-es="Dirección de correo postal" data-en="Mailing address">Dirección de correo postal</h2>
+<p data-es="Norte Financial<br>[DIRECCIÓN POSTAL — ACTUALIZAR ANTES DE LANZAMIENTO]<br>Miami, FL [ZIP]<br>Estados Unidos" data-en="Norte Financial<br>[MAILING ADDRESS — UPDATE BEFORE LAUNCH]<br>Miami, FL [ZIP]<br>United States">Norte Financial<br>[DIRECCIÓN POSTAL — ACTUALIZAR ANTES DE LANZAMIENTO]<br>Miami, FL [ZIP]<br>Estados Unidos</p>
+<p data-es="<em>Nota del desarrollador: las redes de afiliados de seguros (EverQuote, MediaAlpha) requieren una dirección postal verificable. Si no tienes una dirección comercial dedicada, servicios de buzón virtual como iPostal1 o Earth Class Mail ($10-$25/mes) proveen direcciones aceptadas.</em>" data-en="<em>Developer note: insurance affiliate networks (EverQuote, MediaAlpha) require a verifiable mailing address. If you don't have a dedicated business address, virtual mailbox services like iPostal1 or Earth Class Mail ($10-$25/mo) provide accepted addresses.</em>"><em>Nota del desarrollador: las redes de afiliados de seguros (EverQuote, MediaAlpha) requieren una dirección postal verificable. Si no tienes una dirección comercial dedicada, servicios de buzón virtual como iPostal1 o Earth Class Mail ($10-$25/mes) proveen direcciones aceptadas.</em></p>
+
+<h2 data-es="Preguntas sobre privacidad y datos" data-en="Privacy and data questions">Preguntas sobre privacidad y datos</h2>
+<p data-es="Para solicitudes CCPA/CPRA (acceso, eliminación, corrección, opt-out de venta):<br><strong>privacidad@nortefinancial.com</strong><br>Ver también <a href='/privacidad.html'>Política de Privacidad</a>." data-en="For CCPA/CPRA requests (access, deletion, correction, sale opt-out):<br><strong>privacy@nortefinancial.com</strong><br>See also <a href='/privacidad.html'>Privacy Policy</a>.">Para solicitudes CCPA/CPRA (acceso, eliminación, corrección, opt-out de venta):<br><strong>privacidad@nortefinancial.com</strong><br>Ver también <a href='/privacidad.html'>Política de Privacidad</a>.</p>
+
+<h2 data-es="Preguntas legales o editoriales" data-en="Legal or editorial questions">Preguntas legales o editoriales</h2>
+<p data-es="<strong>legal@nortefinancial.com</strong> — términos, propiedad intelectual, notificaciones DMCA." data-en="<strong>legal@nortefinancial.com</strong> — terms, intellectual property, DMCA notices."><strong>legal@nortefinancial.com</strong> — términos, propiedad intelectual, notificaciones DMCA.</p>
+<p data-es="<strong>editorial@nortefinancial.com</strong> — correcciones, preguntas sobre metodología, sugerencias de contenido." data-en="<strong>editorial@nortefinancial.com</strong> — corrections, methodology questions, content suggestions."><strong>editorial@nortefinancial.com</strong> — correcciones, preguntas sobre metodología, sugerencias de contenido.</p>
+
+<h2 data-es="Agencias y socios de afiliados" data-en="Agencies and affiliate partners">Agencias y socios de afiliados</h2>
+<p data-es="¿Eres agente licenciado o representante de una aseguradora interesado en asociarte con Norte Financial para recibir leads del mercado hispano? <strong>socios@nortefinancial.com</strong>" data-en="Are you a licensed agent or insurer representative interested in partnering with Norte Financial to receive Hispanic market leads? <strong>partners@nortefinancial.com</strong>">¿Eres agente licenciado o representante de una aseguradora interesado en asociarte con Norte Financial para recibir leads del mercado hispano? <strong>socios@nortefinancial.com</strong></p>
+
+<h2 data-es="Horario de atención" data-en="Support hours">Horario de atención</h2>
+<p data-es="Lunes a viernes · 9am–6pm ET<br>Respondemos correos dentro de 1 día hábil." data-en="Monday to Friday · 9am–6pm ET<br>We reply to emails within 1 business day.">Lunes a viernes · 9am–6pm ET<br>Respondemos correos dentro de 1 día hábil.</p>
+</div></section><section class="cta-band"><div class="container"><div class="cta-band__inner">
+  <h2 class="cta-band__headline" data-es="¿Listo para cotizar?" data-en="Ready for your quote?">¿Listo para cotizar?</h2>
+  <p class="cta-band__sub" data-es="Gratis, bilingüe, sin presión." data-en="Free, bilingual, no pressure.">Gratis, bilingüe, sin presión.</p>
+  <div class="cta-band__actions"><a href="/cotizar.html" class="btn-white" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a></div>
+</div></div></section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+          <li><a href="/estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>
