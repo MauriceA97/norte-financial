@@ -27,7 +27,7 @@ const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 // Allowlist of carrier slugs we'll accept. Prevents open-redirect abuse —
 // destination hosts MUST match an entry here or the request is rejected.
 const ALLOWED_HOSTS = [
-  // Affiliate networks
+  // Insurance affiliate networks
   'everquote.com', 'www.everquote.com',
   'mediaalpha.com', 'www.mediaalpha.com',
   'quinstreet.com', 'www.quinstreet.com',
@@ -35,7 +35,7 @@ const ALLOWED_HOSTS = [
   'insurify.com', 'www.insurify.com',
   'thezebra.com', 'www.thezebra.com',
   'policygenius.com', 'www.policygenius.com',
-  // Direct carriers
+  // Direct insurance carriers
   'geico.com', 'www.geico.com',
   'progressive.com', 'www.progressive.com',
   'statefarm.com', 'www.statefarm.com',
@@ -51,10 +51,52 @@ const ALLOWED_HOSTS = [
   'metlife.com', 'www.metlife.com',
   'root.com', 'www.root.com',
   'lemonade.com', 'www.lemonade.com',
-  // Florida-specific carriers
+  // Florida-specific insurance carriers
   'citizensfla.com', 'www.citizensfla.com',
   'universalproperty.com', 'www.universalproperty.com',
   'heritagepci.com', 'www.heritagepci.com',
+  // Credit cards (ITIN-friendly / no-history)
+  'petalcard.com', 'www.petalcard.com',
+  'tomocredit.com', 'www.tomocredit.com',
+  'capitalone.com', 'www.capitalone.com',
+  'self.inc', 'www.self.inc', 'self.com', 'www.self.com',
+  'missionlane.com', 'www.missionlane.com',
+  'creditone.com', 'www.creditone.com',
+  // Digital + traditional banks
+  'chime.com', 'www.chime.com',
+  'sofi.com', 'www.sofi.com',
+  'current.com', 'www.current.com',
+  'varomoney.com', 'www.varomoney.com',
+  'bankofamerica.com', 'www.bankofamerica.com',
+  'wellsfargo.com', 'www.wellsfargo.com',
+  'chase.com', 'www.chase.com',
+  // Remittance services
+  'wise.com', 'www.wise.com', 'transferwise.com', 'www.transferwise.com',
+  'remitly.com', 'www.remitly.com',
+  'xoom.com', 'www.xoom.com',
+  'westernunion.com', 'www.westernunion.com',
+  'moneygram.com', 'www.moneygram.com',
+  'riamoneytransfer.com', 'www.riamoneytransfer.com',
+  'xe.com', 'www.xe.com',
+  // Tax preparation
+  'turbotax.intuit.com',
+  'intuit.com', 'www.intuit.com',
+  'hrblock.com', 'www.hrblock.com',
+  'freetaxusa.com', 'www.freetaxusa.com',
+  'taxslayer.com', 'www.taxslayer.com',
+  'cash.app',
+  // ITIN / immigrant-friendly mortgage lenders
+  'alterrahomeloans.com', 'www.alterrahomeloans.com',
+  'newamericanfunding.com', 'www.newamericanfunding.com',
+  'guildmortgage.com', 'www.guildmortgage.com',
+  'homexpress.com', 'www.homexpress.com',
+  // Personal + business loans (ITIN-friendly + prime)
+  'oportun.com', 'www.oportun.com',
+  'caminofinancial.com', 'www.caminofinancial.com',
+  'lightstream.com', 'www.lightstream.com',
+  'lendingpoint.com', 'www.lendingpoint.com',
+  'upgrade.com', 'www.upgrade.com',
+  'upstart.com', 'www.upstart.com',
   // Test/internal
   'nortefinancial.com', 'www.nortefinancial.com'
 ];

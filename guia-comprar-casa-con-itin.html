@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía paso a paso para comprar casa sin SSN usando una hipoteca ITIN. Requisitos, prestamistas, down payment, y timeline completo.">
+<meta name="robots" content="index, follow">
+<title>Cómo comprar casa con ITIN en 2026 — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/guia-comprar-casa-con-itin.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto down payment necesito para hipoteca ITIN?", "acceptedAnswer": {"@type": "Answer", "text": "Típicamente 15-20% mínimo. Algunos prestamistas como Alterra trabajan con 10% en casos excepcionales con credit score alto y reservas grandes, pero 15-20% es el estándar."}}, {"@type": "Question", "name": "¿Las tasas de ITIN son mucho más altas que FHA?", "acceptedAnswer": {"@type": "Answer", "text": "Generalmente 1-2% más altas. Si FHA está al 6.5%, ITIN estará al 7.5-8.5%. En un préstamo de $300K a 30 años, esa diferencia es ~$300-$600 más al mes."}}, {"@type": "Question", "name": "¿Puedo refinanciar a FHA si eventualmente obtengo SSN?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y deberías hacerlo. Si obtienes residencia/SSN después de comprar con ITIN mortgage, refinanciar a FHA o convencional puede bajarte la tasa 1-2% — ahorras miles al año."}}, {"@type": "Question", "name": "¿Necesito credit score para ITIN mortgage?", "acceptedAnswer": {"@type": "Answer", "text": "Idealmente sí (620+), pero no todos los prestamistas lo requieren. Alterra puede trabajar con personas sin credit score si demuestras historial de pagos alternativos (renta, servicios públicos, teléfono) por 12-24 meses."}}, {"@type": "Question", "name": "¿Qué pasa si pierdo mi trabajo después de comprar?", "acceptedAnswer": {"@type": "Answer", "text": "Igual que con cualquier hipoteca. Contacta al prestamista INMEDIATAMENTE — muchos tienen programas de 'forbearance' (pausa temporal de pagos) por hasta 3-6 meses. La peor opción es no hacer nada y dejar de pagar — eso lleva a foreclosure."}}]}</script>
+<style>
+.review-wrap{padding:60px 0 100px;background:var(--parchment)}
+.review{max-width:880px;margin:0 auto;padding:0 24px}
+.disclosure{background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-md);padding:14px 18px;font-size:12px;color:var(--ink-muted);margin-bottom:32px;line-height:1.6}
+.disclosure strong{color:var(--forest)}
+.disclosure a{color:var(--verde);text-decoration:underline}
+.rating-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px;box-shadow:var(--shadow-sm);margin-bottom:32px}
+.rating-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.rating-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:6px}
+.rating-sub{font-size:14px;color:var(--ink-light)}
+.rating-score{display:flex;align-items:baseline;gap:6px}
+.rating-score .num{font-family:var(--font-display);font-size:48px;font-weight:500;color:var(--forest);line-height:1}
+.rating-score .max{font-size:18px;color:var(--ink-light)}
+.stars{font-size:22px;color:var(--amber);letter-spacing:2px;margin-top:6px}
+.rating-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 0}
+.highlight{padding:14px 16px;background:var(--frost);border-radius:var(--r-md);text-align:center;border:1px solid var(--border-light)}
+.highlight-label{font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px}
+.highlight-value{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.pc-box{padding:20px;border-radius:var(--r-md);border:1px solid var(--border-light)}
+.pc-box.pros{background:rgba(29,158,117,0.06);border-color:rgba(29,158,117,0.2)}
+.pc-box.cons{background:rgba(212,112,10,0.06);border-color:rgba(212,112,10,0.2)}
+.pc-box h4{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+.pc-box.pros h4{color:var(--verde)}
+.pc-box.cons h4{color:var(--amber)}
+.pc-box ul{list-style:none;font-size:14px;line-height:1.7;color:var(--ink-muted)}
+.pc-box li{padding-left:20px;position:relative;margin-bottom:6px}
+.pc-box.pros li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:500}
+.pc-box.cons li::before{content:'!';position:absolute;left:0;color:var(--amber);font-weight:500}
+.pillar-list{display:grid;gap:12px;margin-top:16px}
+.pillar{display:grid;grid-template-columns:160px 100px 1fr;gap:12px;align-items:center;padding:14px 18px;background:var(--parchment);border:1px solid var(--border-light);border-radius:var(--r-md);font-size:14px}
+.pillar .pname{font-weight:500;color:var(--ink)}
+.pillar .pscore{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest)}
+.pillar .pnote{color:var(--ink-muted);font-size:13px}
+.review h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.review h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:28px 0 12px}
+.review p{font-size:16px;line-height:1.75;color:var(--ink-muted);margin-bottom:16px}
+.review ul,.review ol{margin:12px 0 20px 24px;color:var(--ink-muted);line-height:1.75}
+.review li{margin-bottom:6px}
+.review a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.review strong{color:var(--ink);font-weight:500}
+.methodology-box{background:var(--white);border:1px dashed var(--border);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:13px;color:var(--ink-light);line-height:1.7}
+.methodology-box strong{color:var(--ink-muted);font-weight:500}
+.byline{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--border-light);margin-bottom:32px;font-size:13px}
+.byline-avatar{width:38px;height:38px;background:var(--forest);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:500;font-size:14px}
+.byline-info strong{display:block;color:var(--ink);font-weight:500;font-size:14px}
+.byline-info span{color:var(--ink-light);font-size:12px}
+.verify-note{display:block;margin-top:14px;padding:10px 14px;background:rgba(212,112,10,0.08);border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:12px;color:var(--ink-muted);line-height:1.6}
+.verify-note strong{color:var(--amber)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" onclick="closeMobileMenu()" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" onclick="closeMobileMenu()" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" onclick="closeMobileMenu()" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" onclick="closeMobileMenu()" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/hipotecas.html" onclick="closeMobileMenu()" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+        <li><a href="/prestamos.html" onclick="closeMobileMenu()" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Guía Hipotecas · ITIN" data-en="Mortgage Guide · ITIN">Guía Hipotecas · ITIN</p>
+    <h1 class="page-hero__title" data-es='Compra casa <em>con ITIN</em>' data-en='Buy a home <em>with ITIN</em>'>Compra casa <em>con ITIN</em></h1>
+    <p class="page-hero__desc" data-es="Tener ITIN en lugar de SSN no te cierra las puertas de la vivienda. Miles de familias hispanas lo hacen cada año. Aquí está el proceso real." data-en="Having ITIN instead of SSN doesn't close homeownership doors. Thousands of Hispanic families do it every year. Here's the real process.">Tener ITIN en lugar de SSN no te cierra las puertas de la vivienda. Miles de familias hispanas lo hacen cada año. Aquí está el proceso real.</p>
+  </div>
+</section>
+<section class="review-wrap">
+<div class="review">
+<div class="disclosure" data-es='<strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.' data-en='<strong>Affiliate notice:</strong> Norte Financial may receive compensation when you click links or open accounts with products shown here. This does not affect our independent ratings. <a href="/divulgacion.html">See full disclosure</a>.'><strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.</div>
+<div class="byline">
+  <div class="byline-avatar">NF</div>
+  <div class="byline-info">
+    <strong data-es="Equipo Editorial Norte Financial" data-en="Norte Financial Editorial Team">Equipo Editorial Norte Financial</strong>
+    <span data-es="Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026" data-en="Bilingual editorial team · Miami, FL · Updated Apr 11, 2026">Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026</span>
+  </div>
+</div>
+<p data-es="Comprar tu propia casa en EE.UU. es uno de los sueños más importantes de toda familia hispana. Pero existe una creencia falsa muy extendida: 'sin SSN no puedo comprar casa'. Incorrecto. Las hipotecas ITIN existen, son legales, y son un producto establecido con múltiples prestamistas. Cada año miles de familias inmigrantes compran casa sin SSN. Esta guía te explica exactamente cómo, qué necesitas, y cuánto te va a costar." data-en="Buying your own home in the US is one of the most important dreams of every Hispanic family. But there's a widespread false belief: 'without SSN I can't buy a house'. Incorrect. ITIN mortgages exist, are legal, and are an established product with multiple lenders. Every year thousands of immigrant families buy homes without SSN. This guide explains exactly how, what you need, and how much it will cost.">Comprar tu propia casa en EE.UU. es uno de los sueños más importantes de toda familia hispana. Pero existe una creencia falsa muy extendida: 'sin SSN no puedo comprar casa'. Incorrecto. Las hipotecas ITIN existen, son legales, y son un producto establecido con múltiples prestamistas. Cada año miles de familias inmigrantes compran casa sin SSN. Esta guía te explica exactamente cómo, qué necesitas, y cuánto te va a costar.</p>
+
+<h2 data-es="¿Qué es una hipoteca ITIN?" data-en="What is an ITIN mortgage?">¿Qué es una hipoteca ITIN?</h2>
+<div data-es='Una hipoteca ITIN es un préstamo para comprar vivienda donde el prestamista acepta ITIN en lugar de SSN como identificación fiscal del deudor. Estas hipotecas NO son programas del gobierno federal (FHA, VA, USDA) — todos los programas federales requieren SSN. Las hipotecas ITIN son 'portfolio loans' — préstamos que el banco mantiene en su propia cartera en lugar de venderlos a Fannie Mae o Freddie Mac. Esto les da más flexibilidad para aceptar perfiles no-tradicionales pero también resulta en tasas más altas que las hipotecas tradicionales.' data-en='An ITIN mortgage is a home loan where the lender accepts ITIN instead of SSN as the borrower's tax identification. These mortgages are NOT federal government programs (FHA, VA, USDA) — all federal programs require SSN. ITIN mortgages are 'portfolio loans' — loans the bank keeps in its own portfolio instead of selling to Fannie Mae or Freddie Mac. This gives them more flexibility to accept non-traditional profiles but also results in higher rates than traditional mortgages.'>Una hipoteca ITIN es un préstamo para comprar vivienda donde el prestamista acepta ITIN en lugar de SSN como identificación fiscal del deudor. Estas hipotecas NO son programas del gobierno federal (FHA, VA, USDA) — todos los programas federales requieren SSN. Las hipotecas ITIN son 'portfolio loans' — préstamos que el banco mantiene en su propia cartera en lugar de venderlos a Fannie Mae o Freddie Mac. Esto les da más flexibilidad para aceptar perfiles no-tradicionales pero también resulta en tasas más altas que las hipotecas tradicionales.</div>
+<h2 data-es="Requisitos típicos" data-en="Typical requirements">Requisitos típicos</h2>
+<div data-es='<strong>Documentación:</strong><ul><li>ITIN vigente</li><li>Pasaporte vigente</li><li>2 años completos de declaraciones de impuestos al IRS (1040 + schedules)</li><li>2 años de W-2 o 1099 según corresponda</li><li>Últimos 2 meses de paystubs (si W-2)</li><li>Últimos 2-3 meses de estados de cuenta bancaria</li><li>Comprobante de renta pagada (12-24 meses de recibos o estados bancarios)</li></ul><strong>Financiero:</strong><ul><li>Down payment: típicamente 15-20% del precio de la casa</li><li>Reservas: 2-6 meses de pago hipotecario en el banco</li><li>Historial de crédito: generalmente 620+ (algunos aceptan sin credit score si muestras historial de pagos de renta y facturas)</li><li>DTI (deuda a ingreso): máximo 43% típicamente</li></ul>' data-en='<strong>Documentation:</strong><ul><li>Valid ITIN</li><li>Valid passport</li><li>2 full years of IRS tax returns (1040 + schedules)</li><li>2 years of W-2 or 1099 as applicable</li><li>Last 2 months of paystubs (if W-2)</li><li>Last 2-3 months of bank statements</li><li>Proof of rent paid (12-24 months of receipts or bank statements)</li></ul><strong>Financial:</strong><ul><li>Down payment: typically 15-20% of home price</li><li>Reserves: 2-6 months of mortgage payment in bank</li><li>Credit history: generally 620+ (some accept without credit score if you show rent and bill payment history)</li><li>DTI (debt-to-income): typically max 43%</li></ul>'><strong>Documentación:</strong><ul><li>ITIN vigente</li><li>Pasaporte vigente</li><li>2 años completos de declaraciones de impuestos al IRS (1040 + schedules)</li><li>2 años de W-2 o 1099 según corresponda</li><li>Últimos 2 meses de paystubs (si W-2)</li><li>Últimos 2-3 meses de estados de cuenta bancaria</li><li>Comprobante de renta pagada (12-24 meses de recibos o estados bancarios)</li></ul><strong>Financiero:</strong><ul><li>Down payment: típicamente 15-20% del precio de la casa</li><li>Reservas: 2-6 meses de pago hipotecario en el banco</li><li>Historial de crédito: generalmente 620+ (algunos aceptan sin credit score si muestras historial de pagos de renta y facturas)</li><li>DTI (deuda a ingreso): máximo 43% típicamente</li></ul></div>
+<h2 data-es="Los mejores prestamistas ITIN" data-en="Best ITIN lenders">Los mejores prestamistas ITIN</h2>
+<div data-es='<strong>1. <a href='/resena-alterra-hipoteca.html'>Alterra Home Loans</a>:</strong> El especialista #1 del país. Casi 50% de sus clientes son ITIN. Proceso completo en español. Generalmente las tasas más competitivas para ITIN.<br><br><strong>2. <a href='/resena-new-american-funding.html'>New American Funding</a>:</strong> Prestamista nacional grande con división 'Latino Focus'. Más variedad de programas (FHA, ITIN, convencional). Bueno si quieres comparar múltiples opciones con un solo prestamista.<br><br><strong>3. <a href='/resena-guild-mortgage.html'>Guild Mortgage</a>:</strong> Programa 'Guild Dream' específico para primer comprador ITIN con educación financiera pre-compra gratis. Asistencia de down payment disponible en algunos estados.<br><br><strong>Otros para considerar:</strong> HomeXpress Mortgage, Non-QM Lenders como Athas Capital, Angel Oak Mortgage, y portfolio loans de bancos locales con fuerte enfoque hispano.' data-en='<strong>1. <a href='/resena-alterra-hipoteca.html'>Alterra Home Loans</a>:</strong> The country's #1 specialist. Nearly 50% of clients are ITIN. Full process in Spanish. Generally most competitive rates for ITIN.<br><br><strong>2. <a href='/resena-new-american-funding.html'>New American Funding</a>:</strong> Large national lender with 'Latino Focus' division. More program variety (FHA, ITIN, conventional). Good if you want to compare multiple options with one lender.<br><br><strong>3. <a href='/resena-guild-mortgage.html'>Guild Mortgage</a>:</strong> 'Guild Dream' program specifically for first-time ITIN buyer with free pre-purchase financial education. Down payment assistance available in some states.<br><br><strong>Others to consider:</strong> HomeXpress Mortgage, Non-QM Lenders like Athas Capital, Angel Oak Mortgage, and portfolio loans from local banks with strong Hispanic focus.'><strong>1. <a href='/resena-alterra-hipoteca.html'>Alterra Home Loans</a>:</strong> El especialista #1 del país. Casi 50% de sus clientes son ITIN. Proceso completo en español. Generalmente las tasas más competitivas para ITIN.<br><br><strong>2. <a href='/resena-new-american-funding.html'>New American Funding</a>:</strong> Prestamista nacional grande con división 'Latino Focus'. Más variedad de programas (FHA, ITIN, convencional). Bueno si quieres comparar múltiples opciones con un solo prestamista.<br><br><strong>3. <a href='/resena-guild-mortgage.html'>Guild Mortgage</a>:</strong> Programa 'Guild Dream' específico para primer comprador ITIN con educación financiera pre-compra gratis. Asistencia de down payment disponible en algunos estados.<br><br><strong>Otros para considerar:</strong> HomeXpress Mortgage, Non-QM Lenders como Athas Capital, Angel Oak Mortgage, y portfolio loans de bancos locales con fuerte enfoque hispano.</div>
+<h2 data-es="El proceso paso a paso" data-en="The process step by step">El proceso paso a paso</h2>
+<div data-es='<strong>Paso 1 — Pre-calificación (1 semana):</strong> Contactas 2-3 prestamistas ITIN. Les das información básica: ingresos, deudas, ITIN, ahorros. Ellos te dan estimaciones de cuánto puedes pedir prestado y a qué tasa aproximada. Esto NO afecta tu credit score.<br><br><strong>Paso 2 — Pre-aprobación (2-3 semanas):</strong> Eliges el prestamista con mejor oferta. Envías documentos completos. El prestamista verifica todo y te da una carta de pre-aprobación con el monto máximo que prestará. Esta carta es lo que usas para hacer ofertas en casas.<br><br><strong>Paso 3 — Buscar casa (1-6 meses):</strong> Con tu realtor (idealmente bilingüe), buscas casa dentro de tu presupuesto. Importante: incluye en el presupuesto impuestos de propiedad (1-3% del valor anual), seguro de hogar ($1,000-$3,000/año), y HOA si aplica.<br><br><strong>Paso 4 — Oferta y aceptación (1-2 semanas):</strong> Haces oferta, negocias, el vendedor acepta. Firmas contrato de compra.<br><br><strong>Paso 5 — Processing (30-45 días):</strong> El prestamista ordena appraisal (valuación), inspección de casa, título, y hace verificación final de tus documentos. Aquí es donde pueden pedir documentos adicionales — responde rápido.<br><br><strong>Paso 6 — Cierre (1 día):</strong> Firmas los papeles finales, pagas down payment + closing costs (3-5% del precio de la casa), recibes las llaves. Ya tienes casa.' data-en='<strong>Step 1 — Pre-qualification (1 week):</strong> Contact 2-3 ITIN lenders. Give them basic info: income, debts, ITIN, savings. They give you estimates of how much you can borrow and at approximately what rate. This does NOT affect your credit score.<br><br><strong>Step 2 — Pre-approval (2-3 weeks):</strong> Choose the lender with best offer. Submit complete documents. Lender verifies everything and gives you a pre-approval letter with max amount they'll lend. This letter is what you use to make offers on homes.<br><br><strong>Step 3 — Home search (1-6 months):</strong> With your realtor (ideally bilingual), search for homes within your budget. Important: include in budget property taxes (1-3% of value annually), home insurance ($1,000-$3,000/year), and HOA if applicable.<br><br><strong>Step 4 — Offer and acceptance (1-2 weeks):</strong> You make offer, negotiate, seller accepts. Sign purchase contract.<br><br><strong>Step 5 — Processing (30-45 days):</strong> Lender orders appraisal, home inspection, title, and does final verification of your documents. This is where they may ask for additional documents — respond fast.<br><br><strong>Step 6 — Closing (1 day):</strong> Sign final papers, pay down payment + closing costs (3-5% of home price), receive keys. You own a home.'><strong>Paso 1 — Pre-calificación (1 semana):</strong> Contactas 2-3 prestamistas ITIN. Les das información básica: ingresos, deudas, ITIN, ahorros. Ellos te dan estimaciones de cuánto puedes pedir prestado y a qué tasa aproximada. Esto NO afecta tu credit score.<br><br><strong>Paso 2 — Pre-aprobación (2-3 semanas):</strong> Eliges el prestamista con mejor oferta. Envías documentos completos. El prestamista verifica todo y te da una carta de pre-aprobación con el monto máximo que prestará. Esta carta es lo que usas para hacer ofertas en casas.<br><br><strong>Paso 3 — Buscar casa (1-6 meses):</strong> Con tu realtor (idealmente bilingüe), buscas casa dentro de tu presupuesto. Importante: incluye en el presupuesto impuestos de propiedad (1-3% del valor anual), seguro de hogar ($1,000-$3,000/año), y HOA si aplica.<br><br><strong>Paso 4 — Oferta y aceptación (1-2 semanas):</strong> Haces oferta, negocias, el vendedor acepta. Firmas contrato de compra.<br><br><strong>Paso 5 — Processing (30-45 días):</strong> El prestamista ordena appraisal (valuación), inspección de casa, título, y hace verificación final de tus documentos. Aquí es donde pueden pedir documentos adicionales — responde rápido.<br><br><strong>Paso 6 — Cierre (1 día):</strong> Firmas los papeles finales, pagas down payment + closing costs (3-5% del precio de la casa), recibes las llaves. Ya tienes casa.</div>
+<h2 data-es="Cuánto cuesta en total" data-en="Total cost">Cuánto cuesta en total</h2>
+<div data-es='Ejemplo real: comprar una casa de $350,000 con ITIN mortgage.<br><br><strong>Dinero en efectivo necesario al cierre:</strong><ul><li>Down payment 15%: $52,500</li><li>Closing costs ~4%: $14,000</li><li>Reservas 3 meses pago: ~$8,000</li><li><strong>Total cash: ~$74,500</strong></li></ul><strong>Pago mensual (ejemplo, tasa 8%, término 30 años):</strong><ul><li>Principal + interés: $2,184</li><li>Impuestos propiedad (1.5% anual): $437</li><li>Seguro de hogar: $125</li><li>PMI (si down <20%): $200</li><li><strong>Total mensual: ~$2,946</strong></li></ul><strong>Para calificar con esta cuota, necesitas ingreso mensual aproximado de:</strong> $2,946 / 0.28 = <strong>$10,521/mes ($126,250/año)</strong> usando la regla del 28%. Con la regla más flexible del 43% DTI, necesitas <strong>$6,851/mes ($82,200/año)</strong>.' data-en='Real example: buying a $350,000 home with ITIN mortgage.<br><br><strong>Cash needed at closing:</strong><ul><li>15% down payment: $52,500</li><li>~4% closing costs: $14,000</li><li>3 months reserves: ~$8,000</li><li><strong>Total cash: ~$74,500</strong></li></ul><strong>Monthly payment (example, 8% rate, 30-year term):</strong><ul><li>Principal + interest: $2,184</li><li>Property taxes (1.5% annually): $437</li><li>Home insurance: $125</li><li>PMI (if down <20%): $200</li><li><strong>Total monthly: ~$2,946</strong></li></ul><strong>To qualify with this payment, you need approximate monthly income of:</strong> $2,946 / 0.28 = <strong>$10,521/month ($126,250/year)</strong> using 28% rule. With the more flexible 43% DTI rule, you need <strong>$6,851/month ($82,200/year)</strong>.'>Ejemplo real: comprar una casa de $350,000 con ITIN mortgage.<br><br><strong>Dinero en efectivo necesario al cierre:</strong><ul><li>Down payment 15%: $52,500</li><li>Closing costs ~4%: $14,000</li><li>Reservas 3 meses pago: ~$8,000</li><li><strong>Total cash: ~$74,500</strong></li></ul><strong>Pago mensual (ejemplo, tasa 8%, término 30 años):</strong><ul><li>Principal + interés: $2,184</li><li>Impuestos propiedad (1.5% anual): $437</li><li>Seguro de hogar: $125</li><li>PMI (si down <20%): $200</li><li><strong>Total mensual: ~$2,946</strong></li></ul><strong>Para calificar con esta cuota, necesitas ingreso mensual aproximado de:</strong> $2,946 / 0.28 = <strong>$10,521/mes ($126,250/año)</strong> usando la regla del 28%. Con la regla más flexible del 43% DTI, necesitas <strong>$6,851/mes ($82,200/año)</strong>.</div>
+
+
+<h2 data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</h2><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Cuánto down payment necesito para hipoteca ITIN?" data-en="How much down payment do I need for ITIN mortgage?">¿Cuánto down payment necesito para hipoteca ITIN?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Típicamente 15-20% mínimo. Algunos prestamistas como Alterra trabajan con 10% en casos excepcionales con credit score alto y reservas grandes, pero 15-20% es el estándar." data-en="Typically 15-20% minimum. Some lenders like Alterra work with 10% in exceptional cases with high credit score and large reserves, but 15-20% is the standard.">Típicamente 15-20% mínimo. Algunos prestamistas como Alterra trabajan con 10% en casos excepcionales con credit score alto y reservas grandes, pero 15-20% es el estándar.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Las tasas de ITIN son mucho más altas que FHA?" data-en="Are ITIN rates much higher than FHA?">¿Las tasas de ITIN son mucho más altas que FHA?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Generalmente 1-2% más altas. Si FHA está al 6.5%, ITIN estará al 7.5-8.5%. En un préstamo de $300K a 30 años, esa diferencia es ~$300-$600 más al mes." data-en="Generally 1-2% higher. If FHA is at 6.5%, ITIN will be at 7.5-8.5%. On a $300K 30-year loan, that difference is ~$300-$600 more per month.">Generalmente 1-2% más altas. Si FHA está al 6.5%, ITIN estará al 7.5-8.5%. En un préstamo de $300K a 30 años, esa diferencia es ~$300-$600 más al mes.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Puedo refinanciar a FHA si eventualmente obtengo SSN?" data-en="Can I refinance to FHA if I eventually get SSN?">¿Puedo refinanciar a FHA si eventualmente obtengo SSN?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Sí, y deberías hacerlo. Si obtienes residencia/SSN después de comprar con ITIN mortgage, refinanciar a FHA o convencional puede bajarte la tasa 1-2% — ahorras miles al año." data-en="Yes, and you should. If you get residency/SSN after buying with ITIN mortgage, refinancing to FHA or conventional can lower your rate 1-2% — saving thousands per year.">Sí, y deberías hacerlo. Si obtienes residencia/SSN después de comprar con ITIN mortgage, refinanciar a FHA o convencional puede bajarte la tasa 1-2% — ahorras miles al año.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Necesito credit score para ITIN mortgage?" data-en="Do I need credit score for ITIN mortgage?">¿Necesito credit score para ITIN mortgage?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Idealmente sí (620+), pero no todos los prestamistas lo requieren. Alterra puede trabajar con personas sin credit score si demuestras historial de pagos alternativos (renta, servicios públicos, teléfono) por 12-24 meses." data-en="Ideally yes (620+), but not all lenders require it. Alterra can work with people without credit score if you demonstrate alternative payment history (rent, utilities, phone) for 12-24 months.">Idealmente sí (620+), pero no todos los prestamistas lo requieren. Alterra puede trabajar con personas sin credit score si demuestras historial de pagos alternativos (renta, servicios públicos, teléfono) por 12-24 meses.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Qué pasa si pierdo mi trabajo después de comprar?" data-en="What happens if I lose my job after buying?">¿Qué pasa si pierdo mi trabajo después de comprar?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Igual que con cualquier hipoteca. Contacta al prestamista INMEDIATAMENTE — muchos tienen programas de 'forbearance' (pausa temporal de pagos) por hasta 3-6 meses. La peor opción es no hacer nada y dejar de pagar — eso lleva a foreclosure." data-en="Same as any mortgage. Contact the lender IMMEDIATELY — many have 'forbearance' programs (temporary payment pause) for up to 3-6 months. Worst option is doing nothing and stopping payments — that leads to foreclosure.">Igual que con cualquier hipoteca. Contacta al prestamista INMEDIATAMENTE — muchos tienen programas de 'forbearance' (pausa temporal de pagos) por hasta 3-6 meses. La peor opción es no hacer nada y dejar de pagar — eso lleva a foreclosure.</p>
+</div>
+
+<h2 data-es="Próximo paso" data-en="Next step">Próximo paso</h2>
+<p data-es="Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Hipotecas." data-en="Explore the specific products mentioned in this guide or go back to the main hub to see all Hipotecas options.">Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Hipotecas.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 0">
+  <a href="/hipotecas.html" class="btn-primary" data-es="Ver Hipotecas →" data-en="See Hipotecas →">Ver Hipotecas →</a>
+  <a href="/finanzas.html" class="btn-ghost" data-es="Todas las finanzas →" data-en="All finances →">Todas las finanzas →</a>
+</div>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="Guía bilingüe de finanzas personales para hispanos en Estados Unidos. Crédito, banca, remesas, impuestos, hipotecas." data-en="Bilingual personal finance guide for Hispanics in the United States. Credit, banking, remittances, taxes, mortgages.">Guía bilingüe de finanzas personales para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/herramientas.html" data-es="Calculadoras" data-en="Calculators">Calculadoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="/divulgacion.html" data-es="Divulgación" data-en="Disclosure">Divulgación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

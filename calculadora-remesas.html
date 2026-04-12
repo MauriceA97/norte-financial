@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Calculadora de remesas 2026: compara Wise, Remitly, Xoom, Western Union y MoneyGram en segundos. Ahorra cientos al año enviando dinero a Latinoamérica.">
+<meta name="robots" content="index, follow">
+<title>Calculadora de Remesas — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/calculadora-remesas.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-track.js" defer></script>
+
+<style>
+.review-wrap{padding:60px 0 100px;background:var(--parchment)}
+.review{max-width:880px;margin:0 auto;padding:0 24px}
+.disclosure{background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-md);padding:14px 18px;font-size:12px;color:var(--ink-muted);margin-bottom:32px;line-height:1.6}
+.disclosure strong{color:var(--forest)}
+.disclosure a{color:var(--verde);text-decoration:underline}
+.rating-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px;box-shadow:var(--shadow-sm);margin-bottom:32px}
+.rating-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.rating-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:6px}
+.rating-sub{font-size:14px;color:var(--ink-light)}
+.rating-score{display:flex;align-items:baseline;gap:6px}
+.rating-score .num{font-family:var(--font-display);font-size:48px;font-weight:500;color:var(--forest);line-height:1}
+.rating-score .max{font-size:18px;color:var(--ink-light)}
+.stars{font-size:22px;color:var(--amber);letter-spacing:2px;margin-top:6px}
+.rating-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 0}
+.highlight{padding:14px 16px;background:var(--frost);border-radius:var(--r-md);text-align:center;border:1px solid var(--border-light)}
+.highlight-label{font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px}
+.highlight-value{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.pc-box{padding:20px;border-radius:var(--r-md);border:1px solid var(--border-light)}
+.pc-box.pros{background:rgba(29,158,117,0.06);border-color:rgba(29,158,117,0.2)}
+.pc-box.cons{background:rgba(212,112,10,0.06);border-color:rgba(212,112,10,0.2)}
+.pc-box h4{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+.pc-box.pros h4{color:var(--verde)}
+.pc-box.cons h4{color:var(--amber)}
+.pc-box ul{list-style:none;font-size:14px;line-height:1.7;color:var(--ink-muted)}
+.pc-box li{padding-left:20px;position:relative;margin-bottom:6px}
+.pc-box.pros li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:500}
+.pc-box.cons li::before{content:'!';position:absolute;left:0;color:var(--amber);font-weight:500}
+.pillar-list{display:grid;gap:12px;margin-top:16px}
+.pillar{display:grid;grid-template-columns:160px 100px 1fr;gap:12px;align-items:center;padding:14px 18px;background:var(--parchment);border:1px solid var(--border-light);border-radius:var(--r-md);font-size:14px}
+.pillar .pname{font-weight:500;color:var(--ink)}
+.pillar .pscore{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest)}
+.pillar .pnote{color:var(--ink-muted);font-size:13px}
+.review h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.review h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:28px 0 12px}
+.review p{font-size:16px;line-height:1.75;color:var(--ink-muted);margin-bottom:16px}
+.review ul,.review ol{margin:12px 0 20px 24px;color:var(--ink-muted);line-height:1.75}
+.review li{margin-bottom:6px}
+.review a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.review strong{color:var(--ink);font-weight:500}
+.methodology-box{background:var(--white);border:1px dashed var(--border);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:13px;color:var(--ink-light);line-height:1.7}
+.methodology-box strong{color:var(--ink-muted);font-weight:500}
+.byline{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--border-light);margin-bottom:32px;font-size:13px}
+.byline-avatar{width:38px;height:38px;background:var(--forest);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:500;font-size:14px}
+.byline-info strong{display:block;color:var(--ink);font-weight:500;font-size:14px}
+.byline-info span{color:var(--ink-light);font-size:12px}
+.verify-note{display:block;margin-top:14px;padding:10px 14px;background:rgba(212,112,10,0.08);border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:12px;color:var(--ink-muted);line-height:1.6}
+.verify-note strong{color:var(--amber)}
+</style>
+<style>
+.calc-wrap{padding:60px 0 100px;background:var(--parchment)}
+.calc-inner{max-width:880px;margin:0 auto;padding:0 24px}
+.calc-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px;box-shadow:var(--shadow-sm);margin-bottom:28px}
+.calc-form{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:8px}
+.calc-field label{display:block;font-size:13px;font-weight:500;color:var(--ink-muted);margin-bottom:6px;letter-spacing:0.02em}
+.calc-field .input-wrap{position:relative}
+.calc-field .currency-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-light);font-size:16px;pointer-events:none}
+.calc-field input[type="number"]{width:100%;font-family:var(--font-body);font-size:18px;font-weight:500;padding:14px 16px 14px 32px;border:1.5px solid var(--border);border-radius:var(--r-md);outline:none;background:var(--white);color:var(--ink);transition:border-color 0.18s}
+.calc-field input[type="number"]:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(29,158,117,0.12)}
+.calc-field select{width:100%;font-family:var(--font-body);font-size:16px;padding:14px 40px 14px 16px;border:1.5px solid var(--border);border-radius:var(--r-md);outline:none;background:var(--white);color:var(--ink);-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234A4A4A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.calc-field select:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(29,158,117,0.12)}
+.calc-summary{margin-top:24px;padding:18px 22px;background:var(--frost);border-radius:var(--r-md);border-left:4px solid var(--verde);font-size:14px;color:var(--ink-muted);line-height:1.7}
+.calc-summary strong{color:var(--forest);font-weight:500}
+.results-title{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin:28px 0 12px;letter-spacing:-0.01em}
+.result-list{display:grid;gap:12px}
+.result-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:22px 24px;transition:all 0.2s;position:relative}
+.result-card.winner{border-color:var(--verde);border-width:2px;box-shadow:0 4px 20px rgba(29,158,117,0.12)}
+.result-card.winner::before{content:'MEJOR OPCIÓN';position:absolute;top:-10px;left:22px;background:var(--verde);color:var(--white);font-size:10px;font-weight:500;letter-spacing:0.08em;padding:4px 10px;border-radius:var(--r-full)}
+.result-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:12px}
+.result-name{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);line-height:1.2}
+.result-received{text-align:right}
+.result-received .amount{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--forest);line-height:1}
+.result-received .label{font-size:11px;color:var(--ink-light);margin-top:4px;letter-spacing:0.04em;text-transform:uppercase}
+.result-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--ink-muted);margin-bottom:14px}
+.result-meta-item{display:flex;gap:6px;align-items:center}
+.result-meta-item strong{color:var(--ink);font-weight:500}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap}
+.result-actions .btn-send{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--amber);color:var(--white);border:none;border-radius:var(--r-full);font-size:13px;font-weight:500;text-decoration:none;transition:all 0.2s;cursor:pointer}
+.result-actions .btn-send:hover{background:#BA6208;transform:translateY(-1px)}
+.result-actions .btn-review{display:inline-flex;align-items:center;padding:10px 18px;background:transparent;color:var(--ink-muted);border:1px solid var(--border);border-radius:var(--r-full);font-size:13px;font-weight:400;text-decoration:none;transition:all 0.18s}
+.result-actions .btn-review:hover{background:var(--frost);color:var(--forest);border-color:var(--verde)}
+.result-savings{margin-top:14px;padding:10px 14px;background:rgba(29,158,117,0.08);border-radius:var(--r-sm);font-size:12px;color:var(--verde);font-weight:500}
+.result-loss{margin-top:14px;padding:10px 14px;background:rgba(212,112,10,0.08);border-radius:var(--r-sm);font-size:12px;color:var(--amber);font-weight:500}
+.calc-note{margin-top:32px;padding:18px 22px;background:var(--white);border:1px dashed var(--border);border-radius:var(--r-md);font-size:12px;color:var(--ink-light);line-height:1.7}
+.calc-note strong{color:var(--ink-muted)}
+@media(max-width:768px){
+  .calc-form{grid-template-columns:1fr}
+  .calc-card{padding:24px 20px}
+  .result-card{padding:18px 20px}
+  .result-header{flex-direction:column;align-items:flex-start;gap:8px}
+  .result-received{text-align:left}
+  .result-name{font-size:20px}
+  .result-received .amount{font-size:24px}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" onclick="closeMobileMenu()" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" onclick="closeMobileMenu()" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" onclick="closeMobileMenu()" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" onclick="closeMobileMenu()" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/hipotecas.html" onclick="closeMobileMenu()" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+        <li><a href="/prestamos.html" onclick="closeMobileMenu()" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Calculadora · Comparación en vivo" data-en="Calculator · Live comparison">Calculadora · Comparación en vivo</p>
+    <h1 class="page-hero__title" data-es="Calculadora de <em>remesas</em>" data-en="<em>Remittance</em> calculator">Calculadora de <em>remesas</em></h1>
+    <p class="page-hero__desc" data-es="Compara en segundos cuánto dinero llega realmente con Wise, Remitly, Xoom, Western Union y MoneyGram. Los resultados te van a sorprender." data-en="Compare in seconds how much money actually arrives with Wise, Remitly, Xoom, Western Union, and MoneyGram. The results will surprise you.">Compara en segundos cuánto dinero llega realmente con Wise, Remitly, Xoom, Western Union y MoneyGram.</p>
+  </div>
+</section>
+<section class="calc-wrap">
+<div class="calc-inner">
+<div class="disclosure" data-es='<strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.' data-en='<strong>Affiliate notice:</strong> Norte Financial may receive compensation when you click links or open accounts with products shown here. This does not affect our independent ratings. <a href="/divulgacion.html">See full disclosure</a>.'><strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.</div>
+
+<div class="calc-card">
+  <div class="calc-form">
+    <div class="calc-field">
+      <label data-es="Monto a enviar (USD)" data-en="Amount to send (USD)">Monto a enviar (USD)</label>
+      <div class="input-wrap">
+        <span class="currency-prefix">$</span>
+        <input type="number" id="amount" value="500" min="10" max="50000" step="10" />
+      </div>
+    </div>
+    <div class="calc-field">
+      <label data-es="País destino" data-en="Destination country">País destino</label>
+      <select id="country"></select>
+    </div>
+  </div>
+  <div class="calc-summary" id="summary"></div>
+</div>
+
+<h2 class="results-title" data-es="Resultados ordenados por monto recibido" data-en="Results sorted by amount received">Resultados ordenados por monto recibido</h2>
+<div class="result-list" id="results"></div>
+
+<div class="calc-note" data-es="<strong>Nota importante:</strong> Estos cálculos son estimaciones basadas en márgenes y comisiones promedio de los proveedores en 2026. Las tasas reales cambian diariamente según el mercado, el método de pago (ACH es más barato que tarjeta), el monto, y promociones vigentes. Verifica siempre la tasa final en el sitio del proveedor antes de enviar." data-en="<strong>Important note:</strong> These calculations are estimates based on average 2026 provider margins and fees. Real rates change daily based on market, payment method (ACH is cheaper than card), amount, and active promotions. Always verify the final rate on the provider's site before sending."><strong>Nota importante:</strong> Estos cálculos son estimaciones basadas en márgenes y comisiones promedio de los proveedores en 2026. Las tasas reales cambian diariamente según el mercado, el método de pago (ACH es más barato que tarjeta), el monto, y promociones vigentes. Verifica siempre la tasa final en el sitio del proveedor antes de enviar.</div>
+
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="Guía bilingüe de finanzas personales para hispanos en Estados Unidos. Crédito, banca, remesas, impuestos, hipotecas." data-en="Bilingual personal finance guide for Hispanics in the United States. Credit, banking, remittances, taxes, mortgages.">Guía bilingüe de finanzas personales para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/herramientas.html" data-es="Calculadoras" data-en="Calculators">Calculadoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="/divulgacion.html" data-es="Divulgación" data-en="Disclosure">Divulgación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+<script>
+
+const COUNTRIES = [
+  { code: 'MX', nameEs: 'México',              nameEn: 'Mexico',              currency: 'MXN', midRate: 20.40, symbol: '$' },
+  { code: 'GT', nameEs: 'Guatemala',           nameEn: 'Guatemala',           currency: 'GTQ', midRate: 7.85,  symbol: 'Q' },
+  { code: 'HN', nameEs: 'Honduras',            nameEn: 'Honduras',            currency: 'HNL', midRate: 24.70, symbol: 'L' },
+  { code: 'SV', nameEs: 'El Salvador',         nameEn: 'El Salvador',         currency: 'USD', midRate: 1.00,  symbol: '$' },
+  { code: 'NI', nameEs: 'Nicaragua',           nameEn: 'Nicaragua',           currency: 'NIO', midRate: 36.70, symbol: 'C$' },
+  { code: 'DO', nameEs: 'República Dominicana', nameEn: 'Dominican Republic', currency: 'DOP', midRate: 59.20, symbol: 'RD$' },
+  { code: 'CO', nameEs: 'Colombia',            nameEn: 'Colombia',            currency: 'COP', midRate: 4150,  symbol: '$' },
+  { code: 'PE', nameEs: 'Perú',                nameEn: 'Peru',                currency: 'PEN', midRate: 3.72,  symbol: 'S/' },
+  { code: 'EC', nameEs: 'Ecuador',             nameEn: 'Ecuador',             currency: 'USD', midRate: 1.00,  symbol: '$' },
+  { code: 'CU', nameEs: 'Cuba',                nameEn: 'Cuba',                currency: 'CUP', midRate: 24.00, symbol: '$' },
+  { code: 'AR', nameEs: 'Argentina',           nameEn: 'Argentina',           currency: 'ARS', midRate: 1020,  symbol: '$' },
+  { code: 'VE', nameEs: 'Venezuela',           nameEn: 'Venezuela',           currency: 'VES', midRate: 48.50, symbol: 'Bs.' }
+];
+
+// Provider pricing model — APPROXIMATE, for comparison only.
+// Each has:
+//   marginPct: % margin over mid-market exchange rate (lower is better for user)
+//   flatFeePct: % of amount as flat fee (separate from rate margin)
+//   minFee: minimum flat fee in USD
+//   speedEs/En: delivery speed text
+//   destUrl: partner URL for click-through
+//   productId: used for /api/click routing
+const PROVIDERS = [
+  {
+    id: 'wise',
+    name: 'Wise',
+    marginPct: 0.0,        // uses real mid-market rate
+    flatFeePct: 0.0065,    // ~0.65% fixed fee
+    minFee: 3.50,
+    speedEs: 'Minutos a 1 día',
+    speedEn: 'Minutes to 1 day',
+    destUrl: 'https://wise.com/',
+    productId: 'wise',
+    reviewUrl: '/resena-wise.html'
+  },
+  {
+    id: 'remitly',
+    name: 'Remitly Economy',
+    marginPct: 0.018,      // ~1.8% margin on rate
+    flatFeePct: 0.005,
+    minFee: 0.00,
+    speedEs: '1-3 días',
+    speedEn: '1-3 days',
+    destUrl: 'https://www.remitly.com/',
+    productId: 'remitly',
+    reviewUrl: '/resena-remitly.html'
+  },
+  {
+    id: 'xoom',
+    name: 'Xoom (PayPal)',
+    marginPct: 0.028,      // ~2.8% margin
+    flatFeePct: 0.006,
+    minFee: 4.99,
+    speedEs: 'Minutos a 1 día',
+    speedEn: 'Minutes to 1 day',
+    destUrl: 'https://www.xoom.com/',
+    productId: 'xoom',
+    reviewUrl: '/resena-xoom.html'
+  },
+  {
+    id: 'moneygram',
+    name: 'MoneyGram',
+    marginPct: 0.042,
+    flatFeePct: 0.008,
+    minFee: 5.99,
+    speedEs: 'Minutos',
+    speedEn: 'Minutes',
+    destUrl: 'https://www.moneygram.com/',
+    productId: 'moneygram',
+    reviewUrl: '/resena-moneygram.html'
+  },
+  {
+    id: 'western-union',
+    name: 'Western Union',
+    marginPct: 0.055,      // worst margin on average
+    flatFeePct: 0.009,
+    minFee: 4.99,
+    speedEs: 'Minutos',
+    speedEn: 'Minutes',
+    destUrl: 'https://www.westernunion.com/',
+    productId: 'western-union',
+    reviewUrl: '/resena-western-union.html'
+  }
+];
+
+
+// Build country dropdown
+const countrySelect = document.getElementById('country');
+COUNTRIES.forEach(c => {
+  const opt = document.createElement('option');
+  opt.value = c.code;
+  opt.textContent = (currentLang === 'en' ? c.nameEn : c.nameEs) + ' (' + c.currency + ')';
+  opt.dataset.nameEs = c.nameEs;
+  opt.dataset.nameEn = c.nameEn;
+  opt.dataset.currency = c.currency;
+  countrySelect.appendChild(opt);
+});
+countrySelect.value = 'MX'; // Default Mexico
+
+function formatMoney(n, currency, symbol) {
+  const opts = {minimumFractionDigits: 2, maximumFractionDigits: 2};
+  return (symbol || '') + n.toLocaleString(undefined, opts) + (currency ? ' ' + currency : '');
+}
+
+function calculateOffer(provider, usd, country) {
+  const effectiveRate = country.midRate * (1 - provider.marginPct);
+  const flatFee = Math.max(provider.minFee, usd * provider.flatFeePct);
+  const usdAfterFee = Math.max(0, usd - flatFee);
+  const received = usdAfterFee * effectiveRate;
+  return {
+    provider,
+    flatFee,
+    effectiveRate,
+    received,
+    totalCostUsd: flatFee + (usd * provider.marginPct) // approximation of real cost
+  };
+}
+
+function render() {
+  const usd = parseFloat(document.getElementById('amount').value) || 0;
+  const countryCode = countrySelect.value;
+  const country = COUNTRIES.find(c => c.code === countryCode);
+  if (!country || usd <= 0) return;
+
+  const isEs = currentLang !== 'en';
+
+  // Compute offers
+  const offers = PROVIDERS.map(p => calculateOffer(p, usd, country)).sort((a,b) => b.received - a.received);
+  const best = offers[0];
+  const worst = offers[offers.length - 1];
+  const diff = best.received - worst.received;
+  const diffUsd = (diff / country.midRate);
+
+  // Summary
+  const summary = document.getElementById('summary');
+  if (country.currency === 'USD') {
+    summary.innerHTML = isEs
+      ? `Enviando <strong>$${usd}</strong> a <strong>${country.nameEs}</strong> — ${country.nameEs} usa dólares estadounidenses, así que el tipo de cambio no aplica. La diferencia está solo en las comisiones.`
+      : `Sending <strong>$${usd}</strong> to <strong>${country.nameEn}</strong> — ${country.nameEn} uses US dollars, so exchange rate doesn't apply. The difference is only in fees.`;
+  } else {
+    summary.innerHTML = isEs
+      ? `Enviando <strong>$${usd} USD</strong> a <strong>${country.nameEs}</strong>. Diferencia entre la mejor y peor opción: <strong>${formatMoney(diff, country.currency, country.symbol)}</strong> (${diffUsd.toFixed(2)} USD por envío). Mensual eso es ~<strong>$${(diffUsd * 12).toFixed(0)}/año</strong>.`
+      : `Sending <strong>$${usd} USD</strong> to <strong>${country.nameEn}</strong>. Difference between best and worst option: <strong>${formatMoney(diff, country.currency, country.symbol)}</strong> (${diffUsd.toFixed(2)} USD per send). Monthly that's ~<strong>$${(diffUsd * 12).toFixed(0)}/year</strong>.`;
+  }
+
+  // Render result cards
+  const resultsEl = document.getElementById('results');
+  resultsEl.innerHTML = '';
+  offers.forEach((offer, i) => {
+    const isWinner = i === 0;
+    const vsBest = best.received - offer.received;
+    const vsBestUsd = vsBest / country.midRate;
+    const provider = offer.provider;
+    const speed = isEs ? provider.speedEs : provider.speedEn;
+
+    const card = document.createElement('div');
+    card.className = 'result-card' + (isWinner ? ' winner' : '');
+
+    const clickUrl = '/api/click?c=' + encodeURIComponent(provider.productId)
+                   + '&p=remittance'
+                   + '&pl=calculator'
+                   + '&dest=' + encodeURIComponent(provider.destUrl);
+
+    const sendLabel = isEs ? 'Enviar →' : 'Send →';
+    const reviewLabel = isEs ? 'Ver reseña' : 'See review';
+    const youSendLabel = isEs ? 'RECIBEN' : 'THEY RECEIVE';
+    const feeLabel = isEs ? 'Comisión' : 'Fee';
+    const rateLabel = isEs ? 'Tipo de cambio' : 'Exchange rate';
+    const speedLabelText = isEs ? 'Velocidad' : 'Speed';
+
+    const effRateStr = country.currency === 'USD'
+      ? '—'
+      : '1 USD = ' + offer.effectiveRate.toFixed(2) + ' ' + country.currency;
+
+    let comparisonHtml = '';
+    if (isWinner) {
+      comparisonHtml = '<div class="result-savings">' + (isEs
+        ? '✓ Mejor opción — ahorra ' + formatMoney(diff, country.currency, country.symbol) + ' vs la peor (' + worst.provider.name + ')'
+        : '✓ Best option — saves ' + formatMoney(diff, country.currency, country.symbol) + ' vs the worst (' + worst.provider.name + ')') + '</div>';
+    } else if (vsBest > 0) {
+      comparisonHtml = '<div class="result-loss">' + (isEs
+        ? '− ' + formatMoney(vsBest, country.currency, country.symbol) + ' menos que ' + best.provider.name + ' (' + vsBestUsd.toFixed(2) + ' USD perdidos en esta transferencia)'
+        : '− ' + formatMoney(vsBest, country.currency, country.symbol) + ' less than ' + best.provider.name + ' (' + vsBestUsd.toFixed(2) + ' USD lost on this transfer)') + '</div>';
+    }
+
+    card.innerHTML =
+      '<div class="result-header">' +
+        '<div><div class="result-name">' + provider.name + '</div></div>' +
+        '<div class="result-received">' +
+          '<div class="amount">' + formatMoney(offer.received, country.currency, country.symbol) + '</div>' +
+          '<div class="label">' + youSendLabel + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="result-meta">' +
+        '<div class="result-meta-item">' + feeLabel + ': <strong>$' + offer.flatFee.toFixed(2) + '</strong></div>' +
+        '<div class="result-meta-item">' + rateLabel + ': <strong>' + effRateStr + '</strong></div>' +
+        '<div class="result-meta-item">' + speedLabelText + ': <strong>' + speed + '</strong></div>' +
+      '</div>' +
+      '<div class="result-actions">' +
+        '<a href="' + clickUrl + '" rel="sponsored nofollow noopener" target="_blank" class="btn-send">' + sendLabel + '</a>' +
+        '<a href="' + provider.reviewUrl + '" class="btn-review">' + reviewLabel + '</a>' +
+      '</div>' +
+      comparisonHtml;
+
+    resultsEl.appendChild(card);
+  });
+}
+
+// Re-render country labels when language changes
+const _origSetLang = window.setLang;
+window.setLang = function(lang) {
+  _origSetLang(lang);
+  // Re-render dropdown options with new language
+  const current = countrySelect.value;
+  countrySelect.innerHTML = '';
+  COUNTRIES.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.code;
+    opt.textContent = (lang === 'en' ? c.nameEn : c.nameEs) + ' (' + c.currency + ')';
+    countrySelect.appendChild(opt);
+  });
+  countrySelect.value = current;
+  render();
+};
+
+document.getElementById('amount').addEventListener('input', render);
+countrySelect.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía 2026: cómo reclamar hasta $7,830 de EITC y $2,000 por hijo de Child Tax Credit. Reglas para familias de estatus mixto (algunos con SSN, otros con ITIN).">
+<meta name="robots" content="index, follow">
+<title>EITC y Child Tax Credit para familias hispanas — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/guia-eitc-child-tax-credit.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Puedo reclamar EITC si tengo ITIN?", "acceptedAnswer": {"@type": "Answer", "text": "No. EITC requiere SSN válido para el trabajador. Si tú tienes ITIN pero tu cónyuge tiene SSN y declaran juntos, pueden calificar si el cónyuge con SSN es quien tiene los ingresos — consulta a un preparador."}}, {"@type": "Question", "name": "¿Mi hijo con ITIN califica para Child Tax Credit?", "acceptedAnswer": {"@type": "Answer", "text": "No para el CTC regular de $2,000. Pero sí califica para el Credit for Other Dependents (ODC) de $500. El ODC es no-reembolsable (solo reduce impuestos, no paga refund)."}}, {"@type": "Question", "name": "¿Cuándo recibo el refund?", "acceptedAnswer": {"@type": "Answer", "text": "Si declaras electrónicamente y usas direct deposit: 2-3 semanas después de que el IRS procese. EITC y CTC reembolsables están sujetos a verificación adicional — típicamente llegan después del 15 de febrero."}}, {"@type": "Question", "name": "¿Necesito guardar recibos para reclamar CTC?", "acceptedAnswer": {"@type": "Answer", "text": "No necesitas recibos de gastos del hijo. Pero necesitas prueba de relación (acta de nacimiento) y residencia del hijo contigo (registros de escuela, médicos) en caso de auditoría. Guarda todo 3-7 años."}}, {"@type": "Question", "name": "¿Puedo reclamar CTC por un hijo que vive en México?", "acceptedAnswer": {"@type": "Answer", "text": "Generalmente no. El hijo debe haber vivido contigo en EE.UU. más de la mitad del año para calificar. Excepciones limitadas existen (ausencias temporales como escuela)."}}]}</script>
+<style>
+.review-wrap{padding:60px 0 100px;background:var(--parchment)}
+.review{max-width:880px;margin:0 auto;padding:0 24px}
+.disclosure{background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-md);padding:14px 18px;font-size:12px;color:var(--ink-muted);margin-bottom:32px;line-height:1.6}
+.disclosure strong{color:var(--forest)}
+.disclosure a{color:var(--verde);text-decoration:underline}
+.rating-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px;box-shadow:var(--shadow-sm);margin-bottom:32px}
+.rating-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.rating-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:6px}
+.rating-sub{font-size:14px;color:var(--ink-light)}
+.rating-score{display:flex;align-items:baseline;gap:6px}
+.rating-score .num{font-family:var(--font-display);font-size:48px;font-weight:500;color:var(--forest);line-height:1}
+.rating-score .max{font-size:18px;color:var(--ink-light)}
+.stars{font-size:22px;color:var(--amber);letter-spacing:2px;margin-top:6px}
+.rating-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 0}
+.highlight{padding:14px 16px;background:var(--frost);border-radius:var(--r-md);text-align:center;border:1px solid var(--border-light)}
+.highlight-label{font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px}
+.highlight-value{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.pc-box{padding:20px;border-radius:var(--r-md);border:1px solid var(--border-light)}
+.pc-box.pros{background:rgba(29,158,117,0.06);border-color:rgba(29,158,117,0.2)}
+.pc-box.cons{background:rgba(212,112,10,0.06);border-color:rgba(212,112,10,0.2)}
+.pc-box h4{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+.pc-box.pros h4{color:var(--verde)}
+.pc-box.cons h4{color:var(--amber)}
+.pc-box ul{list-style:none;font-size:14px;line-height:1.7;color:var(--ink-muted)}
+.pc-box li{padding-left:20px;position:relative;margin-bottom:6px}
+.pc-box.pros li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:500}
+.pc-box.cons li::before{content:'!';position:absolute;left:0;color:var(--amber);font-weight:500}
+.pillar-list{display:grid;gap:12px;margin-top:16px}
+.pillar{display:grid;grid-template-columns:160px 100px 1fr;gap:12px;align-items:center;padding:14px 18px;background:var(--parchment);border:1px solid var(--border-light);border-radius:var(--r-md);font-size:14px}
+.pillar .pname{font-weight:500;color:var(--ink)}
+.pillar .pscore{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest)}
+.pillar .pnote{color:var(--ink-muted);font-size:13px}
+.review h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.review h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:28px 0 12px}
+.review p{font-size:16px;line-height:1.75;color:var(--ink-muted);margin-bottom:16px}
+.review ul,.review ol{margin:12px 0 20px 24px;color:var(--ink-muted);line-height:1.75}
+.review li{margin-bottom:6px}
+.review a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.review strong{color:var(--ink);font-weight:500}
+.methodology-box{background:var(--white);border:1px dashed var(--border);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:13px;color:var(--ink-light);line-height:1.7}
+.methodology-box strong{color:var(--ink-muted);font-weight:500}
+.byline{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--border-light);margin-bottom:32px;font-size:13px}
+.byline-avatar{width:38px;height:38px;background:var(--forest);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:500;font-size:14px}
+.byline-info strong{display:block;color:var(--ink);font-weight:500;font-size:14px}
+.byline-info span{color:var(--ink-light);font-size:12px}
+.verify-note{display:block;margin-top:14px;padding:10px 14px;background:rgba(212,112,10,0.08);border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:12px;color:var(--ink-muted);line-height:1.6}
+.verify-note strong{color:var(--amber)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" onclick="closeMobileMenu()" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" onclick="closeMobileMenu()" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" onclick="closeMobileMenu()" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" onclick="closeMobileMenu()" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/hipotecas.html" onclick="closeMobileMenu()" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+        <li><a href="/prestamos.html" onclick="closeMobileMenu()" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Guía Impuestos · Créditos" data-en="Tax Guide · Credits">Guía Impuestos · Créditos</p>
+    <h1 class="page-hero__title" data-es='EITC y <em>Child Tax Credit</em>' data-en='EITC and <em>Child Tax Credit</em>'>EITC y <em>Child Tax Credit</em></h1>
+    <p class="page-hero__desc" data-es="Miles de familias hispanas dejan $1,000-$6,000 de refund al año sobre la mesa porque no saben que califican. Este artículo te enseña cómo reclamarlo." data-en="Thousands of Hispanic families leave $1,000-$6,000 of refund on the table each year because they don't know they qualify. This article teaches you how to claim it.">Miles de familias hispanas dejan $1,000-$6,000 de refund al año sobre la mesa porque no saben que califican. Este artículo te enseña cómo reclamarlo.</p>
+  </div>
+</section>
+<section class="review-wrap">
+<div class="review">
+<div class="disclosure" data-es='<strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.' data-en='<strong>Affiliate notice:</strong> Norte Financial may receive compensation when you click links or open accounts with products shown here. This does not affect our independent ratings. <a href="/divulgacion.html">See full disclosure</a>.'><strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.</div>
+<div class="byline">
+  <div class="byline-avatar">NF</div>
+  <div class="byline-info">
+    <strong data-es="Equipo Editorial Norte Financial" data-en="Norte Financial Editorial Team">Equipo Editorial Norte Financial</strong>
+    <span data-es="Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026" data-en="Bilingual editorial team · Miami, FL · Updated Apr 11, 2026">Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026</span>
+  </div>
+</div>
+<p data-es="Si ganas menos de $66,819 al año y tienes hijos, probablemente calificas para cientos o miles de dólares en créditos tributarios federales reembolsables. 'Reembolsable' significa que el IRS te paga a TI aunque no debas impuestos — el crédito llega como refund. El problema: la complejidad de las reglas (especialmente para familias de estatus mixto donde unos tienen SSN y otros ITIN) hace que muchas familias no los reclamen. Esta guía desglosa el EITC y el Child Tax Credit para que no dejes un peso en la mesa." data-en="If you earn less than $66,819 per year and have children, you probably qualify for hundreds or thousands of dollars in refundable federal tax credits. 'Refundable' means the IRS pays YOU even if you don't owe taxes — the credit arrives as a refund. The problem: the complexity of the rules (especially for mixed-status families where some have SSN and others ITIN) makes many families not claim them. This guide breaks down EITC and Child Tax Credit so you don't leave a dollar on the table.">Si ganas menos de $66,819 al año y tienes hijos, probablemente calificas para cientos o miles de dólares en créditos tributarios federales reembolsables. 'Reembolsable' significa que el IRS te paga a TI aunque no debas impuestos — el crédito llega como refund. El problema: la complejidad de las reglas (especialmente para familias de estatus mixto donde unos tienen SSN y otros ITIN) hace que muchas familias no los reclamen. Esta guía desglosa el EITC y el Child Tax Credit para que no dejes un peso en la mesa.</p>
+
+<h2 data-es="EITC (Earned Income Tax Credit) en 2026" data-en="EITC (Earned Income Tax Credit) in 2026">EITC (Earned Income Tax Credit) en 2026</h2>
+<div data-es='El EITC es un crédito federal para trabajadores de ingresos bajos y medios. Los límites de 2024 (que presentas en 2025):<br><br><strong>Sin hijos:</strong> ingreso máximo $18,591 (soltero) / $25,511 (casado). Crédito máximo: $632.<br><strong>1 hijo:</strong> ingreso máximo $49,084 / $56,004. Crédito máximo: $4,213.<br><strong>2 hijos:</strong> ingreso máximo $55,768 / $62,688. Crédito máximo: $6,960.<br><strong>3+ hijos:</strong> ingreso máximo $59,899 / $66,819. Crédito máximo: $7,830.<br><br><strong>REQUISITO CRÍTICO:</strong> EITC requiere que TÚ (el trabajador) tengas SSN válido. ITIN NO califica para EITC. Si tú tienes ITIN pero tu cónyuge tiene SSN, podrían calificar si el cónyuge es quien gana los ingresos — consulta con un preparador.' data-en='EITC is a federal credit for low and middle income workers. 2024 limits (filing in 2025):<br><br><strong>No children:</strong> max income $18,591 (single) / $25,511 (married). Max credit: $632.<br><strong>1 child:</strong> max income $49,084 / $56,004. Max credit: $4,213.<br><strong>2 children:</strong> max income $55,768 / $62,688. Max credit: $6,960.<br><strong>3+ children:</strong> max income $59,899 / $66,819. Max credit: $7,830.<br><br><strong>CRITICAL REQUIREMENT:</strong> EITC requires YOU (the worker) to have a valid SSN. ITIN does NOT qualify for EITC. If you have ITIN but your spouse has SSN, you might qualify if the spouse is the one earning income — consult a preparer.'>El EITC es un crédito federal para trabajadores de ingresos bajos y medios. Los límites de 2024 (que presentas en 2025):<br><br><strong>Sin hijos:</strong> ingreso máximo $18,591 (soltero) / $25,511 (casado). Crédito máximo: $632.<br><strong>1 hijo:</strong> ingreso máximo $49,084 / $56,004. Crédito máximo: $4,213.<br><strong>2 hijos:</strong> ingreso máximo $55,768 / $62,688. Crédito máximo: $6,960.<br><strong>3+ hijos:</strong> ingreso máximo $59,899 / $66,819. Crédito máximo: $7,830.<br><br><strong>REQUISITO CRÍTICO:</strong> EITC requiere que TÚ (el trabajador) tengas SSN válido. ITIN NO califica para EITC. Si tú tienes ITIN pero tu cónyuge tiene SSN, podrían calificar si el cónyuge es quien gana los ingresos — consulta con un preparador.</div>
+<h2 data-es="Child Tax Credit (CTC) — el crédito que SÍ incluye familias ITIN" data-en="Child Tax Credit (CTC) — the credit that DOES include ITIN families">Child Tax Credit (CTC) — el crédito que SÍ incluye familias ITIN</h2>
+<div data-es='El Child Tax Credit vale hasta $2,000 por hijo calificado menor de 17 años. Hasta $1,700 de ese crédito es reembolsable (el IRS te lo paga aunque no debas impuestos). Las reglas clave:<br><br><strong>Tú puedes tener ITIN o SSN.</strong> Diferente a EITC, CTC permite que el padre/madre tenga ITIN.<br><br><strong>PERO el hijo DEBE tener SSN válido.</strong> Un hijo con ITIN NO califica para el CTC regular. Esto es nuevo desde la reforma de 2018 — antes también aceptaban ITIN.<br><br><strong>Hay un crédito alternativo — Credit for Other Dependents (ODC) — de $500 por dependiente con ITIN.</strong> Menos dinero, pero algo es mejor que nada.<br><br><strong>Ingreso límite:</strong> el CTC empieza a reducirse desde $200K (soltero) / $400K (casado). Para la mayoría de familias hispanas, ingresos están muy por debajo — califican al 100%.' data-en='Child Tax Credit is worth up to $2,000 per qualifying child under 17 years old. Up to $1,700 of that credit is refundable (IRS pays you even if you don't owe taxes). Key rules:<br><br><strong>You can have ITIN or SSN.</strong> Unlike EITC, CTC allows the parent to have ITIN.<br><br><strong>BUT the child MUST have valid SSN.</strong> A child with ITIN does NOT qualify for regular CTC. This is new since 2018 reform — previously they also accepted ITIN.<br><br><strong>There's an alternative credit — Credit for Other Dependents (ODC) — of $500 per ITIN dependent.</strong> Less money, but something is better than nothing.<br><br><strong>Income limit:</strong> CTC begins phasing out from $200K (single) / $400K (married). For most Hispanic families, incomes are well below — they qualify at 100%.'>El Child Tax Credit vale hasta $2,000 por hijo calificado menor de 17 años. Hasta $1,700 de ese crédito es reembolsable (el IRS te lo paga aunque no debas impuestos). Las reglas clave:<br><br><strong>Tú puedes tener ITIN o SSN.</strong> Diferente a EITC, CTC permite que el padre/madre tenga ITIN.<br><br><strong>PERO el hijo DEBE tener SSN válido.</strong> Un hijo con ITIN NO califica para el CTC regular. Esto es nuevo desde la reforma de 2018 — antes también aceptaban ITIN.<br><br><strong>Hay un crédito alternativo — Credit for Other Dependents (ODC) — de $500 por dependiente con ITIN.</strong> Menos dinero, pero algo es mejor que nada.<br><br><strong>Ingreso límite:</strong> el CTC empieza a reducirse desde $200K (soltero) / $400K (casado). Para la mayoría de familias hispanas, ingresos están muy por debajo — califican al 100%.</div>
+<h2 data-es="Ejemplos de familias reales" data-en="Real family examples">Ejemplos de familias reales</h2>
+<div data-es='<strong>Familia A — Ambos padres ITIN, 3 hijos con SSN:</strong> No califican para EITC (padres tienen ITIN). Pero SÍ califican para CTC — $2,000 × 3 = <strong>$6,000 de crédito</strong>. De esos, $5,100 son reembolsables ($1,700 × 3). Esta familia obtiene un refund grande incluso sin deber impuestos.<br><br><strong>Familia B — Padre ITIN, madre SSN, 2 hijos con SSN:</strong> Si la madre trabaja, pueden declarar casados-juntos y potencialmente calificar para EITC basándose en sus ingresos. Para CTC, los 2 hijos con SSN dan $4,000. Total refund potencial: <strong>$10,000+ combinado</strong>.<br><br><strong>Familia C — Padre con SSN, madre sin documentos, 1 hijo con SSN, 1 hijo con ITIN:</strong> EITC posible si el padre es el que gana (con SSN). CTC de $2,000 por el hijo con SSN. ODC de $500 por el hijo con ITIN. Total: <strong>~$6,700 potencial</strong>.<br><br>La lección: las familias de estatus mixto frecuentemente dejan miles en la mesa porque creen que no califican. Siempre declara. Siempre busca ayuda de un CAA o preparador que entienda familias hispanas.' data-en='<strong>Family A — Both parents ITIN, 3 children with SSN:</strong> They don't qualify for EITC (parents have ITIN). But they DO qualify for CTC — $2,000 × 3 = <strong>$6,000 credit</strong>. Of those, $5,100 are refundable ($1,700 × 3). This family gets a big refund even without owing taxes.<br><br><strong>Family B — Father ITIN, mother SSN, 2 children with SSN:</strong> If the mother works, they can file married-jointly and potentially qualify for EITC based on her income. For CTC, 2 children with SSN give $4,000. Total potential refund: <strong>$10,000+ combined</strong>.<br><br><strong>Family C — Father with SSN, mother without documents, 1 child with SSN, 1 child with ITIN:</strong> EITC possible if father is the one earning (with SSN). CTC of $2,000 for the SSN child. ODC of $500 for the ITIN child. Total: <strong>~$6,700 potential</strong>.<br><br>The lesson: mixed-status families frequently leave thousands on the table because they think they don't qualify. Always file. Always seek help from a CAA or preparer who understands Hispanic families.'><strong>Familia A — Ambos padres ITIN, 3 hijos con SSN:</strong> No califican para EITC (padres tienen ITIN). Pero SÍ califican para CTC — $2,000 × 3 = <strong>$6,000 de crédito</strong>. De esos, $5,100 son reembolsables ($1,700 × 3). Esta familia obtiene un refund grande incluso sin deber impuestos.<br><br><strong>Familia B — Padre ITIN, madre SSN, 2 hijos con SSN:</strong> Si la madre trabaja, pueden declarar casados-juntos y potencialmente calificar para EITC basándose en sus ingresos. Para CTC, los 2 hijos con SSN dan $4,000. Total refund potencial: <strong>$10,000+ combinado</strong>.<br><br><strong>Familia C — Padre con SSN, madre sin documentos, 1 hijo con SSN, 1 hijo con ITIN:</strong> EITC posible si el padre es el que gana (con SSN). CTC de $2,000 por el hijo con SSN. ODC de $500 por el hijo con ITIN. Total: <strong>~$6,700 potencial</strong>.<br><br>La lección: las familias de estatus mixto frecuentemente dejan miles en la mesa porque creen que no califican. Siempre declara. Siempre busca ayuda de un CAA o preparador que entienda familias hispanas.</div>
+<h2 data-es="Cómo reclamar estos créditos" data-en="How to claim these credits">Cómo reclamar estos créditos</h2>
+<div data-es='Los créditos se reclaman automáticamente cuando declaras impuestos (formulario 1040) SI proporcionas correctamente la información de tus dependientes. El software de impuestos como <a href='/resena-turbotax.html'>TurboTax</a>, <a href='/resena-hr-block.html'>H&R Block</a>, o <a href='/resena-freetaxusa.html'>FreeTaxUSA</a> te hace las preguntas para identificar si calificas. Tres errores comunes:<br><br><strong>1. No declarar porque 'no gano mucho'.</strong> Si tus ingresos son $15,000-$66,000 con hijos, probablemente califiques a créditos reembolsables. Siempre declara.<br><br><strong>2. Marcar al hijo como 'dependiente' en la declaración de otra persona.</strong> Solo un padre puede reclamar al hijo. Si están separados, el padre custodio tiene prioridad por default. Coordina.<br><br><strong>3. No incluir SSN del hijo aunque existe.</strong> Si el hijo tiene SSN, DEBES ponerlo en la declaración para reclamar CTC. Sin SSN del hijo, solo calificas al ODC de $500.' data-en='Credits are claimed automatically when you file taxes (Form 1040) IF you provide dependents' information correctly. Tax software like <a href='/resena-turbotax.html'>TurboTax</a>, <a href='/resena-hr-block.html'>H&R Block</a>, or <a href='/resena-freetaxusa.html'>FreeTaxUSA</a> asks you questions to identify if you qualify. Three common mistakes:<br><br><strong>1. Not filing because 'I don't earn much'.</strong> If your income is $15,000-$66,000 with children, you probably qualify for refundable credits. Always file.<br><br><strong>2. Marking the child as 'dependent' on another person's return.</strong> Only one parent can claim the child. If separated, the custodial parent has priority by default. Coordinate.<br><br><strong>3. Not including child's SSN even though it exists.</strong> If the child has SSN, you MUST put it on the return to claim CTC. Without child's SSN, you only qualify for $500 ODC.'>Los créditos se reclaman automáticamente cuando declaras impuestos (formulario 1040) SI proporcionas correctamente la información de tus dependientes. El software de impuestos como <a href='/resena-turbotax.html'>TurboTax</a>, <a href='/resena-hr-block.html'>H&R Block</a>, o <a href='/resena-freetaxusa.html'>FreeTaxUSA</a> te hace las preguntas para identificar si calificas. Tres errores comunes:<br><br><strong>1. No declarar porque 'no gano mucho'.</strong> Si tus ingresos son $15,000-$66,000 con hijos, probablemente califiques a créditos reembolsables. Siempre declara.<br><br><strong>2. Marcar al hijo como 'dependiente' en la declaración de otra persona.</strong> Solo un padre puede reclamar al hijo. Si están separados, el padre custodio tiene prioridad por default. Coordina.<br><br><strong>3. No incluir SSN del hijo aunque existe.</strong> Si el hijo tiene SSN, DEBES ponerlo en la declaración para reclamar CTC. Sin SSN del hijo, solo calificas al ODC de $500.</div>
+
+
+<h2 data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</h2><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Puedo reclamar EITC si tengo ITIN?" data-en="Can I claim EITC if I have ITIN?">¿Puedo reclamar EITC si tengo ITIN?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No. EITC requiere SSN válido para el trabajador. Si tú tienes ITIN pero tu cónyuge tiene SSN y declaran juntos, pueden calificar si el cónyuge con SSN es quien tiene los ingresos — consulta a un preparador." data-en="No. EITC requires valid SSN for the worker. If you have ITIN but your spouse has SSN and you file jointly, you may qualify if the SSN spouse is the one with income — consult a preparer.">No. EITC requiere SSN válido para el trabajador. Si tú tienes ITIN pero tu cónyuge tiene SSN y declaran juntos, pueden calificar si el cónyuge con SSN es quien tiene los ingresos — consulta a un preparador.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Mi hijo con ITIN califica para Child Tax Credit?" data-en="Does my child with ITIN qualify for Child Tax Credit?">¿Mi hijo con ITIN califica para Child Tax Credit?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No para el CTC regular de $2,000. Pero sí califica para el Credit for Other Dependents (ODC) de $500. El ODC es no-reembolsable (solo reduce impuestos, no paga refund)." data-en="Not for the regular $2,000 CTC. But does qualify for Credit for Other Dependents (ODC) of $500. ODC is non-refundable (only reduces taxes, doesn't pay refund).">No para el CTC regular de $2,000. Pero sí califica para el Credit for Other Dependents (ODC) de $500. El ODC es no-reembolsable (solo reduce impuestos, no paga refund).</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Cuándo recibo el refund?" data-en="When do I receive the refund?">¿Cuándo recibo el refund?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Si declaras electrónicamente y usas direct deposit: 2-3 semanas después de que el IRS procese. EITC y CTC reembolsables están sujetos a verificación adicional — típicamente llegan después del 15 de febrero." data-en="If you file electronically and use direct deposit: 2-3 weeks after IRS processes. Refundable EITC and CTC are subject to additional verification — typically arrive after February 15.">Si declaras electrónicamente y usas direct deposit: 2-3 semanas después de que el IRS procese. EITC y CTC reembolsables están sujetos a verificación adicional — típicamente llegan después del 15 de febrero.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Necesito guardar recibos para reclamar CTC?" data-en="Do I need to keep receipts to claim CTC?">¿Necesito guardar recibos para reclamar CTC?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No necesitas recibos de gastos del hijo. Pero necesitas prueba de relación (acta de nacimiento) y residencia del hijo contigo (registros de escuela, médicos) en caso de auditoría. Guarda todo 3-7 años." data-en="You don't need receipts for child expenses. But you need proof of relationship (birth certificate) and residency of child with you (school, medical records) in case of audit. Keep everything 3-7 years.">No necesitas recibos de gastos del hijo. Pero necesitas prueba de relación (acta de nacimiento) y residencia del hijo contigo (registros de escuela, médicos) en caso de auditoría. Guarda todo 3-7 años.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Puedo reclamar CTC por un hijo que vive en México?" data-en="Can I claim CTC for a child living in Mexico?">¿Puedo reclamar CTC por un hijo que vive en México?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Generalmente no. El hijo debe haber vivido contigo en EE.UU. más de la mitad del año para calificar. Excepciones limitadas existen (ausencias temporales como escuela)." data-en="Generally no. The child must have lived with you in the US more than half the year to qualify. Limited exceptions exist (temporary absences like school).">Generalmente no. El hijo debe haber vivido contigo en EE.UU. más de la mitad del año para calificar. Excepciones limitadas existen (ausencias temporales como escuela).</p>
+</div>
+
+<h2 data-es="Próximo paso" data-en="Next step">Próximo paso</h2>
+<p data-es="Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Impuestos." data-en="Explore the specific products mentioned in this guide or go back to the main hub to see all Impuestos options.">Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Impuestos.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 0">
+  <a href="/impuestos.html" class="btn-primary" data-es="Ver Impuestos →" data-en="See Impuestos →">Ver Impuestos →</a>
+  <a href="/finanzas.html" class="btn-ghost" data-es="Todas las finanzas →" data-en="All finances →">Todas las finanzas →</a>
+</div>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="Guía bilingüe de finanzas personales para hispanos en Estados Unidos. Crédito, banca, remesas, impuestos, hipotecas." data-en="Bilingual personal finance guide for Hispanics in the United States. Credit, banking, remittances, taxes, mortgages.">Guía bilingüe de finanzas personales para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/herramientas.html" data-es="Calculadoras" data-en="Calculators">Calculadoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="/divulgacion.html" data-es="Divulgación" data-en="Disclosure">Divulgación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

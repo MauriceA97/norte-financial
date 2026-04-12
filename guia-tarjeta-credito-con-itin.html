@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía 2026: qué tarjetas aceptan ITIN en lugar de SSN, cómo aplicar paso a paso, y qué documentos necesitas. Todo en español.">
+<meta name="robots" content="index, follow">
+<title>Cómo solicitar tarjeta de crédito con ITIN — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/guia-tarjeta-credito-con-itin.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-track.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Realmente hay tarjetas que aceptan ITIN sin necesidad de SSN?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Tomo no requiere ITIN siquiera (acepta pasaporte). Capital One, Amex, Bank of America, Wells Fargo, Chase y Discover aceptan ITIN aunque sus formularios online no siempre lo indiquen."}}, {"@type": "Question", "name": "¿Aplicar con ITIN afecta mi estatus migratorio?", "acceptedAnswer": {"@type": "Answer", "text": "No. El ITIN es un número fiscal emitido por el IRS. Bancos no comparten aplicaciones de crédito con ICE o USCIS. Tener ITIN y usarlo para productos financieros es completamente legal y no tiene consecuencias migratorias."}}, {"@type": "Question", "name": "¿Si me rechazan con ITIN puedo volver a aplicar?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, pero espera al menos 3 meses entre aplicaciones para minimizar el impacto de hard inquiries. Entre tanto, trabaja en las razones del rechazo — construye flujo bancario, aumenta ingresos reportados, o intenta con un banco diferente."}}, {"@type": "Question", "name": "¿Necesito W-2 o acepta 1099?", "acceptedAnswer": {"@type": "Answer", "text": "Acepta ambos. 1099 (contractor) requiere 2 años de declaraciones de impuestos como prueba. W-2 (empleado) solo necesita paystubs recientes. Si eres self-employed con negocio nuevo <2 años, será más difícil."}}, {"@type": "Question", "name": "¿Qué hago si un representante me dice que no pueden aceptar ITIN?", "acceptedAnswer": {"@type": "Answer", "text": "Pide hablar con un supervisor. Frecuentemente los representantes de primera línea no están entrenados en ITIN. Los supervisores o los equipos de 'international accounts' sí saben. Si te dicen no después de 2 escalaciones, prueba con otro banco."}}]}</script>
+<style>
+.review-wrap{padding:60px 0 100px;background:var(--parchment)}
+.review{max-width:880px;margin:0 auto;padding:0 24px}
+.disclosure{background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-md);padding:14px 18px;font-size:12px;color:var(--ink-muted);margin-bottom:32px;line-height:1.6}
+.disclosure strong{color:var(--forest)}
+.disclosure a{color:var(--verde);text-decoration:underline}
+.rating-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px;box-shadow:var(--shadow-sm);margin-bottom:32px}
+.rating-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.rating-title{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;margin-bottom:6px}
+.rating-sub{font-size:14px;color:var(--ink-light)}
+.rating-score{display:flex;align-items:baseline;gap:6px}
+.rating-score .num{font-family:var(--font-display);font-size:48px;font-weight:500;color:var(--forest);line-height:1}
+.rating-score .max{font-size:18px;color:var(--ink-light)}
+.stars{font-size:22px;color:var(--amber);letter-spacing:2px;margin-top:6px}
+.rating-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 0}
+.highlight{padding:14px 16px;background:var(--frost);border-radius:var(--r-md);text-align:center;border:1px solid var(--border-light)}
+.highlight-label{font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px}
+.highlight-value{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.pc-box{padding:20px;border-radius:var(--r-md);border:1px solid var(--border-light)}
+.pc-box.pros{background:rgba(29,158,117,0.06);border-color:rgba(29,158,117,0.2)}
+.pc-box.cons{background:rgba(212,112,10,0.06);border-color:rgba(212,112,10,0.2)}
+.pc-box h4{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+.pc-box.pros h4{color:var(--verde)}
+.pc-box.cons h4{color:var(--amber)}
+.pc-box ul{list-style:none;font-size:14px;line-height:1.7;color:var(--ink-muted)}
+.pc-box li{padding-left:20px;position:relative;margin-bottom:6px}
+.pc-box.pros li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:500}
+.pc-box.cons li::before{content:'!';position:absolute;left:0;color:var(--amber);font-weight:500}
+.pillar-list{display:grid;gap:12px;margin-top:16px}
+.pillar{display:grid;grid-template-columns:160px 100px 1fr;gap:12px;align-items:center;padding:14px 18px;background:var(--parchment);border:1px solid var(--border-light);border-radius:var(--r-md);font-size:14px}
+.pillar .pname{font-weight:500;color:var(--ink)}
+.pillar .pscore{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest)}
+.pillar .pnote{color:var(--ink-muted);font-size:13px}
+.review h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.review h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:28px 0 12px}
+.review p{font-size:16px;line-height:1.75;color:var(--ink-muted);margin-bottom:16px}
+.review ul,.review ol{margin:12px 0 20px 24px;color:var(--ink-muted);line-height:1.75}
+.review li{margin-bottom:6px}
+.review a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.review strong{color:var(--ink);font-weight:500}
+.methodology-box{background:var(--white);border:1px dashed var(--border);border-radius:var(--r-md);padding:18px 22px;margin:24px 0;font-size:13px;color:var(--ink-light);line-height:1.7}
+.methodology-box strong{color:var(--ink-muted);font-weight:500}
+.byline{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--border-light);margin-bottom:32px;font-size:13px}
+.byline-avatar{width:38px;height:38px;background:var(--forest);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:500;font-size:14px}
+.byline-info strong{display:block;color:var(--ink);font-weight:500;font-size:14px}
+.byline-info span{color:var(--ink-light);font-size:12px}
+.verify-note{display:block;margin-top:14px;padding:10px 14px;background:rgba(212,112,10,0.08);border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:12px;color:var(--ink-muted);line-height:1.6}
+.verify-note strong{color:var(--amber)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/credito.html" onclick="closeMobileMenu()" data-es="Crédito" data-en="Credit">Crédito</a></li>
+        <li><a href="/banca.html" onclick="closeMobileMenu()" data-es="Banca" data-en="Banking">Banca</a></li>
+        <li><a href="/remesas.html" onclick="closeMobileMenu()" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+        <li><a href="/impuestos.html" onclick="closeMobileMenu()" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+        <li><a href="/hipotecas.html" onclick="closeMobileMenu()" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+        <li><a href="/prestamos.html" onclick="closeMobileMenu()" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Guía Crédito · ITIN" data-en="Credit Guide · ITIN">Guía Crédito · ITIN</p>
+    <h1 class="page-hero__title" data-es='Tarjetas de crédito <em>con ITIN</em>' data-en='Credit cards <em>with ITIN</em>'>Tarjetas de crédito <em>con ITIN</em></h1>
+    <p class="page-hero__desc" data-es="Tener ITIN en lugar de SSN no te cierra las puertas del crédito. Estas son las tarjetas que sí aceptan, cómo aplicar, y qué necesitas tener listo." data-en="Having an ITIN instead of SSN doesn't close credit doors. Here are the cards that accept it, how to apply, and what you need to have ready.">Tener ITIN en lugar de SSN no te cierra las puertas del crédito. Estas son las tarjetas que sí aceptan, cómo aplicar, y qué necesitas tener listo.</p>
+  </div>
+</section>
+<section class="review-wrap">
+<div class="review">
+<div class="disclosure" data-es='<strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.' data-en='<strong>Affiliate notice:</strong> Norte Financial may receive compensation when you click links or open accounts with products shown here. This does not affect our independent ratings. <a href="/divulgacion.html">See full disclosure</a>.'><strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces o abres cuentas con productos aquí mostrados. Esto no afecta nuestras calificaciones independientes. <a href="/divulgacion.html">Ver divulgación completa</a>.</div>
+<div class="byline">
+  <div class="byline-avatar">NF</div>
+  <div class="byline-info">
+    <strong data-es="Equipo Editorial Norte Financial" data-en="Norte Financial Editorial Team">Equipo Editorial Norte Financial</strong>
+    <span data-es="Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026" data-en="Bilingual editorial team · Miami, FL · Updated Apr 11, 2026">Equipo bilingüe · Miami, FL · Actualizado 11 Abr 2026</span>
+  </div>
+</div>
+<p data-es="El mito más común en la comunidad hispana: 'sin SSN no puedo tener tarjeta de crédito'. Es falso. Hay tarjetas que aceptan ITIN específicamente. Otras aceptan número de pasaporte sin nada más. Y varias tarjetas mainstream aceptan ITIN si llamas al banco y se lo explicas (sus formularios online a veces no lo permiten, pero los representantes internos sí pueden procesarlo). Esta guía te muestra exactamente cuáles funcionan en 2026 y cómo aplicar." data-en="The most common myth in the Hispanic community: 'without SSN I can't have a credit card'. It's false. There are cards that accept ITIN specifically. Others accept passport number with nothing else. And several mainstream cards accept ITIN if you call the bank and explain it (their online forms sometimes don't allow it, but internal reps can process it). This guide shows you exactly which work in 2026 and how to apply.">El mito más común en la comunidad hispana: 'sin SSN no puedo tener tarjeta de crédito'. Es falso. Hay tarjetas que aceptan ITIN específicamente. Otras aceptan número de pasaporte sin nada más. Y varias tarjetas mainstream aceptan ITIN si llamas al banco y se lo explicas (sus formularios online a veces no lo permiten, pero los representantes internos sí pueden procesarlo). Esta guía te muestra exactamente cuáles funcionan en 2026 y cómo aplicar.</p>
+
+<h2 data-es="¿Qué es un ITIN y por qué sirve para crédito?" data-en="What is an ITIN and why does it work for credit?">¿Qué es un ITIN y por qué sirve para crédito?</h2>
+<div data-es='Un ITIN (Individual Taxpayer Identification Number) es un número de 9 dígitos emitido por el IRS. Visualmente se ve como un SSN (formato 9XX-XX-XXXX) pero empieza con 9. Fue creado en 1996 específicamente para que personas sin SSN puedan cumplir con sus obligaciones fiscales. Muchos bancos lo aceptan como identificación fiscal suficiente para abrir productos. El ITIN NO te da permiso de trabajo, NO es un número de seguridad social, y NO afecta tu estatus migratorio. Es simplemente una forma de identificarte ante el IRS y el sistema financiero.' data-en='An ITIN (Individual Taxpayer Identification Number) is a 9-digit number issued by the IRS. Visually it looks like an SSN (format 9XX-XX-XXXX) but starts with 9. It was created in 1996 specifically so people without SSN could meet their tax obligations. Many banks accept it as sufficient tax identification to open products. The ITIN does NOT give you work permission, is NOT a Social Security number, and does NOT affect your immigration status. It's simply a way to identify yourself to the IRS and the financial system.'>Un ITIN (Individual Taxpayer Identification Number) es un número de 9 dígitos emitido por el IRS. Visualmente se ve como un SSN (formato 9XX-XX-XXXX) pero empieza con 9. Fue creado en 1996 específicamente para que personas sin SSN puedan cumplir con sus obligaciones fiscales. Muchos bancos lo aceptan como identificación fiscal suficiente para abrir productos. El ITIN NO te da permiso de trabajo, NO es un número de seguridad social, y NO afecta tu estatus migratorio. Es simplemente una forma de identificarte ante el IRS y el sistema financiero.</div>
+<h2 data-es="Tarjetas que aceptan ITIN en 2026" data-en="Cards that accept ITIN in 2026">Tarjetas que aceptan ITIN en 2026</h2>
+<div data-es='<strong>Aceptan ITIN online directamente:</strong><ul><li><a href='/resena-tomo.html'>Tomo Credit Card</a> — la única tarjeta diseñada específicamente para inmigrantes. Acepta pasaporte/visa sin ITIN obligatorio.</li><li>American Express (sí, Amex) — acepta ITIN si llamas al 1-800-297-1693. No siempre permiten ITIN en la aplicación online, pero el equipo de 'international new accounts' puede procesarlo.</li><li>Bank of America — acepta ITIN en secured cards y algunas tradicionales. Procesa mejor en sucursal que online.</li><li>Wells Fargo — similar a BofA, mejor ir a sucursal.</li><li>Chase — acepta ITIN si ya tienes relación de banco con ellos.</li><li>Capital One — acepta ITIN en algunas líneas de producto. <a href='/resena-capital-one-secured.html'>Platinum Secured</a> es la más accesible.</li></ul><strong>NO requieren ITIN ni SSN:</strong><ul><li><a href='/resena-tomo.html'>Tomo</a> — pasaporte o visa es suficiente.</li><li><a href='/resena-petal-2.html'>Petal 2</a> — a veces ITIN, a veces solo SSN (depende del applicant).</li></ul>' data-en='<strong>Accept ITIN online directly:</strong><ul><li><a href='/resena-tomo.html'>Tomo Credit Card</a> — the only card designed specifically for immigrants. Accepts passport/visa without mandatory ITIN.</li><li>American Express (yes, Amex) — accepts ITIN if you call 1-800-297-1693. Doesn't always allow ITIN in online application, but 'international new accounts' team can process it.</li><li>Bank of America — accepts ITIN on secured cards and some traditional ones. Processes better in branch than online.</li><li>Wells Fargo — similar to BofA, better to go to branch.</li><li>Chase — accepts ITIN if you already have a banking relationship with them.</li><li>Capital One — accepts ITIN on some product lines. <a href='/resena-capital-one-secured.html'>Platinum Secured</a> is most accessible.</li></ul><strong>Don't require ITIN or SSN:</strong><ul><li><a href='/resena-tomo.html'>Tomo</a> — passport or visa is enough.</li><li><a href='/resena-petal-2.html'>Petal 2</a> — sometimes ITIN, sometimes only SSN (depends on applicant).</li></ul>'><strong>Aceptan ITIN online directamente:</strong><ul><li><a href='/resena-tomo.html'>Tomo Credit Card</a> — la única tarjeta diseñada específicamente para inmigrantes. Acepta pasaporte/visa sin ITIN obligatorio.</li><li>American Express (sí, Amex) — acepta ITIN si llamas al 1-800-297-1693. No siempre permiten ITIN en la aplicación online, pero el equipo de 'international new accounts' puede procesarlo.</li><li>Bank of America — acepta ITIN en secured cards y algunas tradicionales. Procesa mejor en sucursal que online.</li><li>Wells Fargo — similar a BofA, mejor ir a sucursal.</li><li>Chase — acepta ITIN si ya tienes relación de banco con ellos.</li><li>Capital One — acepta ITIN en algunas líneas de producto. <a href='/resena-capital-one-secured.html'>Platinum Secured</a> es la más accesible.</li></ul><strong>NO requieren ITIN ni SSN:</strong><ul><li><a href='/resena-tomo.html'>Tomo</a> — pasaporte o visa es suficiente.</li><li><a href='/resena-petal-2.html'>Petal 2</a> — a veces ITIN, a veces solo SSN (depende del applicant).</li></ul></div>
+<h2 data-es="Documentos que necesitas" data-en="Documents you need">Documentos que necesitas</h2>
+<div data-es='Lista de documentos típica para aplicar con ITIN:<ul><li><strong>ITIN</strong> (carta del IRS o W-7 aprobado)</li><li><strong>Pasaporte</strong> vigente como ID primaria</li><li><strong>Comprobante de domicilio</strong> en EE.UU. (utility bill, contrato de renta, bank statement reciente)</li><li><strong>Comprobante de ingresos</strong> (W-2, 1099, paystubs, o 2 años de declaraciones de impuestos)</li><li><strong>Información laboral</strong> (empleador, teléfono, años en el trabajo)</li></ul>Si estás aplicando en sucursal, lleva TODO físicamente. Los representantes de banco hispanos frecuentemente ayudan a llenar la aplicación correctamente — busca una sucursal en zona de alta población hispana.' data-en='Typical document list for applying with ITIN:<ul><li><strong>ITIN</strong> (IRS letter or approved W-7)</li><li><strong>Valid passport</strong> as primary ID</li><li><strong>Proof of US address</strong> (utility bill, rental contract, recent bank statement)</li><li><strong>Income proof</strong> (W-2, 1099, paystubs, or 2 years of tax returns)</li><li><strong>Employment info</strong> (employer, phone, years at job)</li></ul>If applying in branch, bring EVERYTHING physically. Hispanic bank reps frequently help fill out the application correctly — look for a branch in a high-Hispanic population area.'>Lista de documentos típica para aplicar con ITIN:<ul><li><strong>ITIN</strong> (carta del IRS o W-7 aprobado)</li><li><strong>Pasaporte</strong> vigente como ID primaria</li><li><strong>Comprobante de domicilio</strong> en EE.UU. (utility bill, contrato de renta, bank statement reciente)</li><li><strong>Comprobante de ingresos</strong> (W-2, 1099, paystubs, o 2 años de declaraciones de impuestos)</li><li><strong>Información laboral</strong> (empleador, teléfono, años en el trabajo)</li></ul>Si estás aplicando en sucursal, lleva TODO físicamente. Los representantes de banco hispanos frecuentemente ayudan a llenar la aplicación correctamente — busca una sucursal en zona de alta población hispana.</div>
+<h2 data-es="Proceso de aplicación paso a paso" data-en="Step-by-step application process">Proceso de aplicación paso a paso</h2>
+<div data-es='<strong>Paso 1 — Pre-qualification (opcional pero recomendado):</strong> Sitios como NerdWallet, Credit Karma y los sitios oficiales de los emisores ofrecen pre-qualification soft pull. Esto te dice si probablemente serías aprobado sin afectar tu credit score. Con ITIN, puede ser complicado porque los sistemas automáticos a veces no entienden ITINs que empiezan con 9 — no te desanimes si dice 'no elegible' en pre-qualification pero sí cuando hablas con un representante humano.<br><br><strong>Paso 2 — Aplica:</strong> Si la pre-qualification es positiva o si decides ir directo, completa la aplicación. Online es más rápido pero los sistemas a veces rechazan ITINs. Llamar o ir en persona es más confiable para ITIN.<br><br><strong>Paso 3 — Verificación:</strong> El banco puede pedir documentos adicionales o llamarte para verificar información. Esto es normal con ITIN y NO significa que estás siendo discriminado. Responde rápido.<br><br><strong>Paso 4 — Decisión:</strong> Online es instantáneo (generalmente). Sucursal o teléfono puede ser 1-3 días. Si te aprueban, recibes la tarjeta en 7-14 días por correo.' data-en='<strong>Step 1 — Pre-qualification (optional but recommended):</strong> Sites like NerdWallet, Credit Karma, and issuers' official sites offer soft-pull pre-qualification. This tells you if you'd likely be approved without affecting your credit score. With ITIN, it can be tricky because automated systems sometimes don't understand ITINs starting with 9 — don't get discouraged if it says 'not eligible' in pre-qualification but yes when you talk to a human rep.<br><br><strong>Step 2 — Apply:</strong> If pre-qualification is positive or if you decide to go direct, complete the application. Online is faster but systems sometimes reject ITINs. Calling or going in person is more reliable for ITIN.<br><br><strong>Step 3 — Verification:</strong> The bank may request additional documents or call you to verify information. This is normal with ITIN and does NOT mean you're being discriminated against. Respond quickly.<br><br><strong>Step 4 — Decision:</strong> Online is instant (generally). Branch or phone can be 1-3 days. If approved, you receive the card in 7-14 days by mail.'><strong>Paso 1 — Pre-qualification (opcional pero recomendado):</strong> Sitios como NerdWallet, Credit Karma y los sitios oficiales de los emisores ofrecen pre-qualification soft pull. Esto te dice si probablemente serías aprobado sin afectar tu credit score. Con ITIN, puede ser complicado porque los sistemas automáticos a veces no entienden ITINs que empiezan con 9 — no te desanimes si dice 'no elegible' en pre-qualification pero sí cuando hablas con un representante humano.<br><br><strong>Paso 2 — Aplica:</strong> Si la pre-qualification es positiva o si decides ir directo, completa la aplicación. Online es más rápido pero los sistemas a veces rechazan ITINs. Llamar o ir en persona es más confiable para ITIN.<br><br><strong>Paso 3 — Verificación:</strong> El banco puede pedir documentos adicionales o llamarte para verificar información. Esto es normal con ITIN y NO significa que estás siendo discriminado. Responde rápido.<br><br><strong>Paso 4 — Decisión:</strong> Online es instantáneo (generalmente). Sucursal o teléfono puede ser 1-3 días. Si te aprueban, recibes la tarjeta en 7-14 días por correo.</div>
+<h2 data-es="Qué hacer si te rechazan" data-en="What to do if denied">Qué hacer si te rechazan</h2>
+<div data-es='Si te rechazan, la ley Fair Credit Reporting Act te da derecho a recibir por escrito el motivo exacto del rechazo. Úsalo. Motivos comunes y qué hacer:<br><br>· <em>'Credit file too thin' o 'insufficient credit history'</em> — aplica a una tarjeta que NO requiere historial, como <a href='/resena-tomo.html'>Tomo</a> o <a href='/resena-capital-one-secured.html'>Capital One Secured</a>.<br><br>· <em>'Unable to verify identity'</em> — el sistema no procesó bien tu ITIN. Llama al banco y pide hablar con 'international new accounts' o un supervisor que maneje ITINs.<br><br>· <em>'Insufficient income'</em> — tus ingresos declarados no son suficientes. Si trabajas por cuenta propia, incluye TODO tu ingreso bruto anual (no solo lo que tomas a casa), y tu cónyuge también si vive contigo.<br><br>· <em>'Application incomplete'</em> — volvió a llenar con un rep humano en persona o por teléfono. Los formularios online frecuentemente no aceptan todos los formatos de dirección internacional ni ITINs.' data-en='If denied, the Fair Credit Reporting Act gives you the right to receive the exact reason in writing. Use it. Common reasons and what to do:<br><br>· <em>'Credit file too thin' or 'insufficient credit history'</em> — apply to a card that does NOT require history, like <a href='/resena-tomo.html'>Tomo</a> or <a href='/resena-capital-one-secured.html'>Capital One Secured</a>.<br><br>· <em>'Unable to verify identity'</em> — the system didn't process your ITIN well. Call the bank and ask to talk to 'international new accounts' or a supervisor who handles ITINs.<br><br>· <em>'Insufficient income'</em> — your declared income isn't enough. If you're self-employed, include ALL your gross annual income (not just what you take home), and your spouse too if they live with you.<br><br>· <em>'Application incomplete'</em> — refill with a human rep in person or by phone. Online forms frequently don't accept all international address formats or ITINs.'>Si te rechazan, la ley Fair Credit Reporting Act te da derecho a recibir por escrito el motivo exacto del rechazo. Úsalo. Motivos comunes y qué hacer:<br><br>· <em>'Credit file too thin' o 'insufficient credit history'</em> — aplica a una tarjeta que NO requiere historial, como <a href='/resena-tomo.html'>Tomo</a> o <a href='/resena-capital-one-secured.html'>Capital One Secured</a>.<br><br>· <em>'Unable to verify identity'</em> — el sistema no procesó bien tu ITIN. Llama al banco y pide hablar con 'international new accounts' o un supervisor que maneje ITINs.<br><br>· <em>'Insufficient income'</em> — tus ingresos declarados no son suficientes. Si trabajas por cuenta propia, incluye TODO tu ingreso bruto anual (no solo lo que tomas a casa), y tu cónyuge también si vive contigo.<br><br>· <em>'Application incomplete'</em> — volvió a llenar con un rep humano en persona o por teléfono. Los formularios online frecuentemente no aceptan todos los formatos de dirección internacional ni ITINs.</div>
+
+
+<h2 data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</h2><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Realmente hay tarjetas que aceptan ITIN sin necesidad de SSN?" data-en="Are there really cards that accept ITIN without needing an SSN?">¿Realmente hay tarjetas que aceptan ITIN sin necesidad de SSN?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Sí. Tomo no requiere ITIN siquiera (acepta pasaporte). Capital One, Amex, Bank of America, Wells Fargo, Chase y Discover aceptan ITIN aunque sus formularios online no siempre lo indiquen." data-en="Yes. Tomo doesn't even require ITIN (accepts passport). Capital One, Amex, Bank of America, Wells Fargo, Chase, and Discover accept ITIN even if their online forms don't always indicate it.">Sí. Tomo no requiere ITIN siquiera (acepta pasaporte). Capital One, Amex, Bank of America, Wells Fargo, Chase y Discover aceptan ITIN aunque sus formularios online no siempre lo indiquen.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Aplicar con ITIN afecta mi estatus migratorio?" data-en="Does applying with ITIN affect my immigration status?">¿Aplicar con ITIN afecta mi estatus migratorio?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No. El ITIN es un número fiscal emitido por el IRS. Bancos no comparten aplicaciones de crédito con ICE o USCIS. Tener ITIN y usarlo para productos financieros es completamente legal y no tiene consecuencias migratorias." data-en="No. ITIN is a tax number issued by IRS. Banks don't share credit applications with ICE or USCIS. Having an ITIN and using it for financial products is completely legal and has no immigration consequences.">No. El ITIN es un número fiscal emitido por el IRS. Bancos no comparten aplicaciones de crédito con ICE o USCIS. Tener ITIN y usarlo para productos financieros es completamente legal y no tiene consecuencias migratorias.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Si me rechazan con ITIN puedo volver a aplicar?" data-en="If I'm rejected with ITIN can I apply again?">¿Si me rechazan con ITIN puedo volver a aplicar?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Sí, pero espera al menos 3 meses entre aplicaciones para minimizar el impacto de hard inquiries. Entre tanto, trabaja en las razones del rechazo — construye flujo bancario, aumenta ingresos reportados, o intenta con un banco diferente." data-en="Yes, but wait at least 3 months between applications to minimize the impact of hard inquiries. In the meantime, work on the reasons for rejection — build bank flow, increase reported income, or try with a different bank.">Sí, pero espera al menos 3 meses entre aplicaciones para minimizar el impacto de hard inquiries. Entre tanto, trabaja en las razones del rechazo — construye flujo bancario, aumenta ingresos reportados, o intenta con un banco diferente.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Necesito W-2 o acepta 1099?" data-en="Do I need W-2 or do they accept 1099?">¿Necesito W-2 o acepta 1099?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Acepta ambos. 1099 (contractor) requiere 2 años de declaraciones de impuestos como prueba. W-2 (empleado) solo necesita paystubs recientes. Si eres self-employed con negocio nuevo <2 años, será más difícil." data-en="Both accepted. 1099 (contractor) requires 2 years of tax returns as proof. W-2 (employee) only needs recent paystubs. If you're self-employed with a new business <2 years, it will be harder.">Acepta ambos. 1099 (contractor) requiere 2 años de declaraciones de impuestos como prueba. W-2 (empleado) solo necesita paystubs recientes. Si eres self-employed con negocio nuevo <2 años, será más difícil.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Qué hago si un representante me dice que no pueden aceptar ITIN?" data-en="What do I do if a rep says they can't accept ITIN?">¿Qué hago si un representante me dice que no pueden aceptar ITIN?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Pide hablar con un supervisor. Frecuentemente los representantes de primera línea no están entrenados en ITIN. Los supervisores o los equipos de 'international accounts' sí saben. Si te dicen no después de 2 escalaciones, prueba con otro banco." data-en="Ask to speak with a supervisor. Frequently front-line reps aren't trained in ITIN. Supervisors or 'international accounts' teams know. If they say no after 2 escalations, try another bank.">Pide hablar con un supervisor. Frecuentemente los representantes de primera línea no están entrenados en ITIN. Los supervisores o los equipos de 'international accounts' sí saben. Si te dicen no después de 2 escalaciones, prueba con otro banco.</p>
+</div>
+
+<h2 data-es="Próximo paso" data-en="Next step">Próximo paso</h2>
+<p data-es="Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Crédito." data-en="Explore the specific products mentioned in this guide or go back to the main hub to see all Crédito options.">Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Crédito.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 0">
+  <a href="/credito.html" class="btn-primary" data-es="Ver Crédito →" data-en="See Crédito →">Ver Crédito →</a>
+  <a href="/finanzas.html" class="btn-ghost" data-es="Todas las finanzas →" data-en="All finances →">Todas las finanzas →</a>
+</div>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="Guía bilingüe de finanzas personales para hispanos en Estados Unidos. Crédito, banca, remesas, impuestos, hipotecas." data-en="Bilingual personal finance guide for Hispanics in the United States. Credit, banking, remittances, taxes, mortgages.">Guía bilingüe de finanzas personales para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/herramientas.html" data-es="Calculadoras" data-en="Calculators">Calculadoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="/divulgacion.html" data-es="Divulgación" data-en="Disclosure">Divulgación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>
