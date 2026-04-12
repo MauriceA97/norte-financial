@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sala de prensa de Norte Financial. Recursos para periodistas: biografía, datos clave, ángulos de historia sugeridos, contacto de prensa.">
+<title>Prensa — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/prensa.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-track.js" defer></script>
+<style>
+.prensa-wrap{padding:60px 0 100px;background:var(--parchment)}
+.prensa-inner{max-width:920px;margin:0 auto;padding:0 24px}
+.kit-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-xl);padding:32px 36px;box-shadow:var(--shadow-sm);margin-bottom:24px}
+.kit-card h2{font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin:0 0 16px;letter-spacing:-0.01em}
+.kit-card h3{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin:20px 0 8px}
+.kit-card p, .kit-card li{font-size:16px;line-height:1.75;color:var(--ink-muted)}
+.kit-card ul{margin:12px 0 8px 22px}
+.kit-card li{margin-bottom:8px}
+.kit-card a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.kit-card strong{color:var(--ink);font-weight:500}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:24px 0 8px}
+.stat{padding:20px 18px;background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-lg);text-align:center}
+.stat-num{font-family:var(--font-display);font-size:34px;font-weight:500;color:var(--forest);line-height:1;margin-bottom:6px}
+.stat-label{font-size:12px;color:var(--ink-muted);line-height:1.4}
+.quick-contact{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:12px 0 0}
+.contact-box{padding:22px 24px;background:var(--parchment);border:1px solid var(--border-light);border-radius:var(--r-lg)}
+.contact-box .cat{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--verde);margin-bottom:6px}
+.contact-box .email{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--forest);margin-bottom:4px}
+.contact-box .sub{font-size:13px;color:var(--ink-light)}
+.topic-grid{display:grid;gap:14px;margin-top:20px}
+.topic{padding:18px 22px;background:var(--parchment);border-left:3px solid var(--verde);border-radius:var(--r-md)}
+.topic-title{font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.topic-desc{font-size:14px;color:var(--ink-muted);line-height:1.6}
+.badge-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-full);background:var(--frost);color:var(--verde);margin-bottom:10px}
+.brand-swatch-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.swatch{width:80px;padding:12px;text-align:center;border-radius:var(--r-md);font-size:10px;font-weight:500;letter-spacing:0.05em}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:var(--forest);color:var(--white);border-radius:var(--r-full);font-size:13px;font-weight:500;text-decoration:none;margin:6px 8px 0 0;transition:all 0.2s}
+.dl-btn:hover{background:var(--forest-mid);transform:translateY(-1px)}
+.dl-btn.secondary{background:var(--white);color:var(--forest);border:1px solid var(--border)}
+.dl-btn.secondary:hover{background:var(--frost)}
+@media(max-width:768px){
+  .kit-card{padding:24px 22px}
+  .kit-card h2{font-size:22px}
+  .stat-row{grid-template-columns:1fr 1fr;gap:12px}
+  .stat-num{font-size:28px}
+  .quick-contact{grid-template-columns:1fr}
+}
+</style>
+<script src="/norte-email.js" defer></script>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="/cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="/cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Sala de prensa" data-en="Newsroom">Sala de prensa</p>
+    <h1 class="page-hero__title" data-es="Norte Financial <em>en los medios</em>" data-en="Norte Financial <em>in the media</em>">Norte Financial <em>en los medios</em></h1>
+    <p class="page-hero__desc" data-es="Recursos para periodistas que cubren inclusión financiera hispana, seguros, crédito, remesas y la economía del 62M latino en Estados Unidos." data-en="Resources for journalists covering Hispanic financial inclusion, insurance, credit, remittances, and the 62M Latino economy in the United States.">Recursos para periodistas que cubren inclusión financiera hispana, seguros, crédito, remesas y la economía del 62M latino en Estados Unidos.</p>
+  </div>
+</section>
+
+<section class="prensa-wrap">
+<div class="prensa-inner">
+
+<!-- Quick contact -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Contacto rápido" data-en="Quick contact">Contacto rápido</span>
+  <h2 data-es="Contacto de prensa" data-en="Press contact">Contacto de prensa</h2>
+  <p data-es="Respondemos a solicitudes de periodistas dentro de 24 horas. Estamos disponibles para entrevistas en inglés y español, declaraciones por escrito, datos personalizados, y revisión de artículos antes de publicación." data-en="We respond to journalist requests within 24 hours. Available for interviews in English and Spanish, written statements, custom data pulls, and pre-publication fact checking.">Respondemos a solicitudes de periodistas dentro de 24 horas. Estamos disponibles para entrevistas en inglés y español, declaraciones por escrito, datos personalizados, y revisión de artículos antes de publicación.</p>
+  <div class="quick-contact">
+    <div class="contact-box">
+      <div class="cat" data-es="General" data-en="General">General</div>
+      <div class="email">prensa@nortefinancial.com</div>
+      <div class="sub" data-es="Solicitudes de entrevista, declaraciones, datos" data-en="Interview requests, statements, data">Solicitudes de entrevista, declaraciones, datos</div>
+    </div>
+    <div class="contact-box">
+      <div class="cat" data-es="Editorial" data-en="Editorial">Editorial</div>
+      <div class="email">editorial@nortefinancial.com</div>
+      <div class="sub" data-es="Correcciones, fact-check, metodología" data-en="Corrections, fact-check, methodology">Correcciones, fact-check, metodología</div>
+    </div>
+  </div>
+</div>
+
+<!-- Who we are -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Sobre Norte" data-en="About Norte">Sobre Norte</span>
+  <h2 data-es="Quiénes somos" data-en="Who we are">Quiénes somos</h2>
+  <p data-es="<strong>Norte Financial</strong> es una plataforma bilingüe de finanzas personales para hispanos en Estados Unidos. Cubrimos seguros, crédito, banca, remesas, impuestos, hipotecas y préstamos — todo en español, con metodología independiente y divulgación transparente de afiliados. Nuestro público objetivo son los 62 millones de hispanos de EE.UU. que siguen siendo subatendidos por el sistema financiero dominado por el inglés." data-en="<strong>Norte Financial</strong> is a bilingual personal finance platform for Hispanics in the United States. We cover insurance, credit, banking, remittances, taxes, mortgages, and loans — all in Spanish, with independent methodology and transparent affiliate disclosure. Our target audience is the 62 million US Hispanics still underserved by the English-dominated financial system."><strong>Norte Financial</strong> es una plataforma bilingüe de finanzas personales para hispanos en Estados Unidos. Cubrimos seguros, crédito, banca, remesas, impuestos, hipotecas y préstamos — todo en español, con metodología independiente y divulgación transparente de afiliados. Nuestro público objetivo son los 62 millones de hispanos de EE.UU. que siguen siendo subatendidos por el sistema financiero dominado por el inglés.</p>
+  <h3 data-es="Nuestra misión" data-en="Our mission">Nuestra misión</h3>
+  <p data-es="Eliminar las barreras de idioma y acceso en las decisiones financieras de las familias hispanas en EE.UU. Desde entender un deducible hasta comprar casa con ITIN, lo hacemos claro, en español, y sin costo para el usuario." data-en="Eliminate language and access barriers in the financial decisions of US Hispanic families. From understanding a deductible to buying a home with ITIN, we make it clear, in Spanish, and free for the user.">Eliminar las barreras de idioma y acceso en las decisiones financieras de las familias hispanas en EE.UU. Desde entender un deducible hasta comprar casa con ITIN, lo hacemos claro, en español, y sin costo para el usuario.</p>
+  <h3 data-es="Fundada" data-en="Founded">Fundada</h3>
+  <p data-es="2026 · Miami, Florida · Privada (bootstrap)" data-en="2026 · Miami, Florida · Private (bootstrap)">2026 · Miami, Florida · Privada (bootstrap)</p>
+</div>
+
+<!-- Key stats -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Datos clave" data-en="Key stats">Datos clave</span>
+  <h2 data-es="El mercado hispano-estadounidense" data-en="The US Hispanic market">El mercado hispano-estadounidense</h2>
+  <p data-es="Datos verificables que puedes citar libremente en tus historias. Fuentes: Pew Research, CFPB, NAIC, World Bank, US Census Bureau, Urban Institute." data-en="Verifiable data you can freely cite in your stories. Sources: Pew Research, CFPB, NAIC, World Bank, US Census Bureau, Urban Institute.">Datos verificables que puedes citar libremente en tus historias. Fuentes: Pew Research, CFPB, NAIC, World Bank, US Census Bureau, Urban Institute.</p>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-num">62M</div>
+      <div class="stat-label" data-es="Hispanos en EE.UU. (19% de la población)" data-en="US Hispanics (19% of population)">Hispanos en EE.UU. (19% de la población)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">28%</div>
+      <div class="stat-label" data-es="De hispanos son 'credit invisible' sin historial" data-en="Of Hispanics are 'credit invisible' with no history">De hispanos son "credit invisible" sin historial</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$60B</div>
+      <div class="stat-label" data-es="En remesas anuales de EE.UU. a Latinoamérica" data-en="In annual remittances from US to Latin America">En remesas anuales de EE.UU. a Latinoamérica</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">30%</div>
+      <div class="stat-label" data-es="De hispanos no tiene cuenta bancaria (o es underbanked)" data-en="Of Hispanics are unbanked or underbanked">De hispanos no tiene cuenta bancaria (underbanked)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">49%</div>
+      <div class="stat-label" data-es="Tasa de propiedad de vivienda hispana (vs 74% blanca)" data-en="Hispanic homeownership rate (vs 74% white)">Tasa de propiedad de vivienda hispana (vs 74% blanca)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$1.6B</div>
+      <div class="stat-label" data-es="En Child Tax Credit no reclamado por familias hispanas" data-en="In unclaimed Child Tax Credit by Hispanic families">En CTC no reclamado por familias hispanas/año</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">43%</div>
+      <div class="stat-label" data-es="De hispanos tiene seguro de vida (vs 56% blancos)" data-en="Of Hispanics have life insurance (vs 56% white)">De hispanos tiene seguro de vida</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5.9%</div>
+      <div class="stat-label" data-es="Margen promedio oculto de Western Union vs tipo real" data-en="Western Union avg hidden margin vs real rate">Margen oculto de WU vs tipo real</div>
+    </div>
+  </div>
+</div>
+
+<!-- Story angles -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Para periodistas" data-en="For journalists">Para periodistas</span>
+  <h2 data-es="10 ángulos de historia sugeridos" data-en="10 suggested story angles">10 ángulos de historia sugeridos</h2>
+  <p data-es="Historias que estamos listos para apoyar con datos, fuentes secundarias, entrevistas y casos reales (con consentimiento)." data-en="Stories we're ready to support with data, secondary sources, interviews, and real cases (with consent).">Historias que estamos listos para apoyar con datos, fuentes secundarias, entrevistas y casos reales (con consentimiento).</p>
+  <div class="topic-grid">
+    <div class="topic">
+      <div class="topic-title" data-es="Por qué el 28% de los hispanos siguen siendo invisibles al crédito" data-en="Why 28% of Hispanics remain credit invisible">Por qué el 28% de los hispanos siguen siendo invisibles al crédito</div>
+      <div class="topic-desc" data-es="La intersección del sistema de FICO, la dependencia del SSN, y los productos financieros que están cambiando esto (Petal, Tomo, Chime Credit Builder)." data-en="The intersection of FICO, SSN dependency, and the financial products changing this (Petal, Tomo, Chime Credit Builder).">La intersección del sistema de FICO, la dependencia del SSN, y los productos financieros que están cambiando esto (Petal, Tomo, Chime Credit Builder).</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="El impuesto oculto de las remesas: $800/año por familia en comisiones invisibles" data-en="The hidden remittance tax: $800/year per family in invisible fees">El impuesto oculto de las remesas: $800/año por familia en comisiones invisibles</div>
+      <div class="topic-desc" data-es="Cómo Western Union y otros cobran margen en el tipo de cambio en lugar de comisiones visibles. Análisis comparativo con Wise, Remitly, MoneyGram, Xoom." data-en="How Western Union and others charge margin on exchange rate instead of visible fees. Comparative analysis with Wise, Remitly, MoneyGram, Xoom.">Cómo Western Union y otros cobran margen en el tipo de cambio en lugar de comisiones visibles. Análisis comparativo con Wise, Remitly, MoneyGram, Xoom.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Familias de estatus mixto y el Child Tax Credit" data-en="Mixed-status families and the Child Tax Credit">Familias de estatus mixto y el Child Tax Credit</div>
+      <div class="topic-desc" data-es="$1.6 mil millones se quedan sin reclamar cada año por familias donde padres con ITIN no saben que sus hijos con SSN califican para CTC hasta $2,000 por hijo." data-en="$1.6 billion go unclaimed yearly by families where parents with ITIN don't know their SSN children qualify for up to $2,000 per child CTC.">$1.6 mil millones se quedan sin reclamar cada año por familias donde padres con ITIN no saben que sus hijos con SSN califican para CTC hasta $2,000 por hijo.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Hipotecas ITIN: cómo 50K familias inmigrantes compran casa cada año sin SSN" data-en="ITIN mortgages: how 50K immigrant families buy homes yearly without SSN">Hipotecas ITIN: cómo 50K familias inmigrantes compran casa cada año sin SSN</div>
+      <div class="topic-desc" data-es="El mercado de portfolio loans para inmigrantes, prestamistas especializados como Alterra, y por qué las tasas están 1-2% por encima de FHA tradicional." data-en="The portfolio loan market for immigrants, specialized lenders like Alterra, and why rates are 1-2% above traditional FHA.">El mercado de portfolio loans para inmigrantes, prestamistas especializados como Alterra, y por qué las tasas están 1-2% por encima de FHA tradicional.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Seguro de auto sin licencia americana: el mercado FL + TX" data-en="Car insurance without a US license: the FL + TX market">Seguro de auto sin licencia americana: el mercado FL + TX</div>
+      <div class="topic-desc" data-es="Qué aseguradoras aceptan licencias internacionales o matrícula consular, las trampas legales del non-owner coverage, y el impacto del SR-22/FR-44 en Florida." data-en="Which insurers accept international licenses or consular IDs, the legal traps of non-owner coverage, and the impact of SR-22/FR-44 in Florida.">Qué aseguradoras aceptan licencias internacionales o matrícula consular, las trampas legales del non-owner coverage, y el impacto del SR-22/FR-44 en Florida.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Por qué el 43% de hispanos tiene seguro de vida vs 56% de blancos" data-en="Why 43% of Hispanics have life insurance vs 56% of whites">Por qué el 43% de hispanos tiene seguro de vida vs 56% de blancos</div>
+      <div class="topic-desc" data-es="Barreras culturales (tabú de hablar de la muerte), barreras de acceso (ITIN no calificaba para muchas aseguradoras hasta hace poco), y cómo Mutual of Omaha y Gerber Life están cambiando esto." data-en="Cultural barriers (taboo of discussing death), access barriers (ITIN didn't qualify for many insurers until recently), and how Mutual of Omaha and Gerber Life are changing this.">Barreras culturales (tabú de hablar de la muerte), barreras de acceso (ITIN no calificaba para muchas aseguradoras hasta hace poco), y cómo Mutual of Omaha y Gerber Life están cambiando esto.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Predatory lending en comunidades hispanas: payday loans vs alternativas reales" data-en="Predatory lending in Hispanic communities: payday loans vs real alternatives">Predatory lending en comunidades hispanas: payday loans vs alternativas reales</div>
+      <div class="topic-desc" data-es="Análisis de APRs: payday loans (200-400%) vs Oportun (20-36%) vs bancos tradicionales (6-15%). Dónde están concentrados geográficamente y cómo se aprovechan del idioma." data-en="APR analysis: payday loans (200-400%) vs Oportun (20-36%) vs traditional banks (6-15%). Where they're concentrated geographically and how they exploit language.">Análisis de APRs: payday loans (200-400%) vs Oportun (20-36%) vs bancos tradicionales (6-15%). Dónde están concentrados geográficamente y cómo se aprovechan del idioma.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="El colapso del mercado de seguro de hogar en Florida: impacto específico en hispanos" data-en="Florida home insurance market collapse: specific impact on Hispanics">El colapso del mercado de seguro de hogar en Florida: impacto específico en hispanos</div>
+      <div class="topic-desc" data-es="Por qué los propietarios hispanos están desproporcionadamente expuestos a Citizens Property Insurance, y cómo los sistemas de Spanish-language risk assessment fallan." data-en="Why Hispanic homeowners are disproportionately exposed to Citizens Property Insurance, and how Spanish-language risk assessment systems fail.">Por qué los propietarios hispanos están desproporcionadamente expuestos a Citizens Property Insurance, y cómo los sistemas de Spanish-language risk assessment fallan.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Chime, Current, Varo: la generación de neobancos que está bancarizando a los inmigrantes" data-en="Chime, Current, Varo: the neobank generation banking immigrants">Chime, Current, Varo: la generación de neobancos que está bancarizando a los inmigrantes</div>
+      <div class="topic-desc" data-es="Cómo los bancos digitales están aceptando ITIN y pasaporte donde los bancos tradicionales rechazaron. Datos sobre adopción en el mercado hispano 2020-2026." data-en="How digital banks are accepting ITIN and passport where traditional banks rejected. Adoption data in the Hispanic market 2020-2026.">Cómo los bancos digitales están aceptando ITIN y pasaporte donde los bancos tradicionales rechazaron. Datos sobre adopción en el mercado hispano 2020-2026.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title" data-es="Educación financiera en español: el vacío del contenido" data-en="Financial education in Spanish: the content vacuum">Educación financiera en español: el vacío del contenido</div>
+      <div class="topic-desc" data-es="Por qué NerdWallet, Bankrate y SmartAsset tienen contenido en español débil, y por qué el 'Google translate' de contenido en inglés deja millones de lectores sin respuestas reales." data-en="Why NerdWallet, Bankrate, and SmartAsset have weak Spanish content, and why 'Google translate' of English content leaves millions of readers without real answers.">Por qué NerdWallet, Bankrate y SmartAsset tienen contenido en español débil, y por qué el 'Google translate' de contenido en inglés deja millones de lectores sin respuestas reales.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Spokesperson -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Portavoces" data-en="Spokespersons">Portavoces</span>
+  <h2 data-es="Portavoces disponibles" data-en="Available spokespersons">Portavoces disponibles</h2>
+  <p data-es="Contamos con portavoces bilingües (ES/EN) con experiencia en seguros, crédito, banca, remesas, impuestos e hipotecas. Nuestros portavoces están disponibles para entrevistas en TV, radio, podcast, prensa escrita y webinars." data-en="We have bilingual spokespersons (ES/EN) with experience in insurance, credit, banking, remittances, taxes, and mortgages. Our spokespersons are available for TV, radio, podcast, print, and webinar interviews.">Contamos con portavoces bilingües (ES/EN) con experiencia en seguros, crédito, banca, remesas, impuestos e hipotecas. Nuestros portavoces están disponibles para entrevistas en TV, radio, podcast, prensa escrita y webinars.</p>
+  <h3 data-es="Áreas de experticia" data-en="Areas of expertise">Áreas de experticia</h3>
+  <ul>
+    <li data-es="Seguros de auto, hogar, vida, médico, negocio — con enfoque en el mercado hispano" data-en="Auto, home, life, health, business insurance — with Hispanic market focus">Seguros de auto, hogar, vida, médico, negocio — con enfoque en el mercado hispano</li>
+    <li data-es="Construcción de crédito para inmigrantes y ITIN holders" data-en="Credit building for immigrants and ITIN holders">Construcción de crédito para inmigrantes y ITIN holders</li>
+    <li data-es="Hipotecas ITIN y programas para compradores de primera vez" data-en="ITIN mortgages and first-time buyer programs">Hipotecas ITIN y programas para compradores de primera vez</li>
+    <li data-es="Remesas, comparación de servicios, y el impuesto oculto de los spreads cambiarios" data-en="Remittances, service comparison, and the hidden tax of exchange rate spreads">Remesas, comparación de servicios, y el impuesto oculto de los spreads cambiarios</li>
+    <li data-es="Impuestos para familias de estatus mixto — EITC, CTC, ITIN" data-en="Taxes for mixed-status families — EITC, CTC, ITIN">Impuestos para familias de estatus mixto — EITC, CTC, ITIN</li>
+    <li data-es="El mercado de seguros en Florida post-huracanes y la migración de compañías" data-en="Florida post-hurricane insurance market and company exits">El mercado de seguros en Florida post-huracanes y la migración de compañías</li>
+  </ul>
+  <p style="margin-top:16px" data-es="Para programar una entrevista, escribe a <a href='mailto:prensa@nortefinancial.com'>prensa@nortefinancial.com</a> con el tema, formato (TV/radio/escrito/podcast), audiencia, fecha y longitud estimada. Respondemos dentro de 24 horas hábiles." data-en="To schedule an interview, write to <a href='mailto:prensa@nortefinancial.com'>prensa@nortefinancial.com</a> with the topic, format (TV/radio/print/podcast), audience, date, and estimated length. We respond within 24 business hours.">Para programar una entrevista, escribe a <a href='mailto:prensa@nortefinancial.com'>prensa@nortefinancial.com</a> con el tema, formato (TV/radio/escrito/podcast), audiencia, fecha y longitud estimada. Respondemos dentro de 24 horas hábiles.</p>
+</div>
+
+<!-- Brand assets -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Activos de marca" data-en="Brand assets">Activos de marca</span>
+  <h2 data-es="Logotipo y colores" data-en="Logo and colors">Logotipo y colores</h2>
+  <p data-es="Usa nuestro logotipo libremente para acompañar historias sobre Norte Financial. Por favor no modifiques los colores ni distorsiones las proporciones." data-en="Use our logo freely to accompany stories about Norte Financial. Please do not modify colors or distort proportions.">Usa nuestro logotipo libremente para acompañar historias sobre Norte Financial. Por favor no modifiques los colores ni distorsiones las proporciones.</p>
+  <h3 data-es="Paleta de colores oficial" data-en="Official color palette">Paleta de colores oficial</h3>
+  <div class="brand-swatch-row">
+    <div class="swatch" style="background:#0B3D2E;color:#fff">#0B3D2E<br><span style="opacity:0.7">Forest</span></div>
+    <div class="swatch" style="background:#1D9E75;color:#fff">#1D9E75<br><span style="opacity:0.7">Verde</span></div>
+    <div class="swatch" style="background:#7EC4A8;color:#0B3D2E">#7EC4A8<br><span style="opacity:0.7">Mist</span></div>
+    <div class="swatch" style="background:#D4700A;color:#fff">#D4700A<br><span style="opacity:0.7">Amber</span></div>
+    <div class="swatch" style="background:#F7F5F1;color:#0B3D2E;border:1px solid #ddd">#F7F5F1<br><span style="opacity:0.7">Parchment</span></div>
+    <div class="swatch" style="background:#1A1A1A;color:#fff">#1A1A1A<br><span style="opacity:0.7">Ink</span></div>
+  </div>
+  <h3 data-es="Tipografía" data-en="Typography">Tipografía</h3>
+  <p data-es="<strong>Playfair Display</strong> (display / titulares) · <strong>DM Sans</strong> (texto corrido / UI). Ambas en Google Fonts, uso libre." data-en="<strong>Playfair Display</strong> (display / headlines) · <strong>DM Sans</strong> (body / UI). Both on Google Fonts, free use."><strong>Playfair Display</strong> (display / titulares) · <strong>DM Sans</strong> (texto corrido / UI). Ambas en Google Fonts, uso libre.</p>
+  <p style="margin-top:16px" data-es="<strong>Descargas de activos de marca:</strong> Envía un correo a <a href='mailto:prensa@nortefinancial.com'>prensa@nortefinancial.com</a> y te enviamos el kit completo — logo en SVG, PNG transparente, variantes monocromáticas, y hoja de datos con estadísticas actualizadas (PDF)." data-en="<strong>Brand asset downloads:</strong> Email <a href='mailto:prensa@nortefinancial.com'>prensa@nortefinancial.com</a> and we'll send the full kit — SVG logo, transparent PNG, monochromatic variants, and updated fact sheet (PDF)."><strong>Descargas de activos de marca:</strong> Envía un correo a <a href="mailto:prensa@nortefinancial.com">prensa@nortefinancial.com</a> y te enviamos el kit completo — logo en SVG, PNG transparente, variantes monocromáticas, y hoja de datos con estadísticas actualizadas (PDF).</p>
+</div>
+
+<!-- Methodology & independence -->
+<div class="kit-card">
+  <span class="badge-pill" data-es="Independencia editorial" data-en="Editorial independence">Independencia editorial</span>
+  <h2 data-es="Nuestra metodología es pública y verificable" data-en="Our methodology is public and verifiable">Nuestra metodología es pública y verificable</h2>
+  <p data-es="Las calificaciones de Norte Financial no se compran. Nuestras 5 pilares de evaluación — precio, cobertura, satisfacción del cliente, fortaleza financiera y proceso de reclamos — están detallados públicamente en <a href='/metodologia.html'>nuestra página de metodología</a>. Nuestra <a href='/divulgacion.html'>divulgación completa de afiliados</a> explica cómo ganamos dinero y por qué la compensación no afecta nuestros rankings." data-en="Norte Financial ratings cannot be bought. Our 5 evaluation pillars — price, coverage, customer satisfaction, financial strength, and claims process — are publicly detailed on <a href='/metodologia.html'>our methodology page</a>. Our <a href='/divulgacion.html'>full affiliate disclosure</a> explains how we make money and why compensation doesn't affect our rankings.">Las calificaciones de Norte Financial no se compran. Nuestras 5 pilares de evaluación — precio, cobertura, satisfacción del cliente, fortaleza financiera y proceso de reclamos — están detallados públicamente en <a href='/metodologia.html'>nuestra página de metodología</a>. Nuestra <a href='/divulgacion.html'>divulgación completa de afiliados</a> explica cómo ganamos dinero y por qué la compensación no afecta nuestros rankings.</p>
+  <p data-es="Para periodistas: estamos felices de explicar en detalle cómo nuestros rankings se construyen, compartir las fuentes de datos que usamos (NAIC, AM Best, J.D. Power, CFPB, FinCEN), y respaldar cualquier afirmación publicada con documentación secundaria." data-en="For journalists: we're happy to explain in detail how our rankings are built, share the data sources we use (NAIC, AM Best, J.D. Power, CFPB, FinCEN), and back any published claim with secondary documentation.">Para periodistas: estamos felices de explicar en detalle cómo nuestros rankings se construyen, compartir las fuentes de datos que usamos (NAIC, AM Best, J.D. Power, CFPB, FinCEN), y respaldar cualquier afirmación publicada con documentación secundaria.</p>
+</div>
+
+<!-- Fact sheet download -->
+<div class="kit-card" style="background:var(--forest);color:var(--white);border-color:var(--forest)">
+  <h2 style="color:var(--white)" data-es="Fact sheet listo para usar" data-en="Ready-to-use fact sheet">Fact sheet listo para usar</h2>
+  <p style="color:rgba(232,245,240,0.85)" data-es="Una hoja de datos de 2 páginas con las estadísticas clave, puntos de conversación, ángulos de historia, y contactos. Formato: PDF, con embargo si se solicita." data-en="A 2-page fact sheet with key statistics, talking points, story angles, and contacts. Format: PDF, with embargo if requested.">Una hoja de datos de 2 páginas con las estadísticas clave, puntos de conversación, ángulos de historia, y contactos. Formato: PDF, con embargo si se solicita.</p>
+  <a href="mailto:prensa@nortefinancial.com?subject=Fact%20sheet%20request%20—%20Norte%20Financial" class="dl-btn" style="background:var(--amber);color:var(--white)" data-es="Solicitar fact sheet →" data-en="Request fact sheet →">Solicitar fact sheet →</a>
+  <a href="/metodologia.html" class="dl-btn secondary" data-es="Ver metodología →" data-en="See methodology →">Ver metodología →</a>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos." data-en="The insurance and personal finance guide for Hispanics in the United States.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/prensa.html" data-es="Prensa" data-en="Press">Prensa</a></li>
+          <li><a href="/cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

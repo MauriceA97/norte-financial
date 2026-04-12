@@ -173,6 +173,7 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
 </style>
 <script src="/norte-track.js" defer></script>
 <link rel="stylesheet" href="/mobile-fix.css">
+<script src="/norte-email.js" defer></script>
 </head>
 <body>
 
@@ -208,6 +209,7 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2
     <button class="vtab active" id="tab-active" onclick="switchView('active')">Active Leads <span class="count" id="cnt-active">0</span></button>
     <button class="vtab" id="tab-sold" onclick="switchView('sold')">Sold <span class="count" id="cnt-sold">0</span></button>
     <button class="vtab" id="tab-clicks" onclick="switchView('clicks')">Affiliate Clicks <span class="count" id="cnt-clicks">0</span></button>
+    <button class="vtab" id="tab-subs" onclick="switchView('subs')">📧 Subscribers <span class="count" id="cnt-subs">0</span></button>
     <button class="vtab" id="tab-deleted" onclick="switchView('deleted')">🗑️ Deleted <span class="count" id="cnt-deleted">0</span></button>
   </div>
 
@@ -401,6 +403,7 @@ const DEFAULT_PASS = 'Norte2025!';
 
 let allLeads = [], filtered = [], currentView = 'active';
 let allClicks = [], clicksLoaded = false;
+let allSubs = [], subsLoaded = false;
 let selectedIds = new Set();
 let pendingLeadId = null, pendingLeadData = null;
 let pkgLeads = [];
@@ -457,8 +460,9 @@ async function loadLeads(){
     if(!r.ok) throw new Error('Supabase '+r.status);
     allLeads=await r.json();
     updateStats(); updateTabCounts(); doFilter();
-    // Preload clicks in background so tab counter is accurate
+    // Preload clicks and subs in background so tab counters are accurate
     loadClicks();
+    loadSubs();
   }catch(e){
     document.getElementById('tContainer').innerHTML=`<div class="loading-msg" style="color:#f87171">Error: ${e.message}<br><span style="font-size:11px;color:#334155">Check that the leads table exists in Supabase.</span></div>`;
   }
@@ -483,6 +487,95 @@ function updateTabCounts(){
   document.getElementById('cnt-deleted').textContent = allLeads.filter(l=>l.deleted).length;
   const cc = document.getElementById('cnt-clicks');
   if(cc) cc.textContent = allClicks.filter(c=>!c.deleted).length;
+  const cs = document.getElementById('cnt-subs');
+  if(cs) cs.textContent = allSubs.filter(s=>!s.deleted && !s.unsubscribed).length;
+}
+
+// ── Newsletter Subscribers ─────────────────────
+async function loadSubs(){
+  const c = document.getElementById('tContainer');
+  if(currentView==='subs') c.innerHTML = '<div class="loading-msg">Loading subscribers...</div>';
+  try{
+    const r = await fetch(`${SUPA_URL}/rest/v1/newsletter_subscribers?select=*&order=created_at.desc&limit=2000`,
+      {headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});
+    if(!r.ok) throw new Error('Supabase '+r.status);
+    allSubs = await r.json();
+    subsLoaded = true;
+    updateTabCounts();
+    if(currentView==='subs') renderSubs();
+  }catch(e){
+    if(currentView==='subs') c.innerHTML=`<div class="loading-msg" style="color:#f87171">Error loading subscribers: ${e.message}<br><span style="font-size:11px;color:#334155">Check that the newsletter_subscribers table exists in Supabase.</span></div>`;
+  }
+}
+
+function renderSubs(){
+  const c = document.getElementById('tContainer');
+  const rows = allSubs.filter(s=>!s.deleted);
+  if(!rows.length){
+    c.innerHTML = `<div class="empty"><div class="empty-icon">📧</div><p>No email subscribers yet. Signups will appear here as visitors opt in via the bottom bar or exit-intent modal.</p></div>`;
+    return;
+  }
+
+  const total = rows.length;
+  const active = rows.filter(s=>!s.unsubscribed).length;
+  const cut24 = Date.now() - 86400000;
+  const last24 = rows.filter(s=>new Date(s.created_at).getTime()>cut24).length;
+  const byType = {};
+  rows.forEach(s=>{ const k=s.capture_type||'(none)'; byType[k]=(byType[k]||0)+1; });
+  const topType = Object.entries(byType).sort((a,b)=>b[1]-a[1])[0];
+  const bySource = {};
+  rows.forEach(s=>{ const k=s.source_page||'(none)'; bySource[k]=(bySource[k]||0)+1; });
+  const topSource = Object.entries(bySource).sort((a,b)=>b[1]-a[1])[0];
+
+  let html = `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:16px 24px 0">
+    <div class="stat"><div class="stat-label">Total Subscribers</div><div class="stat-num">${total}</div><div class="stat-sub">All time</div></div>
+    <div class="stat green"><div class="stat-label">Active</div><div class="stat-num">${active}</div><div class="stat-sub">Not unsubscribed</div></div>
+    <div class="stat"><div class="stat-label">Last 24h</div><div class="stat-num">${last24}</div><div class="stat-sub">Recent signups</div></div>
+    <div class="stat"><div class="stat-label">Top Capture</div><div class="stat-num" style="font-size:18px;font-family:var(--font-body)">${topType?esc(topType[0]):'—'}</div><div class="stat-sub">${topType?topType[1]+' signups':''}</div></div>
+    <div class="stat"><div class="stat-label">Top Source Page</div><div class="stat-num" style="font-size:13px;font-family:var(--font-body);word-break:break-all">${topSource?esc(topSource[0].slice(-30)):'—'}</div><div class="stat-sub">${topSource?topSource[1]+' signups':''}</div></div>
+  </div>`;
+
+  html += `<table class="tbl" style="margin-top:16px"><thead><tr>
+    <th>Date</th><th>Email</th><th>Lang</th><th>Capture</th><th>Source Page</th><th>UTM Source</th><th>Status</th><th>Actions</th>
+  </tr></thead><tbody>`;
+
+  rows.forEach(s=>{
+    const d = new Date(s.created_at);
+    const date = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'2-digit'})+' '+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+    const statusBadge = s.unsubscribed ? '<span class="badge b-deleted">Unsubscribed</span>' : '<span class="badge b-contacted">Active</span>';
+    html += `<tr>
+      <td class="date-cell">${date}</td>
+      <td><a href="mailto:${esc(s.email)}" style="color:#60a5fa">${esc(s.email||'—')}</a></td>
+      <td><span class="badge ${s.preferred_language==='en'?'b-en':'b-es'}">${s.preferred_language==='en'?'EN':'ES'}</span></td>
+      <td style="font-size:11px">${esc(s.capture_type||'—')}</td>
+      <td style="font-size:11px;color:#94a3b8;word-break:break-all">${esc(s.source_page||'—')}</td>
+      <td style="font-size:11px">${esc(s.utm_source||'—')}</td>
+      <td>${statusBadge}</td>
+      <td><button class="ab ab-delete" style="font-size:10px;padding:4px 8px" onclick="unsubSub('${s.id}',this)">Unsubscribe</button></td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  c.innerHTML = html;
+}
+
+async function unsubSub(id, btn){
+  if(!confirm('Mark this subscriber as unsubscribed?')) return;
+  btn.disabled = true;
+  try{
+    const r = await fetch(`${SUPA_URL}/rest/v1/newsletter_subscribers?id=eq.${id}`,{
+      method:'PATCH',
+      headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify({unsubscribed:true,unsubscribed_at:new Date().toISOString()})
+    });
+    if(!r.ok) throw new Error(r.status);
+    const sub = allSubs.find(s=>s.id===id);
+    if(sub){ sub.unsubscribed = true; sub.unsubscribed_at = new Date().toISOString(); }
+    renderSubs();
+    updateTabCounts();
+  }catch(e){
+    alert('Failed: '+e.message);
+    btn.disabled = false;
+  }
 }
 
 // ── Affiliate Clicks ───────────────────────────────
@@ -558,15 +651,20 @@ function renderClicks(){
 function switchView(view){
   currentView = view;
   selectedIds.clear(); updateBulkBar();
-  ['active','sold','deleted','clicks'].forEach(v=>{
+  ['active','sold','deleted','clicks','subs'].forEach(v=>{
     const t = document.getElementById('tab-'+v);
     if(t) t.classList.toggle('active',v===view);
   });
   const fb = document.getElementById('filterBar');
-  fb.style.display = (view==='deleted'||view==='clicks') ? 'none' : 'flex';
+  fb.style.display = (view==='deleted'||view==='clicks'||view==='subs') ? 'none' : 'flex';
   if(view==='clicks'){
     if(!clicksLoaded) loadClicks();
     else renderClicks();
+    return;
+  }
+  if(view==='subs'){
+    if(!subsLoaded) loadSubs();
+    else renderSubs();
     return;
   }
   doFilter();
