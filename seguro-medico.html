@@ -670,10 +670,10 @@ body {
       </a>
 
       <ul class="nav__links" id="navLinks">
-        <li><a href="seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
-        <li><a href="guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
-        <li><a href="herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
-        <li><a href="estados.html" data-es="Estados" data-en="States">Estados</a></li>
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
       </ul>
 
       <div style="display:flex;align-items:center;gap:12px;">
@@ -692,10 +692,11 @@ body {
     </div>
     <div class="nav__drawer" id="mobileDrawer">
       <ul class="nav__drawer-links">
-        <li><a href="seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
-        <li><a href="guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
-        <li><a href="herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
-        <li><a href="estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
       </ul>
       <a href="cotizar-salud.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
     </div>
@@ -725,15 +726,11 @@ body {
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__grid">
+    <div class="footer__grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px">
       <div class="footer__brand">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
           <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
           </div>
           <div style="display:flex;flex-direction:column;">
             <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
@@ -741,39 +738,51 @@ body {
           </div>
         </div>
         <p class="footer__tagline">Tu norte financiero.</p>
-        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU. Bilingüe, gratuita, diseñada para tu familia.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
       </div>
       <div>
         <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
         <ul class="footer__links">
-          <li><a href="seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
-          <li><a href="seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
-          <li><a href="seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
-          <li><a href="seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
-          <li><a href="seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
         </ul>
       </div>
       <div>
         <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
         <ul class="footer__links">
-          <li><a href="guias.html" data-es="Guías en Español" data-en="Guides in Spanish">Guías en Español</a></li>
-          <li><a href="herramientas.html" data-es="Calculadora" data-en="Calculator">Calculadora</a></li>
-          <li><a href="estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
-          <li><a href="florida.html">Florida</a></li>
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
+          <li><a href="/cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></li>
         </ul>
       </div>
       <div>
         <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
         <ul class="footer__links">
-          <li><a href="nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
           <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
-          <li><a href="cotizar-salud.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
           <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__copy" data-es="© 2025 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2025 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2025 Norte Financial. Información educativa, no asesoría legal.</p>
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
       <div class="footer__legal">
         <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
         <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>

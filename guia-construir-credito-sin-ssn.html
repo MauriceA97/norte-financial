@@ -84,12 +84,10 @@
         </div>
       </a>
       <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
         <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
-        <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
-        <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
-        <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
-        <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
         <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
       </ul>
       <div style="display:flex;align-items:center;gap:12px;">
         <div class="nav__lang">
@@ -103,14 +101,11 @@
     </div>
     <div class="nav__drawer" id="mobileDrawer">
       <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
         <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
-        <li><a href="/credito.html" onclick="closeMobileMenu()" data-es="Crédito" data-en="Credit">Crédito</a></li>
-        <li><a href="/banca.html" onclick="closeMobileMenu()" data-es="Banca" data-en="Banking">Banca</a></li>
-        <li><a href="/remesas.html" onclick="closeMobileMenu()" data-es="Remesas" data-en="Remittances">Remesas</a></li>
-        <li><a href="/impuestos.html" onclick="closeMobileMenu()" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
-        <li><a href="/hipotecas.html" onclick="closeMobileMenu()" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
-        <li><a href="/prestamos.html" onclick="closeMobileMenu()" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
         <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
       </ul>
     </div>
   </div>
@@ -175,7 +170,7 @@
 </section>
 <footer class="footer">
   <div class="container">
-    <div class="footer__grid">
+    <div class="footer__grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px">
       <div class="footer__brand">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
           <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -187,7 +182,17 @@
           </div>
         </div>
         <p class="footer__tagline">Tu norte financiero.</p>
-        <p class="footer__desc" data-es="Guía bilingüe de finanzas personales para hispanos en Estados Unidos. Crédito, banca, remesas, impuestos, hipotecas." data-en="Bilingual personal finance guide for Hispanics in the United States. Credit, banking, remittances, taxes, mortgages.">Guía bilingüe de finanzas personales para hispanos en EE.UU.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos. Bilingüe, gratuita, y diseñada para tu familia." data-en="The insurance and personal finance guide for Hispanics in the United States. Bilingual, free, and designed for your family.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
       </div>
       <div>
         <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
@@ -204,9 +209,10 @@
         <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
         <ul class="footer__links">
           <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
-          <li><a href="/herramientas.html" data-es="Calculadoras" data-en="Calculators">Calculadoras</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
           <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
-          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/estados.html" data-es="Por Estado" data-en="By State">Por Estado</a></li>
+          <li><a href="/cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></li>
         </ul>
       </div>
       <div>
@@ -214,8 +220,8 @@
         <ul class="footer__links">
           <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
           <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
           <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
-          <li><a href="/divulgacion.html" data-es="Divulgación" data-en="Disclosure">Divulgación</a></li>
         </ul>
       </div>
     </div>
