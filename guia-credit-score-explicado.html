@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía completa: qué es credit score, cómo se calcula, FICO vs VantageScore, cómo revisar el tuyo gratis, y qué hace realmente que suba.">
+<meta name="robots" content="index, follow">
+<title>Credit score explicado para hispanos (FICO vs VantageScore) — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/guia-credit-score-explicado.html">
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/mobile-fix.css">
+<script src="/ga-config.js"></script>
+<script src="/norte-track.js" defer></script>
+<script src="/norte-email.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Por qué mi credit score baja aunque pago todo a tiempo?", "acceptedAnswer": {"@type": "Answer", "text": "Lo más común: utilización subió (estás usando más % de tus límites), un nuevo hard inquiry, o alguna cuenta cerró reduciendo tu crédito disponible. Revisa tu reporte mensualmente."}}, {"@type": "Question", "name": "¿Cuál buró usan los lenders?", "acceptedAnswer": {"@type": "Answer", "text": "Depende. Mortgage lenders usan los 3 y toman el del medio. Tarjetas suelen usar Experian o TransUnion. Auto lenders usan Equifax frecuentemente. Los lenders específicos tienen preferencias."}}, {"@type": "Question", "name": "¿Un pago atrasado se queda en mi reporte para siempre?", "acceptedAnswer": {"@type": "Answer", "text": "No — 7 años para late payments, bankruptcies 7-10 años, collections 7 años. Pero su impacto en el score disminuye con el tiempo: un late payment de hace 5 años casi no afecta, uno de hace 2 meses afecta fuerte."}}, {"@type": "Question", "name": "¿Debo congelar mi crédito?", "acceptedAnswer": {"@type": "Answer", "text": "Si no estás buscando crédito nuevo, sí. Es gratis en los 3 buroes (equifax.com, experian.com, transunion.com). Previene identity theft. Lo descongelas temporalmente cuando apliques a algo."}}, {"@type": "Question", "name": "¿Afecta mi credit score si mi pareja tiene mal crédito?", "acceptedAnswer": {"@type": "Answer", "text": "No directamente — los scores son individuales. Pero si son casados con cuentas conjuntas, las decisiones se basan en el score más bajo de los dos para hipotecas. Si tu pareja tiene crédito malo, considera aplicar solo a tu nombre si cualificas."}}]}</script>
+<style>
+.review-wrap{padding:60px 0 100px;background:var(--parchment)}
+.review{max-width:880px;margin:0 auto;padding:0 24px}
+.disclosure{background:var(--frost);border:1px solid var(--border-light);border-radius:var(--r-md);padding:14px 18px;font-size:12px;color:var(--ink-muted);margin-bottom:32px;line-height:1.6}
+.disclosure strong{color:var(--forest)}
+.disclosure a{color:var(--verde);text-decoration:underline}
+.byline{display:flex;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--border-light);margin-bottom:32px;font-size:13px}
+.byline-avatar{width:38px;height:38px;background:var(--forest);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:500;font-size:14px}
+.byline-info strong{display:block;color:var(--ink);font-weight:500;font-size:14px}
+.byline-info span{color:var(--ink-light);font-size:12px}
+.review h2{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.review h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink);margin:28px 0 12px}
+.review p{font-size:16px;line-height:1.75;color:var(--ink-muted);margin-bottom:16px}
+.review ul,.review ol{margin:12px 0 20px 24px;color:var(--ink-muted);line-height:1.75}
+.review li{margin-bottom:6px}
+.review a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+.review strong{color:var(--ink);font-weight:500}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Norte Financial">
+        <div class="nav__logomark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="2" r="2" fill="#7EC4A8"/>
+          </svg>
+        </div>
+        <div class="nav__wordmark">
+          <span class="nav__wordmark-name">Norte</span>
+          <span class="nav__wordmark-sub">Financial</span>
+        </div>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/seguros.html" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="nav__lang">
+          <button class="nav__lang-btn active" id="btnEs" onclick="setLang('es')">ES</button>
+          <button class="nav__lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="/cotizar.html" class="nav__cta" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__drawer" id="mobileDrawer">
+      <ul class="nav__drawer-links">
+        <li><a href="/seguros.html" onclick="closeMobileMenu()" data-es="Seguros" data-en="Insurance">Seguros</a></li>
+        <li><a href="/finanzas.html" onclick="closeMobileMenu()" data-es="Finanzas" data-en="Finance">Finanzas</a></li>
+        <li><a href="/guias.html" onclick="closeMobileMenu()" data-es="Guías" data-en="Guides">Guías</a></li>
+        <li><a href="/herramientas.html" onclick="closeMobileMenu()" data-es="Herramientas" data-en="Tools">Herramientas</a></li>
+        <li><a href="/estados.html" onclick="closeMobileMenu()" data-es="Estados" data-en="States">Estados</a></li>
+      </ul>
+      <a href="/cotizar.html" class="nav__drawer-cta" onclick="closeMobileMenu()" data-es="Cotizar gratis →" data-en="Get free quote →">Cotizar gratis →</a>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <p class="page-hero__eyebrow" data-es="Guía Crédito · Fundamentos" data-en="Credit Guide · Basics">Guía Crédito · Fundamentos</p>
+    <h1 class="page-hero__title" data-es='El <em>credit score</em> explicado' data-en='<em>Credit score</em> explained'>El <em>credit score</em> explicado</h1>
+    <p class="page-hero__desc" data-es="Tu credit score gobierna casi todo en EE.UU. pero pocas familias hispanas saben cómo funciona realmente. Esta guía lo explica sin jerga." data-en="Your credit score governs almost everything in the US but few Hispanic families know how it really works. This guide explains it without jargon.">Tu credit score gobierna casi todo en EE.UU. pero pocas familias hispanas saben cómo funciona realmente. Esta guía lo explica sin jerga.</p>
+  </div>
+</section>
+<section class="review-wrap">
+<div class="review">
+<div class="disclosure" data-es='<strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces. No afecta nuestras calificaciones. <a href="/divulgacion.html">Ver divulgación</a>.' data-en='<strong>Affiliate notice:</strong> Norte Financial may receive compensation when you click links. Does not affect our ratings. <a href="/divulgacion.html">See disclosure</a>.'><strong>Aviso de afiliados:</strong> Norte Financial puede recibir compensación cuando haces clic en enlaces. No afecta nuestras calificaciones. <a href="/divulgacion.html">Ver divulgación</a>.</div>
+<div class="byline"><div class="byline-avatar">NF</div><div class="byline-info"><strong data-es="Equipo Editorial Norte Financial" data-en="Norte Financial Editorial Team">Equipo Editorial Norte Financial</strong><span data-es="Equipo bilingüe · Miami, FL · Actualizado 16 Abr 2026" data-en="Bilingual editorial team · Miami, FL · Updated Apr 16, 2026">Equipo bilingüe · Miami, FL · Actualizado 16 Abr 2026</span></div></div>
+<p data-es="En Estados Unidos tu credit score es el número más importante de tu vida financiera. Determina si te aprueban un apartamento, un carro, una tarjeta, una hipoteca — y cuánto pagas de interés. Pero el sistema es opaco: ni siquiera los estadounidenses nativos entienden cómo se calcula exactamente. Esta guía te lo explica de una vez por todas, sin jerga, con números reales." data-en="In the United States your credit score is the most important number in your financial life. It determines whether you're approved for an apartment, a car, a card, a mortgage — and how much interest you pay. But the system is opaque: even native-born Americans don't understand exactly how it's calculated. This guide explains it once and for all, no jargon, real numbers.">En Estados Unidos tu credit score es el número más importante de tu vida financiera. Determina si te aprueban un apartamento, un carro, una tarjeta, una hipoteca — y cuánto pagas de interés. Pero el sistema es opaco: ni siquiera los estadounidenses nativos entienden cómo se calcula exactamente. Esta guía te lo explica de una vez por todas, sin jerga, con números reales.</p>
+
+<h2 data-es="¿Qué es un credit score?" data-en="What is a credit score?">¿Qué es un credit score?</h2>
+<div data-es='Un credit score es un número entre 300 y 850 que predice la probabilidad de que pagues una deuda a tiempo. Lo calculan empresas privadas llamadas 'buroes de crédito' — principalmente Equifax, Experian, y TransUnion. Cada buró genera su propio score, y pueden ser ligeramente diferentes entre sí.<br><br>Hay dos 'marcas' principales de credit score:<br><br><strong>FICO</strong> (Fair Isaac Corporation) — es la marca original, usada por el 90% de lenders para decisiones importantes como hipotecas. Rango: 300-850.<br><br><strong>VantageScore</strong> — creado por los buroes como competencia a FICO. Es el que ves en Credit Karma, Credit Sesame, y muchas apps gratis. Rango: 300-850, pero calculado diferente. Tu VantageScore puede ser 20-50 puntos más alto que tu FICO — no te emociones si lo ves alto en una app gratis, los lenders probablemente ven un número más bajo.<br><br>Rangos de FICO para contexto:<ul><li><strong>800-850:</strong> Excepcional. Consigues las mejores tasas, aprueban todo.</li><li><strong>740-799:</strong> Muy bueno. Tasas competitivas.</li><li><strong>670-739:</strong> Bueno. Mayoría de productos disponibles.</li><li><strong>580-669:</strong> Regular. Pagas tasas altas, algunos productos restringidos.</li><li><strong>300-579:</strong> Pobre. Difícil aprobar productos tradicionales, terminas en secured cards o lenders de alto riesgo.</li></ul>' data-en='A credit score is a number between 300 and 850 that predicts the probability you'll pay a debt on time. It's calculated by private companies called 'credit bureaus' — mainly Equifax, Experian, and TransUnion. Each bureau generates its own score, and they can be slightly different.<br><br>There are two main credit score 'brands':<br><br><strong>FICO</strong> (Fair Isaac Corporation) — the original brand, used by 90% of lenders for important decisions like mortgages. Range: 300-850.<br><br><strong>VantageScore</strong> — created by bureaus as competition to FICO. It's what you see on Credit Karma, Credit Sesame, and many free apps. Range: 300-850, but calculated differently. Your VantageScore can be 20-50 points higher than your FICO — don't get excited if you see high on a free app, lenders probably see a lower number.<br><br>FICO ranges for context:<ul><li><strong>800-850:</strong> Exceptional. You get the best rates, approved for everything.</li><li><strong>740-799:</strong> Very good. Competitive rates.</li><li><strong>670-739:</strong> Good. Most products available.</li><li><strong>580-669:</strong> Fair. You pay high rates, some restricted products.</li><li><strong>300-579:</strong> Poor. Hard to approve traditional products, you end up with secured cards or high-risk lenders.</li></ul>'>Un credit score es un número entre 300 y 850 que predice la probabilidad de que pagues una deuda a tiempo. Lo calculan empresas privadas llamadas 'buroes de crédito' — principalmente Equifax, Experian, y TransUnion. Cada buró genera su propio score, y pueden ser ligeramente diferentes entre sí.<br><br>Hay dos 'marcas' principales de credit score:<br><br><strong>FICO</strong> (Fair Isaac Corporation) — es la marca original, usada por el 90% de lenders para decisiones importantes como hipotecas. Rango: 300-850.<br><br><strong>VantageScore</strong> — creado por los buroes como competencia a FICO. Es el que ves en Credit Karma, Credit Sesame, y muchas apps gratis. Rango: 300-850, pero calculado diferente. Tu VantageScore puede ser 20-50 puntos más alto que tu FICO — no te emociones si lo ves alto en una app gratis, los lenders probablemente ven un número más bajo.<br><br>Rangos de FICO para contexto:<ul><li><strong>800-850:</strong> Excepcional. Consigues las mejores tasas, aprueban todo.</li><li><strong>740-799:</strong> Muy bueno. Tasas competitivas.</li><li><strong>670-739:</strong> Bueno. Mayoría de productos disponibles.</li><li><strong>580-669:</strong> Regular. Pagas tasas altas, algunos productos restringidos.</li><li><strong>300-579:</strong> Pobre. Difícil aprobar productos tradicionales, terminas en secured cards o lenders de alto riesgo.</li></ul></div>
+<h2 data-es="Los 5 factores que determinan tu score" data-en="The 5 factors that determine your score">Los 5 factores que determinan tu score</h2>
+<div data-es='FICO usa 5 factores ponderados. Memoriza estos porcentajes:<br><br><strong>1. Historial de pagos — 35%</strong><br>El factor #1. ¿Pagas tus deudas a tiempo? Un solo pago atrasado por 30+ días puede bajar tu score 60-110 puntos. Un late payment se queda en tu reporte 7 años.<br><br><strong>2. Utilización de crédito — 30%</strong><br>El % de tu límite total que estás usando. Si tu límite total es $5,000 y debes $1,500, tu utilización es 30%. Ideal: bajo 10%. Máximo aceptable: 30%. Sobre 50% empieza a bajar tu score.<br><br><strong>3. Longitud del historial — 15%</strong><br>Edad promedio de tus cuentas de crédito. Mayor = mejor. Por eso NO cierras tu tarjeta más vieja cuando consigues una nueva.<br><br><strong>4. Mezcla de crédito — 10%</strong><br>¿Tienes variedad? Tarjetas + préstamo de auto + hipoteca = mejor que solo tarjetas. Por eso productos como <a href='/resena-self.html'>Self Credit Builder</a> (un 'installment loan' sintético) ayudan.<br><br><strong>5. Crédito nuevo — 10%</strong><br>¿Has aplicado a muchas cosas recientemente? Cada 'hard inquiry' baja tu score 3-7 puntos. 5+ inquiries en 6 meses te penaliza notablemente.' data-en='FICO uses 5 weighted factors. Memorize these percentages:<br><br><strong>1. Payment history — 35%</strong><br>The #1 factor. Do you pay your debts on time? A single 30+ day late payment can drop your score 60-110 points. A late payment stays on your report for 7 years.<br><br><strong>2. Credit utilization — 30%</strong><br>The % of your total limit you're using. If your total limit is $5,000 and you owe $1,500, your utilization is 30%. Ideal: under 10%. Max acceptable: 30%. Over 50% starts lowering your score.<br><br><strong>3. Length of history — 15%</strong><br>Average age of your credit accounts. Older = better. That's why you DON'T close your oldest card when you get a new one.<br><br><strong>4. Credit mix — 10%</strong><br>Do you have variety? Cards + auto loan + mortgage = better than just cards. That's why products like <a href='/resena-self.html'>Self Credit Builder</a> (a synthetic 'installment loan') help.<br><br><strong>5. New credit — 10%</strong><br>Have you applied to many things recently? Each 'hard inquiry' drops your score 3-7 points. 5+ inquiries in 6 months penalizes you notably.'>FICO usa 5 factores ponderados. Memoriza estos porcentajes:<br><br><strong>1. Historial de pagos — 35%</strong><br>El factor #1. ¿Pagas tus deudas a tiempo? Un solo pago atrasado por 30+ días puede bajar tu score 60-110 puntos. Un late payment se queda en tu reporte 7 años.<br><br><strong>2. Utilización de crédito — 30%</strong><br>El % de tu límite total que estás usando. Si tu límite total es $5,000 y debes $1,500, tu utilización es 30%. Ideal: bajo 10%. Máximo aceptable: 30%. Sobre 50% empieza a bajar tu score.<br><br><strong>3. Longitud del historial — 15%</strong><br>Edad promedio de tus cuentas de crédito. Mayor = mejor. Por eso NO cierras tu tarjeta más vieja cuando consigues una nueva.<br><br><strong>4. Mezcla de crédito — 10%</strong><br>¿Tienes variedad? Tarjetas + préstamo de auto + hipoteca = mejor que solo tarjetas. Por eso productos como <a href='/resena-self.html'>Self Credit Builder</a> (un 'installment loan' sintético) ayudan.<br><br><strong>5. Crédito nuevo — 10%</strong><br>¿Has aplicado a muchas cosas recientemente? Cada 'hard inquiry' baja tu score 3-7 puntos. 5+ inquiries en 6 meses te penaliza notablemente.</div>
+<h2 data-es="Cómo revisar tu score gratis" data-en="How to check your score for free">Cómo revisar tu score gratis</h2>
+<div data-es='<strong>Opciones gratis legítimas (no spam):</strong><ul><li><strong>Credit Karma</strong> — VantageScore actualizado semanalmente. Soft pull, no afecta score. En español. Pega recomendaciones de productos (son afiliados, Norte también lo es — pero el producto gratis es honesto).</li><li><strong>Experian.com</strong> (experian.com/free-credit-report) — FICO 8 + Experian report + FICO Insights por 30 días free trial. Después $24.99/mes — cancela antes.</li><li><strong>AnnualCreditReport.com</strong> — el sitio oficial del gobierno que te da tus 3 reports (Equifax, Experian, TransUnion) gratis una vez al año. NO te da score — solo el reporte. Úsalo para ver qué información tienen sobre ti y disputar errores.</li><li><strong>Tu banco</strong> — Chase, Bank of America, Wells Fargo, Discover, Capital One, y muchas tarjetas te dan FICO Score gratis en la app. Chase Credit Journey y Capital One CreditWise son buenos.</li></ul><strong>NO uses:</strong> FreeCreditReport.com (es trampa, es de Experian pero sellándote en un subscription de $24/mes). Evita cualquier sitio que te pida tarjeta de crédito para 'credit score gratis'.' data-en='<strong>Legitimate free options (no spam):</strong><ul><li><strong>Credit Karma</strong> — VantageScore updated weekly. Soft pull, doesn't affect score. In Spanish. Pushes product recommendations (they're affiliate, Norte is too — but the free product is honest).</li><li><strong>Experian.com</strong> (experian.com/free-credit-report) — FICO 8 + Experian report + FICO Insights for 30-day free trial. Then $24.99/mo — cancel first.</li><li><strong>AnnualCreditReport.com</strong> — the official government site that gives you your 3 reports (Equifax, Experian, TransUnion) free once a year. Does NOT give you score — just the report. Use it to see what info they have about you and dispute errors.</li><li><strong>Your bank</strong> — Chase, Bank of America, Wells Fargo, Discover, Capital One, and many cards give you FICO Score free in the app. Chase Credit Journey and Capital One CreditWise are good.</li></ul><strong>DO NOT use:</strong> FreeCreditReport.com (it's a trap, owned by Experian but enrolling you in a $24/mo subscription). Avoid any site asking for credit card to give 'free credit score'.'><strong>Opciones gratis legítimas (no spam):</strong><ul><li><strong>Credit Karma</strong> — VantageScore actualizado semanalmente. Soft pull, no afecta score. En español. Pega recomendaciones de productos (son afiliados, Norte también lo es — pero el producto gratis es honesto).</li><li><strong>Experian.com</strong> (experian.com/free-credit-report) — FICO 8 + Experian report + FICO Insights por 30 días free trial. Después $24.99/mes — cancela antes.</li><li><strong>AnnualCreditReport.com</strong> — el sitio oficial del gobierno que te da tus 3 reports (Equifax, Experian, TransUnion) gratis una vez al año. NO te da score — solo el reporte. Úsalo para ver qué información tienen sobre ti y disputar errores.</li><li><strong>Tu banco</strong> — Chase, Bank of America, Wells Fargo, Discover, Capital One, y muchas tarjetas te dan FICO Score gratis en la app. Chase Credit Journey y Capital One CreditWise son buenos.</li></ul><strong>NO uses:</strong> FreeCreditReport.com (es trampa, es de Experian pero sellándote en un subscription de $24/mes). Evita cualquier sitio que te pida tarjeta de crédito para 'credit score gratis'.</div>
+<h2 data-es="Cómo subir tu score rápido (realmente rápido)" data-en="How to raise your score fast (really fast)">Cómo subir tu score rápido (realmente rápido)</h2>
+<div data-es='Las mejoras rápidas (30-60 días) vs las lentas (6-24 meses):<br><br><strong>RÁPIDAS — puedes hacerlo este mes:</strong><ul><li><strong>Paga tus tarjetas antes del statement cut.</strong> La utilización se reporta en la fecha del corte del estado de cuenta. Si pagas $500 hoy antes del cut, tu balance reportado será $0 aunque uses la tarjeta todo el mes.</li><li><strong>Pide aumento de límite.</strong> Llama a tu banco y pide aumento. Si te lo dan, tu utilización baja automáticamente (mismo balance / límite más alto = mejor utilización).</li><li><strong>Experian Boost / UltraFICO.</strong> Gratis. Le das a Experian acceso a tu cuenta bancaria. Agrega utility bills, phone, streaming services como 'tradelines' positivos. Puede subir tu score 5-20 puntos en 48 horas.</li><li><strong>Disputa errores en tu reporte.</strong> Revisa annualcreditreport.com. 1 de cada 5 reportes tiene errores. Disputa online — tardan 30-45 días en corregir. Puede subir el score 30-80 puntos si el error es grande.</li></ul><strong>LENTAS — toman meses pero son las más importantes:</strong><ul><li>Paga todo a tiempo por 6-12 meses seguidos (historial de pagos)</li><li>Mantén utilización bajo 10% consistentemente</li><li>No cierres tarjetas viejas</li><li>No apliques a nada nuevo por 6 meses antes de una hipoteca</li></ul>' data-en='Fast improvements (30-60 days) vs slow ones (6-24 months):<br><br><strong>FAST — you can do this month:</strong><ul><li><strong>Pay your cards before statement cut.</strong> Utilization reports on the statement cut date. If you pay $500 today before the cut, your reported balance will be $0 even if you use the card all month.</li><li><strong>Ask for limit increase.</strong> Call your bank and ask for an increase. If granted, your utilization drops automatically (same balance / higher limit = better utilization).</li><li><strong>Experian Boost / UltraFICO.</strong> Free. You give Experian access to your bank account. Adds utility bills, phone, streaming services as positive 'tradelines'. Can raise your score 5-20 points in 48 hours.</li><li><strong>Dispute errors on your report.</strong> Check annualcreditreport.com. 1 in 5 reports has errors. Dispute online — takes 30-45 days to correct. Can raise score 30-80 points if the error is big.</li></ul><strong>SLOW — take months but most important:</strong><ul><li>Pay everything on time for 6-12 months straight (payment history)</li><li>Keep utilization under 10% consistently</li><li>Don't close old cards</li><li>Don't apply to anything new for 6 months before a mortgage</li></ul>'>Las mejoras rápidas (30-60 días) vs las lentas (6-24 meses):<br><br><strong>RÁPIDAS — puedes hacerlo este mes:</strong><ul><li><strong>Paga tus tarjetas antes del statement cut.</strong> La utilización se reporta en la fecha del corte del estado de cuenta. Si pagas $500 hoy antes del cut, tu balance reportado será $0 aunque uses la tarjeta todo el mes.</li><li><strong>Pide aumento de límite.</strong> Llama a tu banco y pide aumento. Si te lo dan, tu utilización baja automáticamente (mismo balance / límite más alto = mejor utilización).</li><li><strong>Experian Boost / UltraFICO.</strong> Gratis. Le das a Experian acceso a tu cuenta bancaria. Agrega utility bills, phone, streaming services como 'tradelines' positivos. Puede subir tu score 5-20 puntos en 48 horas.</li><li><strong>Disputa errores en tu reporte.</strong> Revisa annualcreditreport.com. 1 de cada 5 reportes tiene errores. Disputa online — tardan 30-45 días en corregir. Puede subir el score 30-80 puntos si el error es grande.</li></ul><strong>LENTAS — toman meses pero son las más importantes:</strong><ul><li>Paga todo a tiempo por 6-12 meses seguidos (historial de pagos)</li><li>Mantén utilización bajo 10% consistentemente</li><li>No cierres tarjetas viejas</li><li>No apliques a nada nuevo por 6 meses antes de una hipoteca</li></ul></div>
+
+
+<h2 data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</h2><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Por qué mi credit score baja aunque pago todo a tiempo?" data-en="Why does my credit score drop even though I pay on time?">¿Por qué mi credit score baja aunque pago todo a tiempo?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Lo más común: utilización subió (estás usando más % de tus límites), un nuevo hard inquiry, o alguna cuenta cerró reduciendo tu crédito disponible. Revisa tu reporte mensualmente." data-en="Most common: utilization went up (using more % of your limits), a new hard inquiry, or some account closed reducing your available credit. Check your report monthly.">Lo más común: utilización subió (estás usando más % de tus límites), un nuevo hard inquiry, o alguna cuenta cerró reduciendo tu crédito disponible. Revisa tu reporte mensualmente.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Cuál buró usan los lenders?" data-en="Which bureau do lenders use?">¿Cuál buró usan los lenders?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Depende. Mortgage lenders usan los 3 y toman el del medio. Tarjetas suelen usar Experian o TransUnion. Auto lenders usan Equifax frecuentemente. Los lenders específicos tienen preferencias." data-en="Depends. Mortgage lenders use all 3 and take the middle one. Cards usually use Experian or TransUnion. Auto lenders use Equifax frequently. Specific lenders have preferences.">Depende. Mortgage lenders usan los 3 y toman el del medio. Tarjetas suelen usar Experian o TransUnion. Auto lenders usan Equifax frecuentemente. Los lenders específicos tienen preferencias.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Un pago atrasado se queda en mi reporte para siempre?" data-en="Does a late payment stay on my report forever?">¿Un pago atrasado se queda en mi reporte para siempre?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No — 7 años para late payments, bankruptcies 7-10 años, collections 7 años. Pero su impacto en el score disminuye con el tiempo: un late payment de hace 5 años casi no afecta, uno de hace 2 meses afecta fuerte." data-en="No — 7 years for late payments, bankruptcies 7-10 years, collections 7 years. But their score impact diminishes over time: a 5-year-old late payment barely affects, a 2-month-old one affects strongly.">No — 7 años para late payments, bankruptcies 7-10 años, collections 7 años. Pero su impacto en el score disminuye con el tiempo: un late payment de hace 5 años casi no afecta, uno de hace 2 meses afecta fuerte.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Debo congelar mi crédito?" data-en="Should I freeze my credit?">¿Debo congelar mi crédito?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="Si no estás buscando crédito nuevo, sí. Es gratis en los 3 buroes (equifax.com, experian.com, transunion.com). Previene identity theft. Lo descongelas temporalmente cuando apliques a algo." data-en="If you're not seeking new credit, yes. It's free at all 3 bureaus (equifax.com, experian.com, transunion.com). Prevents identity theft. You unfreeze temporarily when applying for something.">Si no estás buscando crédito nuevo, sí. Es gratis en los 3 buroes (equifax.com, experian.com, transunion.com). Previene identity theft. Lo descongelas temporalmente cuando apliques a algo.</p>
+</div><div style="border:1px solid var(--border-light);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;background:var(--white)">
+  <h3 style="font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--ink);margin-bottom:8px" data-es="¿Afecta mi credit score si mi pareja tiene mal crédito?" data-en="Does my credit score affect if my partner has bad credit?">¿Afecta mi credit score si mi pareja tiene mal crédito?</h3>
+  <p style="font-size:14px;color:var(--ink-muted);line-height:1.7;margin:0" data-es="No directamente — los scores son individuales. Pero si son casados con cuentas conjuntas, las decisiones se basan en el score más bajo de los dos para hipotecas. Si tu pareja tiene crédito malo, considera aplicar solo a tu nombre si cualificas." data-en="Not directly — scores are individual. But if married with joint accounts, decisions are based on the lower score of the two for mortgages. If your partner has bad credit, consider applying solely in your name if you qualify.">No directamente — los scores son individuales. Pero si son casados con cuentas conjuntas, las decisiones se basan en el score más bajo de los dos para hipotecas. Si tu pareja tiene crédito malo, considera aplicar solo a tu nombre si cualificas.</p>
+</div>
+
+<h2 data-es="Próximo paso" data-en="Next step">Próximo paso</h2>
+<p data-es="Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Crédito." data-en="Explore the specific products mentioned in this guide or go back to the main hub to see all Crédito options.">Explora los productos específicos mencionados en esta guía o regresa al hub principal para ver todas las opciones de Crédito.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 0">
+  <a href="/credito.html" class="btn-primary" data-es="Ver Crédito →" data-en="See Crédito →">Ver Crédito →</a>
+  <a href="/finanzas.html" class="btn-ghost" data-es="Todas las finanzas →" data-en="All finances →">Todas las finanzas →</a>
+</div>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px">
+      <div class="footer__brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div style="width:32px;height:32px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#E8F5F0" stroke-width="1.5" stroke-linecap="round"/><path d="M12 2 L16 7 M12 2 L8 7" stroke="#7EC4A8" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#7EC4A8"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;color:white;letter-spacing:-0.01em;">Norte</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Financial</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Tu norte financiero.</p>
+        <p class="footer__desc" data-es="La guía de seguros y finanzas personales para hispanos en Estados Unidos." data-en="The insurance and personal finance guide for Hispanics in the United States.">La guía de seguros y finanzas para hispanos en EE.UU.</p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Seguros" data-en="Insurance">Seguros</div>
+        <ul class="footer__links">
+          <li><a href="/seguro-auto.html" data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</a></li>
+          <li><a href="/seguro-hogar.html" data-es="Seguro de Hogar" data-en="Home Insurance">Seguro de Hogar</a></li>
+          <li><a href="/seguro-vida.html" data-es="Seguro de Vida" data-en="Life Insurance">Seguro de Vida</a></li>
+          <li><a href="/seguro-medico.html" data-es="Seguro Médico" data-en="Health Insurance">Seguro Médico</a></li>
+          <li><a href="/seguro-negocio.html" data-es="Seguro de Negocio" data-en="Business Insurance">Seguro de Negocio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Finanzas" data-en="Finance">Finanzas</div>
+        <ul class="footer__links">
+          <li><a href="/credito.html" data-es="Crédito" data-en="Credit">Crédito</a></li>
+          <li><a href="/banca.html" data-es="Banca" data-en="Banking">Banca</a></li>
+          <li><a href="/remesas.html" data-es="Remesas" data-en="Remittances">Remesas</a></li>
+          <li><a href="/impuestos.html" data-es="Impuestos" data-en="Taxes">Impuestos</a></li>
+          <li><a href="/hipotecas.html" data-es="Hipotecas" data-en="Mortgages">Hipotecas</a></li>
+          <li><a href="/prestamos.html" data-es="Préstamos" data-en="Loans">Préstamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Recursos" data-en="Resources">Recursos</div>
+        <ul class="footer__links">
+          <li><a href="/guias.html" data-es="Guías" data-en="Guides">Guías</a></li>
+          <li><a href="/aseguradoras.html" data-es="Aseguradoras" data-en="Insurers">Aseguradoras</a></li>
+          <li><a href="/calculadora-remesas.html" data-es="Calculadora remesas" data-en="Remittance calculator">Calculadora remesas</a></li>
+          <li><a href="/prensa.html" data-es="Prensa" data-en="Press">Prensa</a></li>
+          <li><a href="/cotizar.html" data-es="Cotizar gratis" data-en="Get free quote">Cotizar gratis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-es="Compañía" data-en="Company">Compañía</div>
+        <ul class="footer__links">
+          <li><a href="/nosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+          <li><a href="/como-ganamos.html" data-es="Cómo ganamos" data-en="How we earn">Cómo ganamos</a></li>
+          <li><a href="/metodologia.html" data-es="Metodología" data-en="Methodology">Metodología</a></li>
+          <li><a href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-es="© 2026 Norte Financial. Información educativa, no asesoría legal. · Todos los derechos reservados." data-en="© 2026 Norte Financial. Educational information, not legal advice. · All rights reserved.">© 2026 Norte Financial. Información educativa, no asesoría legal.</p>
+      <div class="footer__legal">
+        <a href="/privacidad.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="/terminos.html" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="/divulgacion.html" data-es="Divulgación de afiliados" data-en="Affiliate disclosure">Divulgación de afiliados</a>
+        <a href="/privacidad.html#no-vender" data-es="No vender mi información" data-en="Do Not Sell My Info">No vender mi información</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleMobileMenu(){var d=document.getElementById('mobileDrawer'),t=document.getElementById('mobileToggle'),o=d.classList.contains('open');if(o){d.classList.remove('open');t.classList.remove('open')}else{d.classList.add('open');t.classList.add('open')}}
+function closeMobileMenu(){document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('mobileToggle').classList.remove('open')}
+let currentLang=localStorage.getItem('norte_lang')||'es';
+function setLang(lang){currentLang=lang;localStorage.setItem('norte_lang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT')el.placeholder=t;else el.innerHTML=t}});var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.toggle('active',lang==='es');if(n)n.classList.toggle('active',lang==='en')}
+function applyLang(){if(currentLang&&currentLang!=='es')setLang(currentLang);else{var e=document.getElementById('btnEs'),n=document.getElementById('btnEn');if(e)e.classList.add('active');if(n)n.classList.remove('active')}}
+applyLang();window.addEventListener('load',applyLang);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>

@@ -165,11 +165,13 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', id, {
+    // Merge user-provided config with privacy-friendly defaults
+    const cfg = Object.assign({
       send_page_view: true,
       allow_google_signals: false,
       anonymize_ip: true
-    });
+    }, window.NORTE_GA_CONFIG || {});
+    window.gtag('config', id, cfg);
     window.gtag('set', 'user_properties', { norte_visitor: visitorId });
   }
   // Run GA4 loader now AND after DOMContentLoaded (in case NORTE_GA_ID is set later)

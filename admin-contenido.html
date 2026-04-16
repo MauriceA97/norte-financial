@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Norte Content Studio — Admin</title>
+<style>
+  :root{
+    --bg:#0f172a;--panel:#1e293b;--panel-2:#334155;--text:#f1f5f9;
+    --muted:#94a3b8;--accent:#10b981;--amber:#f59e0b;--border:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',sans-serif;line-height:1.6;min-height:100vh}
+
+  /* Login screen */
+  .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .login-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:400px;width:100%}
+  .login-title{font-size:22px;font-weight:600;margin-bottom:8px}
+  .login-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+  .login-input{width:100%;padding:12px 14px;background:var(--panel-2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;margin-bottom:12px}
+  .login-btn{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer}
+  .login-err{color:#f87171;font-size:12px;margin-top:8px;display:none}
+
+  /* Dashboard */
+  .dashboard{display:none;max-width:1280px;margin:0 auto;padding:24px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .topbar-left h1{font-size:22px;font-weight:600}
+  .topbar-left p{font-size:13px;color:var(--muted)}
+  .topbar-right{display:flex;gap:10px}
+  .btn-sm{padding:8px 14px;background:var(--panel-2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .btn-sm:hover{background:var(--panel)}
+  .btn-sm.accent{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  .tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--border)}
+  .tab{padding:10px 18px;background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;position:relative;font-family:inherit}
+  .tab.active{color:var(--text);font-weight:500}
+  .tab.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent)}
+  .tab .count{background:rgba(16,185,129,0.15);color:var(--accent);padding:2px 8px;border-radius:10px;font-size:11px;margin-left:6px}
+
+  .view{display:none}
+  .view.active{display:block}
+
+  /* Scripts */
+  .script-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .script-week{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase}
+  .script-theme{font-size:11px;font-weight:500;color:#fff;padding:3px 10px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase}
+  .script-title{font-size:18px;font-weight:500;margin-bottom:12px;line-height:1.3}
+  .script-section{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+  .script-section strong{color:var(--text);font-weight:500;margin-right:6px}
+  .script-tags{font-size:12px;color:var(--amber)}
+  .copy-btn{margin-top:10px;padding:6px 12px;background:var(--panel-2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer;font-family:inherit}
+  .copy-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .copy-btn.copied{background:var(--accent);color:#fff}
+  .hidden-full-script,.hidden-full-pitch{display:none}
+
+  /* Pitches */
+  .pitch-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:14px;position:relative}
+  .pitch-num{position:absolute;top:22px;right:22px;width:36px;height:36px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+  .pitch-outlet{font-size:18px;font-weight:500;margin-bottom:4px}
+  .pitch-role{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .pitch-subject{font-size:14px;margin-bottom:10px;color:var(--text)}
+  .pitch-subject strong{color:var(--amber)}
+  .pitch-body-details{margin-top:10px;cursor:pointer}
+  .pitch-body-details summary{font-size:12px;color:var(--accent);list-style:none;padding:6px 0;font-weight:500}
+  .pitch-body-details summary::-webkit-details-marker{display:none}
+  .pitch-body-details[open] summary{margin-bottom:10px}
+  .pitch-body{background:var(--panel-2);padding:16px 20px;border-radius:8px;font-size:12px;color:var(--muted);white-space:pre-wrap;font-family:'Menlo',monospace;line-height:1.7}
+
+  .intro-box{background:var(--panel);border-left:3px solid var(--accent);padding:16px 22px;border-radius:8px;margin-bottom:24px;font-size:13px;color:var(--muted);line-height:1.7}
+  .intro-box strong{color:var(--text)}
+
+  @media(max-width:768px){
+    .dashboard{padding:16px}
+    .topbar{flex-direction:column;align-items:flex-start;gap:12px}
+    .tabs{overflow-x:auto;white-space:nowrap}
+    .script-card,.pitch-card{padding:16px 18px}
+    .pitch-num{top:16px;right:16px;width:30px;height:30px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-title">Norte Content Studio</div>
+    <div class="login-sub">Private admin surface. Enter password.</div>
+    <input type="password" id="passInput" class="login-input" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" onclick="doLogin()">Enter</button>
+    <div class="login-err" id="loginErr">Incorrect password.</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <div class="topbar">
+    <div class="topbar-left">
+      <h1>📝 Content Studio</h1>
+      <p>52-week YouTube script calendar · 10 press pitch templates · for internal use only</p>
+    </div>
+    <div class="topbar-right">
+      <a href="/admin.html" class="btn-sm">← Back to admin</a>
+      <button class="btn-sm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+
+  <div class="intro-box">
+    <strong>How to use this page.</strong> This is a private content library for Maurice. Every item has a "Copy full" button that puts the full text in your clipboard — paste into your social media scheduler, email client, or notes. <br><br>
+    <strong>YouTube scripts:</strong> 52 weeks organized by theme (Crédito, Banca, Remesas, Seguros, Impuestos, Hipotecas, Planning). Each is 60-90 seconds. Post 1 per week on YouTube Shorts + TikTok + Instagram Reels for maximum reach.<br><br>
+    <strong>Press pitches:</strong> 10 outlet-specific templates. Replace [Name] and [Your name], personalize the first sentence if you want, send. Follow up after 5 business days if no response.
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchView('scripts')">🎬 52 YouTube Scripts <span class="count">52</span></button>
+    <button class="tab" onclick="switchView('pitches')">📰 10 Press Pitches <span class="count">10</span></button>
+  </div>
+
+  <div class="view active" id="view-scripts"><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 1</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">3 errores que destruyen tu crédito sin que te des cuenta</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> ¿Sabías que pagar tu tarjeta una semana antes puede BAJARTE el credit score?</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> El primer error: cerrar tu tarjeta más vieja cuando consigues una nueva. Pierdes historial y tu score baja de 20 a 50 puntos. Segundo error: usar más del 30% de tu límite. Aunque pagues a tiempo, el sistema te penaliza. Tercer error: aplicar a 3 tarjetas en un mes. Cada hard inquiry te baja 7 puntos. La solución: paga antes del statement cut, mantén utilización bajo 10%, y NO cierres cuentas viejas.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Si quieres saber exactamente cómo construir crédito desde cero, link en la descripción.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #creditohispano #creditoUSA #finanzashispanos #creditscore #itincredit</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">3 errores que destruyen tu crédito sin que te des cuenta
+
+Hook: ¿Sabías que pagar tu tarjeta una semana antes puede BAJARTE el credit score?
+
+El primer error: cerrar tu tarjeta más vieja cuando consigues una nueva. Pierdes historial y tu score baja de 20 a 50 puntos. Segundo error: usar más del 30% de tu límite. Aunque pagues a tiempo, el sistema te penaliza. Tercer error: aplicar a 3 tarjetas en un mes. Cada hard inquiry te baja 7 puntos. La solución: paga antes del statement cut, mantén utilización bajo 10%, y NO cierres cuentas viejas.
+
+Si quieres saber exactamente cómo construir crédito desde cero, link en la descripción.
+
+#creditohispano #creditoUSA #finanzashispanos #creditscore #itincredit</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 2</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">Cómo sacar tarjeta de crédito SIN número de seguro social</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si no tienes SSN, no necesitas rendirte con el crédito — hay opciones reales en 2026.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Tomo Card acepta pasaporte sin SSN, 0% APR, y reporta a los 3 buroes. Petal 2 usa tu cuenta bancaria en lugar de historial — si tienes ingresos estables, te aprueban con límite de $500 a $2,500. Capital One Platinum Secured acepta ITIN con depósito de solo $49. Estas tres son las opciones reales que funcionan en 2026 para inmigrantes.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa paso a paso en el link de la bio.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #tarjetasinssn #itincredit #creditohispano #inmigrantesUSA</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Cómo sacar tarjeta de crédito SIN número de seguro social
+
+Hook: Si no tienes SSN, no necesitas rendirte con el crédito — hay opciones reales en 2026.
+
+Tomo Card acepta pasaporte sin SSN, 0% APR, y reporta a los 3 buroes. Petal 2 usa tu cuenta bancaria en lugar de historial — si tienes ingresos estables, te aprueban con límite de $500 a $2,500. Capital One Platinum Secured acepta ITIN con depósito de solo $49. Estas tres son las opciones reales que funcionan en 2026 para inmigrantes.
+
+Guía completa paso a paso en el link de la bio.
+
+#tarjetasinssn #itincredit #creditohispano #inmigrantesUSA</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 3</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">El credit score que los bancos NO quieren que sepas</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Hay DOS credit scores — y el que ves gratis en Credit Karma no es el que los bancos usan.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Credit Karma te muestra VantageScore, que generalmente es 20-50 puntos más alto que tu FICO real. Los bancos usan FICO para decisiones importantes como hipotecas. Si Credit Karma dice 720, tu FICO real puede ser 685. Para ver tu FICO real: Chase Credit Journey, Capital One CreditWise, Discover Scorecard — todos gratis y te dan FICO verdadero.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Link para revisar tu FICO real gratis en la descripción.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #creditscore #FICO #vantagescore #finanzashispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">El credit score que los bancos NO quieren que sepas
+
+Hook: Hay DOS credit scores — y el que ves gratis en Credit Karma no es el que los bancos usan.
+
+Credit Karma te muestra VantageScore, que generalmente es 20-50 puntos más alto que tu FICO real. Los bancos usan FICO para decisiones importantes como hipotecas. Si Credit Karma dice 720, tu FICO real puede ser 685. Para ver tu FICO real: Chase Credit Journey, Capital One CreditWise, Discover Scorecard — todos gratis y te dan FICO verdadero.
+
+Link para revisar tu FICO real gratis en la descripción.
+
+#creditscore #FICO #vantagescore #finanzashispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 4</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">Payday loans: la trampa más cara del mercado hispano</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si alguien te ofrece '$500 en 10 minutos sin credit check', VE CORRIENDO al otro lado.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Los payday loans cobran APR de 300 a 400%. Si pides $500, terminas pagando $1,500 en 6 meses si rolas la deuda. Son ilegales en 19 estados y están específicamente concentrados en barrios hispanos. La alternativa real: Oportun — acepta ITIN, APR de 20-36%, construye crédito, y te ahorra miles vs payday lenders.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa de préstamos seguros en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #paydayloans #prestamoshispanos #oportun #noalasusura</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Payday loans: la trampa más cara del mercado hispano
+
+Hook: Si alguien te ofrece '$500 en 10 minutos sin credit check', VE CORRIENDO al otro lado.
+
+Los payday loans cobran APR de 300 a 400%. Si pides $500, terminas pagando $1,500 en 6 meses si rolas la deuda. Son ilegales en 19 estados y están específicamente concentrados en barrios hispanos. La alternativa real: Oportun — acepta ITIN, APR de 20-36%, construye crédito, y te ahorra miles vs payday lenders.
+
+Guía completa de préstamos seguros en el link.
+
+#paydayloans #prestamoshispanos #oportun #noalasusura</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 5</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">Experian Boost: sube tu credit score en 48 horas GRATIS</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Existe una herramienta que los buroes no te ofrecen activamente — Experian Boost.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Es gratis. Conectas tu cuenta bancaria y Experian agrega tus pagos de utilities (luz, agua, teléfono, Netflix, Spotify) como 'tradelines' positivos a tu reporte. Puede subir tu score 5 a 20 puntos en 48 horas. Especialmente útil si eres credit invisible o tienes historial corto. Tardas 5 minutos en configurarlo.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Link directo a Experian Boost en la descripción.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #experianboost #creditscore #subirscore #creditohispano</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Experian Boost: sube tu credit score en 48 horas GRATIS
+
+Hook: Existe una herramienta que los buroes no te ofrecen activamente — Experian Boost.
+
+Es gratis. Conectas tu cuenta bancaria y Experian agrega tus pagos de utilities (luz, agua, teléfono, Netflix, Spotify) como 'tradelines' positivos a tu reporte. Puede subir tu score 5 a 20 puntos en 48 horas. Especialmente útil si eres credit invisible o tienes historial corto. Tardas 5 minutos en configurarlo.
+
+Link directo a Experian Boost en la descripción.
+
+#experianboost #creditscore #subirscore #creditohispano</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 6</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">La regla del 30% que tu tarjeta no te enseña</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Aunque pagues tu tarjeta completa cada mes, puedes estar bajando tu score.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Credit utilization es el 30% de tu score. Si tu límite es $1,000 y debes $500 el día del statement cut, tu utilización reportada es 50%, y tu score baja. La solución: paga el balance ANTES del statement cut (no de la due date). Muchos no saben la diferencia. Statement cut es el día que se reporta a los buroes. Due date es cuando debes pagar. Paga entre estas dos fechas.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Te explico paso a paso con fechas exactas en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #creditutilization #creditscore #finanzashispanos #tarjetashispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">La regla del 30% que tu tarjeta no te enseña
+
+Hook: Aunque pagues tu tarjeta completa cada mes, puedes estar bajando tu score.
+
+Credit utilization es el 30% de tu score. Si tu límite es $1,000 y debes $500 el día del statement cut, tu utilización reportada es 50%, y tu score baja. La solución: paga el balance ANTES del statement cut (no de la due date). Muchos no saben la diferencia. Statement cut es el día que se reporta a los buroes. Due date es cuando debes pagar. Paga entre estas dos fechas.
+
+Te explico paso a paso con fechas exactas en el link.
+
+#creditutilization #creditscore #finanzashispanos #tarjetashispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 7</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">3 tarjetas que todo inmigrante debería tener en orden</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si acabas de llegar a EE.UU., este es el camino exacto en 3 pasos.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Paso 1, mes 1 a 6: Tomo Card — sin SSN, sin depósito, empiezas a construir historial. Paso 2, mes 6 a 12: Capital One Platinum Secured con $200 de depósito — agrega diversidad y baja tu utilización. Paso 3, mes 12 a 18: Capital One QuickSilver o Discover Student — tarjeta unsecured con cashback. En 18 meses vas de 0 a FICO 700 siguiendo este plan.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Plan completo con links de aplicación en el primer comentario.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #tarjetasinmigrantes #credithispano #itincredit #planfinanciero</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">3 tarjetas que todo inmigrante debería tener en orden
+
+Hook: Si acabas de llegar a EE.UU., este es el camino exacto en 3 pasos.
+
+Paso 1, mes 1 a 6: Tomo Card — sin SSN, sin depósito, empiezas a construir historial. Paso 2, mes 6 a 12: Capital One Platinum Secured con $200 de depósito — agrega diversidad y baja tu utilización. Paso 3, mes 12 a 18: Capital One QuickSilver o Discover Student — tarjeta unsecured con cashback. En 18 meses vas de 0 a FICO 700 siguiendo este plan.
+
+Plan completo con links de aplicación en el primer comentario.
+
+#tarjetasinmigrantes #credithispano #itincredit #planfinanciero</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 8</span>
+    <span class="script-theme" style="background:#1D9E75">Crédito</span>
+  </div>
+  <h3 class="script-title">Por qué cerrar una tarjeta puede BAJARTE el credit score</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Cerrar una tarjeta vieja parece buena idea — pero puede quitarte 30 a 60 puntos.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Dos razones. Primera: historial de crédito es el 15% de tu FICO. Cerrar una tarjeta de 10 años te reduce el promedio de edad de tus cuentas. Segunda: cerrar baja tu crédito total disponible, aumentando tu utilización automáticamente. Si tienes $5,000 de límite total y cierras una tarjeta de $2,000, tu utilización sobre los $3,000 restantes es mucho mayor. Mantén las tarjetas viejas abiertas — úsalas 1 vez cada 3 meses para evitar que las cierren.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa de crédito en la descripción.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #creditscore #tarjetashispanos #finanzashispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Por qué cerrar una tarjeta puede BAJARTE el credit score
+
+Hook: Cerrar una tarjeta vieja parece buena idea — pero puede quitarte 30 a 60 puntos.
+
+Dos razones. Primera: historial de crédito es el 15% de tu FICO. Cerrar una tarjeta de 10 años te reduce el promedio de edad de tus cuentas. Segunda: cerrar baja tu crédito total disponible, aumentando tu utilización automáticamente. Si tienes $5,000 de límite total y cierras una tarjeta de $2,000, tu utilización sobre los $3,000 restantes es mucho mayor. Mantén las tarjetas viejas abiertas — úsalas 1 vez cada 3 meses para evitar que las cierren.
+
+Guía completa de crédito en la descripción.
+
+#creditscore #tarjetashispanos #finanzashispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 9</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Chime vs Wells Fargo: cuál conviene más al hispano</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Los bancos tradicionales te cobran $180 al año en cuotas — Chime te paga a ti.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Chime: $0 cuota mensual, depósito directo 2 días antes, sin overdraft fees, acepta ITIN. Wells Fargo: $10 cuota mensual (evitable con $500 de depósito), red de sucursales, acepta ITIN + matrícula consular. La respuesta real: ten ambos. Chime para día a día, Wells Fargo para depósitos de efectivo y relaciones largas para hipoteca eventual.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Comparación completa de 5 bancos en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #chime #wellsfargo #bancahispana #itinbanking</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Chime vs Wells Fargo: cuál conviene más al hispano
+
+Hook: Los bancos tradicionales te cobran $180 al año en cuotas — Chime te paga a ti.
+
+Chime: $0 cuota mensual, depósito directo 2 días antes, sin overdraft fees, acepta ITIN. Wells Fargo: $10 cuota mensual (evitable con $500 de depósito), red de sucursales, acepta ITIN + matrícula consular. La respuesta real: ten ambos. Chime para día a día, Wells Fargo para depósitos de efectivo y relaciones largas para hipoteca eventual.
+
+Comparación completa de 5 bancos en el link.
+
+#chime #wellsfargo #bancahispana #itinbanking</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 10</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Cuenta bancaria SIN SSN: los 3 bancos que sí aceptan</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> El mito: 'los bancos no me abren cuenta sin SSN'. La realidad: 4 de los top 10 sí.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Bank of America SafeBalance — acepta ITIN y matrícula consular. Wells Fargo — ITIN aceptado, programa ClearAccess. Chase — acepta ITIN si tienes relación previa. Chime y Current — bancos digitales con aceptación ITIN rápida. Lleva: pasaporte, ITIN, comprobante de domicilio (lease o utility bill). El proceso toma 45 minutos en sucursal, 15 minutos online.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Documentos exactos y pasos en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #cuentasinssn #bancasinSSN #itinbanking #inmigrantesUSA</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Cuenta bancaria SIN SSN: los 3 bancos que sí aceptan
+
+Hook: El mito: 'los bancos no me abren cuenta sin SSN'. La realidad: 4 de los top 10 sí.
+
+Bank of America SafeBalance — acepta ITIN y matrícula consular. Wells Fargo — ITIN aceptado, programa ClearAccess. Chase — acepta ITIN si tienes relación previa. Chime y Current — bancos digitales con aceptación ITIN rápida. Lleva: pasaporte, ITIN, comprobante de domicilio (lease o utility bill). El proceso toma 45 minutos en sucursal, 15 minutos online.
+
+Documentos exactos y pasos en el link.
+
+#cuentasinssn #bancasinSSN #itinbanking #inmigrantesUSA</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 11</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">4% de interés: lo que tu banco tradicional NO te paga</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Tu banco tradicional te paga 0.01% en ahorros — SoFi te paga 4%+.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Si tienes $5,000 guardados, Bank of America te paga $0.50 al año. SoFi te paga $200. Es el mismo dinero, el mismo FDIC insurance hasta $250,000 — solo que en cuentas distintas. Transferir toma 10 minutos. En 3 años de ahorrar $10,000, es la diferencia entre $3 de intereses y $1,200 de intereses.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Paso a paso para abrir SoFi en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #sofi #ahorroshispanos #APYalto #finanzashispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">4% de interés: lo que tu banco tradicional NO te paga
+
+Hook: Tu banco tradicional te paga 0.01% en ahorros — SoFi te paga 4%+.
+
+Si tienes $5,000 guardados, Bank of America te paga $0.50 al año. SoFi te paga $200. Es el mismo dinero, el mismo FDIC insurance hasta $250,000 — solo que en cuentas distintas. Transferir toma 10 minutos. En 3 años de ahorrar $10,000, es la diferencia entre $3 de intereses y $1,200 de intereses.
+
+Paso a paso para abrir SoFi en el link.
+
+#sofi #ahorroshispanos #APYalto #finanzashispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 12</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Overdraft: la trampa más cara de tu banco</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Un overdraft fee de $35 es peor que un payday loan si lo calculas como APR.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Cuando gastas $10 más de lo que tienes, Bank of America te cobra $35 — eso es 350% APR si lo pagas en un día. Lo peor: pueden reordenar tus transacciones del día para activar MÚLTIPLES overdraft fees. La solución: Chime SpotMe te permite gastar hasta $200 sobre tu balance SIN cargo alguno. Varo, SoFi, Current: también sin overdraft fees.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Cómo eliminar overdraft fees para siempre: link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #overdraft #comisionesbancarias #chime #bancahispana</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Overdraft: la trampa más cara de tu banco
+
+Hook: Un overdraft fee de $35 es peor que un payday loan si lo calculas como APR.
+
+Cuando gastas $10 más de lo que tienes, Bank of America te cobra $35 — eso es 350% APR si lo pagas en un día. Lo peor: pueden reordenar tus transacciones del día para activar MÚLTIPLES overdraft fees. La solución: Chime SpotMe te permite gastar hasta $200 sobre tu balance SIN cargo alguno. Varo, SoFi, Current: también sin overdraft fees.
+
+Cómo eliminar overdraft fees para siempre: link.
+
+#overdraft #comisionesbancarias #chime #bancahispana</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 13</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Deposita tu paycheck 2 días antes: cómo funciona</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Sí, es legal. Y sí, los bancos tradicionales podrían hacerlo pero no quieren.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Cuando tu empleador procesa la nómina el miércoles, el archivo ACH está listo. Chime lo procesa al recibirlo; Wells Fargo lo retiene hasta el viernes para generar interés. Al cambiarte a Chime, Current, SoFi o Varo, literalmente recibes tu dinero 2 días antes. Para un hogar que vive mes a mes, son 2 días menos de estrés cada 2 semanas.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Setup de depósito directo en Chime: guía en descripción.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #pagotemprano #chime #direct deposit #bancahispana</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Deposita tu paycheck 2 días antes: cómo funciona
+
+Hook: Sí, es legal. Y sí, los bancos tradicionales podrían hacerlo pero no quieren.
+
+Cuando tu empleador procesa la nómina el miércoles, el archivo ACH está listo. Chime lo procesa al recibirlo; Wells Fargo lo retiene hasta el viernes para generar interés. Al cambiarte a Chime, Current, SoFi o Varo, literalmente recibes tu dinero 2 días antes. Para un hogar que vive mes a mes, son 2 días menos de estrés cada 2 semanas.
+
+Setup de depósito directo en Chime: guía en descripción.
+
+#pagotemprano #chime #direct deposit #bancahispana</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 14</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Zelle, Venmo, CashApp — cuál es el más seguro</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> 90% de hispanos usan una de las tres — pero hay diferencias importantes de seguridad.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Zelle es el más seguro — integrado directamente con tu banco, respaldo del banco si hay fraude verificado. Venmo es el menos seguro para transacciones grandes — si te estafan, NO hay devolución. CashApp tiene el punto medio. Regla: Zelle para rent y cosas grandes. Venmo/CashApp solo para amigos y familia que conoces personalmente.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa de seguridad financiera en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #zelle #venmo #cashapp #seguridadfinanciera</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Zelle, Venmo, CashApp — cuál es el más seguro
+
+Hook: 90% de hispanos usan una de las tres — pero hay diferencias importantes de seguridad.
+
+Zelle es el más seguro — integrado directamente con tu banco, respaldo del banco si hay fraude verificado. Venmo es el menos seguro para transacciones grandes — si te estafan, NO hay devolución. CashApp tiene el punto medio. Regla: Zelle para rent y cosas grandes. Venmo/CashApp solo para amigos y familia que conoces personalmente.
+
+Guía completa de seguridad financiera en el link.
+
+#zelle #venmo #cashapp #seguridadfinanciera</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 15</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">Qué hacer SI tu banco congela tu cuenta (pasa más de lo que crees)</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> A 1 de cada 4 usuarios de Chime les han congelado la cuenta sin aviso — aquí está qué hacer.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Primera regla: no entres en pánico. Los bancos digitales congelan cuentas por 'actividad sospechosa' — depósitos grandes inusuales, transferencias repetidas, uso desde IP nuevas. Pasos: 1) Contactar soporte por chat Y por teléfono simultáneamente. 2) Tener documentos listos (ID, comprobante de empleo, source of funds). 3) Si no responden en 48 horas, escalar al CFPB — Consumer Financial Protection Bureau te ayuda gratis.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Template de carta al CFPB en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #chime #banking #derechoshispanos #CFPB</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Qué hacer SI tu banco congela tu cuenta (pasa más de lo que crees)
+
+Hook: A 1 de cada 4 usuarios de Chime les han congelado la cuenta sin aviso — aquí está qué hacer.
+
+Primera regla: no entres en pánico. Los bancos digitales congelan cuentas por 'actividad sospechosa' — depósitos grandes inusuales, transferencias repetidas, uso desde IP nuevas. Pasos: 1) Contactar soporte por chat Y por teléfono simultáneamente. 2) Tener documentos listos (ID, comprobante de empleo, source of funds). 3) Si no responden en 48 horas, escalar al CFPB — Consumer Financial Protection Bureau te ayuda gratis.
+
+Template de carta al CFPB en el link.
+
+#chime #banking #derechoshispanos #CFPB</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 16</span>
+    <span class="script-theme" style="background:#0B3D2E">Banca</span>
+  </div>
+  <h3 class="script-title">FDIC: la garantía que salva tu dinero si el banco colapsa</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si tu banco colapsa — como Silicon Valley Bank en 2023 — FDIC te paga lo tuyo.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> FDIC garantiza hasta $250,000 por persona por banco. Significa que si tienes $300,000 en un solo banco y colapsa, pierdes $50,000. Solución: distribuir en 2+ bancos. Otra trampa: Chime, SoFi, Current no son bancos directamente — usan partner banks (Bancorp, Stride). Tu FDIC coverage está con el partner bank. Varo es el único neobanco con charter bancario nacional propio.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía de cómo verificar tu FDIC coverage en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #FDIC #seguridadbancaria #ahorroshispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">FDIC: la garantía que salva tu dinero si el banco colapsa
+
+Hook: Si tu banco colapsa — como Silicon Valley Bank en 2023 — FDIC te paga lo tuyo.
+
+FDIC garantiza hasta $250,000 por persona por banco. Significa que si tienes $300,000 en un solo banco y colapsa, pierdes $50,000. Solución: distribuir en 2+ bancos. Otra trampa: Chime, SoFi, Current no son bancos directamente — usan partner banks (Bancorp, Stride). Tu FDIC coverage está con el partner bank. Varo es el único neobanco con charter bancario nacional propio.
+
+Guía de cómo verificar tu FDIC coverage en el link.
+
+#FDIC #seguridadbancaria #ahorroshispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 17</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Western Union te cobra $30 escondidos por cada envío</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si envías $500 mensuales a México con Western Union, pierdes $360 al año en comisiones escondidas.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> No es la comisión visible de $5 — es el tipo de cambio. Western Union te da 19.20 pesos por dólar cuando el mercado real es 20.40. En $500 eso son 600 pesos menos de lo que deberías recibir. Son $30 extras invisibles por transferencia. Wise te da el tipo de cambio real — solo cobra $4-5 de comisión visible y eso es TODO.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora de remesas en nortefinancial.com/calculadora-remesas.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #remesas #westernunion #wise #hispanosEEUU</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Western Union te cobra $30 escondidos por cada envío
+
+Hook: Si envías $500 mensuales a México con Western Union, pierdes $360 al año en comisiones escondidas.
+
+No es la comisión visible de $5 — es el tipo de cambio. Western Union te da 19.20 pesos por dólar cuando el mercado real es 20.40. En $500 eso son 600 pesos menos de lo que deberías recibir. Son $30 extras invisibles por transferencia. Wise te da el tipo de cambio real — solo cobra $4-5 de comisión visible y eso es TODO.
+
+Calculadora de remesas en nortefinancial.com/calculadora-remesas.
+
+#remesas #westernunion #wise #hispanosEEUU</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 18</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Wise vs Remitly: cuál conviene para tu familia</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> La respuesta depende de una sola pregunta: ¿tu familia tiene cuenta bancaria?</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Si sí: Wise — sin excepción. Tipo de cambio real mid-market, comisión transparente, llega en minutos a cuenta de BBVA, Banorte, Santander, Banco Industrial. Si no: Remitly Economy — cash pickup en 20,000+ ubicaciones, un poco más caro que Wise pero mucho más barato que Western Union. Nunca uses Western Union en 2026.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Comparación exacta por país en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #wise #remitly #remesas #hispanosEEUU</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Wise vs Remitly: cuál conviene para tu familia
+
+Hook: La respuesta depende de una sola pregunta: ¿tu familia tiene cuenta bancaria?
+
+Si sí: Wise — sin excepción. Tipo de cambio real mid-market, comisión transparente, llega en minutos a cuenta de BBVA, Banorte, Santander, Banco Industrial. Si no: Remitly Economy — cash pickup en 20,000+ ubicaciones, un poco más caro que Wise pero mucho más barato que Western Union. Nunca uses Western Union en 2026.
+
+Comparación exacta por país en el link.
+
+#wise #remitly #remesas #hispanosEEUU</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 19</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Cómo enseñar a tu mamá a recibir dinero en Wise (en 10 minutos)</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> La barrera no es tecnológica — es emocional. Tu mamá ha usado Western Union 20 años.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Paso 1: envíale $100 como prueba un domingo. Llámala mientras te ve en video. Paso 2: enséñale a abrir la app del banco mexicano — ya ve el dinero ahí. Paso 3: muéstrale en un papel: 'con Wise recibes 10,200 pesos. Con Western Union 9,700 pesos. Son 500 pesos más. Al año son 6,000 pesos. En 10 años son 60,000 pesos que dejaste de enviar a mí.' El argumento emocional es: TÚ estás perdiendo ese dinero, no ella.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Script completo de conversación con la familia en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #remesas #familyfinance #wise #comunidadhispana</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Cómo enseñar a tu mamá a recibir dinero en Wise (en 10 minutos)
+
+Hook: La barrera no es tecnológica — es emocional. Tu mamá ha usado Western Union 20 años.
+
+Paso 1: envíale $100 como prueba un domingo. Llámala mientras te ve en video. Paso 2: enséñale a abrir la app del banco mexicano — ya ve el dinero ahí. Paso 3: muéstrale en un papel: 'con Wise recibes 10,200 pesos. Con Western Union 9,700 pesos. Son 500 pesos más. Al año son 6,000 pesos. En 10 años son 60,000 pesos que dejaste de enviar a mí.' El argumento emocional es: TÚ estás perdiendo ese dinero, no ella.
+
+Script completo de conversación con la familia en el link.
+
+#remesas #familyfinance #wise #comunidadhispana</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 20</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">El corredor más caro del mundo: EE.UU. a Cuba</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Enviar $500 a Cuba vía Western Union te puede costar $40 en comisiones y tipo de cambio.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Cuba tiene mercado cambiario dual — el oficial y el informal. Western Union solo te da el oficial, peor tipo. Opciones modernas: Western Union Cuba sigue siendo la dominante aunque cara; Fincimex (servicio estatal cubano); VaCuba; CubaMax para pickup en casa. La realidad: Cuba es el corredor más caro de LatAm — presupuesta 8-10% de pérdida como costo real.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía de remesas a Cuba en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #cuba #remesas #cubanosUSA #hispanoscommunity</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">El corredor más caro del mundo: EE.UU. a Cuba
+
+Hook: Enviar $500 a Cuba vía Western Union te puede costar $40 en comisiones y tipo de cambio.
+
+Cuba tiene mercado cambiario dual — el oficial y el informal. Western Union solo te da el oficial, peor tipo. Opciones modernas: Western Union Cuba sigue siendo la dominante aunque cara; Fincimex (servicio estatal cubano); VaCuba; CubaMax para pickup en casa. La realidad: Cuba es el corredor más caro de LatAm — presupuesta 8-10% de pérdida como costo real.
+
+Guía de remesas a Cuba en el link.
+
+#cuba #remesas #cubanosUSA #hispanoscommunity</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 21</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Remitly Express vs Economy: la diferencia que nadie te dice</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Remitly tiene dos modos de envío con la misma app — la diferencia son horas o días.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Express: llega en minutos a cuenta bancaria o pickup. Cobra $3-5 de comisión. Economy: llega en 1-3 días. Comisión $0-1. Si tu familia NO necesita el dinero urgentemente, Economy te ahorra 3-4 dólares por transferencia. En 12 envíos al año son $40-50. Usa Express solo cuando hay emergencia real.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Setup de Remitly en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #remitly #remesas #ahorroshispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Remitly Express vs Economy: la diferencia que nadie te dice
+
+Hook: Remitly tiene dos modos de envío con la misma app — la diferencia son horas o días.
+
+Express: llega en minutos a cuenta bancaria o pickup. Cobra $3-5 de comisión. Economy: llega en 1-3 días. Comisión $0-1. Si tu familia NO necesita el dinero urgentemente, Economy te ahorra 3-4 dólares por transferencia. En 12 envíos al año son $40-50. Usa Express solo cuando hay emergencia real.
+
+Setup de Remitly en el link.
+
+#remitly #remesas #ahorroshispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 22</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Por qué nunca debes pagar remesas con tarjeta de crédito</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si pagas $500 de remesa con tarjeta de crédito, te cobran 5% extra SIN avisarte.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Dos razones: 1) El servicio cobra 3-5% más cuando pagas con tarjeta vs cuenta bancaria (ACH). 2) Tu banco puede tratar la transacción como 'cash advance' y aplicar comisión adicional + interés desde día 1 sin período de gracia. En Wise, pagar con ACH cuesta $4.50 por $500. Con tarjeta de crédito cuesta $8 + posible cash advance fee de $15. Usa siempre cuenta bancaria (ACH).</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía de pagos óptimos en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #remesas #tarjetascredito #wise #evitatrampas</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Por qué nunca debes pagar remesas con tarjeta de crédito
+
+Hook: Si pagas $500 de remesa con tarjeta de crédito, te cobran 5% extra SIN avisarte.
+
+Dos razones: 1) El servicio cobra 3-5% más cuando pagas con tarjeta vs cuenta bancaria (ACH). 2) Tu banco puede tratar la transacción como 'cash advance' y aplicar comisión adicional + interés desde día 1 sin período de gracia. En Wise, pagar con ACH cuesta $4.50 por $500. Con tarjeta de crédito cuesta $8 + posible cash advance fee de $15. Usa siempre cuenta bancaria (ACH).
+
+Guía de pagos óptimos en el link.
+
+#remesas #tarjetascredito #wise #evitatrampas</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 23</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Enviar dinero a Venezuela en 2026: lo que funciona</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Venezuela tiene restricciones especiales — no todos los servicios operan allí.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Lo que funciona: Zelle (si tu familia tiene cuenta en un banco venezolano que acepta Zelle, rarísimo); Binance P2P con USDT (el más usado en Venezuela, pero aprende primero); Reserve App — específico para Venezuela, tipo de cambio competitivo; Western Union solo en bolívares oficiales (terrible tipo). La mayoría de remesas a Venezuela en 2026 van por crypto — específicamente USDT.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía de remesas a Venezuela en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #venezuela #remesas #USDT #venezolanosUSA</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Enviar dinero a Venezuela en 2026: lo que funciona
+
+Hook: Venezuela tiene restricciones especiales — no todos los servicios operan allí.
+
+Lo que funciona: Zelle (si tu familia tiene cuenta en un banco venezolano que acepta Zelle, rarísimo); Binance P2P con USDT (el más usado en Venezuela, pero aprende primero); Reserve App — específico para Venezuela, tipo de cambio competitivo; Western Union solo en bolívares oficiales (terrible tipo). La mayoría de remesas a Venezuela en 2026 van por crypto — específicamente USDT.
+
+Guía de remesas a Venezuela en el link.
+
+#venezuela #remesas #USDT #venezolanosUSA</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 24</span>
+    <span class="script-theme" style="background:#D4700A">Remesas</span>
+  </div>
+  <h3 class="script-title">Remesas y el IRS: ¿tengo que reportar?</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Miles de hispanos tienen miedo de que el IRS los multe por enviar dinero a casa.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Las remesas NO se reportan al IRS bajo $18,000 anuales por persona receptora. Si mandas $1,500 mensuales a tu mamá ($18,000/año), estás bajo el límite — no hay reporte. Si mandas más de $18,000 a UNA persona, llenas el Form 709 (gift tax) — pero solo informativo, no pagas impuesto hasta $13 millones de vida. Las remesas NO son deducibles. Importante: transferencias >$10,000 generan report automático bancario (Bank Secrecy Act), pero no es impuesto, solo paper trail.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía de IRS y remesas en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #IRS #remesas #impuestoshispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Remesas y el IRS: ¿tengo que reportar?
+
+Hook: Miles de hispanos tienen miedo de que el IRS los multe por enviar dinero a casa.
+
+Las remesas NO se reportan al IRS bajo $18,000 anuales por persona receptora. Si mandas $1,500 mensuales a tu mamá ($18,000/año), estás bajo el límite — no hay reporte. Si mandas más de $18,000 a UNA persona, llenas el Form 709 (gift tax) — pero solo informativo, no pagas impuesto hasta $13 millones de vida. Las remesas NO son deducibles. Importante: transferencias >$10,000 generan report automático bancario (Bank Secrecy Act), pero no es impuesto, solo paper trail.
+
+Guía de IRS y remesas en el link.
+
+#IRS #remesas #impuestoshispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 25</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">SR-22 después de DUI: lo que Florida NO te dice</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si tuviste DUI en Florida, NO necesitas SR-22 — necesitas FR-44, y son MUY distintos.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> SR-22 tiene límites estándar ($10K/20K). FR-44 tiene límites 10x más altos ($100K/300K) — obligatorio en Florida después de DUI. Resultado: tu prima puede duplicarse o triplicarse. Mejores opciones FR-44 Florida: Progressive (especialista #1), GEICO, State Farm selecto. El FR-44 dura 3 años. Si cancelas la póliza antes, la aseguradora notifica al FLHSMV y pierdes licencia.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa FR-44 Florida en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #SR22 #FR44 #Florida #DUI #segurosFL</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">SR-22 después de DUI: lo que Florida NO te dice
+
+Hook: Si tuviste DUI en Florida, NO necesitas SR-22 — necesitas FR-44, y son MUY distintos.
+
+SR-22 tiene límites estándar ($10K/20K). FR-44 tiene límites 10x más altos ($100K/300K) — obligatorio en Florida después de DUI. Resultado: tu prima puede duplicarse o triplicarse. Mejores opciones FR-44 Florida: Progressive (especialista #1), GEICO, State Farm selecto. El FR-44 dura 3 años. Si cancelas la póliza antes, la aseguradora notifica al FLHSMV y pierdes licencia.
+
+Guía completa FR-44 Florida en el link.
+
+#SR22 #FR44 #Florida #DUI #segurosFL</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 26</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">Seguro de auto sin licencia americana: sí es posible</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Muchos hispanos creen que sin licencia de EE.UU. no pueden tener seguro. Falso.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Florida, Texas y California aceptan licencias internacionales, matrícula consular, o ID extranjero para póliza no-owner o como conductor adicional. Progressive es el más aceptable. Sin licencia propia, la póliza se emite a nombre del dueño del carro o como 'named non-owner'. Prima: 15-25% más alta que con licencia de EE.UU. — pero cubierto legalmente.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Aseguradoras que aceptan sin licencia US en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #seguroauto #sinlicencia #hispanosUSA #inmigrantes</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Seguro de auto sin licencia americana: sí es posible
+
+Hook: Muchos hispanos creen que sin licencia de EE.UU. no pueden tener seguro. Falso.
+
+Florida, Texas y California aceptan licencias internacionales, matrícula consular, o ID extranjero para póliza no-owner o como conductor adicional. Progressive es el más aceptable. Sin licencia propia, la póliza se emite a nombre del dueño del carro o como 'named non-owner'. Prima: 15-25% más alta que con licencia de EE.UU. — pero cubierto legalmente.
+
+Aseguradoras que aceptan sin licencia US en el link.
+
+#seguroauto #sinlicencia #hispanosUSA #inmigrantes</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 27</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">Citizens Insurance: el seguro de hogar de último recurso en Florida</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si ninguna aseguradora privada te quiere en Florida, existe Citizens Property Insurance.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Citizens es la aseguradora del estado de Florida — de ÚLTIMO recurso. Solo calificas si dos aseguradoras privadas te rechazaron. Cobertura: solo lo básico. No tiene coverage de flood (necesitas póliza separada). Tasas: a veces más bajas que privadas, a veces más altas. Importante: intenta con privadas primero. Citizens es la opción cuando las demás cierran la puerta.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Lista de aseguradoras FL que aún operan en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #citizensinsurance #FL #segurohogar #huracanes</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Citizens Insurance: el seguro de hogar de último recurso en Florida
+
+Hook: Si ninguna aseguradora privada te quiere en Florida, existe Citizens Property Insurance.
+
+Citizens es la aseguradora del estado de Florida — de ÚLTIMO recurso. Solo calificas si dos aseguradoras privadas te rechazaron. Cobertura: solo lo básico. No tiene coverage de flood (necesitas póliza separada). Tasas: a veces más bajas que privadas, a veces más altas. Importante: intenta con privadas primero. Citizens es la opción cuando las demás cierran la puerta.
+
+Lista de aseguradoras FL que aún operan en el link.
+
+#citizensinsurance #FL #segurohogar #huracanes</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 28</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">El 43% de hispanos NO tiene seguro de vida — aquí está por qué</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Hay un tabú cultural — 'hablar de la muerte trae mala suerte'. Pero el costo del tabú es enorme.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Un seguro de vida de $250,000 para 30 años cuesta $20-30 al mes si tienes 35 años. Un Starbucks a la semana. Si te pasa algo, tu familia recibe $250K sin impuestos. Sin seguro, tu familia queda con gastos de funeral ($10-15K), posibles deudas, y pérdida de ingresos. El momento perfecto para comprar: cuando naces tu primer hijo o compras casa.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Comparación de aseguradoras de vida en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #seguroprovida #hispanofamily #familyprotection #vidaseguro</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">El 43% de hispanos NO tiene seguro de vida — aquí está por qué
+
+Hook: Hay un tabú cultural — 'hablar de la muerte trae mala suerte'. Pero el costo del tabú es enorme.
+
+Un seguro de vida de $250,000 para 30 años cuesta $20-30 al mes si tienes 35 años. Un Starbucks a la semana. Si te pasa algo, tu familia recibe $250K sin impuestos. Sin seguro, tu familia queda con gastos de funeral ($10-15K), posibles deudas, y pérdida de ingresos. El momento perfecto para comprar: cuando naces tu primer hijo o compras casa.
+
+Comparación de aseguradoras de vida en el link.
+
+#seguroprovida #hispanofamily #familyprotection #vidaseguro</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 29</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">ACA en español: cómo califiica tu familia aunque tengas ITIN</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Miles de familias hispanas dejan beneficios de salud sin reclamar porque creen que no califican.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Con ITIN NO calificas personalmente para ACA subsidios. PERO: si tu hijo tiene SSN (nacido en EE.UU.), tu hijo SÍ califica para Medicaid o CHIP. Y si tu cónyuge tiene SSN, el subsidio familiar cuenta basado en el ingreso combinado. Estados como California, Washington, Colorado ofrecen salud pública para indocumentados bajo ciertas condiciones.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora de elegibilidad ACA en español en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #ACA #saludhispana #seguromedico #Medicaid</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">ACA en español: cómo califiica tu familia aunque tengas ITIN
+
+Hook: Miles de familias hispanas dejan beneficios de salud sin reclamar porque creen que no califican.
+
+Con ITIN NO calificas personalmente para ACA subsidios. PERO: si tu hijo tiene SSN (nacido en EE.UU.), tu hijo SÍ califica para Medicaid o CHIP. Y si tu cónyuge tiene SSN, el subsidio familiar cuenta basado en el ingreso combinado. Estados como California, Washington, Colorado ofrecen salud pública para indocumentados bajo ciertas condiciones.
+
+Calculadora de elegibilidad ACA en español en el link.
+
+#ACA #saludhispana #seguromedico #Medicaid</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 30</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">Por qué GEICO es el rey del seguro auto para inmigrantes jóvenes</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si eres hispano menor de 30 sin accidentes, GEICO casi siempre gana el precio.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Razones: modelo de underwriting basado en datos, menos overhead (sin red de agentes), y cultura de 'mandar cotización y punto'. Prima promedio para hispano de 25 años sin accidentes en Florida: GEICO $1,100/año vs State Farm $1,400 vs Allstate $1,550. La diferencia: $300-450/año que puedes usar para otras cosas. Compara siempre con Progressive también.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Comparación completa de aseguradoras en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #geico #seguroauto #hispanosjovenes #ahorrosseguro</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Por qué GEICO es el rey del seguro auto para inmigrantes jóvenes
+
+Hook: Si eres hispano menor de 30 sin accidentes, GEICO casi siempre gana el precio.
+
+Razones: modelo de underwriting basado en datos, menos overhead (sin red de agentes), y cultura de 'mandar cotización y punto'. Prima promedio para hispano de 25 años sin accidentes en Florida: GEICO $1,100/año vs State Farm $1,400 vs Allstate $1,550. La diferencia: $300-450/año que puedes usar para otras cosas. Compara siempre con Progressive también.
+
+Comparación completa de aseguradoras en el link.
+
+#geico #seguroauto #hispanosjovenes #ahorrosseguro</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 31</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">Seguro de negocio para LLC hispana: lo mínimo que necesitas</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si tienes un LLC, hay 3 coberturas sin las que estás loco.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> General Liability ($500-$1,500/año) — te protege de demandas por accidentes con clientes. Workers Comp (obligatorio si tienes empleados, varía por estado) — cubre accidentes de trabajo. Commercial Auto si usas tu carro para el negocio ($1,200-$2,500/año) — tu seguro personal NO cubre accidentes durante trabajo. Aseguradoras especializadas en hispanos: Farmers, State Farm, Hartford.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Checklist completa de seguros para LLC en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #seguronegocio #LLC #emprendedoreshispanos #businesshispano</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Seguro de negocio para LLC hispana: lo mínimo que necesitas
+
+Hook: Si tienes un LLC, hay 3 coberturas sin las que estás loco.
+
+General Liability ($500-$1,500/año) — te protege de demandas por accidentes con clientes. Workers Comp (obligatorio si tienes empleados, varía por estado) — cubre accidentes de trabajo. Commercial Auto si usas tu carro para el negocio ($1,200-$2,500/año) — tu seguro personal NO cubre accidentes durante trabajo. Aseguradoras especializadas en hispanos: Farmers, State Farm, Hartford.
+
+Checklist completa de seguros para LLC en el link.
+
+#seguronegocio #LLC #emprendedoreshispanos #businesshispano</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 32</span>
+    <span class="script-theme" style="background:#7EC4A8">Seguros</span>
+  </div>
+  <h3 class="script-title">Flood insurance en Florida: NO está incluido en tu seguro de hogar</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> El 90% de los hispanos en Florida piensan que tienen flood coverage. NO lo tienen.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Flood insurance es SEPARADO del homeowner insurance. Cuesta $500-$2,500/año dependiendo de zona de flood. Proveedores: NFIP (Federal) o aseguradoras privadas como Neptune Flood. Si vives en zona A o V, el banco te obliga a tenerlo para la hipoteca. Si vives en zona X pero cerca del agua, lo necesitas igual — huracanes cambian la categoría de tu zona.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Verifica tu zona de flood en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #floodinsurance #Florida #huracanes #segurohogar</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Flood insurance en Florida: NO está incluido en tu seguro de hogar
+
+Hook: El 90% de los hispanos en Florida piensan que tienen flood coverage. NO lo tienen.
+
+Flood insurance es SEPARADO del homeowner insurance. Cuesta $500-$2,500/año dependiendo de zona de flood. Proveedores: NFIP (Federal) o aseguradoras privadas como Neptune Flood. Si vives en zona A o V, el banco te obliga a tenerlo para la hipoteca. Si vives en zona X pero cerca del agua, lo necesitas igual — huracanes cambian la categoría de tu zona.
+
+Verifica tu zona de flood en el link.
+
+#floodinsurance #Florida #huracanes #segurohogar</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 33</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">ITIN: lo que el IRS NO te dice sobre cómo obtenerlo</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> El 50% de aplicaciones de ITIN se rechazan por un error pequeño en el formulario W-7.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Los errores top: documento no es original (tienen que ser ORIGINALES, no copias notariadas); dirección de mailing no es válida en EE.UU.; razón para aplicar no marcada; W-7 firmado incorrectamente. Alternativa: usar un Certified Acceptance Agent (CAA) — cobra $50-200 pero hace el proceso completo y verifica documentos sin mandar originales. Aprobación 6-8 semanas.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Lista de CAAs certificados en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #ITIN #W7 #taxeshispanos #IRS</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">ITIN: lo que el IRS NO te dice sobre cómo obtenerlo
+
+Hook: El 50% de aplicaciones de ITIN se rechazan por un error pequeño en el formulario W-7.
+
+Los errores top: documento no es original (tienen que ser ORIGINALES, no copias notariadas); dirección de mailing no es válida en EE.UU.; razón para aplicar no marcada; W-7 firmado incorrectamente. Alternativa: usar un Certified Acceptance Agent (CAA) — cobra $50-200 pero hace el proceso completo y verifica documentos sin mandar originales. Aprobación 6-8 semanas.
+
+Lista de CAAs certificados en el link.
+
+#ITIN #W7 #taxeshispanos #IRS</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 34</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">Child Tax Credit: $2,000 por hijo que tu familia deja en la mesa</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Padres con ITIN pueden reclamar CTC por hijos con SSN — muchos no lo saben.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Si tú tienes ITIN y tu hijo nació en EE.UU. con SSN, reclamas hasta $2,000 por hijo con Form 1040. De esos, $1,700 son reembolsables — el IRS te paga aunque no debas impuestos. Con 3 hijos: hasta $6,000 de refund. El error común: no incluir el SSN del hijo en la declaración. TIENES que ponerlo o solo calificas al ODC de $500.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora EITC/CTC en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #CTC #childtaxcredit #familiashispanas #IRS</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Child Tax Credit: $2,000 por hijo que tu familia deja en la mesa
+
+Hook: Padres con ITIN pueden reclamar CTC por hijos con SSN — muchos no lo saben.
+
+Si tú tienes ITIN y tu hijo nació en EE.UU. con SSN, reclamas hasta $2,000 por hijo con Form 1040. De esos, $1,700 son reembolsables — el IRS te paga aunque no debas impuestos. Con 3 hijos: hasta $6,000 de refund. El error común: no incluir el SSN del hijo en la declaración. TIENES que ponerlo o solo calificas al ODC de $500.
+
+Calculadora EITC/CTC en el link.
+
+#CTC #childtaxcredit #familiashispanas #IRS</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 35</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">EITC: hasta $7,830 para familias de bajos ingresos</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> El Earned Income Tax Credit es el más generoso — y el más ignorado por hispanos.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Requiere SSN (no ITIN). Si ganaste $15-60K con hijos, probablemente califiques. Hasta $7,830 con 3+ hijos. Es REEMBOLSABLE — el IRS te paga. El problema: muchas familias con SSN no declaran porque 'no ganan mucho' — y están dejando miles en la mesa. Declara siempre, aunque tu trabajo no te dé W-2.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora EITC 2026 en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #EITC #earnedincomecredit #refundtax #hispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">EITC: hasta $7,830 para familias de bajos ingresos
+
+Hook: El Earned Income Tax Credit es el más generoso — y el más ignorado por hispanos.
+
+Requiere SSN (no ITIN). Si ganaste $15-60K con hijos, probablemente califiques. Hasta $7,830 con 3+ hijos. Es REEMBOLSABLE — el IRS te paga. El problema: muchas familias con SSN no declaran porque 'no ganan mucho' — y están dejando miles en la mesa. Declara siempre, aunque tu trabajo no te dé W-2.
+
+Calculadora EITC 2026 en el link.
+
+#EITC #earnedincomecredit #refundtax #hispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 36</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">3 deducciones que el hispano self-employed nunca reclama</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si trabajas por tu cuenta — contractor, Uber, Uber Eats, limpieza — dejas dinero en la mesa.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Primera: millaje del carro — 67 centavos por milla en 2024. Si manejas 100 millas a la semana para trabajo: $3,500/año de deducción. Segunda: oficina en casa — % del espacio que usas para trabajo deducible como utilities, internet, renta. Tercera: celular de trabajo — 50-80% deducible si lo usas para clientes. Total deducciones típicas self-employed hispano: $5,000-$12,000 al año.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Lista completa de deducciones en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #selfemployed #1099 #impuestoshispanos #deducciones</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">3 deducciones que el hispano self-employed nunca reclama
+
+Hook: Si trabajas por tu cuenta — contractor, Uber, Uber Eats, limpieza — dejas dinero en la mesa.
+
+Primera: millaje del carro — 67 centavos por milla en 2024. Si manejas 100 millas a la semana para trabajo: $3,500/año de deducción. Segunda: oficina en casa — % del espacio que usas para trabajo deducible como utilities, internet, renta. Tercera: celular de trabajo — 50-80% deducible si lo usas para clientes. Total deducciones típicas self-employed hispano: $5,000-$12,000 al año.
+
+Lista completa de deducciones en el link.
+
+#selfemployed #1099 #impuestoshispanos #deducciones</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 37</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">TurboTax en español vs H&R Block: cuál conviene</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> TurboTax y H&R Block dominan — pero para hispanos hay una diferencia importante.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> TurboTax: mejor interfaz en español, guía muy clara, $69-$129 online. H&R Block: tiene 9,000 oficinas físicas con preparadores bilingües, $100-$300 en oficina, software similar. FreeTaxUSA: $0 federal + $15 estatal, acepta ITIN, menos bilingüe. Recomendación: H&R Block si tu situación es compleja (ITIN, mixed status). TurboTax si quieres hacerlo solo online.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Comparación completa en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #TurboTax #HRBlock #impuestoshispanos #taxprep</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">TurboTax en español vs H&R Block: cuál conviene
+
+Hook: TurboTax y H&R Block dominan — pero para hispanos hay una diferencia importante.
+
+TurboTax: mejor interfaz en español, guía muy clara, $69-$129 online. H&R Block: tiene 9,000 oficinas físicas con preparadores bilingües, $100-$300 en oficina, software similar. FreeTaxUSA: $0 federal + $15 estatal, acepta ITIN, menos bilingüe. Recomendación: H&R Block si tu situación es compleja (ITIN, mixed status). TurboTax si quieres hacerlo solo online.
+
+Comparación completa en el link.
+
+#TurboTax #HRBlock #impuestoshispanos #taxprep</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 38</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">Declarar impuestos siendo indocumentado: POR QUÉ conviene</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Mito: 'si declaro impuestos, ICE me encuentra'. FALSO.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> El IRS NO comparte información fiscal con ICE/USCIS por ley. Al contrario: declarar impuestos con ITIN crea historial fiscal que puede ser importante si eventualmente obtienes residencia. Paga tus taxes, construye historial, y protégete. Algunas visas y procesos migratorios específicamente requieren prueba de declaraciones de impuestos previas. Al no declarar, pierdes esa evidencia.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía completa de ITIN y declaraciones en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #ITIN #impuestoshispanos #inmigrantes #indocumentados</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Declarar impuestos siendo indocumentado: POR QUÉ conviene
+
+Hook: Mito: 'si declaro impuestos, ICE me encuentra'. FALSO.
+
+El IRS NO comparte información fiscal con ICE/USCIS por ley. Al contrario: declarar impuestos con ITIN crea historial fiscal que puede ser importante si eventualmente obtienes residencia. Paga tus taxes, construye historial, y protégete. Algunas visas y procesos migratorios específicamente requieren prueba de declaraciones de impuestos previas. Al no declarar, pierdes esa evidencia.
+
+Guía completa de ITIN y declaraciones en el link.
+
+#ITIN #impuestoshispanos #inmigrantes #indocumentados</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 39</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">Self-employment tax: el impuesto sorpresa que mata al 1099</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si eres contractor, te cobran DOBLE Social Security y Medicare — 15.3% sobre tu ingreso neto.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Un W-2 paga 7.65% (la empresa cubre el otro 7.65%). Un 1099 paga 15.3% completo como 'self-employment tax'. Si ganas $50,000 neto como 1099, debes $7,650 solo en SE tax, además de income tax normal. Estrategia: hacer quarterly payments al IRS cada 3 meses — si no, te multan. Setup Free: IRS Direct Pay.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora de quarterly tax en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #selfemploymenttax #1099 #contractor #hispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Self-employment tax: el impuesto sorpresa que mata al 1099
+
+Hook: Si eres contractor, te cobran DOBLE Social Security y Medicare — 15.3% sobre tu ingreso neto.
+
+Un W-2 paga 7.65% (la empresa cubre el otro 7.65%). Un 1099 paga 15.3% completo como 'self-employment tax'. Si ganas $50,000 neto como 1099, debes $7,650 solo en SE tax, además de income tax normal. Estrategia: hacer quarterly payments al IRS cada 3 meses — si no, te multan. Setup Free: IRS Direct Pay.
+
+Calculadora de quarterly tax en el link.
+
+#selfemploymenttax #1099 #contractor #hispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 40</span>
+    <span class="script-theme" style="background:#0F5240">Impuestos</span>
+  </div>
+  <h3 class="script-title">Fechas de impuestos 2026 que NUNCA debes olvidar</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Hay 4 fechas de impuestos cada año — perderlas cuesta multas de cientos de dólares.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> 15 de abril: fecha límite de declaración federal y estatal. 15 de abril también: quarterly Q1. 15 de junio: quarterly Q2. 15 de septiembre: quarterly Q3. 15 de enero: quarterly Q4 del año anterior. Si no puedes declarar a tiempo, pide extensión (Form 4868) — te da 6 meses adicionales SIN multa. Pero el pago sigue siendo 15 de abril.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calendario impuestos 2026 en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #impuestos2026 #IRS #quarterlytax #hispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Fechas de impuestos 2026 que NUNCA debes olvidar
+
+Hook: Hay 4 fechas de impuestos cada año — perderlas cuesta multas de cientos de dólares.
+
+15 de abril: fecha límite de declaración federal y estatal. 15 de abril también: quarterly Q1. 15 de junio: quarterly Q2. 15 de septiembre: quarterly Q3. 15 de enero: quarterly Q4 del año anterior. Si no puedes declarar a tiempo, pide extensión (Form 4868) — te da 6 meses adicionales SIN multa. Pero el pago sigue siendo 15 de abril.
+
+Calendario impuestos 2026 en el link.
+
+#impuestos2026 #IRS #quarterlytax #hispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 41</span>
+    <span class="script-theme" style="background:#D4700A">Hipotecas</span>
+  </div>
+  <h3 class="script-title">Hipoteca con ITIN: los 3 prestamistas que SÍ aprueban</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> El mito: 'sin SSN no puedo comprar casa'. Verdad: 3 prestamistas dan hipotecas ITIN en 2026.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Alterra Home Loans: el especialista #1 del país, 50% de clientes son ITIN. New American Funding: banco grande con división Latino Focus. Guild Mortgage: programa Dream para primer comprador ITIN. Down payment típico: 15-20%. Tasas: 1-2% sobre FHA. Documentos clave: 2 años de declaraciones IRS, pasaporte, comprobantes de ingreso, 2 años de payment history de renta.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Checklist completa ITIN mortgage en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #ITINmortgage #hipotecahispana #Alterra #comprarcasaUSA</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Hipoteca con ITIN: los 3 prestamistas que SÍ aprueban
+
+Hook: El mito: 'sin SSN no puedo comprar casa'. Verdad: 3 prestamistas dan hipotecas ITIN en 2026.
+
+Alterra Home Loans: el especialista #1 del país, 50% de clientes son ITIN. New American Funding: banco grande con división Latino Focus. Guild Mortgage: programa Dream para primer comprador ITIN. Down payment típico: 15-20%. Tasas: 1-2% sobre FHA. Documentos clave: 2 años de declaraciones IRS, pasaporte, comprobantes de ingreso, 2 años de payment history de renta.
+
+Checklist completa ITIN mortgage en el link.
+
+#ITINmortgage #hipotecahispana #Alterra #comprarcasaUSA</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 42</span>
+    <span class="script-theme" style="background:#D4700A">Hipotecas</span>
+  </div>
+  <h3 class="script-title">Cuánto dinero NECESITAS en el banco para comprar casa en Florida</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Una casa de $350K requiere $74,500 en cash al momento del cierre — muchos no lo saben.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Desglose real: Down payment 15% = $52,500. Closing costs 4% = $14,000. Reservas 3 meses del pago = $8,000. Total cash que necesitas LIQUIDO en el banco: $74,500. Más ingresos mensuales que sostengan pago de $2,946/mes (28% de tu bruto = $10,500/mes de ingreso). Si tienes esto, calificas para ITIN mortgage.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora de affordability en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #comprarcasa #hipotecahispana #FloridaReal estate</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Cuánto dinero NECESITAS en el banco para comprar casa en Florida
+
+Hook: Una casa de $350K requiere $74,500 en cash al momento del cierre — muchos no lo saben.
+
+Desglose real: Down payment 15% = $52,500. Closing costs 4% = $14,000. Reservas 3 meses del pago = $8,000. Total cash que necesitas LIQUIDO en el banco: $74,500. Más ingresos mensuales que sostengan pago de $2,946/mes (28% de tu bruto = $10,500/mes de ingreso). Si tienes esto, calificas para ITIN mortgage.
+
+Calculadora de affordability en el link.
+
+#comprarcasa #hipotecahispana #FloridaReal estate</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 43</span>
+    <span class="script-theme" style="background:#D4700A">Hipotecas</span>
+  </div>
+  <h3 class="script-title">FHA vs ITIN: cuál conviene si tienes SSN</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si tienes SSN, FHA casi siempre le gana a un portfolio loan ITIN.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> FHA: 3.5% down payment, tasa ~6.5% en 2026, se puede asumir, apoyado por el gobierno. ITIN: 15-20% down, tasa ~8-8.5%, portfolio loan (el banco lo retiene). Si tienes SSN y credit score 580+, siempre elige FHA. Ahorras $50,000-$70,000 en down payment Y $200-$400/mes en interés. ITIN mortgage es para cuando FHA no es una opción.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Guía FHA completa en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #FHA #ITINmortgage #hipotecahispana</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">FHA vs ITIN: cuál conviene si tienes SSN
+
+Hook: Si tienes SSN, FHA casi siempre le gana a un portfolio loan ITIN.
+
+FHA: 3.5% down payment, tasa ~6.5% en 2026, se puede asumir, apoyado por el gobierno. ITIN: 15-20% down, tasa ~8-8.5%, portfolio loan (el banco lo retiene). Si tienes SSN y credit score 580+, siempre elige FHA. Ahorras $50,000-$70,000 en down payment Y $200-$400/mes en interés. ITIN mortgage es para cuando FHA no es una opción.
+
+Guía FHA completa en el link.
+
+#FHA #ITINmortgage #hipotecahispana</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 44</span>
+    <span class="script-theme" style="background:#D4700A">Hipotecas</span>
+  </div>
+  <h3 class="script-title">Pre-qualification vs Pre-approval: la diferencia que vale miles</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Un realtor que te pide 'pre-qualification' te está haciendo perder tiempo.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Pre-qualification: rápido, basado en lo que tú dices. No verifica nada. NO es vinculante. Los vendedores la ignoran. Pre-approval: documentos completos, hard credit pull, carta con monto máximo y tasa específica. ES vinculante. Los vendedores la toman en serio. NUNCA hagas oferta con solo pre-qualification en un mercado competitivo — pierdes la casa.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Diferencia completa en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #prequalification #preapproval #hipotecacomprador</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Pre-qualification vs Pre-approval: la diferencia que vale miles
+
+Hook: Un realtor que te pide 'pre-qualification' te está haciendo perder tiempo.
+
+Pre-qualification: rápido, basado en lo que tú dices. No verifica nada. NO es vinculante. Los vendedores la ignoran. Pre-approval: documentos completos, hard credit pull, carta con monto máximo y tasa específica. ES vinculante. Los vendedores la toman en serio. NUNCA hagas oferta con solo pre-qualification en un mercado competitivo — pierdes la casa.
+
+Diferencia completa en el link.
+
+#prequalification #preapproval #hipotecacomprador</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 45</span>
+    <span class="script-theme" style="background:#D4700A">Hipotecas</span>
+  </div>
+  <h3 class="script-title">Non-QM loans: la opción que nadie te cuenta</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si eres self-employed con ingresos variables, hay un producto especial: Non-QM.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Non-QM = Non-Qualified Mortgage. No sigue las reglas FHA/Fannie Mae. Aceptan: bank statements en lugar de W-2 (12-24 meses), ingresos 1099, flujo de renta de propiedades como ingreso. Tasas: 1-2% más altas que conventional. Down payment: 10-20%. Prestamistas: Angel Oak, Athas Capital, HomeXpress. Ideal para self-employed hispano con ingresos reales pero papeles complicados.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Lista de prestamistas Non-QM en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #NonQMloan #selfemployed #hipotecahispana</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Non-QM loans: la opción que nadie te cuenta
+
+Hook: Si eres self-employed con ingresos variables, hay un producto especial: Non-QM.
+
+Non-QM = Non-Qualified Mortgage. No sigue las reglas FHA/Fannie Mae. Aceptan: bank statements en lugar de W-2 (12-24 meses), ingresos 1099, flujo de renta de propiedades como ingreso. Tasas: 1-2% más altas que conventional. Down payment: 10-20%. Prestamistas: Angel Oak, Athas Capital, HomeXpress. Ideal para self-employed hispano con ingresos reales pero papeles complicados.
+
+Lista de prestamistas Non-QM en el link.
+
+#NonQMloan #selfemployed #hipotecahispana</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 46</span>
+    <span class="script-theme" style="background:#1D9E75">Préstamos</span>
+  </div>
+  <h3 class="script-title">Oportun: el préstamo que construye crédito con ITIN</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si necesitas $2,000 ahora y no tienes SSN ni credit score, Oportun es la opción real.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Oportun presta $300-$10,000, APR 20-36%, acepta ITIN, NO requiere credit score. Evalúan tu capacidad de pago basándose en ingresos bancarios, no en FICO. Reportan a los 3 buroes — construyes crédito mientras pagas. Evita payday loans: Oportun al 30% es mil veces mejor que Check 'n Go al 400%.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Aplicación Oportun en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #oportun #prestamohispano #ITINloan</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Oportun: el préstamo que construye crédito con ITIN
+
+Hook: Si necesitas $2,000 ahora y no tienes SSN ni credit score, Oportun es la opción real.
+
+Oportun presta $300-$10,000, APR 20-36%, acepta ITIN, NO requiere credit score. Evalúan tu capacidad de pago basándose en ingresos bancarios, no en FICO. Reportan a los 3 buroes — construyes crédito mientras pagas. Evita payday loans: Oportun al 30% es mil veces mejor que Check 'n Go al 400%.
+
+Aplicación Oportun en el link.
+
+#oportun #prestamohispano #ITINloan</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 47</span>
+    <span class="script-theme" style="background:#1D9E75">Préstamos</span>
+  </div>
+  <h3 class="script-title">Camino Financial: préstamos para emprendedores hispanos</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si tienes un LLC con 9+ meses operando, puedes calificar hasta $50,000 sin garantía.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Camino Financial es el primer lender enfocado específicamente en emprendedores hispanos. Préstamos $5K-$50K, APR 12-30%, acepta ITIN o SSN, sin collateral (solo tu negocio como garantía). Requiere: 9+ meses operando, cuenta bancaria de negocio, y proof de ingresos. Proceso 100% en español. Reportan a buroes — construye crédito personal Y de negocio.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Aplicación Camino en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #caminofinancial #businesshispano #LLCloan #emprendedores</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Camino Financial: préstamos para emprendedores hispanos
+
+Hook: Si tienes un LLC con 9+ meses operando, puedes calificar hasta $50,000 sin garantía.
+
+Camino Financial es el primer lender enfocado específicamente en emprendedores hispanos. Préstamos $5K-$50K, APR 12-30%, acepta ITIN o SSN, sin collateral (solo tu negocio como garantía). Requiere: 9+ meses operando, cuenta bancaria de negocio, y proof de ingresos. Proceso 100% en español. Reportan a buroes — construye crédito personal Y de negocio.
+
+Aplicación Camino en el link.
+
+#caminofinancial #businesshispano #LLCloan #emprendedores</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 48</span>
+    <span class="script-theme" style="background:#1D9E75">Préstamos</span>
+  </div>
+  <h3 class="script-title">Consolidar deuda de tarjeta con préstamo personal: cuándo conviene</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si debes $5,000 en tarjetas al 24%, un préstamo personal al 14% te ahorra $500/año.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Regla: el préstamo debe tener APR MÍNIMO 8% menor que tu tarjeta actual. Si tu tarjeta cobra 24% APR y un préstamo te dan al 15%, vale la pena. Si el préstamo es 20%, no vale. Mejores opciones: SoFi 8-24% (requiere SSN y buen crédito), LightStream 7-20%, Upgrade 8-36%. No uses Oportun para consolidar — APR similar al de la tarjeta.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Calculadora de consolidación en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #consolidaciondeuda #prestamopersonal #hispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Consolidar deuda de tarjeta con préstamo personal: cuándo conviene
+
+Hook: Si debes $5,000 en tarjetas al 24%, un préstamo personal al 14% te ahorra $500/año.
+
+Regla: el préstamo debe tener APR MÍNIMO 8% menor que tu tarjeta actual. Si tu tarjeta cobra 24% APR y un préstamo te dan al 15%, vale la pena. Si el préstamo es 20%, no vale. Mejores opciones: SoFi 8-24% (requiere SSN y buen crédito), LightStream 7-20%, Upgrade 8-36%. No uses Oportun para consolidar — APR similar al de la tarjeta.
+
+Calculadora de consolidación en el link.
+
+#consolidaciondeuda #prestamopersonal #hispanos</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 49</span>
+    <span class="script-theme" style="background:#0B3D2E">Planning</span>
+  </div>
+  <h3 class="script-title">Resolución financiera 2027: los 3 hábitos que cambian todo</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> 90% de resoluciones financieras fallan. Las que funcionan comparten 3 cosas.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Hábito 1: automatiza AHORA. Auto-pago de tarjetas, auto-deposit a savings, auto-transfers a Wise/Remitly. Si no lo ves, no lo gastas. Hábito 2: revisa tu credit score cada trimestre. Chase Credit Journey o Capital One CreditWise. 5 minutos, gratis, ves progreso real. Hábito 3: declara impuestos en enero-febrero (no abril). Refund llega 2 meses antes y eso es cashflow real.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Planilla de hábitos financieros 2027 en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #resoluciones2027 #financialgoals #hispanos #finanzaspersonal</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Resolución financiera 2027: los 3 hábitos que cambian todo
+
+Hook: 90% de resoluciones financieras fallan. Las que funcionan comparten 3 cosas.
+
+Hábito 1: automatiza AHORA. Auto-pago de tarjetas, auto-deposit a savings, auto-transfers a Wise/Remitly. Si no lo ves, no lo gastas. Hábito 2: revisa tu credit score cada trimestre. Chase Credit Journey o Capital One CreditWise. 5 minutos, gratis, ves progreso real. Hábito 3: declara impuestos en enero-febrero (no abril). Refund llega 2 meses antes y eso es cashflow real.
+
+Planilla de hábitos financieros 2027 en el link.
+
+#resoluciones2027 #financialgoals #hispanos #finanzaspersonal</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 50</span>
+    <span class="script-theme" style="background:#0B3D2E">Planning</span>
+  </div>
+  <h3 class="script-title">Año nuevo: los 5 documentos financieros que debes tener</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Si algo te pasa mañana, tu familia NO sabe dónde está tu información financiera.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Lista mínima: 1) Lista de todas tus cuentas bancarias + passwords. 2) Pólizas de seguro de vida con nombres de beneficiarios. 3) Testamento (gratis en LegalZoom o gratis si tu empleador lo ofrece). 4) Poder notarial limitado a tu cónyuge. 5) Lista de deudas vs activos. Guarda en un sobre en la casa O en 1Password/LastPass compartido con tu pareja. Actualiza cada enero.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Template de documentos en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #estateplanning #familyprotection #testamento</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Año nuevo: los 5 documentos financieros que debes tener
+
+Hook: Si algo te pasa mañana, tu familia NO sabe dónde está tu información financiera.
+
+Lista mínima: 1) Lista de todas tus cuentas bancarias + passwords. 2) Pólizas de seguro de vida con nombres de beneficiarios. 3) Testamento (gratis en LegalZoom o gratis si tu empleador lo ofrece). 4) Poder notarial limitado a tu cónyuge. 5) Lista de deudas vs activos. Guarda en un sobre en la casa O en 1Password/LastPass compartido con tu pareja. Actualiza cada enero.
+
+Template de documentos en el link.
+
+#estateplanning #familyprotection #testamento</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 51</span>
+    <span class="script-theme" style="background:#0B3D2E">Planning</span>
+  </div>
+  <h3 class="script-title">Diciembre: 3 movidas fiscales antes del fin de año</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> Estas 3 cosas las tienes que hacer ANTES de diciembre 31 — después ya es tarde.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Movida 1: maximiza 401(k) match del empleador — si tu empresa matchea hasta 4%, asegúrate de estar contribuyendo. Es dinero gratis. Movida 2: abre IRA antes del 31 de diciembre si crees que IRS te debe dinero este año — reduce tu income. Movida 3: dona a charity si estás en umbral de deducción alto — mantén recibos. Haz estas 3 en la segunda semana de diciembre.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Lista completa year-end tax moves en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #yearendtax #401k #IRA #taxplanning</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Diciembre: 3 movidas fiscales antes del fin de año
+
+Hook: Estas 3 cosas las tienes que hacer ANTES de diciembre 31 — después ya es tarde.
+
+Movida 1: maximiza 401(k) match del empleador — si tu empresa matchea hasta 4%, asegúrate de estar contribuyendo. Es dinero gratis. Movida 2: abre IRA antes del 31 de diciembre si crees que IRS te debe dinero este año — reduce tu income. Movida 3: dona a charity si estás en umbral de deducción alto — mantén recibos. Haz estas 3 en la segunda semana de diciembre.
+
+Lista completa year-end tax moves en el link.
+
+#yearendtax #401k #IRA #taxplanning</pre>
+</div><div class="script-card">
+  <div class="script-meta">
+    <span class="script-week">Semana 52</span>
+    <span class="script-theme" style="background:#0B3D2E">Planning</span>
+  </div>
+  <h3 class="script-title">Temporada de impuestos: el kit completo para hispanos</h3>
+  <div class="script-section"><strong>Hook (3-5 seg):</strong> En enero arranca la temporada de impuestos. Esto es TODO lo que necesitas.</div>
+  <div class="script-section"><strong>Contenido (40-70 seg):</strong> Documentos de ingresos: W-2s, 1099s, bank interest 1099-INT. Deducciones: recibos de deducciones, 1098 de hipoteca, property tax. Dependientes: SSNs o ITINs de hijos. Plataforma: TurboTax o FreeTaxUSA online, o H&R Block si es complejo. Plazo: 15 abril 2027. Mi consejo: declara en enero-febrero. Refund llega en 2-3 semanas y empiezas el año con cash flow.</div>
+  <div class="script-section"><strong>CTA (5-10 seg):</strong> Kit completo de temporada de impuestos en el link.</div>
+  <div class="script-section script-tags"><strong>Hashtags:</strong> #temporadaimpuestos #tax2026 #hispanos</div>
+  <button class="copy-btn" onclick="copyScript(this)">📋 Copy full script</button>
+  <pre class="hidden-full-script">Temporada de impuestos: el kit completo para hispanos
+
+Hook: En enero arranca la temporada de impuestos. Esto es TODO lo que necesitas.
+
+Documentos de ingresos: W-2s, 1099s, bank interest 1099-INT. Deducciones: recibos de deducciones, 1098 de hipoteca, property tax. Dependientes: SSNs o ITINs de hijos. Plataforma: TurboTax o FreeTaxUSA online, o H&R Block si es complejo. Plazo: 15 abril 2027. Mi consejo: declara en enero-febrero. Refund llega en 2-3 semanas y empiezas el año con cash flow.
+
+Kit completo de temporada de impuestos en el link.
+
+#temporadaimpuestos #tax2026 #hispanos</pre>
+</div></div>
+
+  <div class="view" id="view-pitches"><div class="pitch-card">
+  <div class="pitch-num">#1</div>
+  <div class="pitch-outlet">Univision Online / Noticias</div>
+  <div class="pitch-role">Assignment editor, economía/finanzas</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Story idea: 62M Hispanics underserved by English-only financial content</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hi [Name],
+
+I'm writing from Norte Financial, a Spanish-first personal finance platform for US Hispanics.
+
+We've been tracking a data story that I think would resonate with your audience: 28% of US Hispanics are credit invisible (no FICO score at all, per CFPB) vs 9% of whites. And of those who DO have credit, the Spanish-language guidance to build it is almost nonexistent — NerdWallet's Spanish content is machine-translated, not native.
+
+We've built the first Spanish-first personal finance platform from scratch covering credit, banking, remittances, taxes, mortgages, and loans for the Hispanic community. We have:
+• Proprietary data on how Hispanic families lose $800+/year per household in hidden remittance fees
+• Independent rankings of ITIN-friendly credit cards, mortgages, and banks
+• A bilingual spokesperson ready for interview (written or on-camera, ES or EN)
+
+Would you or a member of your team be interested in a 15-minute call to discuss angles? Happy to send our full media kit and supporting data: nortefinancial.com/prensa
+
+Best,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com
+nortefinancial.com</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Story idea: 62M Hispanics underserved by English-only financial content
+
+Hi [Name],
+
+I'm writing from Norte Financial, a Spanish-first personal finance platform for US Hispanics.
+
+We've been tracking a data story that I think would resonate with your audience: 28% of US Hispanics are credit invisible (no FICO score at all, per CFPB) vs 9% of whites. And of those who DO have credit, the Spanish-language guidance to build it is almost nonexistent — NerdWallet's Spanish content is machine-translated, not native.
+
+We've built the first Spanish-first personal finance platform from scratch covering credit, banking, remittances, taxes, mortgages, and loans for the Hispanic community. We have:
+• Proprietary data on how Hispanic families lose $800+/year per household in hidden remittance fees
+• Independent rankings of ITIN-friendly credit cards, mortgages, and banks
+• A bilingual spokesperson ready for interview (written or on-camera, ES or EN)
+
+Would you or a member of your team be interested in a 15-minute call to discuss angles? Happy to send our full media kit and supporting data: nortefinancial.com/prensa
+
+Best,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com
+nortefinancial.com</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#2</div>
+  <div class="pitch-outlet">Telemundo Digital</div>
+  <div class="pitch-role">Producer, finanzas personales</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Reportaje: $60 mil millones en remesas pierden $5 mil millones en comisiones ocultas</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hola [Nombre],
+
+Me pongo en contacto desde Norte Financial. Creo que tenemos una historia que puede interesar a la audiencia de Telemundo.
+
+Los datos: los hispanos en EE.UU. envían $60 mil millones anuales en remesas a Latinoamérica. Nuestro análisis muestra que aproximadamente $5 mil millones de ese total se pierden en comisiones ocultas en el tipo de cambio — principalmente con Western Union y MoneyGram.
+
+Hemos construido una calculadora de remesas pública (nortefinancial.com/calculadora-remesas) que muestra las diferencias reales en tiempo real. Western Union cobra ~$30 extras invisibles por cada $500 enviado a México vs Wise.
+
+Ángulo de la historia: 'El impuesto escondido que las familias hispanas no saben que pagan'.
+
+Tenemos portavoz bilingüe disponible para entrevista. Puedo enviar datos de respaldo, el kit de prensa completo (nortefinancial.com/prensa), y gráficas listas para publicación.
+
+¿Te puedo llamar para coordinar?
+
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Reportaje: $60 mil millones en remesas pierden $5 mil millones en comisiones ocultas
+
+Hola [Nombre],
+
+Me pongo en contacto desde Norte Financial. Creo que tenemos una historia que puede interesar a la audiencia de Telemundo.
+
+Los datos: los hispanos en EE.UU. envían $60 mil millones anuales en remesas a Latinoamérica. Nuestro análisis muestra que aproximadamente $5 mil millones de ese total se pierden en comisiones ocultas en el tipo de cambio — principalmente con Western Union y MoneyGram.
+
+Hemos construido una calculadora de remesas pública (nortefinancial.com/calculadora-remesas) que muestra las diferencias reales en tiempo real. Western Union cobra ~$30 extras invisibles por cada $500 enviado a México vs Wise.
+
+Ángulo de la historia: 'El impuesto escondido que las familias hispanas no saben que pagan'.
+
+Tenemos portavoz bilingüe disponible para entrevista. Puedo enviar datos de respaldo, el kit de prensa completo (nortefinancial.com/prensa), y gráficas listas para publicación.
+
+¿Te puedo llamar para coordinar?
+
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#3</div>
+  <div class="pitch-outlet">La Opinión (Los Angeles)</div>
+  <div class="pitch-role">Editor de economía</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Propuesta editorial: cómo hispanos de CA pueden comprar casa con ITIN</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Estimado [Nombre],
+
+Le escribo desde Norte Financial, plataforma bilingüe de finanzas personales. Queremos proponerle un tema con datos fuertes para California específicamente.
+
+En California el 49% de los hispanos son dueños de casa vs 74% de blancos — la brecha más amplia del país. Una razón subestimada: el mito de que 'sin SSN no se puede comprar casa'. En realidad, las hipotecas con ITIN existen desde 2001 y prestamistas como Alterra (California-based), New American Funding, y Guild Mortgage dan miles de préstamos al año a familias inmigrantes.
+
+Podemos proveer:
+• Datos completos sobre el mercado de hipotecas ITIN en California
+• Análisis de tasas, down payments, y DTI típicos
+• Casos de familias reales que compraron con ITIN (con consentimiento)
+• Portavoz para entrevista en español
+
+¿Le interesaría coordinar para su cobertura de finanzas personales hispanas? Nuestro kit de prensa: nortefinancial.com/prensa
+
+Saludos cordiales,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Propuesta editorial: cómo hispanos de CA pueden comprar casa con ITIN
+
+Estimado [Nombre],
+
+Le escribo desde Norte Financial, plataforma bilingüe de finanzas personales. Queremos proponerle un tema con datos fuertes para California específicamente.
+
+En California el 49% de los hispanos son dueños de casa vs 74% de blancos — la brecha más amplia del país. Una razón subestimada: el mito de que 'sin SSN no se puede comprar casa'. En realidad, las hipotecas con ITIN existen desde 2001 y prestamistas como Alterra (California-based), New American Funding, y Guild Mortgage dan miles de préstamos al año a familias inmigrantes.
+
+Podemos proveer:
+• Datos completos sobre el mercado de hipotecas ITIN en California
+• Análisis de tasas, down payments, y DTI típicos
+• Casos de familias reales que compraron con ITIN (con consentimiento)
+• Portavoz para entrevista en español
+
+¿Le interesaría coordinar para su cobertura de finanzas personales hispanas? Nuestro kit de prensa: nortefinancial.com/prensa
+
+Saludos cordiales,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#4</div>
+  <div class="pitch-outlet">El Diario NY</div>
+  <div class="pitch-role">Reportero de finanzas personales</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Datos: 30% de hispanos en NY son underbanked — cambió en 2026</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hola [Nombre],
+
+Soy del equipo editorial de Norte Financial, una plataforma bilingüe de finanzas para hispanos en EE.UU. Tengo un dato que probablemente va a interesarte para El Diario.
+
+El 30% de hispanos en EE.UU. son 'unbanked' o 'underbanked' (FDIC). En Nueva York el número es aún más alto — 35% según el New York Fed. Pero algo cambió: neobancos como Chime, Current, y Varo comenzaron a aceptar ITIN ampliamente desde 2023, y la adopción está explotando en comunidades hispanas de Queens, Bronx y Brooklyn.
+
+Ángulo: 'La generación de bancos digitales está bancarizando a la comunidad hispana de NY que la banca tradicional ignoró'.
+
+Datos + entrevistas disponibles. Portavoz bilingüe listo.
+
+Kit de prensa: nortefinancial.com/prensa
+Contacto: prensa@nortefinancial.com
+
+¿Podemos hablar 15 minutos esta semana?
+
+[Your name]
+Norte Financial</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Datos: 30% de hispanos en NY son underbanked — cambió en 2026
+
+Hola [Nombre],
+
+Soy del equipo editorial de Norte Financial, una plataforma bilingüe de finanzas para hispanos en EE.UU. Tengo un dato que probablemente va a interesarte para El Diario.
+
+El 30% de hispanos en EE.UU. son 'unbanked' o 'underbanked' (FDIC). En Nueva York el número es aún más alto — 35% según el New York Fed. Pero algo cambió: neobancos como Chime, Current, y Varo comenzaron a aceptar ITIN ampliamente desde 2023, y la adopción está explotando en comunidades hispanas de Queens, Bronx y Brooklyn.
+
+Ángulo: 'La generación de bancos digitales está bancarizando a la comunidad hispana de NY que la banca tradicional ignoró'.
+
+Datos + entrevistas disponibles. Portavoz bilingüe listo.
+
+Kit de prensa: nortefinancial.com/prensa
+Contacto: prensa@nortefinancial.com
+
+¿Podemos hablar 15 minutos esta semana?
+
+[Your name]
+Norte Financial</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#5</div>
+  <div class="pitch-outlet">Mundo Hispánico (Atlanta)</div>
+  <div class="pitch-role">Editor de economía / locales</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Tema local: crecimiento de LLCs hispanas en Georgia y los préstamos que sí aceptan</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Estimado [Nombre],
+
+Me comunico desde Norte Financial. Tenemos datos específicos sobre Georgia que pueden ser interesantes para Mundo Hispánico.
+
+Según el US Census Bureau, las LLCs con dueños hispanos en Georgia crecieron 42% entre 2020-2024 — uno de los ritmos más altos del país. Pero tradicionalmente estos negocios han sido rechazados por bancos por falta de SSN del dueño o historial crediticio corto.
+
+En 2026 hay alternativas reales: Camino Financial presta hasta $50,000 a LLCs hispanas con ITIN (sin collateral), Oportun cubre préstamos personales hasta $10K. Y los programas SBA en Atlanta están finalmente conectando con emprendedores hispanos.
+
+Podemos proveer:
+• Datos de crecimiento de LLCs hispanas en Georgia
+• Tasa promedio de rechazo de bancos tradicionales vs lenders alternativos
+• Casos de emprendedores que han crecido usando estos productos
+• Experto bilingüe para entrevista
+
+Kit: nortefinancial.com/prensa
+
+Gracias,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Tema local: crecimiento de LLCs hispanas en Georgia y los préstamos que sí aceptan
+
+Estimado [Nombre],
+
+Me comunico desde Norte Financial. Tenemos datos específicos sobre Georgia que pueden ser interesantes para Mundo Hispánico.
+
+Según el US Census Bureau, las LLCs con dueños hispanos en Georgia crecieron 42% entre 2020-2024 — uno de los ritmos más altos del país. Pero tradicionalmente estos negocios han sido rechazados por bancos por falta de SSN del dueño o historial crediticio corto.
+
+En 2026 hay alternativas reales: Camino Financial presta hasta $50,000 a LLCs hispanas con ITIN (sin collateral), Oportun cubre préstamos personales hasta $10K. Y los programas SBA en Atlanta están finalmente conectando con emprendedores hispanos.
+
+Podemos proveer:
+• Datos de crecimiento de LLCs hispanas en Georgia
+• Tasa promedio de rechazo de bancos tradicionales vs lenders alternativos
+• Casos de emprendedores que han crecido usando estos productos
+• Experto bilingüe para entrevista
+
+Kit: nortefinancial.com/prensa
+
+Gracias,
+[Your name]
+Norte Financial
+prensa@nortefinancial.com</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#6</div>
+  <div class="pitch-outlet">NPR's Latino USA</div>
+  <div class="pitch-role">Producer</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Podcast pitch: The hidden $5 billion tax on Hispanic remittances</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hi [Name],
+
+I'm reaching out from Norte Financial with a story idea I think fits Latino USA's investigative audio format.
+
+The story: US Hispanics send $60 billion annually to Latin America in remittances. Of that, approximately $5 billion is lost to hidden exchange-rate margins at traditional services like Western Union and MoneyGram — money that never actually arrives to the recipient families.
+
+It's a story about:
+• A 140-year-old industry (Western Union) that profits from information asymmetry
+• Fintechs like Wise and Remitly that have made this visible
+• Working-class Hispanic families who transfer billions but often don't know they're paying 5-7% hidden fees
+• The generational difference: elder Hispanics stick with WU; younger ones have switched to apps
+
+What we can offer:
+• Data and methodology (we've built a public calculator)
+• Interviews with real families about their switching experience
+• Industry perspective from fintech executives
+• Historical/policy context on remittance regulation
+
+Would this fit for a future episode? Happy to send full data deck.
+
+[Your name]
+Norte Financial
+prensa@nortefinancial.com | nortefinancial.com/prensa</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Podcast pitch: The hidden $5 billion tax on Hispanic remittances
+
+Hi [Name],
+
+I'm reaching out from Norte Financial with a story idea I think fits Latino USA's investigative audio format.
+
+The story: US Hispanics send $60 billion annually to Latin America in remittances. Of that, approximately $5 billion is lost to hidden exchange-rate margins at traditional services like Western Union and MoneyGram — money that never actually arrives to the recipient families.
+
+It's a story about:
+• A 140-year-old industry (Western Union) that profits from information asymmetry
+• Fintechs like Wise and Remitly that have made this visible
+• Working-class Hispanic families who transfer billions but often don't know they're paying 5-7% hidden fees
+• The generational difference: elder Hispanics stick with WU; younger ones have switched to apps
+
+What we can offer:
+• Data and methodology (we've built a public calculator)
+• Interviews with real families about their switching experience
+• Industry perspective from fintech executives
+• Historical/policy context on remittance regulation
+
+Would this fit for a future episode? Happy to send full data deck.
+
+[Your name]
+Norte Financial
+prensa@nortefinancial.com | nortefinancial.com/prensa</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#7</div>
+  <div class="pitch-outlet">Axios Latino</div>
+  <div class="pitch-role">Reporter</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Data story: 28% of US Hispanics credit invisible — here's what's changing</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hi [Name],
+
+I'm writing from Norte Financial with a data-driven story idea that fits Axios Latino's format.
+
+The stat: 28% of US Hispanics are credit invisible (no FICO score), per CFPB. That's 17 million adults who can't rent apartments, buy cars, or get mortgages at fair rates.
+
+The shift happening now: three fintech products have dramatically changed the game in 2024-2026:
+1. Petal (cash-flow underwriting instead of FICO — 300K+ Hispanic users)
+2. Tomo Credit (no SSN required — 150K+ users since launch)
+3. Self Credit Builder (forced savings + credit reporting — 1M+ users)
+
+Together they've pulled roughly 2M previously credit invisible Hispanics into the credit system. Data from each fintech supports this, and we have our own analysis.
+
+Story angle: "The fintech companies that finally cracked Hispanic credit inclusion."
+
+Can provide:
+• Data and methodology
+• Bilingual spokesperson
+• Visualizations ready for publication
+
+Press kit: nortefinancial.com/prensa
+Contact: prensa@nortefinancial.com
+
+[Your name]</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Data story: 28% of US Hispanics credit invisible — here's what's changing
+
+Hi [Name],
+
+I'm writing from Norte Financial with a data-driven story idea that fits Axios Latino's format.
+
+The stat: 28% of US Hispanics are credit invisible (no FICO score), per CFPB. That's 17 million adults who can't rent apartments, buy cars, or get mortgages at fair rates.
+
+The shift happening now: three fintech products have dramatically changed the game in 2024-2026:
+1. Petal (cash-flow underwriting instead of FICO — 300K+ Hispanic users)
+2. Tomo Credit (no SSN required — 150K+ users since launch)
+3. Self Credit Builder (forced savings + credit reporting — 1M+ users)
+
+Together they've pulled roughly 2M previously credit invisible Hispanics into the credit system. Data from each fintech supports this, and we have our own analysis.
+
+Story angle: "The fintech companies that finally cracked Hispanic credit inclusion."
+
+Can provide:
+• Data and methodology
+• Bilingual spokesperson
+• Visualizations ready for publication
+
+Press kit: nortefinancial.com/prensa
+Contact: prensa@nortefinancial.com
+
+[Your name]</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#8</div>
+  <div class="pitch-outlet">Bloomberg Línea</div>
+  <div class="pitch-role">Reporter, US Hispanic market</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Market opportunity: Spanish-first personal finance content is underserved</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hi [Name],
+
+I'm reaching out from Norte Financial about a market opportunity story for Bloomberg Línea.
+
+The setup: NerdWallet (public, ~$400M revenue), Credit Karma (acquired by Intuit for $8B), Bankrate (~$600M revenue) all have 'Spanish' versions — but they're machine-translated content, not native Spanish-first coverage.
+
+Meanwhile, the US Hispanic market is:
+• 62M people, 19% of US population
+• $2.8 trillion in annual purchasing power
+• Projected to be 30% of US adults by 2060
+
+The content gap is massive. Norte Financial is one of very few Spanish-first personal finance platforms covering the full stack (insurance, credit, banking, remittances, taxes, mortgages, loans) natively. There's a $500M+ content market segment that remains underserved — and several VCs have taken notice.
+
+Story angle: "The overlooked $500M market: Spanish-first personal finance is the next NerdWallet"
+
+I can provide:
+• Market sizing analysis
+• Competitive landscape data (NerdWallet, Bankrate, SmartAsset Spanish efforts)
+• Founder/executive interviews from Hispanic-focused fintech
+• Data on Hispanic financial inclusion trends
+
+Kit: nortefinancial.com/prensa
+
+[Your name]</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Market opportunity: Spanish-first personal finance content is underserved
+
+Hi [Name],
+
+I'm reaching out from Norte Financial about a market opportunity story for Bloomberg Línea.
+
+The setup: NerdWallet (public, ~$400M revenue), Credit Karma (acquired by Intuit for $8B), Bankrate (~$600M revenue) all have 'Spanish' versions — but they're machine-translated content, not native Spanish-first coverage.
+
+Meanwhile, the US Hispanic market is:
+• 62M people, 19% of US population
+• $2.8 trillion in annual purchasing power
+• Projected to be 30% of US adults by 2060
+
+The content gap is massive. Norte Financial is one of very few Spanish-first personal finance platforms covering the full stack (insurance, credit, banking, remittances, taxes, mortgages, loans) natively. There's a $500M+ content market segment that remains underserved — and several VCs have taken notice.
+
+Story angle: "The overlooked $500M market: Spanish-first personal finance is the next NerdWallet"
+
+I can provide:
+• Market sizing analysis
+• Competitive landscape data (NerdWallet, Bankrate, SmartAsset Spanish efforts)
+• Founder/executive interviews from Hispanic-focused fintech
+• Data on Hispanic financial inclusion trends
+
+Kit: nortefinancial.com/prensa
+
+[Your name]</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#9</div>
+  <div class="pitch-outlet">CNBC (Hispanic Heritage Month)</div>
+  <div class="pitch-role">Producer, Hispanic Heritage segments</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Expert commentary available: Hispanic financial inclusion for Hispanic Heritage Month coverage</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hi [Name],
+
+I'm reaching out from Norte Financial ahead of Hispanic Heritage Month coverage.
+
+We're a Spanish-first personal finance platform with proprietary data and analysis on the Hispanic-American financial landscape. Our bilingual spokespeople are available for expert commentary on topics including:
+
+• The credit invisibility crisis (28% of Hispanics) — and the fintech products changing it
+• Why Hispanic homeownership lags at 49% vs 74% white — ITIN mortgages as the missing piece
+• The $5B hidden tax on remittances (Western Union's exchange rate margins)
+• Why 43% of Hispanics have life insurance vs 56% of whites — cultural and access barriers
+• Financial education in Spanish — why translated content fails
+
+We can provide:
+• Live remote appearances (ES or EN)
+• Written statements under embargo
+• Supporting data sheets
+• Fact-checked quotes for attribution
+
+Press kit: nortefinancial.com/prensa
+Direct line: prensa@nortefinancial.com
+
+Hope to help with your coverage.
+
+[Your name]
+Norte Financial</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Expert commentary available: Hispanic financial inclusion for Hispanic Heritage Month coverage
+
+Hi [Name],
+
+I'm reaching out from Norte Financial ahead of Hispanic Heritage Month coverage.
+
+We're a Spanish-first personal finance platform with proprietary data and analysis on the Hispanic-American financial landscape. Our bilingual spokespeople are available for expert commentary on topics including:
+
+• The credit invisibility crisis (28% of Hispanics) — and the fintech products changing it
+• Why Hispanic homeownership lags at 49% vs 74% white — ITIN mortgages as the missing piece
+• The $5B hidden tax on remittances (Western Union's exchange rate margins)
+• Why 43% of Hispanics have life insurance vs 56% of whites — cultural and access barriers
+• Financial education in Spanish — why translated content fails
+
+We can provide:
+• Live remote appearances (ES or EN)
+• Written statements under embargo
+• Supporting data sheets
+• Fact-checked quotes for attribution
+
+Press kit: nortefinancial.com/prensa
+Direct line: prensa@nortefinancial.com
+
+Hope to help with your coverage.
+
+[Your name]
+Norte Financial</pre>
+</div><div class="pitch-card">
+  <div class="pitch-num">#10</div>
+  <div class="pitch-outlet">Local Hispanic-market podcast (generic)</div>
+  <div class="pitch-role">Podcast host / producer</div>
+  <div class="pitch-subject"><strong>Subject:</strong> Entrevista: experto bilingüe de finanzas personales disponible</div>
+  <details class="pitch-body-details">
+    <summary>Ver cuerpo del email</summary>
+    <pre class="pitch-body">Hola [Nombre],
+
+Me comunico desde Norte Financial — plataforma bilingüe de finanzas personales para hispanos en EE.UU.
+
+Noté tu podcast y creo que nuestras áreas se alinean bien. Tenemos portavoces bilingües disponibles para entrevistas en los siguientes temas:
+
+• Cómo construir crédito sin SSN
+• Mejores tarjetas ITIN en 2026
+• Bancos que aceptan sin SSN
+• Cómo enviar remesas sin perder en comisiones escondidas
+• Comprar casa con ITIN (hipotecas ITIN)
+• Impuestos para familias de estatus mixto (EITC, CTC)
+• Préstamos legítimos vs payday loans predatorios
+
+Para podcasts:
+• Disponibilidad flexible
+• Puedes grabar remoto (Zoom, Riverside, SquadCast)
+• Entrevista en español o inglés
+• Puedes enviar preguntas con antelación
+
+Nuestro kit de prensa: nortefinancial.com/prensa
+Contacto: prensa@nortefinancial.com
+
+¿Coordinamos llamada de 15 minutos para ver si tenemos fit?
+
+[Your name]
+Norte Financial</pre>
+  </details>
+  <button class="copy-btn" onclick="copyPitch(this)">📋 Copy full pitch</button>
+  <pre class="hidden-full-pitch">Subject: Entrevista: experto bilingüe de finanzas personales disponible
+
+Hola [Nombre],
+
+Me comunico desde Norte Financial — plataforma bilingüe de finanzas personales para hispanos en EE.UU.
+
+Noté tu podcast y creo que nuestras áreas se alinean bien. Tenemos portavoces bilingües disponibles para entrevistas en los siguientes temas:
+
+• Cómo construir crédito sin SSN
+• Mejores tarjetas ITIN en 2026
+• Bancos que aceptan sin SSN
+• Cómo enviar remesas sin perder en comisiones escondidas
+• Comprar casa con ITIN (hipotecas ITIN)
+• Impuestos para familias de estatus mixto (EITC, CTC)
+• Préstamos legítimos vs payday loans predatorios
+
+Para podcasts:
+• Disponibilidad flexible
+• Puedes grabar remoto (Zoom, Riverside, SquadCast)
+• Entrevista en español o inglés
+• Puedes enviar preguntas con antelación
+
+Nuestro kit de prensa: nortefinancial.com/prensa
+Contacto: prensa@nortefinancial.com
+
+¿Coordinamos llamada de 15 minutos para ver si tenemos fit?
+
+[Your name]
+Norte Financial</pre>
+</div></div>
+
+</div>
+
+<script>
+const DEFAULT_PASS = 'Norte2025!';
+function getPass(){ return localStorage.getItem('nf_admin_pass') || DEFAULT_PASS; }
+function doLogin(){
+  if(document.getElementById('passInput').value === getPass()){
+    localStorage.setItem('nf_admin_auth', btoa(Date.now().toString()));
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+  } else {
+    document.getElementById('loginErr').style.display='block';
+    document.getElementById('passInput').value='';
+  }
+}
+function logout(){ localStorage.removeItem('nf_admin_auth'); location.reload(); }
+(function(){
+  const a = localStorage.getItem('nf_admin_auth');
+  if(a){ try{ if(Date.now()-parseInt(atob(a))<28800000){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+  }}catch(e){}}
+})();
+
+function switchView(v){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('view-'+v).classList.add('active');
+}
+
+function copyScript(btn){
+  const full = btn.nextElementSibling.textContent;
+  navigator.clipboard.writeText(full).then(()=>{
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 Copy full script'; btn.classList.remove('copied');},1800);
+  });
+}
+function copyPitch(btn){
+  const full = btn.nextElementSibling.textContent;
+  navigator.clipboard.writeText(full).then(()=>{
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 Copy full pitch'; btn.classList.remove('copied');},1800);
+  });
+}
+</script>
+</body>
+</html>

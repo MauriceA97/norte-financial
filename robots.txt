@@ -1,0 +1,18 @@
+# Norte Financial — robots.txt
+# Allow all crawlers. Block private admin surface.
+
+User-agent: *
+Allow: /
+
+# Private admin surfaces — not crawlable
+Disallow: /admin.html
+Disallow: /admin-contenido.html
+
+# Trackers and API endpoints — not for indexing
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://nortefinancial.com/sitemap.xml
+
+# Crawl delay for aggressive bots
+Crawl-delay: 1
