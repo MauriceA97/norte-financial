@@ -331,3 +331,139 @@ All rights reserved. This repository is private and not licensed for redistribut
 - Privacy: `privacidad@nortefinancial.com`
 
 Based in Miami, FL.
+
+---
+
+## Session handoff — resuming work on another machine
+
+### Setup on a fresh machine (Windows, Mac, or Linux)
+
+**1. Install tooling (one-time):**
+- **Git**: https://git-scm.com/download (Windows: includes Git Bash + Git GUI)
+- **Node.js LTS**: https://nodejs.org — needed for `vercel dev` and Claude Code
+- **VS Code**: https://code.visualstudio.com (optional but recommended)
+- **Claude Code**: `npm install -g @anthropic-ai/claude-code`
+- **GitHub Desktop** (optional but convenient on Windows for credential management): https://desktop.github.com
+
+**2. Clone the repo:**
+```bash
+# Windows PowerShell:
+cd $env:USERPROFILE
+git clone https://github.com/MauriceA97/norte-financial.git
+cd norte-financial
+
+# Mac/Linux:
+cd ~
+git clone https://github.com/MauriceA97/norte-financial.git
+cd norte-financial
+```
+
+**3. Start Claude Code and continue:**
+```bash
+claude
+```
+
+Tell Claude:
+> *"Read CONTEXT.md and README.md. I'm resuming work on Norte Financial. Show me the pending task list and let's continue where we left off."*
+
+Claude will read the architecture, then check the pending build-sprint list below and pick up.
+
+---
+
+### Build-sprint status (as of last commit `cf10b7b`)
+
+#### ✅ Shipped in this sprint
+- [x] Affiliate URL central config (`affiliate-urls.js` + `/admin-afiliados.html`)
+- [x] Extended affiliate click allowlist (Impact, CJ, Rakuten, Awin, etc.)
+- [x] TCPA-compliant lead intake (`/api/submit-lead.js`)
+- [x] Email sender via Resend (`/api/newsletter-subscribe.js`, `/api/unsubscribe.js`, `/api/send-drip.js`)
+- [x] 24 drip emails (crédito / remesas / impuestos × 4 days × ES/EN)
+- [x] 12 programmatic remesas corridor pages (`remesas-a-{country}.html`)
+- [x] 50 programmatic city ITIN-credit pages (`tarjeta-credito-itin-{city}-{state}.html`)
+- [x] Schema.org + hreflang added to every page
+- [x] Sitemap regenerated (154 URLs)
+- [x] Display ad loader scaffolding (`norte-ads.js`, dormant)
+- [x] Como-ganamos.html refreshed for finance-first
+- [x] Metodologia.html expanded with 6-pillar framework for financial products (insurance kept)
+
+#### ⏳ Pending in this sprint (pick up from here)
+1. **Refresh `nosotros.html`** content for finance-first positioning
+2. **State pages**: `texas.html`, `california.html`, `nueva-york.html` — follow `florida.html` pattern but finance-first (ITIN banking, remesas corridors from state, bilingual financial resources)
+3. **8 head-term comparison pages**: Wise vs Remitly, Wise vs Western Union, Remitly vs Xoom, Petal vs Tomo, Capital One Secured vs Petal, TurboTax vs FreeTaxUSA, TurboTax vs H&R Block, Chime vs SoFi
+4. **Cross-linking blocks** on all reviews + programmatic pages — script-inject "Related reviews" (3) + "Related guides" (2) per page
+5. **Visible breadcrumbs** on deep pages (schema is there; visible nav isn't)
+6. **Dynamic OG image generator** — `/api/og.js` using `@vercel/og` + package.json, wire `og:image` + `twitter:card` meta tags site-wide
+7. **robots.txt + favicon audit** — `Disallow: /admin*`, ensure favicon set is complete
+8. **Credit score estimator** — `/calculadora-credito.html` (interactive, similar UX to remittance calc)
+9. **ITIN mortgage affordability calculator** — `/calculadora-hipoteca-itin.html`
+10. **Tax refund estimator (ITIN-aware)** — `/calculadora-impuestos.html` with EITC/CTC logic
+11. **Weekly newsletter sender** — `/api/send-weekly.js` Vercel cron
+12. **Double opt-in** for email signups
+13. **Internal site search** — `/buscar.html` with client-side JSON index
+14. **Hub page internal linking audit** — verify all 7 finance hubs link to all related reviews + guides
+15. **Error tracking scaffold** — `norte-errors.js` dormant Sentry loader
+
+Each item is independently shippable and safe to tackle in any order.
+
+---
+
+### Operational prerequisites still on the human (Maurice)
+
+These can't be done by Claude — they require real-world action:
+
+1. Form **FL LLC** (sunbiz.org, ~$125, ~5 days)
+2. **EIN** from IRS (free, irs.gov, instant)
+3. **Virtual mailbox** (iPostal1 Miami, ~$10/mo)
+4. **Mercury** business bank account
+5. **Google Workspace** for `@nortefinancial.com` email aliases (~$6/user)
+6. **Employment lawyer** consult ($300-500) to review employer agreement for IP/non-compete
+7. **Create GA4 property** → paste `G-XXXXXXXXXX` into `ga-config.js`
+8. **Resend** account + verify `nortefinancial.com` domain (DKIM/SPF DNS) + set `RESEND_API_KEY` as Vercel env var
+9. **Apply to affiliate programs** under the LLC — `admin-afiliados.html` lists 40 with application URLs + payout estimates
+
+---
+
+### Environment variables summary
+
+Set these in Vercel (vercel.com → project → Settings → Environment Variables):
+
+| Var | Purpose | Status |
+|-----|---------|--------|
+| `ANTHROPIC_API_KEY` | Norte AI chat widget | ✅ set |
+| `RESEND_API_KEY` | Email welcome + drip sends | ⏳ pending |
+| `RESEND_FROM_EMAIL` | `Norte Financial <hola@nortefinancial.com>` | ⏳ pending |
+| `RESEND_REPLY_TO` | Reply-to for emails | ⏳ optional |
+| `CRON_SECRET` | Auth for `/api/send-drip` Vercel Cron | ⏳ optional |
+
+---
+
+### Commit conventions
+
+Use imperative present-tense subject under 70 chars. Include summary of what + why. Co-authorship tag for Claude-assisted commits:
+
+```
+Short subject under 70 chars
+
+Longer explanation of what changed and why. Include impact
+on revenue, SEO, or compliance if relevant.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
+```
+
+Deploy: push to `main` — Vercel auto-builds and promotes to production in ~60s. Or open `/norte-deploy.html` in a browser and use the single-commit workflow there.
+
+---
+
+### Key files to know when resuming
+
+| File | Read for |
+|------|----------|
+| `CONTEXT.md` | Source of truth — architecture, tables, endpoints, revenue model |
+| `README.md` | This file — setup, handoff, build sprint status |
+| `affiliate-urls.js` | Central config for every affiliate URL on the site |
+| `emails/sequences.js` | The 24 drip emails (3 verticals × 4 × ES/EN) |
+| `scripts/gen-remesas-pages.py` | Regenerates the 12 corridor pages |
+| `scripts/gen-city-credit-pages.py` | Regenerates the 50 city pages |
+| `api/send-drip.js` | How the drip sequencer works + how to add new sequences |
+| `norte-track.js` | Visitor/session tracking + affiliate link wrapping |
+| `ga-config.js` | GA4 and ads loader config holder (currently null) |
