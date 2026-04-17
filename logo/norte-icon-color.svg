@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Norte Financial — Compass Icon (Color on transparent) -->
+  <!-- Brand colors: Forest #0B3D2E, Verde #1D9E75, Mist #7EC4A8 -->
+
+  <!-- Outer circle — subtle compass ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#0B3D2E" stroke-width="3" opacity="0.15"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#0B3D2E" stroke-width="1.5" opacity="0.08"/>
+
+  <!-- Cardinal tick marks -->
+  <line x1="100" y1="14" x2="100" y2="24" stroke="#0B3D2E" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="100" y1="176" x2="100" y2="186" stroke="#0B3D2E" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+  <line x1="14" y1="100" x2="24" y2="100" stroke="#0B3D2E" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+  <line x1="176" y1="100" x2="186" y2="100" stroke="#0B3D2E" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Main vertical axis — the "norte" line -->
+  <line x1="100" y1="38" x2="100" y2="162" stroke="#0B3D2E" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- North arrow — the signature element -->
+  <polygon points="100,28 88,58 100,48 112,58" fill="#1D9E75"/>
+
+  <!-- South arrow (subtle) -->
+  <polygon points="100,172 88,142 100,152 112,142" fill="#0B3D2E" opacity="0.2"/>
+
+  <!-- Horizontal axis (subtle) -->
+  <line x1="50" y1="100" x2="150" y2="100" stroke="#0B3D2E" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- Compass rose curves -->
+  <path d="M70 70 Q100 85 130 70" stroke="#7EC4A8" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M70 130 Q100 115 130 130" stroke="#7EC4A8" stroke-width="1.5" fill="none" opacity="0.25"/>
+
+  <!-- North star — the focal point -->
+  <circle cx="100" cy="28" r="7" fill="#1D9E75"/>
+  <circle cx="100" cy="28" r="3.5" fill="#E8F5F0"/>
+
+  <!-- Center point -->
+  <circle cx="100" cy="100" r="5" fill="#0B3D2E"/>
+  <circle cx="100" cy="100" r="2.5" fill="#E8F5F0"/>
+</svg>
