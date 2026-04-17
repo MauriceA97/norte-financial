@@ -298,7 +298,7 @@ These pages include `<meta name="robots" content="noindex, nofollow">` and are e
 8. Apply to umbrella networks: Impact, CJ, Rakuten, Awin, ShareASale, FlexOffers
 
 ### 📋 Content/distribution pending
-- Additional state pages beyond Florida (TX, CA, NY, IL)
+- Illinois state page (FL, TX, CA, NY already live)
 - YouTube channel launch (52 scripts already written in Content Studio)
 - Press outreach to 10 pre-drafted pitches
 - Lead magnet PDFs gated behind email capture
@@ -370,7 +370,7 @@ Claude will read the architecture, then check the pending build-sprint list belo
 
 ---
 
-### Build-sprint status (as of last commit `cf10b7b`)
+### Build-sprint status (as of last commit `bd44ea1`)
 
 #### ✅ Shipped in this sprint
 - [x] Affiliate URL central config (`affiliate-urls.js` + `/admin-afiliados.html`)
@@ -381,27 +381,28 @@ Claude will read the architecture, then check the pending build-sprint list belo
 - [x] 12 programmatic remesas corridor pages (`remesas-a-{country}.html`)
 - [x] 50 programmatic city ITIN-credit pages (`tarjeta-credito-itin-{city}-{state}.html`)
 - [x] Schema.org + hreflang added to every page
-- [x] Sitemap regenerated (154 URLs)
+- [x] Sitemap (157 URLs, auto-regenerated)
 - [x] Display ad loader scaffolding (`norte-ads.js`, dormant)
-- [x] Como-ganamos.html refreshed for finance-first
-- [x] Metodologia.html expanded with 6-pillar framework for financial products (insurance kept)
+- [x] `como-ganamos.html` refreshed for finance-first
+- [x] `metodologia.html` expanded with 6-pillar framework for financial products (insurance kept)
+- [x] `nosotros.html` refreshed for finance-first positioning (ITIN-first, 7 verticals, insurance secondary)
+- [x] Three new state pages: `texas.html`, `california.html`, `nueva-york.html` — finance-first, state-specific corridors, ITIN banks and lenders; `estados.html` updated to reflect 4 active states
 
 #### ⏳ Pending in this sprint (pick up from here)
-1. **Refresh `nosotros.html`** content for finance-first positioning
-2. **State pages**: `texas.html`, `california.html`, `nueva-york.html` — follow `florida.html` pattern but finance-first (ITIN banking, remesas corridors from state, bilingual financial resources)
-3. **8 head-term comparison pages**: Wise vs Remitly, Wise vs Western Union, Remitly vs Xoom, Petal vs Tomo, Capital One Secured vs Petal, TurboTax vs FreeTaxUSA, TurboTax vs H&R Block, Chime vs SoFi
-4. **Cross-linking blocks** on all reviews + programmatic pages — script-inject "Related reviews" (3) + "Related guides" (2) per page
-5. **Visible breadcrumbs** on deep pages (schema is there; visible nav isn't)
-6. **Dynamic OG image generator** — `/api/og.js` using `@vercel/og` + package.json, wire `og:image` + `twitter:card` meta tags site-wide
-7. **robots.txt + favicon audit** — `Disallow: /admin*`, ensure favicon set is complete
-8. **Credit score estimator** — `/calculadora-credito.html` (interactive, similar UX to remittance calc)
-9. **ITIN mortgage affordability calculator** — `/calculadora-hipoteca-itin.html`
-10. **Tax refund estimator (ITIN-aware)** — `/calculadora-impuestos.html` with EITC/CTC logic
-11. **Weekly newsletter sender** — `/api/send-weekly.js` Vercel cron
-12. **Double opt-in** for email signups
-13. **Internal site search** — `/buscar.html` with client-side JSON index
-14. **Hub page internal linking audit** — verify all 7 finance hubs link to all related reviews + guides
-15. **Error tracking scaffold** — `norte-errors.js` dormant Sentry loader
+1. **8 head-term comparison pages**: Wise vs Remitly, Wise vs Western Union, Remitly vs Xoom, Petal vs Tomo, Capital One Secured vs Petal, TurboTax vs FreeTaxUSA, TurboTax vs H&R Block, Chime vs SoFi
+2. **Cross-linking blocks** on all reviews + programmatic pages — script-inject "Related reviews" (3) + "Related guides" (2) per page
+3. **Visible breadcrumbs** on deep pages (schema is there; visible nav isn't)
+4. **Dynamic OG image generator** — `/api/og.js` using `@vercel/og` + package.json, wire `og:image` + `twitter:card` meta tags site-wide
+5. **robots.txt + favicon audit** — `Disallow: /admin*`, ensure favicon set is complete
+6. **Credit score estimator** — `/calculadora-credito.html` (interactive, similar UX to remittance calc)
+7. **ITIN mortgage affordability calculator** — `/calculadora-hipoteca-itin.html`
+8. **Tax refund estimator (ITIN-aware)** — `/calculadora-impuestos.html` with EITC/CTC logic
+9. **Weekly newsletter sender** — `/api/send-weekly.js` Vercel cron
+10. **Double opt-in** for email signups
+11. **Internal site search** — `/buscar.html` with client-side JSON index
+12. **Hub page internal linking audit** — verify all 7 finance hubs link to all related reviews + guides
+13. **Error tracking scaffold** — `norte-errors.js` dormant Sentry loader
+14. **Illinois state page** — round out the top-5 Hispanic markets (2.3M hispanos, Chicago-centric)
 
 Each item is independently shippable and safe to tackle in any order.
 
