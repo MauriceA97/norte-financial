@@ -97,6 +97,54 @@ const ALLOWED_HOSTS = [
   'lendingpoint.com', 'www.lendingpoint.com',
   'upgrade.com', 'www.upgrade.com',
   'upstart.com', 'www.upstart.com',
+
+  // === Affiliate network tracking domains ===
+  // When Norte is approved into these networks, they assign URLs on these hosts
+  // that redirect to the final carrier. Allowlisting them lets affiliate URLs
+  // from NORTE_AFFILIATE_URLS pass through the click redirector cleanly.
+  // Impact.com (Norton/LifeLock, many banks/lenders)
+  'impact.com', 'www.impact.com',
+  'impactradius.com', 'www.impactradius.com',
+  'impactradius-go.com',
+  'go.impactradius.com',
+  'trk.impact.com',
+  // CJ Affiliate (Commission Junction) — they rotate tracking domains
+  'cj.com', 'www.cj.com',
+  'anrdoezrs.net',
+  'jdoqocy.com',
+  'dpbolvw.net',
+  'kqzyfj.com',
+  'tkqlhce.com',
+  'qksrv.net',
+  'ftjcfx.com',
+  'lduhtrp.net',
+  'emjcd.com',
+  'awltovhc.com',
+  // Rakuten Advertising (LinkSynergy)
+  'linksynergy.com', 'www.linksynergy.com',
+  'click.linksynergy.com',
+  // Awin
+  'awin1.com', 'www.awin1.com',
+  'awin.com', 'www.awin.com',
+  // ShareASale
+  'shareasale.com', 'www.shareasale.com',
+  // FlexOffers
+  'flexoffers.com', 'www.flexoffers.com',
+  'track.flexlinkspro.com',
+  // LinkConnector
+  'linkconnector.com', 'www.linkconnector.com',
+  // PartnerStack
+  'partnerstack.com', 'www.partnerstack.com',
+  'grsm.io',
+  // BankRate / CardRatings (credit card affiliate hubs)
+  'bankrate.com', 'www.bankrate.com',
+  'cardratings.com', 'www.cardratings.com',
+  'creditcards.com', 'www.creditcards.com',
+  'lendingtree.com', 'www.lendingtree.com',
+  // Pepperjam / Ascend
+  'pepperjamnetwork.com',
+  'gopjn.com',
+
   // Test/internal
   'nortefinancial.com', 'www.nortefinancial.com'
 ];

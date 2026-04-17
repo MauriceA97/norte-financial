@@ -109,6 +109,19 @@
   // Any <a data-carrier="geico" data-product="auto" data-placement="review-hero"
   //         data-dest="https://www.geico.com/partners/norte">...</a>
   // gets its href rewritten to the /api/click wrapper. Idempotent.
+  //
+  // If window.NORTE_AFFILIATE_URLS[carrier] is set, that URL overrides the
+  // data-dest attribute. This lets a single config file (/affiliate-urls.js)
+  // control every affiliate URL across the entire site — no HTML edits needed
+  // when programs are approved.
+  function resolveDest(carrier, htmlDest) {
+    const map = window.NORTE_AFFILIATE_URLS;
+    if (map && carrier && typeof map[carrier] === 'string' && map[carrier]) {
+      return map[carrier];
+    }
+    return htmlDest;
+  }
+
   function wrapLinks(root) {
     const scope = root || document;
     const links = scope.querySelectorAll('a[data-carrier][data-dest]');
@@ -117,7 +130,8 @@
       const carrier   = a.getAttribute('data-carrier');
       const product   = a.getAttribute('data-product')   || '';
       const placement = a.getAttribute('data-placement') || '';
-      const dest      = a.getAttribute('data-dest')      || '';
+      const htmlDest  = a.getAttribute('data-dest')      || '';
+      const dest      = resolveDest(carrier, htmlDest);
       if (!dest) return;
       a.href = buildClickUrl(carrier, product, placement, dest);
       a.setAttribute('rel', 'sponsored nofollow noopener');

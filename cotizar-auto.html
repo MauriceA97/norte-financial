@@ -4,6 +4,10 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Cotiza tu seguro de auto gratis. Formulario completo para Progressive, GEICO, State Farm y más. En español e inglés.">
 <title data-es="Cotizar Seguro de Auto — Norte Financial" data-en="Auto Insurance Quote — Norte Financial">Cotizar Seguro de Auto — Norte Financial</title>
+<link rel="canonical" href="https://nortefinancial.com/cotizar-auto.html">
+<link rel="alternate" hreflang="es" href="https://nortefinancial.com/cotizar-auto.html">
+<link rel="alternate" hreflang="x-default" href="https://nortefinancial.com/cotizar-auto.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nortefinancial.com/#organization","name":"Norte Financial","url":"https://nortefinancial.com","logo":{"@type":"ImageObject","url":"https://nortefinancial.com/logo/norte-full-color.svg"},"description":"Bilingual personal finance and insurance guide for Hispanics in the United States","sameAs":[]},{"@type":"WebPage","@id":"https://nortefinancial.com/cotizar-auto.html#main","name":"Cotizar seguro de auto","url":"https://nortefinancial.com/cotizar-auto.html","description":"Cotización gratis de seguro de auto en 5 minutos. Bilingüe.","inLanguage":["es","en"],"publisher":{"@id":"https://nortefinancial.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Norte Financial","item":"https://nortefinancial.com"},{"@type":"ListItem","position":2,"name":"Cotizar seguro de auto","item":"https://nortefinancial.com/cotizar-auto.html"}]}]}</script>
 <script>(function(){var l=localStorage.getItem('norte_lang');if(l&&l!=='es')document.documentElement.setAttribute('data-lang-init',l);})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,7 +179,9 @@ body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 </style>
 <script src="/ga-config.js"></script>
+<script src="/affiliate-urls.js" defer></script>
 <script src="/norte-track.js" defer></script>
+<script src="/norte-ads.js" defer></script>
 <link rel="stylesheet" href="/mobile-fix.css">
 <script src="/norte-email.js" defer></script>
 </head>
@@ -1103,9 +1109,9 @@ async function submitForm() {
 
   // Save to Supabase
   try {
-    await fetch(`${SUPA_URL}/rest/v1/leads`, {
+    await fetch('/api/submit-lead', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}`, 'Prefer': 'return=minimal' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
   } catch(e) {

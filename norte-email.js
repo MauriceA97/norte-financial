@@ -62,6 +62,8 @@
   }
 
   // ---------- Submission ----------
+  // POST to /api/newsletter-subscribe — server-side endpoint captures IP,
+  // writes to Supabase, and fires welcome email via Resend if configured.
   async function submitEmail(email, captureType, leadMagnet) {
     const track = window.NORTE_TRACK || {};
     const utms = (track.getActiveUtms && track.getActiveUtms()) || {};
@@ -84,7 +86,18 @@
     };
 
     try {
-      const r = await fetch(`${SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
+      const r = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (r.ok) {
+        set('norte_email_submitted', '1');
+        return true;
+      }
+      // Fallback: if the edge function fails, write directly to Supabase so
+      // we don't lose the subscriber. Welcome email won't fire in this branch.
+      const fallback = await fetch(`${SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,8 +107,7 @@
         },
         body: JSON.stringify(payload)
       });
-      if (r.ok || r.status === 409) {
-        // 409 = duplicate email (unique constraint). Still a success from UX POV.
+      if (fallback.ok || fallback.status === 409) {
         set('norte_email_submitted', '1');
         return true;
       }

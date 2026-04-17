@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norte Financial — Affiliate URLs</title>
+<link rel="canonical" href="https://nortefinancial.com/admin-afiliados.html">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<script src="/affiliate-urls.js"></script>
+<style>
+:root{--forest:#0B3D2E;--verde:#1D9E75;--amber:#D4700A;--mist:#7EC4A8;--red:#ef4444;--blue:#3b82f6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
+
+#loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:48px 40px;width:400px;text-align:center}
+.login-logo{font-family:'Playfair Display';font-size:32px;color:#7EC4A8;margin-bottom:4px}
+.login-sub{font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:32px}
+.login-label{display:block;text-align:left;font-size:12px;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em}
+.login-input{width:100%;padding:12px 16px;background:#0f1117;border:1.5px solid rgba(255,255,255,0.1);border-radius:8px;color:#e2e8f0;font-family:inherit;font-size:15px;outline:none;margin-bottom:16px;transition:border-color 0.2s}
+.login-input:focus{border-color:#1D9E75}
+.login-btn{width:100%;padding:13px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s}
+.login-btn:hover{background:#16875f;transform:translateY(-1px)}
+.login-err{color:#f87171;font-size:13px;margin-top:10px;display:none}
+
+#dashboard{display:none;min-height:100vh}
+.topbar{background:#1a1f2e;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.topbar-left{display:flex;align-items:center;gap:14px}
+.topbar-logo{font-family:'Playfair Display';font-size:20px;color:#7EC4A8}
+.topbar-badge{font-size:10px;background:rgba(29,158,117,0.15);color:#6ee7b7;border:1px solid rgba(29,158,117,0.25);padding:3px 9px;border-radius:4px;font-weight:500;letter-spacing:0.07em}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.btn-logout{font-size:12px;color:#64748b;background:none;border:1px solid rgba(255,255,255,0.08);padding:6px 14px;border-radius:6px;cursor:pointer;font-family:inherit}
+.btn-logout:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.2)}
+
+.main{padding:24px;max-width:1280px;margin:0 auto}
+.hero-card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px 28px;margin-bottom:20px}
+.hero-title{font-family:'Playfair Display';font-size:24px;color:#e2e8f0;margin-bottom:6px}
+.hero-sub{font-size:13px;color:#64748b;line-height:1.6}
+.hero-sub code{background:#0f1117;padding:2px 7px;border-radius:4px;color:#7EC4A8;font-size:12px}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat{background:#1a1f2e;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px 20px}
+.stat-label{font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+.stat-num{font-family:'Playfair Display';font-size:28px;line-height:1;color:#7EC4A8}
+.stat-sub{font-size:11px;color:#475569;margin-top:4px}
+
+.filter-bar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.filter-bar label{font-size:12px;color:#475569}
+.fsel{padding:8px 12px;background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:6px;color:#e2e8f0;font-family:inherit;font-size:13px;outline:none;cursor:pointer}
+.fsel:focus{border-color:#1D9E75}
+.fbar-right{margin-left:auto;display:flex;gap:8px}
+.btn-sm{padding:8px 16px;border:none;border-radius:6px;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.18s}
+.btn-export{background:rgba(29,158,117,0.15);color:#6ee7b7;border:1px solid rgba(29,158,117,0.3)}
+.btn-export:hover{background:rgba(29,158,117,0.25)}
+.btn-copy{background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.3)}
+.btn-copy:hover{background:rgba(59,130,246,0.25)}
+
+.tbl{width:100%;border-collapse:collapse;background:#1a1f2e;border-radius:12px;overflow:hidden}
+.tbl th{padding:12px 14px;text-align:left;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:#475569;border-bottom:1px solid rgba(255,255,255,0.06);background:#0f1117}
+.tbl td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;color:#94a3b8;font-size:13px}
+.tbl tr:last-child td{border-bottom:none}
+
+.carrier-name{font-weight:500;color:#e2e8f0}
+.vertical-badge{font-size:10px;padding:3px 8px;border-radius:4px;display:inline-block;font-weight:500;letter-spacing:0.03em}
+.vb-credito{background:rgba(139,92,246,0.12);color:#c4b5fd}
+.vb-banca{background:rgba(59,130,246,0.12);color:#93c5fd}
+.vb-remesas{background:rgba(29,158,117,0.12);color:#6ee7b7}
+.vb-impuestos{background:rgba(251,191,36,0.12);color:#fcd34d}
+.vb-hipotecas{background:rgba(236,72,153,0.12);color:#f9a8d4}
+.vb-prestamos{background:rgba(20,184,166,0.12);color:#5eead4}
+.vb-seguros{background:rgba(212,112,10,0.12);color:#fb923c}
+
+.payout{color:#fcd34d;font-weight:500}
+.url-input{width:100%;padding:8px 12px;background:#0f1117;border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#e2e8f0;font-family:'SF Mono',Consolas,monospace;font-size:12px;outline:none;transition:border-color 0.2s}
+.url-input:focus{border-color:#1D9E75}
+.url-input.has-value{border-color:rgba(29,158,117,0.3);background:rgba(29,158,117,0.03)}
+
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.sd-none{background:#475569}
+.sd-set{background:#10b981}
+.status-text{font-size:12px;color:#64748b}
+.status-text.set{color:#6ee7b7}
+
+.apply-link{font-size:11px;color:#7EC4A8;text-decoration:none;padding:4px 8px;background:rgba(29,158,117,0.08);border-radius:4px;border:1px solid rgba(29,158,117,0.15);display:inline-block;transition:all 0.18s;white-space:nowrap}
+.apply-link:hover{background:rgba(29,158,117,0.18)}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal{background:#1a1f2e;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;max-width:780px;width:100%;max-height:82vh;overflow:auto}
+.modal h2{font-family:'Playfair Display';font-size:22px;color:#7EC4A8;margin-bottom:6px}
+.modal p{font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:16px}
+.modal pre{background:#0f1117;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:18px 20px;font-family:'SF Mono',Consolas,monospace;font-size:12px;color:#e2e8f0;overflow-x:auto;max-height:400px;line-height:1.6;white-space:pre-wrap}
+.modal-actions{margin-top:16px;display:flex;gap:10px}
+.btn-close{background:rgba(255,255,255,0.08);color:#94a3b8;border:1px solid rgba(255,255,255,0.1)}
+.btn-close:hover{background:rgba(255,255,255,0.12)}
+
+.info-banner{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;padding:12px 18px;margin-bottom:16px;font-size:12px;color:#93c5fd;line-height:1.6}
+.info-banner strong{color:#bfdbfe}
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">Norte</div>
+    <div class="login-sub">Affiliate URLs</div>
+    <label class="login-label">Password</label>
+    <input type="password" id="pw" class="login-input" placeholder="Enter password" />
+    <button class="login-btn" onclick="login()">Sign in</button>
+    <div class="login-err" id="loginErr">Incorrect password</div>
+  </div>
+</div>
+
+<div id="dashboard">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-logo">Norte</span>
+      <span class="topbar-badge">Affiliate URLs</span>
+    </div>
+    <div class="topbar-right">
+      <a href="/admin.html" style="color:#64748b;font-size:12px;text-decoration:none">← Lead Dashboard</a>
+      <button class="btn-logout" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="hero-card">
+      <div class="hero-title">Affiliate URL Manager</div>
+      <div class="hero-sub">
+        Paste your affiliate tracking URLs as programs approve you. When you click <strong>Export affiliate-urls.js</strong>, the tool generates the updated file. Copy the code, replace <code>affiliate-urls.js</code> in the repo, deploy via <code>norte-deploy.html</code>, and all review pages + CTAs update in ~60 seconds.
+      </div>
+    </div>
+
+    <div class="info-banner">
+      <strong>How this works:</strong> the URLs you paste here are saved in your browser (localStorage). To push them live, click <strong>Export affiliate-urls.js</strong> and deploy the resulting file. Nothing is sent to a server from this page — your URLs stay private until you deploy them.
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-label">Total programs</div>
+        <div class="stat-num" id="statTotal">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">URLs set</div>
+        <div class="stat-num" id="statSet">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Pending</div>
+        <div class="stat-num" id="statPending">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Coverage</div>
+        <div class="stat-num" id="statCoverage">—</div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <label>Vertical</label>
+      <select class="fsel" id="filterVertical">
+        <option value="">All</option>
+        <option value="credito">Crédito</option>
+        <option value="banca">Banca</option>
+        <option value="remesas">Remesas</option>
+        <option value="impuestos">Impuestos</option>
+        <option value="hipotecas">Hipotecas</option>
+        <option value="prestamos">Préstamos</option>
+        <option value="seguros">Seguros</option>
+      </select>
+      <label>Status</label>
+      <select class="fsel" id="filterStatus">
+        <option value="">All</option>
+        <option value="set">URL set</option>
+        <option value="unset">No URL yet</option>
+      </select>
+      <div class="fbar-right">
+        <button class="btn-sm btn-copy" onclick="showExport()">Export affiliate-urls.js</button>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="width:18%">Carrier</th>
+          <th style="width:11%">Vertical</th>
+          <th style="width:11%">Payout (USD)</th>
+          <th style="width:13%">Apply</th>
+          <th style="width:37%">Affiliate URL</th>
+          <th style="width:10%">Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="modal-overlay" id="exportModal">
+  <div class="modal">
+    <h2>Export affiliate-urls.js</h2>
+    <p>Copy the code below, paste it into <code style="background:#0f1117;padding:1px 5px;border-radius:3px;color:#7EC4A8;font-size:11px">affiliate-urls.js</code> (replacing the entire file), then deploy via <code style="background:#0f1117;padding:1px 5px;border-radius:3px;color:#7EC4A8;font-size:11px">norte-deploy.html</code>.</p>
+    <pre id="exportCode"></pre>
+    <div class="modal-actions">
+      <button class="btn-sm btn-export" onclick="copyExport()">Copy to clipboard</button>
+      <button class="btn-sm btn-close" onclick="document.getElementById('exportModal').classList.remove('show')">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PW = 'Norte2025!';
+const STORAGE_KEY = 'norte_admin_afiliados_urls';
+
+function login(){
+  const p=document.getElementById('pw').value;
+  if(p===PW){
+    sessionStorage.setItem('norte_admin_af_auth','1');
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    render();
+  }else{
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+function logout(){
+  sessionStorage.removeItem('norte_admin_af_auth');
+  location.reload();
+}
+
+// Auto-login if session active
+if(sessionStorage.getItem('norte_admin_af_auth')==='1'){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('dashboard').style.display='block';
+  window.addEventListener('DOMContentLoaded',()=>render());
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+
+function loadOverrides(){
+  try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }catch{return{}}
+}
+function saveOverrides(o){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(o));
+}
+
+function getEffectiveUrl(slug){
+  const overrides = loadOverrides();
+  if (typeof overrides[slug] === 'string') return overrides[slug];
+  const mapped = window.NORTE_AFFILIATE_URLS && window.NORTE_AFFILIATE_URLS[slug];
+  return (typeof mapped === 'string' && mapped) ? mapped : '';
+}
+
+function updateStats(entries){
+  let set = 0;
+  entries.forEach(e => { if(getEffectiveUrl(e.slug)) set++; });
+  const total = entries.length;
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statSet').textContent = set;
+  document.getElementById('statPending').textContent = total - set;
+  document.getElementById('statCoverage').textContent = Math.round(100 * set / total) + '%';
+}
+
+function render(){
+  const meta = window.NORTE_AFFILIATE_META || {};
+  const entries = Object.keys(meta).map(slug => ({ slug, ...meta[slug] }));
+  const fv = document.getElementById('filterVertical').value;
+  const fs = document.getElementById('filterStatus').value;
+  const filtered = entries.filter(e => {
+    if (fv && e.vertical !== fv) return false;
+    if (fs === 'set' && !getEffectiveUrl(e.slug)) return false;
+    if (fs === 'unset' && getEffectiveUrl(e.slug)) return false;
+    return true;
+  });
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+  filtered.forEach(e => {
+    const tr = document.createElement('tr');
+    const effective = getEffectiveUrl(e.slug);
+    const hasUrl = !!effective;
+    tr.innerHTML = `
+      <td><div class="carrier-name">${e.slug}</div></td>
+      <td><span class="vertical-badge vb-${e.vertical}">${e.vertical}</span></td>
+      <td><span class="payout">$${e.payout}</span></td>
+      <td><a href="${e.apply.split(' ')[0]}" target="_blank" class="apply-link">Apply →</a></td>
+      <td><input type="url" class="url-input ${hasUrl?'has-value':''}" placeholder="Paste affiliate URL..." value="${effective.replace(/"/g,'&quot;')}" data-slug="${e.slug}" /></td>
+      <td><span class="status-dot ${hasUrl?'sd-set':'sd-none'}"></span><span class="status-text ${hasUrl?'set':''}">${hasUrl?'SET':'pending'}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  // Wire input change
+  tbody.querySelectorAll('.url-input').forEach(inp => {
+    inp.addEventListener('change', (e) => {
+      const slug = e.target.dataset.slug;
+      const url = e.target.value.trim();
+      const overrides = loadOverrides();
+      if (url) { overrides[slug] = url; }
+      else { delete overrides[slug]; }
+      saveOverrides(overrides);
+      render(); // re-render to update status + stats
+    });
+  });
+  updateStats(entries);
+}
+
+document.getElementById('filterVertical').addEventListener('change', render);
+document.getElementById('filterStatus').addEventListener('change', render);
+
+function showExport(){
+  const meta = window.NORTE_AFFILIATE_META || {};
+  const overrides = loadOverrides();
+  // Build the updated NORTE_AFFILIATE_URLS object
+  const slugs = Object.keys(meta);
+  const urls = {};
+  slugs.forEach(slug => {
+    // Prefer local override, otherwise keep existing NORTE_AFFILIATE_URLS value
+    if (typeof overrides[slug] === 'string' && overrides[slug]) {
+      urls[slug] = overrides[slug];
+    } else if (window.NORTE_AFFILIATE_URLS && typeof window.NORTE_AFFILIATE_URLS[slug] === 'string' && window.NORTE_AFFILIATE_URLS[slug]) {
+      urls[slug] = window.NORTE_AFFILIATE_URLS[slug];
+    } else {
+      urls[slug] = null;
+    }
+  });
+  // Pretty-print the URL map with ordering by vertical for readability
+  const byVertical = {};
+  slugs.forEach(s => {
+    const v = meta[s].vertical || 'other';
+    if (!byVertical[v]) byVertical[v] = [];
+    byVertical[v].push(s);
+  });
+  let mapSrc = 'window.NORTE_AFFILIATE_URLS = {\n';
+  const verticalOrder = ['remesas','credito','banca','hipotecas','prestamos','impuestos','seguros'];
+  verticalOrder.forEach(v => {
+    if (!byVertical[v]) return;
+    mapSrc += '\n  // ========= ' + v.toUpperCase() + ' =========\n';
+    byVertical[v].forEach(slug => {
+      const u = urls[slug];
+      const val = (u === null) ? 'null' : JSON.stringify(u);
+      mapSrc += '  ' + JSON.stringify(slug) + ': ' + val + ',\n';
+    });
+  });
+  mapSrc += '};\n';
+  const header = '// Norte Financial — Affiliate URL config\n// Generated by /admin-afiliados.html on ' + new Date().toISOString() + '\n// Paste this entire file over affiliate-urls.js and redeploy.\n\n';
+  // Keep the NORTE_AFFILIATE_META object as-is by pulling from the current file
+  const metaSrc = 'window.NORTE_AFFILIATE_META = ' + JSON.stringify(meta, null, 2) + ';\n';
+  const full = header + mapSrc + '\n' + metaSrc;
+  document.getElementById('exportCode').textContent = full;
+  document.getElementById('exportModal').classList.add('show');
+}
+
+function copyExport(){
+  const t = document.getElementById('exportCode').textContent;
+  navigator.clipboard.writeText(t).then(() => {
+    const btn = document.querySelector('.modal-actions .btn-export');
+    const orig = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => { btn.textContent = orig; }, 1400);
+  });
+}
+</script>
+
+</body>
+</html>

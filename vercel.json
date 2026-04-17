@@ -5,6 +5,24 @@
     },
     "api/click.js": {
       "maxDuration": 5
+    },
+    "api/submit-lead.js": {
+      "maxDuration": 10
+    },
+    "api/newsletter-subscribe.js": {
+      "maxDuration": 10
+    },
+    "api/unsubscribe.js": {
+      "maxDuration": 5
+    },
+    "api/send-drip.js": {
+      "maxDuration": 60
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/send-drip",
+      "schedule": "0 14 * * *"
+    }
+  ]
 }
